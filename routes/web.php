@@ -31,11 +31,11 @@ Route::get('/addorchard', 'FastFruitController@addOrchard');
 Route::get('/checkgap', 'FastFruitController@checkGap');
 Route::get('/updateorchard', 'FastFruitController@updateOrchard');
 Route::get('/updateuserprofile', 'FastFruitController@updateUserprofile');
-Route::get('user/orchard', 'FastFruitController@userOrchard');
-Route::get('user/product', 'FastFruitController@userProduct');
-Route::get('user/product/{id}', 'FastFruitController@userProductDetail');
-Route::get('user/addproduct', 'FastFruitController@userAddProduct');
-Route::get('user/matching', 'FastFruitController@userMatching');
-Route::get('user/addadmin', 'FastFruitController@userAddadmin');
+Route::get('userorchard', 'FastFruitController@userOrchard');
+Route::get('userproduct', 'FastFruitController@userProduct');
+Route::get('userproduct/{id}', 'FastFruitController@userProductDetail');
+Route::get('useraddproduct', 'FastFruitController@userAddProduct');
+Route::get('usermatching', 'FastFruitController@userMatching');
+Route::get('useraddadmin', 'FastFruitController@userAddadmin');
 
 
