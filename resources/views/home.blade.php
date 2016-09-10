@@ -25,7 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>-->
 <!---fonts-->
-<script src="/public_html/js/responsiveslides.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
 	 <script>
 		$(function () {
 		  $("#slider").responsiveSlides({
@@ -37,8 +37,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  });
 		});
 	</script>
-<link href="/public_html/css/owl.carousel.css" rel="stylesheet">
-<script src="/public_html/js/owl.carousel.js"></script>
+<link href="css/owl.carousel.css" rel="stylesheet">
+<script src="js/owl.carousel.js"></script>
 	<script>
 		$(document).ready(function() {
 		$("#owl-demo").owlCarousel({
@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="head-top" style="height: 80px">				
 				<div class="navbar-brand">
 					<a href="index.html">
-						<img src="/public_html/images/fastfruit.png" style="width: 300px; height: 70px; position: absolute;">
+						<img src="images/fastfruit.png" style="width: 300px; height: 70px; position: absolute;">
 					</a>
 				</div>
 				
@@ -167,8 +167,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h3>สวนที่ลงใหม่</h3>
 						<div class="feature-grids">
 							<div class="col-md-3 feature-grid">
-								<img src="/public_html/images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="/public_html/images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
+								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+								<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
 								<h5>ส้มส้ม จากสวนสิรภัทร</h5>
 								<p>ส้มสดๆ ส้มสวยๆ ส้มหวานๆ </p>
 								<a href="ProductDetail1.html">
@@ -176,22 +176,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</a>
 							</div>
 							<div class="col-md-3 feature-grid">
-								<img src="/public_html/images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="/public_html/images/f2.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
+								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+								<img src="images/f2.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
 								<h5>ทุเรียน จากสวนเปรม</h5>
 								<p>ทุเรียนหวานกรอบอร่อย</p>
 								<a href="#"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
 							</div>
 							<div class="col-md-3 feature-grid">
-								<img src="/public_html/images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="/public_html/images/f3.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
+								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+								<img src="images/f3.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
 								<h5>มะม่วง สวนนภัสสกร</h5>
 								<p>มะม่วงหลายพันธุ์ มาดูได้ค่ะ</p>
 								<a href="#"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
 							</div>
 							<div class="col-md-3 feature-grid">
-								<img src="/public_html/images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="/public_html/images/f4.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
+								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+								<img src="images/f4.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
 								<h5>ลำไย สวนวศิน</h5>
 								<p>ลำไยดี ลำไยอร่อย ต้องลำไยสวนวศิน</p>
 								<a href="#"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
@@ -252,7 +252,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								<div class="col-md-3 footer-grid">
 									<br><br><br>
-									<img src="/public_html/images/fastfruit.png" style="width: 200px; height: 50px; ">
+									<img src="images/fastfruit.png" style="width: 200px; height: 50px; ">
 								</div>
 								<div class="col-md-3 footer-grid">
 									<h4>เมนู</h4>
