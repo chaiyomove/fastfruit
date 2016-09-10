@@ -1,0 +1,35 @@
+diff a/resources/views/home2.blade.php b/resources/views/home2.blade.php	(rejected hunks)
+@@ -1,30 +0,6 @@
+-<!--Author: W3layouts
+-Author URL: http://w3layouts.com
+-License: Creative Commons Attribution 3.0 Unported
+-License URL: http://creativecommons.org/licenses/by/3.0/
+--->
+-<!DOCTYPE HTML>
+-<html>
+-<head>
+-<title>The Orchard</title>
+-<!---css--->
+-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+-<link href="css/style.css" rel='stylesheet' type='text/css' />
+-<!---css--->
+-<meta name="viewport" content="width=device-width, initial-scale=1">
+-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+-<meta name="keywords" content="Real Space Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+-<!---js--->
+-<script src="js/jquery-1.11.1.min.js"></script>
+-<script src="js/bootstrap.js"></script>
+-<!---js--->
+-<!---fonts-->
+-<!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+-<link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+-<link href='//fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>-->
+-<!---fonts-->
++@extends('layouts/master')
++@section('content')
++
+ <script src="/public_html/js/responsiveslides.min.js"></script>
+ 	 <script>
+ 		$(function () {
