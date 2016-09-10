@@ -25,7 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>-->
 <!---fonts-->
-<script src="js/responsiveslides.min.js"></script>
+<script src="/public_html/js/responsiveslides.min.js"></script>
 	 <script>
 		$(function () {
 		  $("#slider").responsiveSlides({
@@ -37,8 +37,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  });
 		});
 	</script>
-<link href="css/owl.carousel.css" rel="stylesheet">
-<script src="js/owl.carousel.js"></script>
+<link href="/public_html/css/owl.carousel.css" rel="stylesheet">
+<script src="/public_html/js/owl.carousel.js"></script>
 	<script>
 		$(document).ready(function() {
 		$("#owl-demo").owlCarousel({
