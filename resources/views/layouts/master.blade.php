@@ -126,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <li><a href="orchards">ชมสวน</a></li>
                                         <li><a href="matching">จับคู่</a></li>
                                         <li><a href="register">สมัครสมาชิก</a></li>
-                                        <li><a href="login">เข้าสู่ระบบ</a></li>
+                                        <li><a href="/">เข้าสู่ระบบ</a></li>
                                         <li><a href="chat">แชท</a></li>
                                     </ul>
                                 </div>
