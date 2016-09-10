@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="head-top" style="height: 80px">             
                 <div class="navbar-brand">
-                    <a href="index.html">
+                    <a href="/">
                         <img src="images/fastfruit.png" style="width: 300px; height: 70px; position: absolute;">
                     </a>
                 </div>
@@ -42,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="email">
                     <ul>
                         <li>
-                            <a href="chat.html" >
+                            <a href="chat" >
                                 <i class="glyphicon glyphicon-comment" aria-hidden="true"></i>แชท
                             </a>
                         </li>
@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </select>
                         </li>
                         <li>
-                            <a href="#" data-toggle="modal" data-target="#myModal">
+                            <a href="logout" data-toggle="modal" data-target="#myModal">
                                 <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>ออกจากระบบ
                             </a>
                         </li>
@@ -87,11 +87,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">หน้าแรก <span class="sr-only">(current)</span></a></li>
-                        <li><a href="orchard.html">ชมสวน</a></li>
-                        <li><a href="product.html">ดูผลผลิต</a></li>
-                        <li><a href="match.html">จับคู่สวน</a></li>
-                        <li><a href="contact.html">ติดต่อเรา</a></li>
+                        <li class="active"><a href="/">หน้าแรก <span class="sr-only">(current)</span></a></li>
+                        <li><a href="orchards">ชมสวน</a></li>
+                        <li><a href="products">ดูผลผลิต</a></li>
+                        <li><a href="matching">จับคู่สวน</a></li>
+                        <li><a href="contactus">ติดต่อเรา</a></li>
                     </ul>
                     <form class="navbar-form navbar-right" role="search">
                         <div class="form-group">
@@ -122,18 +122,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="col-md-3 footer-grid">
                                     <h4>เมนู</h4>
                                     <ul>
-                                        <li><a href="#">หน้าแรก</a></li>
-                                        <li><a href="#">ชมสวน</a></li>
-                                        <li><a href="#">จับคู่</a></li>
-                                        <li><a href="#">สมัครสมาชิก</a></li>
-                                        <li><a href="#">เข้าสู่ระบบ</a></li>
-                                        <li><a href="#">แชท</a></li>
+                                        <li><a href="/">หน้าแรก</a></li>
+                                        <li><a href="orchards">ชมสวน</a></li>
+                                        <li><a href="matching">จับคู่</a></li>
+                                        <li><a href="register">สมัครสมาชิก</a></li>
+                                        <li><a href="login">เข้าสู่ระบบ</a></li>
+                                        <li><a href="chat">แชท</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-3 footer-grid">
                                     <h4>ติดต่อ</h4>
                                     <ul>
-                                        <li><a href="terms.html">ติดต่อเรา</a></li>
+                                        <li><a href="contactus">ติดต่อเรา</a></li>
                                     </ul>
                                 </div>      
                                 <div class="col-md-2 footer-grid">
