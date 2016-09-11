@@ -29,13 +29,13 @@
 						เลือกผลไม้
 					</h3>
 					<br>
+					{{-- {{$fruits->first()->fruitName}} --}}
 					<div class="form-group" style="width:90%">
 					 	<select class="form-control" name="selectfruit">
-					 		<option value="fruit" selected>เลือกผลไม้</option>
-					   		<option value="orange">ส้ม</option>
-					    	<option value="mango">มะม่วง</option>
-					    	<option value="durian">ทุเรียน</option>
-					    	<option value="rambutan">เงาะ</option>
+					 		<option value="0" selected>กรุณาเลือก</option>
+					 		@foreach ($fruits as $fruit)
+						 		<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>				
+					 		@endforeach
 					  	</select>
 					</div>
 					<br>

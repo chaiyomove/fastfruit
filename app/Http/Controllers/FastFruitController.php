@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Request;
 use App\Product_sprints;
 use App\Orchards;
+use App\Fruits;
 
 class FastFruitController extends Controller
 {
@@ -24,7 +25,10 @@ class FastFruitController extends Controller
 
      public function matching()
     {
-        return view('match');
+
+        $fruits = Fruits::all();
+        // return dd($fruits);
+        return view('match', compact('fruits'));
     }
 
     public function contactus()
