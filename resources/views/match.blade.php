@@ -29,46 +29,21 @@
 						เลือกผลไม้
 					</h3>
 					<br>
-					<div class="btn-group">
-						 
-						<button class="btn btn-default">
-							เลือกผลไม้
-						</button> 
-							<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-								<span class="caret"></span>
-							</button>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="#" style="color: black">ส้ม</a>
-							</li>
-							<li>
-								<a href="#">มะม่วง</a>
-							</li>
-							<li>
-								<a href="#">ทุเรียน</a>
-							</li>
-							<li>
-								<a href="#">เงาะ</a>
-							</li>
-						</ul>
+					<div class="form-group" style="width:90%">
+					 	<select class="form-control" name="selectfruit">
+					 		<option value="fruit" selected>เลือกผลไม้</option>
+					   		<option value="orange">ส้ม</option>
+					    	<option value="mango">มะม่วง</option>
+					    	<option value="durian">ทุเรียน</option>
+					    	<option value="rambutan">เงาะ</option>
+					  	</select>
 					</div>
-					<br><br><br>
-					<div class="btn-group">
-						 
-						<button class="btn btn-default">
-							จังหวัด
-						</button> 
-						<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="#">กรุงเทพ</a>
-							</li>
-							<li>
-								<a href="#">สุพรรณบุรี</a>
-							</li>
-						</ul>
+					<br>
+					<div class="form-group" style="width:90%">
+					 	<select class="form-control" name="selectprovince">
+					 		<option value="province" selected>เลือกจังหวัด</option>
+					   		<option value="bangkok">กรุงเทพฯ</option>					    	
+					  	</select>
 					</div>
 				</div>
 				<div class="col-md-2">
@@ -76,63 +51,26 @@
 						เลือกสายพันธุ์
 					</h3>
 					<br>
-					<div class="btn-group">
-						 
-						<button class="btn btn-default">
-							เลือกสายพันธุ์
-						</button> 
-						<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="#">ส้มสายน้ำผึ้ง</a>
-							</li>
-							<li>
-								<a href="#">ส้มเขียวหวาน</a>
-							</li>
-							<li>
-								<a href="#">ส้มโชกุน</a>
-							</li>
-							<li>
-								<a href="#">ส้มเช้ง</a>
-							</li>
-						</ul>
+					<div class="form-group" style="width:90%">
+					 	<select class="form-control" name="selectspecies">
+					 		<option value="species" selected>เลือกสายพันธุ์</option>
+					   		<option value="sainamphueng">ส้มสายน้ำผึ้ง</option>					    	
+					  	</select>
 					</div>
-					<br><br><br>
-					<div class="btn-group">
-						 
-						<button class="btn btn-default">
-							เดือน
-						</button> 
-						<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="#">มกราคม</a>
-							</li>
-							<li>
-								<a href="#">กุมภาพันธ์</a>
-							</li>
-						</ul>
+					<br>
+					<div class="form-group" style="width:60%">
+					 	<select class="form-control" name="selectmonth">
+					 		<option value="month" selected>เดือน</option>
+					   		<option value="jan">มกราคม</option>
+					   		<option value="feb">กุมภาพันธ์</option>					    	
+					  	</select>
 					</div>
-					<div class="btn-group">
-						 
-						<button class="btn btn-default">
-							ปี
-						</button> 
-						<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="#">59</a>
-							</li>
-							<li>
-								<a href="#">60</a>
-							</li>
-						</ul>
+					<div class="form-group" style="width:60%">
+					 	<select class="form-control" name="selectyear">
+					 		<option value="year" selected>ปี</option>
+					   		<option value="59">59</option>
+					   		<option value="60">60</option>							    	
+					  	</select>
 					</div>
 				</div>
 				<div class="col-md-2">
@@ -140,36 +78,27 @@
 						จำนวน
 					</h3>
 					<br>
-					<div class="form-group">
+					<div class="form-group" style="width:90%">
 						<input type="text" class="form-control"/>
 					</div>
 					<br>
-					<div class="btn-group">
-						 
-						<button class="btn btn-default">
-							หน่วย
-						</button> 
-						<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="#">กิโลกรัม</a>
-							</li>
-							<li>
-								<a href="#">ตัน</a>
-							</li>
-						</ul>
+					<div class="form-group" style="width:60%">
+					 	<select class="form-control" name="selectscale">
+					 		<option value="scale" selected>หน่วย</option>
+					   		<option value="kg">กิโลกรัม</option>
+					   		<option value="t">ตัน</option>							    	
+					  	</select>
 					</div>
 				</div>
 				<div class="col-md-1">
-					 <br><br>
-					<button type="button" class="btn btn-success" style="width: 49px; height: 34px;">
+					<div class="form-group" style="margin-top:3.3em">
+					 	<button type="button" class="btn btn-success">
 						เพิ่ม
-					</button> 					
+						</button>
+					</div> 					
 				</div>
 				<div class="col-md-3">
-					<div class="panel panel-default">
+					<div class="panel panel-default" style="width:90%">
 						<div class="panel-heading">
 							ส้มเขียวหวาน 20 กิโลกรัม
 							<a href="#" data-toggle="modal" style="float:right">
@@ -188,10 +117,13 @@
 								<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
 							</a>
 						</div>
+					</div>
+					<div class="form-group">
+					 	<button type="button" class="btn btn-info" 
+					 	style="float:right; margin-right:2.3em">
+							จับคู่
+						</button>
 					</div> 
-					<button type="button" class="btn btn-primary" style="width: 70px; height: 34px; float:right">
-						จับคู่
-					</button>
 				</div>
 				<div class="col-md-1">
 				</div>
