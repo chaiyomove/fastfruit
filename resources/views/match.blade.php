@@ -41,8 +41,10 @@
 					<br>
 					<div class="form-group" style="width:90%">
 					 	<select class="form-control" name="selectprovince">
-					 		<option value="province" selected>เลือกจังหวัด</option>
-					   		<option value="bangkok">กรุงเทพฯ</option>					    	
+					 		<option value="0" selected>กรุณาเลือก</option>
+					 		@foreach ($fruitSpecies as $fruitSpecie)
+						 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>				
+					 		@endforeach			    	
 					  	</select>
 					</div>
 				</div>
@@ -53,8 +55,10 @@
 					<br>
 					<div class="form-group" style="width:90%">
 					 	<select class="form-control" name="selectspecies">
-					 		<option value="species" selected>เลือกสายพันธุ์</option>
-					   		<option value="sainamphueng">ส้มสายน้ำผึ้ง</option>					    	
+					 		<option value="0" selected>กรุณาเลือก</option>
+					 		@foreach ($provinces as $province)
+						 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+					 		@endforeach				    	
 					  	</select>
 					</div>
 					<br>
