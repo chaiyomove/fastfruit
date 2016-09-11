@@ -110,14 +110,26 @@
 					<div class="row">
 						<div class="col-md-2">
 						</div>
+						<div class="col-md-2">
+							<h4>ตรวจสอบ GAP : </h4>
+						</div>
+						<div class="col-md-4">
+							<input type="text" class="form-control" placeholder="กรุณาใส่เลขบัตรประชาชนเฉพาะผู้ที่มี GAP"></input>
+						</div>
+						<div class="col-md-4">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">
+						</div>
 						<div class="col-md-4">
 						</div>
 						<div class="col-md-4">
 						</div>
 						<div class="col-md-2">
-							 <a href="Next.html">
-								<button type="button" class="btn btn-primary btn-lg btn-block" >
-									ถัดไป
+							<a href="OrchardProfile.html">
+								<button type="button" class="btn btn-success btn-lg btn-block">
+									เสร็จสิ้น
 								</button>
 							</a>
 						</div>
