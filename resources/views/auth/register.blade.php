@@ -120,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="login-grids">
 							<div class="login">									
 								<div class="login-right">
-									<form>
+									<form action="post">
 										<h3>สมัครสมาชิก</h3>
 										<input type="text" name="firstName" value="ชื่อ" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'ชื่อ';}" required="">
 											<input type="text" name="lastName" value="นามสกุล" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'นามสกุล';}" required="">
