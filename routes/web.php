@@ -38,7 +38,8 @@ Route::get('updateuserprofile', 'FastFruitController@updateUserprofile');
 Route::get('userorchard', 'FastFruitController@userOrchard');
 Route::get('userproduct', 'FastFruitController@userProduct');
 Route::get('userproduct/{id}', 'FastFruitController@userProductDetail');
-Route::get('useraddproduct', 'FastFruitController@userAddProduct');
+Route::get('useraddproduct', 'FastFruitController@getUserAddProduct');
+Route::post('useraddproduct', 'FastFruitController@postUserAddProduct');
 Route::get('usermatching', 'FastFruitController@userMatching');
 Route::get('useraddadmin', 'FastFruitController@userAddadmin');
 

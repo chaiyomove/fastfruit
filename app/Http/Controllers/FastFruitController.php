@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Request;
+use App\Product_sprints;
 
 class FastFruitController extends Controller
 {
@@ -83,7 +85,7 @@ class FastFruitController extends Controller
         return view('AfterLogin');
     }
 
-    public function userAddProduct()
+    public function getUserAddProduct()
     {
         return view('AddFruit');
     }
@@ -101,6 +103,18 @@ class FastFruitController extends Controller
      public function userProductDetail($id)
     {
         return view('ShowProduct');
+    }
+    public function postUserAddProduct()
+    {
+    	$input=Request::all();
+    	unset($input['picture1']);
+    	unset($input['picture2']);
+    	unset($input['picture3']);
+    	Product_sprints::create($input);
+    	$sprint=new Product_sprints;
+    	$sprint->fruitSpecie=$input['fruitSpecie'];
+       // return dd($input);
+    	return redirect('userproduct');
     }
 
 

@@ -32,6 +32,8 @@
 			<div class="feature-section">
 				<div class="container">
 					<h3>เพิ่มผลผลิต</h3><br>
+					<form method="post" action="{{url('/useraddproduct')}}">
+					{{ csrf_field() }}
 					<div class="row">
 						<div class="col-md-2">
 						</div>
@@ -39,7 +41,7 @@
 							<h4>ชื่อผลผลิต : </h4>
 						</div>
 						<div class="col-md-4">
-							<input type="text" class="form-control" placeholder="ส้มเขียวหวาน"></input>
+							<input type="text" name="fruitSpecie" class="form-control" placeholder="ส้มเขียวหวาน"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -52,7 +54,7 @@
 							<h4>รายละเอียดผลผลิต : </h4>
 						</div>
 						<div class="col-md-4">
-							<textarea class="form-control" style="resize: none;" rows="6"></textarea>
+							<textarea name="description" class="form-control" style="resize: none;" rows="6"></textarea>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -65,7 +67,7 @@
 							<h4>จำนวนผลผลิต : </h4>
 						</div>
 						<div class="col-md-2">
-							<input type="text" class="form-control" placeholder="หน่วยเป็นกิโลกรัม"></input>
+							<input type="text" name="fruitNum" class="form-control" placeholder="หน่วยเป็นกิโลกรัม"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -80,13 +82,13 @@
 							<h4>อัพโหลดรูป : </h4>
 						</div>
 						<div class="col-md-2">
-							<form role="form">								
+														
 								<div class="form-group">				 
-									<input id="exampleInputFile" type="file" />
-									<input id="exampleInputFile" type="file" />
-									<input id="exampleInputFile" type="file" />
+									<input name="picture1" id="exampleInputFile" type="file" />
+									<input name="picture2" id="exampleInputFile" type="file" />
+									<input name="picture3" id="exampleInputFile" type="file" />
 								</div>							
-							</form>
+							
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -107,12 +109,13 @@
 						</div>
 						<div class="col-md-2">
 							 <a href="AfterLogin.html">
-								<button type="button" class="btn btn-success btn-lg btn-block" >
+								<button type="submit" class="btn btn-success btn-lg btn-block" >
 									เสร็จสิ้น
 								</button>
 							</a>
 						</div>
 					</div>
+					</form>
 				</div>
 			</div>
 
