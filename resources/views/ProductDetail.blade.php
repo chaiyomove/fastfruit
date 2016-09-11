@@ -125,13 +125,34 @@
 									                          <td></td>
 									                        </tr>
 									                        <tr>
-									                          <td>
-									                          	<button type="button" class="btn btn-info btn-sm" style="margin-left: -15px"> 
-									                            	<h5><i class="glyphicon glyphicon-user"> </i>
-										                            <i class="glyphicon glyphicon-comment"> </i>&nbsp;&nbsp;แชท</h5>
-					                            				</button>
-									                          </td>
-									                        </tr>
+											                    <td>
+											                        <button type="button" class="btn btn-info btn-sm" style="margin-left: -15px"> 
+											                            <h5>
+												                            <i class="glyphicon glyphicon-user"> </i>
+													                        <i class="glyphicon glyphicon-comment"> </i>&nbsp;&nbsp;แชท
+												                        </h5>
+							                            			</button>
+
+
+							                            			<a href="OrchardDetail-bf.html">
+											                			<button type="button" class="btn btn-danger btn-sm" style="margin-left: -14px; margin-top:10px"> 
+												                            <h5>
+													                            <i class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</i>
+													                        </h5>
+							                            				</button>														
+																	</a>
+											                    </td>
+											                    <td>
+											                    	<button type="button" class="btn btn-warning btn-sm" style="margin-left: -15px"> 
+											                            <h5>
+												                            <i class="glyphicon glyphicon-star"> </i>
+												                        </h5>
+							                            			</button>
+											                    </td>
+											                    <td>
+											                    	<img src="images/gap.png" style="float:right;height:48px;width:50px">
+											                    </td>
+											                </tr>
 									                      </tbody>
 									                    </table>
 

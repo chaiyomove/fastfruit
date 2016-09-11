@@ -150,7 +150,9 @@
 										                        </h5>
 					                            			</button>
 									                    </td>
-									                    <td></td>
+									                    <td>
+									                    	<img src="images/gap.png" style="float:right;height:48px;width:50px">
+									                    </td>
 									                </tr>
 									                
 									                </tbody>
