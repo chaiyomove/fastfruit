@@ -25,7 +25,8 @@ Route::get('home', 'HomeController@index');
 
 Route::get('orchards', 'FastFruitController@orchards');
 Route::get('products', 'FastFruitController@products');
-Route::get('matching', 'FastFruitController@matching');
+Route::get('matching', 'FastFruitController@getMatching');
+Route::post('matching', 'FastFruitController@postMatching');
 Route::get('contactus', 'FastFruitController@contactUs');
 Route::get('products/{id}', 'FastFruitController@productDetail');
 Route::get('chat', 'FastFruitController@chat');
