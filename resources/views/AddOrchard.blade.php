@@ -113,14 +113,19 @@
 						<div class="col-md-2">
 						</div>
 						<div class="col-md-2">
-							<h4>ตรวจสอบ GAP : </h4>
+							<h4>GAP : </h4>
 						</div>
 						<div class="col-md-4">
-							<input type="text" name="citizenId" class="form-control" placeholder="กรุณาใส่เลขบัตรประชาชนเฉพาะผู้ที่มี GAP"></input>
+							<label class="radio-inline">
+								<input type="radio" name="GAP" value="1">มี GAP
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="noGAP" value="2">ไม่มี GAP
+							</label>							
 						</div>
 						<div class="col-md-4">
 						</div>
-					</div>
+					</div>					
 					<div class="row">
 						<div class="col-md-2">
 						</div>
