@@ -31,7 +31,8 @@ Route::get('products/{id}', 'FastFruitController@productDetail');
 Route::get('chat', 'FastFruitController@chat');
 Route::get('orchards/{id}', 'FastFruitController@orchardDetail');
 Route::get('userprofile/{id}', 'FastFruitController@userProfile');
-Route::get('addorchard', 'FastFruitController@addOrchard');
+Route::get('addorchard', 'FastFruitController@getAddOrchard');
+Route::post('addorchard', 'FastFruitController@postAddOrchard');
 Route::get('checkgap', 'FastFruitController@checkGap');
 Route::get('updateorchard', 'FastFruitController@updateOrchard');
 Route::get('updateuserprofile', 'FastFruitController@updateUserprofile');
@@ -42,5 +43,6 @@ Route::get('useraddproduct', 'FastFruitController@getUserAddProduct');
 Route::post('useraddproduct', 'FastFruitController@postUserAddProduct');
 Route::get('usermatching', 'FastFruitController@userMatching');
 Route::get('useraddadmin', 'FastFruitController@userAddadmin');
+Route::get('dashboard', 'FastFruitController@dashboard');
 
 

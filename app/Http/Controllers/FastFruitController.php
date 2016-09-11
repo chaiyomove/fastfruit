@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Request;
 use App\Product_sprints;
+use App\Orchards;
 
 class FastFruitController extends Controller
 {
@@ -52,9 +53,20 @@ class FastFruitController extends Controller
     }
 
 
-    public function addOrchard()
+    public function getAddOrchard()
     {
-        return view('Addorchard');
+        return view('AddOrchard');
+    }
+
+    public function postAddOrchard()
+    {
+    	$input=Request::all();
+    	unset($input['picture1']);
+    	unset($input['picture2']);
+    	unset($input['picture3']);
+    	Orchards::create($input);
+       // return dd($input);
+    	return redirect('userorchard');
     }
 
 
@@ -116,6 +128,11 @@ class FastFruitController extends Controller
        // return dd($input);
     	return redirect('userproduct');
     }
+
+     public function dashboard()
+    {
+        return view('DashBoard');
+   	}
 
 
 }
