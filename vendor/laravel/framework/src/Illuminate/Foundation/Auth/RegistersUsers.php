@@ -16,7 +16,7 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return view('auth.laravel_register');
+        return view('auth.register');
     }
 
     /**

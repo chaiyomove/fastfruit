@@ -230,10 +230,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="login-right">
 										<form>
 											<h3>สมัครสมาชิก</h3>
-											<input type="text" value="ชื่อ" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'FName';}" required="">
-											<input type="text" value="นามสกุล" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'LName';}" required="">
-											<input type="text" value="อีเมล์" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">	
-											<input type="password" value="รหัสผ่าน" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">	
+											<input name="firstName" type="text" value="ชื่อ" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'ชื่อ';}" required="">
+											<input name="lastName" type="text" value="นามสกุล" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'นามสกุล';}" required="">
+											<input name="email" type="text" value="อีเมล์" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'อีเมล์';}" required="">	
+											<input name="password" type="password" value="รหัสผ่าน" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'รหัสผ่าน';}" required="">	
 											
 											<input type="submit" value="สมัครสมาชิก" >
 										</form>
@@ -246,6 +246,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 			</div>
-			<!-- //Register -->
+			<!-- Register -->
+			<!--  Error handle -->
+        @if($errors->any())
+        <div class="row collapse">
+            <ul class="alert-box warning radius">
+                @foreach($errors->all() as $error)
+                    <li> {{ $error }} </li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
 </body>
 </html>
