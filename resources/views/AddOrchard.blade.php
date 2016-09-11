@@ -90,7 +90,6 @@
 									<input name="picture2" id="exampleInputFile" type="file" />
 									<input name="picture3" id="exampleInputFile" type="file" />
 								</div>							
-							</form>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -109,6 +108,7 @@
 						<div class="col-md-4">
 						</div>
 					</div>
+					<br />
 					<div class="row">
 						<div class="col-md-2">
 						</div>
@@ -117,10 +117,10 @@
 						</div>
 						<div class="col-md-4">
 							<label class="radio-inline">
-								<input type="radio" name="GAP" value="1">มี GAP
+								<input type="radio" name="checkgap" value="1">มี GAP
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="noGAP" value="2">ไม่มี GAP
+								<input type="radio" name="checkgap" value="2">ไม่มี GAP
 							</label>							
 						</div>
 						<div class="col-md-4">

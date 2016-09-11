@@ -64,6 +64,7 @@ class FastFruitController extends Controller
     	unset($input['picture1']);
     	unset($input['picture2']);
     	unset($input['picture3']);
+    	unset($input['checkgap']);
     	Orchards::create($input);
        // return dd($input);
     	return redirect('userorchard');
