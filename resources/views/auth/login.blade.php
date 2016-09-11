@@ -120,10 +120,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="login-grids">
 							<div class="login">									
 								<div class="login-right">
-									<form>
+									<form action="post">
 										<h3>เข้าสู่ระบบ</h3>
-										<input type="text" value="อีเมล์" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your Email';}" required="">	
-										<input type="password" value="รหัสผ่าน" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">	
+										<input type="text" placeholder="อีเมล์" onfocus="this.value = '';" required="">	
+										<input type="password" placeholder="รหัสผ่าน" onfocus="this.value = '';" required="">	
 										<h4><a href="#">ลืมรหัสผ่าน?</a></h4>
 										<h4><a href="#">สมัครสมาชิก</a></h4>
 										<div class="single-bottom">

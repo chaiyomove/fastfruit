@@ -122,10 +122,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="login-right">
 									<form action="post">
 										<h3>สมัครสมาชิก</h3>
-										<input type="text" name="firstName" value="ชื่อ" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'ชื่อ';}" required="">
-											<input type="text" name="lastName" value="นามสกุล" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'นามสกุล';}" required="">
-											<input type="text" name="email" value="อีเมล์" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'อีเมล์';}" required="">	
-											<input type="password" name="password" value="รหัสผ่าน" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'รหัสผ่าน';}" required="">	
+										<input type="text" name="firstName" placeholder="ชื่อ" onfocus="this.value = '';" required="">
+											<input type="text" name="lastName" placeholder="นามสกุล" onfocus="this.value = '';" required="">
+											<input type="text" name="email" placeholder="อีเมล์" onfocus="this.value = '';" required="">	
+											<input type="password" name="password" placeholder="รหัสผ่าน" onfocus="this.value = '';" required="">	
 											
 											<input type="submit" value="สมัครสมาชิก" >
 									</form>
