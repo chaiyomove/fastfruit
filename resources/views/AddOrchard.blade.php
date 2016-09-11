@@ -34,6 +34,8 @@
 			<div class="feature-section">
 				<div class="container">
 					<h3>เพิ่มสวน</h3><br>
+					<form method="post" action="{{url('/addorchard')}}">
+					{{ csrf_field() }}
 					<div class="row">
 						<div class="col-md-2">
 						</div>
@@ -41,7 +43,7 @@
 							<h4>ชื่อสวน : </h4>
 						</div>
 						<div class="col-md-4">
-							<input type="text" class="form-control" placeholder="สวนเบ็ญจวรรณ"></input>
+							<input type="text" name="nameOrchard" class="form-control" placeholder="สวนเบ็ญจวรรณ"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -54,7 +56,7 @@
 							<h4>รายละเอียดสวน : </h4>
 						</div>
 						<div class="col-md-4">
-							<textarea class="form-control" style="resize: none;" rows="6"></textarea>
+							<textarea name="description" class="form-control" style="resize: none;" rows="6"></textarea>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -67,7 +69,7 @@
 							<h4>พื้นที่สวน : </h4>
 						</div>
 						<div class="col-md-2">
-							<input type="text" class="form-control" placeholder="หน่วยเป็นไร่"></input>
+							<input type="text" name="area" class="form-control" placeholder="หน่วยเป็นไร่"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -84,9 +86,9 @@
 						<div class="col-md-2">
 							<form role="form">								
 								<div class="form-group">				 
-									<input id="exampleInputFile" type="file" />
-									<input id="exampleInputFile" type="file" />
-									<input id="exampleInputFile" type="file" />
+									<input name="picture1" id="exampleInputFile" type="file" />
+									<input name="picture2" id="exampleInputFile" type="file" />
+									<input name="picture3" id="exampleInputFile" type="file" />
 								</div>							
 							</form>
 						</div>
@@ -102,7 +104,7 @@
 							<h4>ที่อยู่สวน : </h4>
 						</div>
 						<div class="col-md-4">
-							<textarea class="form-control" style="resize: none;" rows="3"></textarea>
+							<textarea name="address" class="form-control" style="resize: none;" rows="3"></textarea>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -114,7 +116,7 @@
 							<h4>ตรวจสอบ GAP : </h4>
 						</div>
 						<div class="col-md-4">
-							<input type="text" class="form-control" placeholder="กรุณาใส่เลขบัตรประชาชนเฉพาะผู้ที่มี GAP"></input>
+							<input type="text" name="citizenId" class="form-control" placeholder="กรุณาใส่เลขบัตรประชาชนเฉพาะผู้ที่มี GAP"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -128,12 +130,13 @@
 						</div>
 						<div class="col-md-2">
 							<a href="OrchardProfile.html">
-								<button type="button" class="btn btn-success btn-lg btn-block">
+								<button type="submit" class="btn btn-success btn-lg btn-block">
 									เสร็จสิ้น
 								</button>
 							</a>
 						</div>
 					</div>
+					</form>
 				</div>
 			</div>
 
