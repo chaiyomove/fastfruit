@@ -120,10 +120,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="login-grids">
 							<div class="login">									
 								<div class="login-right">
-									<form action="post">
+									<form method="POST" action="{{ url('/login') }}">
+									{{ csrf_field() }}
 										<h3>เข้าสู่ระบบ</h3>
-										<input type="text" placeholder="อีเมล์" onfocus="this.value = '';" required="">	
-										<input type="password" placeholder="รหัสผ่าน" onfocus="this.value = '';" required="">	
+										<input type="text" name="email" placeholder="อีเมล์" onfocus="this.value = '';" required="">	
+										<input type="password" name="password" placeholder="รหัสผ่าน" onfocus="this.value = '';" required="">	
 										<h4><a href="#">ลืมรหัสผ่าน?</a></h4>
 										<h4><a href="#">สมัครสมาชิก</a></h4>
 										<div class="single-bottom">
