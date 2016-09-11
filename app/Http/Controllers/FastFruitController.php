@@ -10,6 +10,8 @@ use Request;
 use App\Product_sprints;
 use App\Orchards;
 use App\Fruits;
+use App\Fruit_species;
+use App\provinces;
 
 class FastFruitController extends Controller
 {
@@ -27,8 +29,10 @@ class FastFruitController extends Controller
     {
 
         $fruits = Fruits::all();
+        $fruitSpecies = Fruit_species::all();
+        $provinces = Provinces::all();
         // return dd($fruits);
-        return view('match', compact('fruits'));
+        return view('match', compact('fruits','fruitSpecies','provinces'));
     }
 
     public function contactus()

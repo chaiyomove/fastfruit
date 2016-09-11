@@ -34,6 +34,8 @@
 			<div class="feature-section">
 				<div class="container">
 					<h3>แก้ไขข้อมูลของคุณ</h3><br>
+					<form method="post" action="{{url('/addorchard')}}">
+					{{ csrf_field() }}
 					<div class="row">
 						<div class="col-md-2">
 						</div>
