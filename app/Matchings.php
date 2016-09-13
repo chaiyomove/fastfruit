@@ -10,4 +10,5 @@ class Matchings extends Model
         'fruitNum','distance', 'idPlotStatus', 'idProvince','idUser','idFruitSpecie'
     ];
 
+    protected $primaryKey = 'idMatching';
 }

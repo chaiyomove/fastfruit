@@ -44,7 +44,7 @@ class FastFruitController extends Controller
         }
         // $matchings = DB::table('Matchings')->where('idUser',Auth::user()->id);
         $matchings = Matchings::where('idUser',Auth::user()->id)->get();
-        // return dump($matchings);
+        // return dd($matchings);
         // return dd($fruits);
         return view('match', compact('fruits','fruitSpecies','provinces','months','years','matchings'));
     }
@@ -62,6 +62,16 @@ class FastFruitController extends Controller
    	 	// dd($input);
     	return redirect('matching');
     }
+
+    public function deleteMatching()
+    {
+        $input = Request::all();
+        
+        // return dd($input['idMatching']);
+        Matchings::destroy($input['idMatching']);
+        return redirect(action('FastFruitController@getMatching'));
+    }
+    
 
     public function contactus()
     {
@@ -96,7 +106,7 @@ class FastFruitController extends Controller
 
     public function postAddOrchard()
     {
-    	$input=Request::all();
+    	$inpu = Request::all();
     	unset($input['picture1']);
     	unset($input['picture2']);
     	unset($input['picture3']);
@@ -155,7 +165,7 @@ class FastFruitController extends Controller
     }
     public function postUserAddProduct()
     {
-    	$input=Request::all();
+    	$input = Request::all();
     	unset($input['picture1']);
     	unset($input['picture2']);
     	unset($input['picture3']);

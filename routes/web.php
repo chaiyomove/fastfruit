@@ -25,8 +25,9 @@ Route::get('home', 'HomeController@index');
 
 Route::get('orchards', 'FastFruitController@orchards');
 Route::get('products', 'FastFruitController@products');
-Route::get('matching', 'FastFruitController@getMatching');
+Route::get('matching', 'FastFruitController@getMatching')->name('matching.show');
 Route::post('matching', 'FastFruitController@postMatching');
+Route::delete('matching', 'FastFruitController@deleteMatching');
 Route::get('contactus', 'FastFruitController@contactUs');
 Route::get('products/{id}', 'FastFruitController@productDetail');
 Route::get('chat', 'FastFruitController@chat');

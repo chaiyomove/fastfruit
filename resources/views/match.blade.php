@@ -116,13 +116,19 @@
 							@else
 								<div class="panel-body">
 							@endif
-							
+							<form method="POST" action="{{url('/matching')}}">
+							{{ csrf_field() }}
+							<input name="_method" type="hidden" value="DELETE" />
 							{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}
-							<a href="#" data-toggle="modal" style="float:right">
-								<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
-							</a>
-						</div>
-						@endforeach						
+							<button type="submit" class="btn btn-link" style="float:right;">
+								{{-- <a href="#" data-toggle="modal" > --}}
+									<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
+								{{-- </a> --}}
+							</button>
+							</div>
+							<input type="hidden" name="idMatching" value="{{$matching->idMatching}}">
+							</form>
+						@endforeach							
 					</div>
 					<div class="form-group">
 					 	<button type="submit" class="btn btn-info" 
