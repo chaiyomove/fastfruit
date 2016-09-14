@@ -11,4 +11,9 @@ class Fruits extends Model
     ];
 
     protected $primaryKey = 'idFruit';
+
+     public function fruitSpecies()
+    {
+    	return $this->hasMany('App\Fruit_species','idFruit');
+    }
 }

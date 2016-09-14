@@ -11,4 +11,14 @@ class Follow_orchard extends Model
     ];
 
     protected $primaryKey = 'idFollowOrchard';
+
+       public function orchard()
+    {
+    	return $this->belongsTo('App\Orchards','idOrchards');
+    }
+
+      public function user()
+    {
+    	return $this->belongsTo('App\Users');
+    }
 }

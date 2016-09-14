@@ -11,4 +11,14 @@ class Bookmarks extends Model
     ];
 
     protected $primaryKey = 'idBookmark';
+
+     public function productSprint()
+    {
+    	return $this->belongsTo('App\Product_sprints','idProductSprint');
+    }
+
+      public function user()
+    {
+    	return $this->belongsTo('App\Users');
+    }
 }

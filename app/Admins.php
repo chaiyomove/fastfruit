@@ -11,4 +11,14 @@ class Admins extends Model
     ];
 
     protected $primaryKey = 'idAdmin';
+
+     public function user()
+    {
+    	return $this->belongsTo('App\Users');
+    }
+
+     public function orchard()
+    {
+    	return $this->belongsTo('App\Orchards','idOrchards');
+    }
 }

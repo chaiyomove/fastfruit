@@ -11,9 +11,19 @@ class Provinces extends Model
     ];
 
     protected $primaryKey = 'idProvince';
-
+    
     public function users()
     {
     	return $this->hasMany('App\Users');
+    }
+
+    public function orchards()
+    {
+    	return $this->hasMany('App\Orchards','idProvince');
+    }
+
+    public function matchings()
+    {
+        return $this->hasMany('App\Matchings','idProvince');
     }
 }

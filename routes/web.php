@@ -22,7 +22,7 @@ Route::get('test', function(){
 	$users = App\Users::all();
 	// return $users;
 	foreach ($users as $user) {
-		echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
+		echo $user->firstName." ".$user->lastName."-".$user->province->provinceName;
 		echo "<br><hr>";
 	}
 });
