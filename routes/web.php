@@ -19,12 +19,24 @@ Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
 
 Route::get('test', function(){
-	$users = App\Users::all();
-	// return $users;
-	foreach ($users as $user) {
-		echo $user->firstName." ".$user->lastName."-".$user->province->provinceName;
+	// $users = App\Users::all();
+	// // return $users;
+	// foreach ($users as $user) {
+	// 	echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
+	// 	echo "<br><hr>";
+	// }
+
+	$provinces = App\Provinces::first();
+	// return $provinces;
+	// foreach ($provinces as $province) {
+		$users = $provinces->users;
+		foreach ($users as $key => $user) {
+			echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
+			echo "<br><hr>";
+		}
+
 		echo "<br><hr>";
-	}
+	// }
 });
 
 // HOME

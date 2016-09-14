@@ -14,7 +14,7 @@ class Provinces extends Model
     
     public function users()
     {
-    	return $this->hasMany('App\Users');
+        return $this->hasMany('App\Users','idProvince');
     }
 
     public function orchards()
