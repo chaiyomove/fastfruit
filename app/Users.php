@@ -21,4 +21,9 @@ class Users extends Authenticatable
     ];
 
     protected $primaryKey = 'id';
+
+    public function provinces()
+    {
+        return $this->belongsTo('App\Provinces','idProvince');
+    }
 }

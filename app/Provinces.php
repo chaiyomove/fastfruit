@@ -11,4 +11,9 @@ class Provinces extends Model
     ];
 
     protected $primaryKey = 'idProvince';
+
+    public function users()
+    {
+    	return $this->hasMany('App\Users');
+    }
 }

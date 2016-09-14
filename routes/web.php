@@ -20,9 +20,9 @@ Auth::routes();
 
 Route::get('test', function(){
 	$users = App\Users::all();
-	return $users;
+	// return $users;
 	foreach ($users as $user) {
-		echo $user->firstName." ".$user->lastName."-".$user->province->provinceName;
+		echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
 		echo "<br><hr>";
 	}
 });
