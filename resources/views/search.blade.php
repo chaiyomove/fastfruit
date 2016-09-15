@@ -38,7 +38,7 @@
 	<!--Featured Properties-->
 				@foreach ($orchards as $key => $orchard)
 					@if ($key%4 == 0)		
-						<div class="feature-section" style="padding-bottom:0em; padding-top:3em">
+						<div class="feature-section" style="padding-bottom:0em; padding-top:2em">
 							<div class="container">
 								<div class="feature-grids">
 					@endif
