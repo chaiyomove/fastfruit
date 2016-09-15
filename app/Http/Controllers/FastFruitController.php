@@ -34,7 +34,7 @@ class FastFruitController extends Controller
         return view('product',compact('products'));
     }
 
-     public function getMatching()
+    public function getMatching()
     {
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();

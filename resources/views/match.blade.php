@@ -125,25 +125,28 @@
 					</h3>
 					<br>
 					<div class="panel panel-default" style="width:90%">
-						@foreach ($matchings as $key => $matching)
-							@if ($key % 2 == 0)
-								<div class="panel-heading">
-							@else
-								<div class="panel-body">
-							@endif
-							<form method="POST" action="{{url('/matching')}}">
-							{{ csrf_field() }}
-							<input name="_method" type="hidden" value="DELETE" />
-							{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}
-							<button type="submit" class="btn btn-link">
-								{{-- <a href="#" data-toggle="modal" > --}}
-									<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
-								{{-- </a> --}}
-							</button>
-							</div>
-							<input type="hidden" name="idMatching" value="{{$matching->idMatching}}">
-							</form>
-						@endforeach							
+						@if (Auth::check())
+							@foreach ($matchings as $key => $matching)
+								@if ($key % 2 == 0)
+									<div class="panel-heading">
+								@else
+									<div class="panel-body">
+								@endif
+								<form method="POST" action="{{url('/matching')}}">
+								{{ csrf_field() }}
+								<input name="_method" type="hidden" value="DELETE" />
+								{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}
+								<button type="submit" class="btn btn-link">
+									{{-- <a href="#" data-toggle="modal" > --}}
+										<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
+									{{-- </a> --}}
+								</button>
+								</div>
+								<input type="hidden" name="idMatching" value="{{$matching->idMatching}}">
+								</form>
+							@endforeach
+						@endif
+													
 					</div>
 					<div class="form-group">
 					 	<button type="submit" class="btn btn-info" 
@@ -165,11 +168,13 @@
 						<h3>ผลลัพธ์</h3>
 						<br>
 						<ul class="breadcrumb">
-							@foreach ($matchings as $key => $matching)
-							<li>
-								<a href="javascript:;">{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}</a>
-							</li>
-							@endforeach
+							@if (Auth::check())
+								@foreach ($matchings as $key => $matching)
+								<li>
+									<a href="javascript:;">{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}</a>
+								</li>
+								@endforeach
+							@endif
 						</ul>
 					</div>
 				</div>
