@@ -24,12 +24,14 @@ class FastFruitController extends Controller
 {
     public function orchards()
     {
-        return view('orchard');
+        $orchards=Orchards::all();
+        return view('orchard',compact('orchards'));
     }
 
     public function products()
     {
-        return view('product');
+        $products=Product_sprints::all();
+        return view('product',compact('products'));
     }
 
      public function getMatching()

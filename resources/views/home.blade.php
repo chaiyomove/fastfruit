@@ -68,7 +68,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!--Featured Properties-->
 				<div class="feature-section">
 					<div class="container">
-						<h3>สวนที่ลงใหม่</h3>
+						<h3>ผลผลิตที่แนะนำ</h3>
 						<div class="feature-grids">
 							<div class="col-md-3 feature-grid">
 								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">

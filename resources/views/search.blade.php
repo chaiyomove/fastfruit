@@ -19,18 +19,21 @@
 			</div>
 		</div>
 		<!--banner-->
-		<br><br><br>
-		<div class="container-fluid">			
+		
+
+		<div class="feature-section" style="padding-bottom:0em; padding-top:2em">
+			<div class="container">			
 			<div class="row">
 				<div class="col-md-2">
 				</div>
 				<div class="col-md-8">
 					<div class="alert alert-success alert-dismissable" style="text-align: center;">
-						<h3>ผลลัพธ์การค้นหา</h3>
+						<p style="font-size:20px">ผลลัพธ์การค้นหา</p>
 					</div>
 				</div>
 				<div class="col-md-2">
 				</div>
+			</div>
 			</div>
 		</div>
 
@@ -38,7 +41,7 @@
 	<!--Featured Properties-->
 				@foreach ($orchards as $key => $orchard)
 					@if ($key%4 == 0)		
-						<div class="feature-section" style="padding-bottom:0em; padding-top:2em">
+						<div class="feature-section" style="padding:0em 0em 3em 0em;">
 							<div class="container">
 								<div class="feature-grids">
 					@endif
