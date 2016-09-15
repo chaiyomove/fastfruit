@@ -26,89 +26,104 @@
 				</div>
 				<form method="post" action="{{url('/matching')}}">
 				{{ csrf_field() }}
-				<div class="col-md-2">
-					<h3 class="text-left">
-						เลือกผลไม้
-					</h3>
-					<br>
-					
-					<div class="form-group" style="width:90%">
-					 	<select class="form-control" name="fruit" >
-					 		<option  value="0" selected>กรุณาเลือก</option>
-					 		@foreach ($fruits as $fruit)
-						 		<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>				
-					 		@endforeach
-					  	</select>
-					</div>
-					<br>
-					<div class="form-group" style="width:90%">
-					 	<select class="form-control" name="idProvince">
-					 		<option value="0" selected>กรุณาเลือก</option>
-					 		@foreach ($provinces as $province)
-						 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
-					 		@endforeach				 	   	
-					  	</select>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<h3 class="text-left">
-						เลือกสายพันธุ์
-					</h3>
-					<br>
-					<div class="form-group" style="width:90%">
-					 	<select class="form-control" name="idFruitSpecie">
-					 		<option value="0" selected>กรุณาเลือก</option>
-					 		@foreach ($fruitSpecies as $fruitSpecie)
-						 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>				
-					 		@endforeach				    	
-					  	</select>
-					</div>
-					<br>
-					<div class="form-group" style="width:60%">
-					 	<select class="form-control" name="selectmonth">
-					 		<option value="0" selected>เดือน</option>
-					 		@foreach ($months as $num=>$month)
-						 		
-						 		<option value="{{$num}}">{{$month}}</option>	
+					<div class="col-lg-6 box">
+						<div class="col-md-4">
+							<h3 class="text-left">
+								เลือกผลไม้
+							</h3>
+							<br>
+							<div class="form-group" style="width:90%">
+							 	<select class="form-control" name="fruit" >
+							 		<option  value="0" selected>กรุณาเลือก</option>
+							 		@foreach ($fruits as $fruit)
+								 		<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>				
+							 		@endforeach
+							  	</select>
+							</div>
+							<h3 class="text-left">
+								เลือกเดือนและปี
+							</h3>
+							<br>
+							<div class="form-group" style="width:90%">
+								<select class="form-control" name="selectmonth">
+							 		<option value="0" selected>เดือน</option>
+							 		@foreach ($months as $num=>$month)
+								 		
+								 		<option value="{{$num}}">{{$month}}</option>	
 
-					 		@endforeach					    	
-					  	</select>
+							 		@endforeach					    	
+							  	</select>
+							</div>
+							<div class="form-group" style="width:50%; float:right; margin-right:1.3em">
+								<select class="form-control" name="selectyear">
+							 		<option value="0" selected>ปี</option>
+							 		@foreach ($years as $year)
+								 		<option value="{{$year}}">{{$year}}</option>				
+							 		@endforeach							    	
+							  	</select>
+							</div>					
+						</div>
+						<div class="col-md-4">
+							<h3 class="text-left">
+								เลือกสายพันธุ์
+							</h3>
+							<br>
+							<div class="form-group" style="width:90%">
+							 	<select class="form-control" name="idFruitSpecie">
+							 		<option value="0" selected>กรุณาเลือก</option>
+							 		@foreach ($fruitSpecies as $fruitSpecie)
+								 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>				
+							 		@endforeach				    	
+							  	</select>
+							</div>
+							<h3 class="text-left">
+								จำนวน
+							</h3>
+							<br>
+							<div class="form-group" style="width:90%">
+								<input name="fruitNum" type="text" class="form-control"/>
+							</div>					
+						</div>
+						<div class="col-md-4">
+							<h3 class="text-left">
+								เลือกจังหวัด
+							</h3>
+							<br>
+							<div class="form-group" style="width:90%">
+							 	<select class="form-control" name="idProvince">
+							 		<option value="0" selected>กรุณาเลือก</option>
+							 		@foreach ($provinces as $province)
+								 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+							 		@endforeach				 	   	
+							  	</select>
+							</div>
+							<h3 class="text-left">
+								เลือกหน่วย
+							</h3>
+							<br>
+							<div class="form-group" style="width:90%">
+							 	<select class="form-control" name="unit" >
+							 		<option value="0" selected>หน่วย</option>
+							   		<option value="kg">กิโลกรัม</option>
+							   		<option value="t">ตัน</option>							    	
+							  	</select>
+							</div>
+							<div class="form-group" style="float:right; margin-right:1.3em">
+							 	<button type="submit" class="btn btn-success">
+								เพิ่ม
+								</button>
+							</div> 
+						</div>
 					</div>
-					<div class="form-group" style="width:60%">
-					 	<select class="form-control" name="selectyear">
-					 		<option value="0" selected>ปี</option>
-					 		@foreach ($years as $year)
-						 		<option value="{{$year}}">{{$year}}</option>				
-					 		@endforeach							    	
-					  	</select>
+					<div class="col-md-1">
+					
 					</div>
-				</div>
-				<div class="col-md-2">
-					<h3 class="text-left">
-						จำนวน
-					</h3>
-					<br>
-					<div class="form-group" style="width:90%">
-						<input name="fruitNum" type="text" class="form-control"/>
-					</div>
-					<br>
-					<div class="form-group" style="width:60%">
-					 	<select class="form-control" name="unit" >
-					 		<option value="0" selected>หน่วย</option>
-					   		<option value="kg">กิโลกรัม</option>
-					   		<option value="t">ตัน</option>							    	
-					  	</select>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="form-group" style="margin-top:3.3em">
-					 	<button type="submit" class="btn btn-success">
-						เพิ่ม
-						</button>
-					</div> 					
-				</div>
 				</form>
 				<div class="col-md-3">
+					<h3 class="text-left" style="padding-top:20px">
+						ผลไม้ที่ต้องการจับคู่
+					</h3>
+					<br>
 					<div class="panel panel-default" style="width:90%">
 						@foreach ($matchings as $key => $matching)
 							@if ($key % 2 == 0)
@@ -120,7 +135,7 @@
 							{{ csrf_field() }}
 							<input name="_method" type="hidden" value="DELETE" />
 							{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}
-							<button type="submit" class="btn btn-link" style="float:right;">
+							<button type="submit" class="btn btn-link">
 								{{-- <a href="#" data-toggle="modal" > --}}
 									<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
 								{{-- </a> --}}
@@ -164,7 +179,7 @@
 		</div>
 
 
-	<div class="feature-section">
+				<div class="feature-section">
 					<div class="container">
 						<div class="feature-grids">
 							<div class="col-md-3 feature-grid">
