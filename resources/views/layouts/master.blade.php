@@ -23,13 +23,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!---fonts-->
 <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>-->
+<link href='//fonts.googleapis.com/css?nav-family=Righteous' rel='stylesheet' type='text/css'>-->
 <!---fonts-->
-
+<script type="text/javascript">
+    document.getElementById("{{"nav-".Request::path()}}").class="active";
+</script>
 
 </head>
 <body>
-        <!--header-->
+    <!--header-->
     <div class="header-section">
         <div class="container">
             <div class="head-top" style="height: 80px">             
@@ -67,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-toggle="modal" data-target="#myModal1">
+                            <a href="#">
                                 <i class="glyphicon glyphicon-bell" aria-hidden="true"></i>แจ้งเตือน
                             </a>
                         </li>
@@ -106,13 +108,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse">
+                <div class="collapse navbar-collapse" >
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">หน้าแรก <span class="sr-only">(current)</span></a></li>
-                        <li><a href="orchards">ชมสวน</a></li>
-                        <li><a href="products">ดูผลผลิต</a></li>
-                        <li><a href="matching">จับคู่สวน</a></li>
-                        <li><a href="contactus">ติดต่อเรา</a></li>
+                        <li id="nav-home" class="active"><a href="/">หน้าแรก <span class="sr-only">(current)</span></a></li>
+                        <li id="nav-orchards"><a href="orchards">ชมสวน</a></li>
+                        <li id="nav-products"><a href="products">ดูผลผลิต</a></li>
+                        <li id="nav-matching"><a href="matching">จับคู่สวน</a></li>
+                        <li id="nav-contactus"><a href="contactus">ติดต่อเรา</a></li>
                     </ul>
                     <form method="GET" action="{{url('/search')}}" class="navbar-form navbar-right" role="search">
                     {{ csrf_field() }}
