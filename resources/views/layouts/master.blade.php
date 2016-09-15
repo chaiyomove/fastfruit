@@ -114,9 +114,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="matching">จับคู่สวน</a></li>
                         <li><a href="contactus">ติดต่อเรา</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right" role="search">
+                    <form method="GET" action="{{url('/search')}}" class="navbar-form navbar-right" role="search">
+                    {{ csrf_field() }}
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="ค้นหา">
+                            <input type="text" name="search" class="form-control" placeholder="ค้นหา">
                         </div>
                         <button type="submit" class="btn btn-default">
                             <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
