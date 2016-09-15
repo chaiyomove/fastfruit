@@ -10,6 +10,10 @@
 					});
 				</script>
 
+<link href="css/jquery.datepicker.css" rel="stylesheet">
+
+
+
 <!-- pop-up -->
 
 
@@ -28,45 +32,43 @@
 				{{ csrf_field() }}
 					<div class="col-lg-6 box">
 						<div class="col-md-4">
-							<h3 class="text-left">
+							<p class="text-left size">
 								เลือกผลไม้
-							</h3>
+							</p>
 							<br>
 							<div class="form-group" style="width:90%">
 							 	<select class="form-control" name="fruit" >
-							 		<option  value="0" selected>กรุณาเลือก</option>
+							 		<option  value="0" selected >กรุณาเลือก</option>
 							 		@foreach ($fruits as $fruit)
 								 		<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>				
 							 		@endforeach
 							  	</select>
 							</div>
-							<h3 class="text-left">
+							<p class="text-left size">
 								เลือกเดือนและปี
-							</h3>
+							</p>
 							<br>
 							<div class="form-group" style="width:90%">
-								<select class="form-control" name="selectmonth">
-							 		<option value="0" selected>เดือน</option>
-							 		@foreach ($months as $num=>$month)
-								 		
-								 		<option value="{{$num}}">{{$month}}</option>	
-
-							 		@endforeach					    	
-							  	</select>
+								<div class='input-group date' id='datepickerstart'>
+					                <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" />
+					                <span class="input-group-addon" data-toggle="datepicker">
+					                    <span class="glyphicon glyphicon-calendar"></span>
+					                </span>
+					            </div>
 							</div>
-							<div class="form-group" style="width:50%; float:right; margin-right:1.3em">
-								<select class="form-control" name="selectyear">
-							 		<option value="0" selected>ปี</option>
-							 		@foreach ($years as $year)
-								 		<option value="{{$year}}">{{$year}}</option>				
-							 		@endforeach							    	
-							  	</select>
+							<div class="form-group" style="width:90%">
+								<div class='input-group date' id='datepickerend'>
+					                <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง"/>
+					                <span class="input-group-addon" data-toggle="datepicker">
+					                    <span class="glyphicon glyphicon-calendar"></span>
+					                </span>
+					            </div>
 							</div>					
 						</div>
 						<div class="col-md-4">
-							<h3 class="text-left">
+							<p class="text-left size">
 								เลือกสายพันธุ์
-							</h3>
+							</p>
 							<br>
 							<div class="form-group" style="width:90%">
 							 	<select class="form-control" name="idFruitSpecie">
@@ -76,18 +78,29 @@
 							 		@endforeach				    	
 							  	</select>
 							</div>
-							<h3 class="text-left">
+							<p class="text-left size">
 								จำนวน
-							</h3>
+							</p>
 							<br>
 							<div class="form-group" style="width:90%">
 								<input name="fruitNum" type="text" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<p class="text-left size" style="float:left">
+									GAP
+								</p>
+								<div class="form-group" style="width:60%; float:right;margin-right:1.3em">
+								 	<select class="form-control" name="gap" >
+								   		<option value="1">มี GAP</option>
+								   		<option value="2">ไม่มี GAP</option>
+								  	</select>
+								</div>
 							</div>					
 						</div>
 						<div class="col-md-4">
-							<h3 class="text-left">
+							<p class="text-left size">
 								เลือกจังหวัด
-							</h3>
+							</p>
 							<br>
 							<div class="form-group" style="width:90%">
 							 	<select class="form-control" name="idProvince">
@@ -97,9 +110,9 @@
 							 		@endforeach				 	   	
 							  	</select>
 							</div>
-							<h3 class="text-left">
+							<p class="text-left size">
 								เลือกหน่วย
-							</h3>
+							</p>
 							<br>
 							<div class="form-group" style="width:90%">
 							 	<select class="form-control" name="unit" >
@@ -120,9 +133,9 @@
 					</div>
 				</form>
 				<div class="col-md-3">
-					<h3 class="text-left" style="padding-top:20px">
+					<p class="text-left size" style="padding-top:20px">
 						ผลไม้ที่ต้องการจับคู่
-					</h3>
+					</p>
 					<br>
 					<div class="panel panel-default" style="width:90%">
 						@if (Auth::check())
@@ -217,4 +230,8 @@
 						</div>
 					</div>
 				</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/jquery.datepicker.js"></script>
+
 @endsection

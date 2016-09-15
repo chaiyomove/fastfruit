@@ -5790,3 +5790,11 @@ button.close {
     border-radius: 15px;
     padding:20px 5px 10px 20px;
 }
+p.size{
+  font-size: 18px;
+}
+
+.input-group-addon {
+    cursor: pointer;
+
+}
