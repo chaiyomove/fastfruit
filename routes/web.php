@@ -43,13 +43,17 @@ Route::get('test', function(){
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
 
+
+Route::get('orchards', 'FastFruitController@orchards');
+Route::get('products', 'FastFruitController@products');
+Route::get('matching', 'FastFruitController@getMatching')->name('matching.show');
+Route::post('matching', 'FastFruitController@postMatching');
+Route::get('contactus', 'FastFruitController@contactUs');
+Route::get('search', 'FastFruitController@search');
+
+
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('orchards', 'FastFruitController@orchards');
-	Route::get('products', 'FastFruitController@products');
-	Route::get('matching', 'FastFruitController@getMatching')->name('matching.show');
-	Route::post('matching', 'FastFruitController@postMatching');
 	Route::delete('matching', 'FastFruitController@deleteMatching');
-	Route::get('contactus', 'FastFruitController@contactUs');
 	Route::get('products/{id}', 'FastFruitController@productDetail');
 	Route::get('chat', 'FastFruitController@chat');
 	Route::get('orchards/{id}', 'FastFruitController@orchardDetail');
@@ -67,7 +71,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('usermatching', 'FastFruitController@userMatching');
 	Route::get('useraddadmin', 'FastFruitController@userAddadmin');
 	Route::get('dashboard', 'FastFruitController@dashboard');
-	Route::get('search', 'FastFruitController@search');
 
 });
 
