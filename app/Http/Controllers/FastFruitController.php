@@ -106,7 +106,7 @@ class FastFruitController extends Controller
 
     public function postAddOrchard()
     {
-    	$inpu = Request::all();
+    	$input = Request::all();
     	unset($input['picture1']);
     	unset($input['picture2']);
     	unset($input['picture3']);
@@ -180,6 +180,17 @@ class FastFruitController extends Controller
     {
         return view('DashBoard');
    	}
+
+    public function search()
+    {
+        $orchards = Orchards::all();
+        // foreach ($orchards as $orchard) {
+        //     echo $orchard->nameOrchard." ".$orchard->description;
+        //     echo "<br><hr>";
+        // }
+        // return dd($orchards);
+        return view('search', compact('orchards'));
+    }
 
 
 }
