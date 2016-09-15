@@ -235,7 +235,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<input name="email" type="text" value="อีเมล์" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'อีเมล์';}" required="">	
 											<input name="password" type="password" value="รหัสผ่าน" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'รหัสผ่าน';}" required="">	
 											
-											<input type="submit" value="สมัครสมาชิก" >
+											<input type="submit">
 										</form>
 									</div>
 									<div class="clearfix"></div>								

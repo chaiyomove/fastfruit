@@ -7,11 +7,18 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Request;
+use Carbon\Carbon;
 use App\Product_sprints;
 use App\Orchards;
 use App\Fruits;
 use App\Fruit_species;
 use App\provinces;
+use App\Matchings;
+use Auth;
+use DB;
+
+
+
 
 class FastFruitController extends Controller
 {
@@ -25,15 +32,46 @@ class FastFruitController extends Controller
         return view('product');
     }
 
-     public function matching()
+     public function getMatching()
     {
-
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
         $provinces = Provinces::all();
+        $months = ['1'=>'มกราคม','2'=>'กุมภาพันธ์','3'=>'มีนาคม','4'=>'เมษายน','5'=>'พฤษภาคม','6'=>'มิถุนายน','7'=>'กรกฎาคม','8'=>'สิงหาคม','9'=>'กันยายน','10'=>'ตุลาคม','11'=>'พฤศจิกายน','12'=>'ธันวาคม' ];
+        $years = array();
+        for ($i=0;$i<6;$i++){
+        	$years[$i]=Carbon::now()->year+$i;
+        }
+        // $matchings = DB::table('Matchings')->where('idUser',Auth::user()->id);
+        $matchings = Matchings::where('idUser',Auth::user()->id)->get();
+        // return dd($matchings);
         // return dd($fruits);
-        return view('match', compact('fruits','fruitSpecies','provinces'));
+        return view('match', compact('fruits','fruitSpecies','provinces','months','years','matchings'));
     }
+
+    public function postMatching()
+    {
+        $input = Request::all();
+        $input['idUser'] = Auth::user()->id;
+    	unset($input['fruit']);
+    	unset($input['selectmonth']);
+    	unset($input['selectyear']);
+    	unset($input['unit']);
+
+   	 	Matchings::create($input);
+   	 	// dd($input);
+    	return redirect('matching');
+    }
+
+    public function deleteMatching()
+    {
+        $input = Request::all();
+        
+        // return dd($input['idMatching']);
+        Matchings::destroy($input['idMatching']);
+        return redirect(action('FastFruitController@getMatching'));
+    }
+    
 
     public function contactus()
     {
@@ -68,7 +106,7 @@ class FastFruitController extends Controller
 
     public function postAddOrchard()
     {
-    	$input=Request::all();
+    	$inpu = Request::all();
     	unset($input['picture1']);
     	unset($input['picture2']);
     	unset($input['picture3']);
@@ -127,7 +165,7 @@ class FastFruitController extends Controller
     }
     public function postUserAddProduct()
     {
-    	$input=Request::all();
+    	$input = Request::all();
     	unset($input['picture1']);
     	unset($input['picture2']);
     	unset($input['picture3']);

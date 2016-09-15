@@ -17,8 +17,44 @@ class Users extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstName','lastName', 'email', 'password',
+        'firstName','lastName', 'email', 'password','address','phone','userPicture','userType','idProvince',
     ];
 
-    // protected $primaryKey = 'idUser';
+    protected $primaryKey = 'id';
+
+    public function province()
+    {
+        return $this->belongsTo('App\Provinces','idProvince');
+    }
+
+    public function matchings()
+    {
+        return $this->hasMany('App\Matchings');
+    }
+
+     public function admins()
+    {
+        return $this->hasMany('App\Admins');
+    }
+
+     public function bookmarks()
+    {
+        return $this->hasMany('App\Bookmarks');
+    }
+
+    public function followUsers()
+    {
+        return $this->hasMany('App\Follow_user','idUserFollowing');
+    }
+
+    public function followBy()
+    {
+        return $this->hasMany('App\Follow_user','idUserFollower');
+    }
+
+    public function followOrchards()
+    {
+        return $this->hasMany('App\Follow_orchard');
+    }
+
 }

@@ -24,15 +24,17 @@
 			<div class="row">
 				<div class="col-md-1">
 				</div>
+				<form method="post" action="{{url('/matching')}}">
+				{{ csrf_field() }}
 				<div class="col-md-2">
 					<h3 class="text-left">
 						เลือกผลไม้
 					</h3>
 					<br>
-					{{-- {{$fruits->first()->fruitName}} --}}
+					
 					<div class="form-group" style="width:90%">
-					 	<select class="form-control" name="selectfruit">
-					 		<option value="0" selected>กรุณาเลือก</option>
+					 	<select class="form-control" name="fruit" >
+					 		<option  value="0" selected>กรุณาเลือก</option>
 					 		@foreach ($fruits as $fruit)
 						 		<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>				
 					 		@endforeach
@@ -40,11 +42,11 @@
 					</div>
 					<br>
 					<div class="form-group" style="width:90%">
-					 	<select class="form-control" name="selectprovince">
+					 	<select class="form-control" name="idProvince">
 					 		<option value="0" selected>กรุณาเลือก</option>
-					 		@foreach ($fruitSpecies as $fruitSpecie)
-						 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>				
-					 		@endforeach			    	
+					 		@foreach ($provinces as $province)
+						 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+					 		@endforeach				 	   	
 					  	</select>
 					</div>
 				</div>
@@ -54,26 +56,30 @@
 					</h3>
 					<br>
 					<div class="form-group" style="width:90%">
-					 	<select class="form-control" name="selectspecies">
+					 	<select class="form-control" name="idFruitSpecie">
 					 		<option value="0" selected>กรุณาเลือก</option>
-					 		@foreach ($provinces as $province)
-						 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+					 		@foreach ($fruitSpecies as $fruitSpecie)
+						 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>				
 					 		@endforeach				    	
 					  	</select>
 					</div>
 					<br>
 					<div class="form-group" style="width:60%">
 					 	<select class="form-control" name="selectmonth">
-					 		<option value="month" selected>เดือน</option>
-					   		<option value="jan">มกราคม</option>
-					   		<option value="feb">กุมภาพันธ์</option>					    	
+					 		<option value="0" selected>เดือน</option>
+					 		@foreach ($months as $num=>$month)
+						 		
+						 		<option value="{{$num}}">{{$month}}</option>	
+
+					 		@endforeach					    	
 					  	</select>
 					</div>
 					<div class="form-group" style="width:60%">
 					 	<select class="form-control" name="selectyear">
-					 		<option value="year" selected>ปี</option>
-					   		<option value="59">59</option>
-					   		<option value="60">60</option>							    	
+					 		<option value="0" selected>ปี</option>
+					 		@foreach ($years as $year)
+						 		<option value="{{$year}}">{{$year}}</option>				
+					 		@endforeach							    	
 					  	</select>
 					</div>
 				</div>
@@ -83,12 +89,12 @@
 					</h3>
 					<br>
 					<div class="form-group" style="width:90%">
-						<input type="text" class="form-control"/>
+						<input name="fruitNum" type="text" class="form-control"/>
 					</div>
 					<br>
 					<div class="form-group" style="width:60%">
-					 	<select class="form-control" name="selectscale">
-					 		<option value="scale" selected>หน่วย</option>
+					 	<select class="form-control" name="unit" >
+					 		<option value="0" selected>หน่วย</option>
 					   		<option value="kg">กิโลกรัม</option>
 					   		<option value="t">ตัน</option>							    	
 					  	</select>
@@ -96,34 +102,36 @@
 				</div>
 				<div class="col-md-1">
 					<div class="form-group" style="margin-top:3.3em">
-					 	<button type="button" class="btn btn-success">
+					 	<button type="submit" class="btn btn-success">
 						เพิ่ม
 						</button>
 					</div> 					
 				</div>
+				</form>
 				<div class="col-md-3">
 					<div class="panel panel-default" style="width:90%">
-						<div class="panel-heading">
-							ส้มเขียวหวาน 20 กิโลกรัม
-							<a href="#" data-toggle="modal" style="float:right">
-								<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
-							</a>
-						</div>
-						<div class="panel-body">
-							ส้มโชกุน 50 กิโลกรัม
-							<a href="#" data-toggle="modal" style="float:right">
-								<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
-							</a>
-						</div>
-						<div class="panel-footer">
-							ส้มสายน้ำผึ้ง 1 ตัน
-							<a href="#" data-toggle="modal" style="float:right">
-								<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
-							</a>
-						</div>
+						@foreach ($matchings as $key => $matching)
+							@if ($key % 2 == 0)
+								<div class="panel-heading">
+							@else
+								<div class="panel-body">
+							@endif
+							<form method="POST" action="{{url('/matching')}}">
+							{{ csrf_field() }}
+							<input name="_method" type="hidden" value="DELETE" />
+							{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}
+							<button type="submit" class="btn btn-link" style="float:right;">
+								{{-- <a href="#" data-toggle="modal" > --}}
+									<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
+								{{-- </a> --}}
+							</button>
+							</div>
+							<input type="hidden" name="idMatching" value="{{$matching->idMatching}}">
+							</form>
+						@endforeach							
 					</div>
 					<div class="form-group">
-					 	<button type="button" class="btn btn-info" 
+					 	<button type="submit" class="btn btn-info" 
 					 	style="float:right; margin-right:2.3em">
 							จับคู่
 						</button>
@@ -142,15 +150,11 @@
 						<h3>ผลลัพธ์</h3>
 						<br>
 						<ul class="breadcrumb">
+							@foreach ($matchings as $key => $matching)
 							<li>
-								<a href="javascript:;">ส้มเขียวหวาน 20 กิโลกรัม</a>
+								<a href="javascript:;">{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}</a>
 							</li>
-							<li>
-								<a href="javascript:;">ส้มโชกุน 50 กิโลกรัม</a>
-							</li>
-							<li>
-								<a href="javascript:;">ส้มสายน้ำผึ้ง 1 ตัน</a>
-							</li>
+							@endforeach
 						</ul>
 					</div>
 				</div>

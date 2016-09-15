@@ -31,7 +31,7 @@ class RegisterController extends Controller
 
     /**
      * Create a new controller instance.
-     *
+     *  
      * @return void
      */
     public function __construct()
@@ -48,7 +48,6 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            // 'name' => 'required|max:255',
             'firstName' => 'required|max:255',
             'lastName' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
@@ -65,7 +64,6 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Users::create([
-            // 'firstName' => $data['name'],
             'firstName' => $data['firstName'],
             'lastName' => $data['lastName'],
             'email' => $data['email'],

@@ -38,7 +38,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <img src="images/fastfruit.png" style="width: 300px; height: 70px; position: absolute;">
                     </a>
                 </div>
-                
+                @if(!Auth::check())
+                <div class="email">
+                    <ul>                                
+                        <li>
+                            <a href="login" >
+                                <i class="glyphicon glyphicon-comment" aria-hidden="true"></i>แชท
+                            </a>
+                        </li>
+                        <li>
+                            <a href="login">
+                                <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>เข้าสู่ระบบ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="register">
+                                <i class="glyphicon glyphicon-lock" aria-hidden="true"></i>สมัครสมาชิก
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                @else
                 <div class="email">
                     <ul>
                         <li>
@@ -62,12 +82,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </select>
                         </li>
                         <li>
-                            <a href="logout" data-toggle="modal" data-target="#myModal">
+                            <a href="logout">
                                 <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>ออกจากระบบ
                             </a>
                         </li>
                     </ul>
                 </div>
+                @endif
                 <div class="clearfix"></div>
             </div>
             <nav class="navbar navbar-default">
