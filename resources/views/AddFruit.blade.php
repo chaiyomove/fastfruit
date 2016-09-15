@@ -38,10 +38,24 @@
 						<div class="col-md-2">
 						</div>
 						<div class="col-md-2">
-							<h4>ชื่อผลผลิต : </h4>
+							<h4>ผลผลิต : </h4>
 						</div>
 						<div class="col-md-4">
-							<input type="text" name="fruitSpecie" class="form-control" placeholder="ส้มเขียวหวาน"></input>
+							<div class="form-group" style="width:40%; float:left">
+							 	<select class="form-control" name="selectfruit">
+							 		<option value="fruit" selected>เลือกผลไม้</option>
+							   		<option value="orange">ส้ม</option>
+							    	<option value="mango">มะม่วง</option>
+							    	<option value="durian">ทุเรียน</option>
+							    	<option value="rambutan">เงาะ</option>
+							  	</select>
+							</div>
+							<div class="form-group" style="width:50%; float:right">
+							 	<select class="form-control" name="selectspecies">
+							 		<option value="species" selected>เลือกสายพันธุ์</option>
+							   		<option value="sainamphueng">ส้มสายน้ำผึ้ง</option>					    	
+							  	</select>
+							</div>
 						</div>
 						<div class="col-md-4">
 						</div>
