@@ -24,14 +24,12 @@ class FastFruitController extends Controller
 {
     public function orchards()
     {
-        $orchards=Orchards::all();
-        return view('orchard',compact('orchards'));
+        return view('orchard');
     }
 
     public function products()
     {
-        $products=Product_sprints::all();
-        return view('product',compact('products'));
+        return view('product');
     }
 
      public function getMatching()
@@ -42,27 +40,34 @@ class FastFruitController extends Controller
         $months = ['1'=>'มกราคม','2'=>'กุมภาพันธ์','3'=>'มีนาคม','4'=>'เมษายน','5'=>'พฤษภาคม','6'=>'มิถุนายน','7'=>'กรกฎาคม','8'=>'สิงหาคม','9'=>'กันยายน','10'=>'ตุลาคม','11'=>'พฤศจิกายน','12'=>'ธันวาคม' ];
         $years = array();
         for ($i=0;$i<6;$i++){
-        	$years[$i]=Carbon::now()->year+$i;
+            $years[$i]=Carbon::now()->year+$i;
         }
+
         // $matchings = DB::table('Matchings')->where('idUser',Auth::user()->id);
-        $matchings = Matchings::where('idUser',Auth::user()->id)->get();
+
+        if (Auth::check())
+        {
+            $matchings = Matchings::where('idUser',Auth::user()->id)->get();
+            return view('match', compact('fruits','fruitSpecies','provinces','months','years','matchings'));
+        }
+        
         // return dd($matchings);
         // return dd($fruits);
-        return view('match', compact('fruits','fruitSpecies','provinces','months','years','matchings'));
+        return view('match', compact('fruits','fruitSpecies','provinces','months','years'));
     }
 
     public function postMatching()
     {
         $input = Request::all();
         $input['idUser'] = Auth::user()->id;
-    	unset($input['fruit']);
-    	unset($input['selectmonth']);
-    	unset($input['selectyear']);
-    	unset($input['unit']);
+        unset($input['fruit']);
+        unset($input['selectmonth']);
+        unset($input['selectyear']);
+        unset($input['unit']);
 
-   	 	Matchings::create($input);
-   	 	// dd($input);
-    	return redirect('matching');
+        Matchings::create($input);
+        // dd($input);
+        return redirect('matching');
     }
 
     public function deleteMatching()
@@ -108,14 +113,14 @@ class FastFruitController extends Controller
 
     public function postAddOrchard()
     {
-    	$input = Request::all();
-    	unset($input['picture1']);
-    	unset($input['picture2']);
-    	unset($input['picture3']);
-    	unset($input['checkgap']);
-    	Orchards::create($input);
+        $input = Request::all();
+        unset($input['picture1']);
+        unset($input['picture2']);
+        unset($input['picture3']);
+        unset($input['checkgap']);
+        Orchards::create($input);
        // return dd($input);
-    	return redirect('userorchard');
+        return redirect('userorchard');
     }
 
 
@@ -167,21 +172,21 @@ class FastFruitController extends Controller
     }
     public function postUserAddProduct()
     {
-    	$input = Request::all();
-    	unset($input['picture1']);
-    	unset($input['picture2']);
-    	unset($input['picture3']);
-    	Product_sprints::create($input);
-    	$sprint=new Product_sprints;
-    	$sprint->fruitSpecie=$input['fruitSpecie'];
+        $input = Request::all();
+        unset($input['picture1']);
+        unset($input['picture2']);
+        unset($input['picture3']);
+        Product_sprints::create($input);
+        $sprint=new Product_sprints;
+        $sprint->fruitSpecie=$input['fruitSpecie'];
        // return dd($input);
-    	return redirect('userproduct');
+        return redirect('userproduct');
     }
 
      public function dashboard()
     {
         return view('DashBoard');
-   	}
+    }
 
     public function search()
     {
