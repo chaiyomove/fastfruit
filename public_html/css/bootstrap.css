@@ -5783,3 +5783,10 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.box {
+    border-color:#BFBFBF;
+    border-style:solid;
+    border-width: thin;
+    border-radius: 15px;
+    padding:20px 5px 10px 20px;
+}
