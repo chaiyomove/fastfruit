@@ -17,7 +17,7 @@
 		},
 		defaults: {
 			formatDate: function(date) {
-				var formatted = $.datePicker.utils.pad(date.getDate(), 2) + '/' + $.datePicker.utils.pad(date.getMonth() + 1, 2) + '/' + date.getFullYear();
+				var formatted = date.getFullYear() + '/' + $.datePicker.utils.pad(date.getMonth() + 1, 2) + '/' + $.datePicker.utils.pad(date.getDate(), 2);
 				return formatted;
 			},
 			parseDate: function(string) {
