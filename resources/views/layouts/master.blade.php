@@ -26,7 +26,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?nav-family=Righteous' rel='stylesheet' type='text/css'>-->
 <!---fonts-->
 <script type="text/javascript">
-    document.getElementById("{{"nav-".Request::path()}}").class="active";
+    window.onload = function(){
+        document.getElementById("{{"nav-".Request::path()}}").className="active";   
+    }
+    
 </script>
 
 </head>
@@ -110,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" >
                     <ul class="nav navbar-nav">
-                        <li id="nav-home" class="active"><a href="/">หน้าแรก <span class="sr-only">(current)</span></a></li>
+                        <li id="nav-/"><a href="/">หน้าแรก <span class="sr-only">(current)</span></a></li>
                         <li id="nav-orchards"><a href="orchards">ชมสวน</a></li>
                         <li id="nav-products"><a href="products">ดูผลผลิต</a></li>
                         <li id="nav-matching"><a href="matching">จับคู่สวน</a></li>
