@@ -58,9 +58,8 @@ class FastFruitController extends Controller
                             // foreach ($matchedOrcs as $key => $idOrchard) {
                             //     echo $idOrchard;
                             //     echo "<br><hr>";
+                            // }
                         }
-                            }
-                            
                     } 
                 }
                 // echo $matching->idFruitSpecie;
