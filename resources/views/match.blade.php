@@ -141,15 +141,15 @@
 						@if (Auth::check())
 							@foreach ($matchings as $key => $matching)
 								@if ($key % 2 == 0)
-									<div class="panel-heading">
+									<div class="panel-heading clearfix">
 								@else
-									<div class="panel-body">
+									<div class="panel-body clearfix">
 								@endif
 								<form method="POST" action="{{url('/matching')}}">
 								{{ csrf_field() }}
 								<input name="_method" type="hidden" value="DELETE" />
 								{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}
-								<button type="submit" class="btn btn-link">
+								<button type="submit" class="btn btn-link pull-right">
 									{{-- <a href="#" data-toggle="modal" > --}}
 										<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
 									{{-- </a> --}}
