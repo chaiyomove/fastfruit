@@ -90,7 +90,7 @@
 									GAP
 								</p>
 								<div class="form-group" style="width:60%; float:right;margin-right:1.3em">
-								 	<select class="form-control" name="gap" >
+								 	<select class="form-control" name="idPlotStatus" >
 								   		<option value="1">มี GAP</option>
 								   		<option value="2">ไม่มี GAP</option>
 								  	</select>
@@ -161,12 +161,15 @@
 						@endif
 													
 					</div>
+					<form method="post" action="{{url('/matching')}}">
+					{{ csrf_field() }}
 					<div class="form-group">
 					 	<button type="submit" class="btn btn-info" 
 					 	style="float:right; margin-right:2.3em">
 							จับคู่
 						</button>
 					</div> 
+					</form>
 				</div>
 				<div class="col-md-1">
 				</div>
