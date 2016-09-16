@@ -117,8 +117,8 @@
 							<div class="form-group" style="width:90%">
 							 	<select class="form-control" name="unit" >
 							 		<option value="0" selected>หน่วย</option>
-							   		<option value="kg">กิโลกรัม</option>
-							   		<option value="t">ตัน</option>							    	
+							   		<option value="1">กิโลกรัม</option>
+							   		<option value="2">ตัน</option>							    	
 							  	</select>
 							</div>
 							<div class="form-group" style="float:right; margin-right:1.3em">

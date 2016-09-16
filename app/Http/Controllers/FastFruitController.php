@@ -47,8 +47,7 @@ class FastFruitController extends Controller
 
         // $matchings = DB::table('Matchings')->where('idUser',Auth::user()->id);
 
-        if (Auth::check())
-        {
+        if (Auth::check()){
             $matchings = Matchings::where('idUser',Auth::user()->id)->get();
             return view('match', compact('fruits','fruitSpecies','provinces','months','years','matchings'));
         }
@@ -61,11 +60,21 @@ class FastFruitController extends Controller
     public function postMatching()
     {
         $input = Request::all();
-        $input['idUser'] = Auth::user()->id;
+
+        if (Auth::check()){
+            $input['idUser'] = Auth::user()->id;
+        } else {
+            $input['idUser'] = 0;
+        }
+
         unset($input['fruit']);
-        unset($input['selectmonth']);
-        unset($input['selectyear']);
-        unset($input['unit']);
+       
+
+        if ( $input['unit']==2){
+            $input['fruitNum']= $input['fruitNum']*1000;
+
+        }
+
 
         Matchings::create($input);
         // dd($input);
