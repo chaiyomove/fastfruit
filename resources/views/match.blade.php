@@ -161,7 +161,7 @@
 						@endif
 													
 					</div>
-					<form method="post" action="{{url('/matching')}}">
+					<form method="get" action="{{url('/matching')}}">
 					{{ csrf_field() }}
 					<div class="form-group">
 					 	<button type="submit" class="btn btn-info" 

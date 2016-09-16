@@ -39,22 +39,40 @@ class FastFruitController extends Controller
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
         $provinces = Provinces::all();
-        $months = ['1'=>'มกราคม','2'=>'กุมภาพันธ์','3'=>'มีนาคม','4'=>'เมษายน','5'=>'พฤษภาคม','6'=>'มิถุนายน','7'=>'กรกฎาคม','8'=>'สิงหาคม','9'=>'กันยายน','10'=>'ตุลาคม','11'=>'พฤศจิกายน','12'=>'ธันวาคม' ];
-        $years = array();
-        for ($i=0;$i<6;$i++){
-            $years[$i]=Carbon::now()->year+$i;
-        }
+        
 
         // $matchings = DB::table('Matchings')->where('idUser',Auth::user()->id);
 
         if (Auth::check()){
             $matchings = Matchings::where('idUser',Auth::user()->id)->get();
-            return view('match', compact('fruits','fruitSpecies','provinces','months','years','matchings'));
+            $orchards = Orchards::all();
+            $orchard = $orchards->first();
+
+
+            foreach ($matchings as $key => $matching) {
+                foreach ($orchards as $key => $orchard) {
+                   $orchardPlots = $orchard->orchardPlots; 
+                   foreach ($orchardPlots as $key => $orchardPlot) {
+                        echo dd($orchardPlot);
+                        echo "<br><hr>";
+                    } 
+                }
+                // echo $matching->idFruitSpecie;
+                // echo "<br><hr>";
+            }
+            
+
+
+
+            // 
+            // 
+            //dd($matchings->idFruitSpecie);
+            //return view('match', compact('fruits','fruitSpecies','provinces','matchings'));
         }
         
         // return dd($matchings);
         // return dd($fruits);
-        return view('match', compact('fruits','fruitSpecies','provinces','months','years'));
+        // return view('match', compact('fruits','fruitSpecies','provinces'));
     }
 
     public function postMatching()

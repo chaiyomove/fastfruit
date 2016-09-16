@@ -43,7 +43,7 @@
 								<h5>{{$orchard->nameOrchard}}</h5>
 								<p>{{$orchard->description}}</p>
 								<p></p>							
-								<a href="OrchardDetail.html">
+								<a href="orchards/{{$orchard->idOrchard}}">
 									<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
 								</a>
 							</div>
