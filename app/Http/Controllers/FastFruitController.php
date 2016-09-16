@@ -53,12 +53,14 @@ class FastFruitController extends Controller
                    $orchardPlots = $orchard->orchardPlots; 
                    foreach ($orchardPlots as $key => $orchardPlot) {
                         if ($matching->idFruitSpecie == $orchardPlot->idFruitSpecie){
-                            array_push($matchedOrcs, $orchard->idOrchard);
+                            // array_push($matchedOrcs, $orchard->idOrchard);
+                            $matchedOrcs[] = $orchard->idOrchard;
                             // foreach ($matchedOrcs as $key => $idOrchard) {
                             //     echo $idOrchard;
-                            // }
-                            // echo "<br><hr>";
+                            //     echo "<br><hr>";
                         }
+                            }
+                            
                     } 
                 }
                 // echo $matching->idFruitSpecie;
