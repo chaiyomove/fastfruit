@@ -46,15 +46,15 @@ class FastFruitController extends Controller
         if (Auth::check()){
             $matchings = Matchings::where('idUser',Auth::user()->id)->get();
             $orchards = Orchards::all();
-            $orchard = $orchards->first();
-
-
+                   
             foreach ($matchings as $key => $matching) {
                 foreach ($orchards as $key => $orchard) {
                    $orchardPlots = $orchard->orchardPlots; 
                    foreach ($orchardPlots as $key => $orchardPlot) {
-                        echo dd($orchardPlot);
-                        echo "<br><hr>";
+                        if ($matching->idFruitSpecie == $orchardPlot->idFruitSpecie){
+                            echo $orchard->idOrchard;
+                            echo "<br><hr>";
+                        }
                     } 
                 }
                 // echo $matching->idFruitSpecie;
