@@ -46,14 +46,18 @@ class FastFruitController extends Controller
         if (Auth::check()){
             $matchings = Matchings::where('idUser',Auth::user()->id)->get();
             $orchards = Orchards::all();
+            $matchedOrcs = array(); 
                    
             foreach ($matchings as $key => $matching) {
                 foreach ($orchards as $key => $orchard) {
                    $orchardPlots = $orchard->orchardPlots; 
                    foreach ($orchardPlots as $key => $orchardPlot) {
                         if ($matching->idFruitSpecie == $orchardPlot->idFruitSpecie){
-                            echo $orchard->idOrchard;
-                            echo "<br><hr>";
+                            array_push($matchedOrcs, $orchard->idOrchard);
+                            // foreach ($matchedOrcs as $key => $idOrchard) {
+                            //     echo $idOrchard;
+                            // }
+                            // echo "<br><hr>";
                         }
                     } 
                 }
@@ -67,7 +71,7 @@ class FastFruitController extends Controller
             // 
             // 
             //dd($matchings->idFruitSpecie);
-            //return view('match', compact('fruits','fruitSpecies','provinces','matchings'));
+            return view('match', compact('fruits','fruitSpecies','provinces','matchings','matchedOrcs'));
         }
         
         // return dd($matchings);
