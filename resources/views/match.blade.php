@@ -11,9 +11,6 @@
 				</script>
 
 <link href="css/jquery.datepicker.css" rel="stylesheet">
-
-
-
 <!-- pop-up -->
 
 
@@ -199,40 +196,30 @@
 			</div>
 		</div>
 
-
+		@foreach ($matchedOrcs as $key => $matchedOrc)
+			@if ($key%4 == 0)	
 				<div class="feature-section">
 					<div class="container">
 						<div class="feature-grids">
+			@endif
+			
 							<div class="col-md-3 feature-grid">
-								<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-								<h5>ส้มส้ม จากสวนสิรภัทร</h5>
-								<p>ส้มสดๆ ส้มสวยๆ ส้มหวานๆ </p>
-								<a href="ProductDetail1.html">
-									<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
+								<img src="images/o1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
+								<h5>{{$matchedOrc->nameOrchard}}</h5>
+								<p>{{$matchedOrc->description}}</p>
+								<a href="orchards/{{$matchedOrc->idOrchard}}">
+									<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
 								</a>
 							</div>
-							<div class="col-md-3 feature-grid">
-								<img src="images/f2.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-								<h5>ทุเรียน จากสวนเปรม</h5>
-								<p>ทุเรียนหวานกรอบอร่อย</p>
-								<a href="#"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
-							</div>
-							<div class="col-md-3 feature-grid">
-								<img src="images/f3.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-								<h5>มะม่วง สวนนภัสสกร</h5>
-								<p>มะม่วงหลายพันธุ์ มาดูได้ค่ะ</p>
-								<a href="#"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
-							</div>
-							<div class="col-md-3 feature-grid">
-								<img src="images/f4.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-								<h5>ลำไย สวนวศิน</h5>
-								<p>ลำไยดี ลำไยอร่อย ต้องลำไยสวนวศิน</p>
-								<a href="#"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
-							</div>
+
+			@if ((count($matchedOrc)===$key+1) || $key%4 == 3)
 							<div class="clearfix"></div>
 						</div>
 					</div>
 				</div>
+
+			@endif
+		@endforeach			
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/jquery.datepicker.js"></script>

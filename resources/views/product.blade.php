@@ -29,28 +29,27 @@
 				<h3>ผลผลิตทั้งหมด</h3>
 			</div>
 		</div>
-			@foreach ($products as $key => $product)
-				@if ($key%4 == 0)	
+		@foreach ($products as $key => $product)
+			@if ($key%4 == 0)	
 				<div class="feature-section" style="padding:0em 0em 3em 0em;">
 					<div class="container">
 						<div class="feature-grids">
-				@endif
+			@endif
 							<div class="col-md-3 feature-grid">
 								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
 								<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
 								<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
 								<h5>{{$product->description}}</h5>
-								<p></p>
-								<a href="ProductDetail.html">
+								<a href="products/{{$product->idProductSprint}}">
 									<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
 								</a>
 							</div>
-					@if (($products->last()===$product) || $key%4 == 3)	
+			@if ((count($products)===$key+1) || $key%4 == 3)	
 							<div class="clearfix"></div>
 						</div>
 					</div>
 				</div>
-				@endif
+			@endif
 		@endforeach	
 		<!--Featured Properties-->
 	
