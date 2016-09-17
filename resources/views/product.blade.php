@@ -38,11 +38,14 @@
 							<div class="col-md-3 feature-grid">
 								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
 								<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
-								<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-								<h5>{{$product->description}}</h5>
-								<a href="products/{{$product->idProductSprint}}">
-									<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
-								</a>
+								<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px; box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
+								<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
+									<h5 style="margin-left:10px">{{$product->description}}</h5>
+									<p></p>
+									<a href="products/{{$product->idProductSprint}}" style="margin-left:10px">
+										<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
+									</a>
+								</div>
 							</div>
 			@if ((count($products)===$key+1) || $key%4 == 3)	
 							<div class="clearfix"></div>

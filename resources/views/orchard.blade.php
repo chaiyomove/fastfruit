@@ -39,12 +39,14 @@
 								<div class="col-md-3 feature-grid">
 									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
 									<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
-									<img src="images/o1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-									<h5>{{$orchard->nameOrchard}}</h5>
-									<p>{{$orchard->description}}</p>			
-									<a href="orchards/{{$orchard->idOrchard}}">
-										<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
-									</a>
+									<img src="images/o1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
+									<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
+										<h5 style="margin-left:10px">{{$orchard->nameOrchard}}</h5>
+										<p style="margin-left:10px">{{$orchard->description}}</p>		
+										<a href="orchards/{{$orchard->idOrchard}}" style="margin-left:10px">
+											<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+										</a>
+									</div>
 								</div>
 
 				@if ((count($orchards)===$key+1) || $key%4 == 3)

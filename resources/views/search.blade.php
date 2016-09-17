@@ -46,12 +46,14 @@
 								<div class="feature-grids">
 					@endif
 									<div class="col-md-3 feature-grid">
-										<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-										<h5>{{$orchard->nameOrchard}}</h5>
-										<p>{{$orchard->description}}</p>
-										<a href="ProductDetail1.html">
-											<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
-										</a>
+										<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
+										<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
+											<h5 style="margin-left:10px">{{$orchard->nameOrchard}}</h5>
+											<p style="margin-left:10px">{{$orchard->description}}</p>
+											<a href="ProductDetail1.html" style="margin-left:10px">
+												<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
+											</a>
+										</div>
 									</div>
 					@if (($orchards->last()===$orchard) || $key%4 == 3)
 									<div class="clearfix"></div>

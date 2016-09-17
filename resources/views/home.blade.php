@@ -68,37 +68,45 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!--Featured Properties-->
 				<div class="feature-section">
 					<div class="container">
-						<h3>ผลผลิตที่แนะนำ</h3>
+						<h3>ผลผลิตที่ลงใหม่</h3>
 						<div class="feature-grids">
 							<div class="col-md-3 feature-grid">
 								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-								<h5>ส้มส้ม จากสวนสิรภัทร</h5>
-								<p>ส้มสดๆ ส้มสวยๆ ส้มหวานๆ </p>
-								<a href="ProductDetail1.html">
-									<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
-								</a>
+								<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px; box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
+								<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
+									<h5 style="margin-left:10px">ส้มส้ม จากสวนสิรภัทร</h5>
+									<p style="margin-left:10px">ส้มสดๆ ส้มสวยๆ ส้มหวานๆ </p>
+									<a href="ProductDetail1.html" style="margin-left:10px">
+										<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
+									</a>
+								</div>
 							</div>
 							<div class="col-md-3 feature-grid">
 								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="images/f2.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-								<h5>ทุเรียน จากสวนเปรม</h5>
-								<p>ทุเรียนหวานกรอบอร่อย</p>
-								<a href="#"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
+								<img src="images/f2.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
+								<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
+									<h5 style="margin-left:10px">ทุเรียน จากสวนเปรม</h5>
+									<p style="margin-left:10px">ทุเรียนหวานกรอบอร่อย</p>
+									<a href="#" style="margin-left:10px"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
+								</div>
 							</div>
 							<div class="col-md-3 feature-grid">
 								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="images/f3.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-								<h5>มะม่วง สวนนภัสสกร</h5>
-								<p>มะม่วงหลายพันธุ์ มาดูได้ค่ะ</p>
-								<a href="#"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
+								<img src="images/f3.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
+								<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
+									<h5 style="margin-left:10px">มะม่วง สวนนภัสสกร</h5>
+									<p style="margin-left:10px">มะม่วงหลายพันธุ์ มาดูได้ค่ะ</p>
+									<a href="#" style="margin-left:10px"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
+								</div>
 							</div>
 							<div class="col-md-3 feature-grid">
 								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="images/f4.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px">
-								<h5>ลำไย สวนวศิน</h5>
-								<p>ลำไยดี ลำไยอร่อย ต้องลำไยสวนวศิน</p>
-								<a href="#"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
+								<img src="images/f4.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
+								<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
+									<h5 style="margin-left:10px">ลำไย สวนวศิน</h5>
+									<p style="margin-left:10px">ลำไยดี ลำไยอร่อย ต้องลำไยสวนวศิน</p>
+									<a href="#" style="margin-left:10px"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
+								</div>
 							</div>
 							<div class="clearfix"></div>
 						</div>
