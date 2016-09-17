@@ -46,11 +46,11 @@
 								<div class="feature-grids">
 					@endif
 									<div class="col-md-3 feature-grid">
-										<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
-										<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
-											<h5 style="margin-left:10px">{{$orchard->nameOrchard}}</h5>
-											<p style="margin-left:10px">{{$orchard->description}}</p>
-											<a href="ProductDetail1.html" style="margin-left:10px">
+										<div class="frame">
+											<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+											<h5 class="space">{{$orchard->nameOrchard}}</h5>
+											<p class="space">{{$orchard->description}}</p>
+											<a href="ProductDetail1.html" class="space">
 												<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
 											</a>
 										</div>

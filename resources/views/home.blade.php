@@ -71,41 +71,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h3>ผลผลิตที่ลงใหม่</h3>
 						<div class="feature-grids">
 							<div class="col-md-3 feature-grid">
-								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px; box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
-								<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
-									<h5 style="margin-left:10px">ส้มส้ม จากสวนสิรภัทร</h5>
-									<p style="margin-left:10px">ส้มสดๆ ส้มสวยๆ ส้มหวานๆ </p>
-									<a href="ProductDetail1.html" style="margin-left:10px">
+								<div class="frame">
+									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+									<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px; ">
+									<h5 class="space">ส้มส้ม จากสวนสิรภัทร</h5>
+									<p class="space">ส้มสดๆ ส้มสวยๆ ส้มหวานๆ </p>
+									<a href="ProductDetail1.html" class="space">
 										<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
 									</a>
 								</div>
 							</div>
 							<div class="col-md-3 feature-grid">
-								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="images/f2.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
-								<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
-									<h5 style="margin-left:10px">ทุเรียน จากสวนเปรม</h5>
-									<p style="margin-left:10px">ทุเรียนหวานกรอบอร่อย</p>
-									<a href="#" style="margin-left:10px"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
+								<div class="frame">
+									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+									<img src="images/f2.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+									<h5 class="space">ทุเรียน จากสวนเปรม</h5>
+									<p class="space">ทุเรียนหวานกรอบอร่อย</p>
+									<a href="#" class="space">
+										<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
+									</a>
 								</div>
 							</div>
 							<div class="col-md-3 feature-grid">
-								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="images/f3.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
-								<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
-									<h5 style="margin-left:10px">มะม่วง สวนนภัสสกร</h5>
-									<p style="margin-left:10px">มะม่วงหลายพันธุ์ มาดูได้ค่ะ</p>
-									<a href="#" style="margin-left:10px"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
+								<div class="frame">
+									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+									<img src="images/f3.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+									<h5 class="space">มะม่วง สวนนภัสสกร</h5>
+									<p class="space">มะม่วงหลายพันธุ์ มาดูได้ค่ะ</p>
+									<a href="#" class="space">
+										<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
+									</a>
 								</div>
 							</div>
 							<div class="col-md-3 feature-grid">
-								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="images/f4.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
-								<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
-									<h5 style="margin-left:10px">ลำไย สวนวศิน</h5>
-									<p style="margin-left:10px">ลำไยดี ลำไยอร่อย ต้องลำไยสวนวศิน</p>
-									<a href="#" style="margin-left:10px"><span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span></a>
+								<div class="frame">
+									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+									<img src="images/f4.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+									<h5 class="space">ลำไย สวนวศิน</h5>
+									<p class="space">ลำไยดี ลำไยอร่อย ต้องลำไยสวนวศิน</p>
+									<a href="#" class="space">
+										<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
+									</a>
 								</div>
 							</div>
 							<div class="clearfix"></div>

@@ -36,13 +36,13 @@
 						<div class="feature-grids">
 			@endif
 							<div class="col-md-3 feature-grid">
-								<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-								<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
-								<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px; box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.25);">
-								<div style="background-color:#FFF; width:100%;box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);">
-									<h5 style="margin-left:10px">{{$product->description}}</h5>
+								<div class="frame">
+									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+									<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
+									<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+									<h5 class="space">{{$product->description}}</h5>
 									<p></p>
-									<a href="products/{{$product->idProductSprint}}" style="margin-left:10px">
+									<a href="products/{{$product->idProductSprint}}" class="space">
 										<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
 									</a>
 								</div>
