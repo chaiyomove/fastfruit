@@ -214,7 +214,7 @@
 								</div>
 							</div>
 
-			@if ((count($matchedOrc)===$key+1) || $key%4 == 3)
+			@if ((count($matchedOrcs)===$key+1) || $key%4 == 3)
 							<div class="clearfix"></div>
 						</div>
 					</div>
