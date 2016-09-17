@@ -133,17 +133,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!--header-->
-     @yield('content')
+
+
+    @yield('content')
+    
 
     <!--  Error handle -->
     @if($errors->any())
-    <div class="row collapse">
-        <ul class="alert-box warning radius">
-            @foreach($errors->all() as $error)
-                <li> {{ $error }} </li>
-            @endforeach
-        </ul>
-    </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="modal-body real-spa">
+                    <div class="login-grids">
+                        <div class="login">                                 
+                            <div class="login-right">
+                                <ul class="alert alert-danger" style="font-size: 100%; margin-top:-30px; padding-left:40px;">
+
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+
+                                </ul>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
     @endif
        
               <!--footer-->
