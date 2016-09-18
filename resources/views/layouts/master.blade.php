@@ -25,6 +25,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?nav-family=Righteous' rel='stylesheet' type='text/css'>-->
 <!---fonts-->
+
+<!---dependent-dropdown-->
+{{-- <link href="{{asset('kartik-v/dependent-dropdown/css/dependent-dropdown.min.css')}}" media="all" rel="stylesheet" type="text/css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{{asset('kartik-v/dependent-dropdown/js/dependent-dropdown.min.js')}}" type="text/javascript"></script> --}}
+<!-- optionally if you need translation for your language then include locale file as mentioned below -->
+{{-- <script src="{{asset('kartik-v/dependent-dropdown/js/depdrop_locale_<lang>.js')}}"></script> --}}
+<!---dependent-dropdown-->
+
 <script type="text/javascript">
     window.onload = function(){
         document.getElementById("{{"nav-".Request::path()}}").className="active";   

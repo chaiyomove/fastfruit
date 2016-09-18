@@ -23,6 +23,10 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'k' => 
+        array (
+            'kartik\\plugins\\depdrop\\' => 23,
+        ),
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
@@ -99,6 +103,10 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'kartik\\plugins\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -277,23 +285,39 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
     );
 
     public static $classMap = array (
+        'App\\Admins' => __DIR__ . '/../..' . '/app/Admins.php',
+        'App\\Bookmarks' => __DIR__ . '/../..' . '/app/Bookmarks.php',
+        'App\\Chats' => __DIR__ . '/../..' . '/app/Chats.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Follow_orchard' => __DIR__ . '/../..' . '/app/Follow_orchard.php',
+        'App\\Follow_user' => __DIR__ . '/../..' . '/app/Follow_user.php',
+        'App\\Fruit_species' => __DIR__ . '/../..' . '/app/Fruit_species.php',
+        'App\\Fruits' => __DIR__ . '/../..' . '/app/Fruits.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\FastFruitController' => __DIR__ . '/../..' . '/app/Http/Controllers/FastFruitController.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Matchings' => __DIR__ . '/../..' . '/app/Matchings.php',
+        'App\\Orchard_plots' => __DIR__ . '/../..' . '/app/Orchard_plots.php',
+        'App\\Orchards' => __DIR__ . '/../..' . '/app/Orchards.php',
+        'App\\Plot_status' => __DIR__ . '/../..' . '/app/Plot_status.php',
+        'App\\Product_sprints' => __DIR__ . '/../..' . '/app/Product_sprints.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\Provinces' => __DIR__ . '/../..' . '/app/Provinces.php',
+        'App\\User' => __DIR__ . '/../..' . '/app/asdsadfasdfUser.php',
+        'App\\Users' => __DIR__ . '/../..' . '/app/Users.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'ClassPreloader\\ClassList' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/ClassList.php',
