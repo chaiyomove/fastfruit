@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>The Orchard</title>
+<title>FastFruit</title>
 <!---css--->
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -78,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>
                         <li>
                             <select>
-                                <option value="sumet" selected>สุเมธ</option>
+                                <option value="sumet" selected>{{Auth::user()->firstName}}</option>
                                 <option value="suan1" >สวนเบ็ญจวรรณ์</option>
                                 <option value="suan2" >สวนกุลภัสร์</option>
                                 <option value="suan3" >สวนพุดทรัพย์</option>
