@@ -21,4 +21,8 @@ class Product_sprints extends Model
         return $this->hasMany('App\Bookmarks','idProductSprint');
     }
 
+    public function scopeNew($query)
+    {
+        $query->latest()->take(10)->get();
+    }
 }

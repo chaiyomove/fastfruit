@@ -43,7 +43,7 @@
 							<h4>ชื่อสวน : </h4>
 						</div>
 						<div class="col-md-4">
-							<input type="text" name="nameOrchard" class="form-control" placeholder="สวนเบ็ญจวรรณ"></input>
+							<input type="text" name="nameOrchard" class="form-control"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -130,10 +130,10 @@
 						</div>
 						<div class="col-md-4">
 							<label class="radio-inline">
-								<input type="radio" name="checkgap" value="1">มี GAP
+								<input type="radio" name="inPlotStatus" value="1">มี GAP
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="checkgap" value="2">ไม่มี GAP
+								<input type="radio" name="idPlotStatus" value="2">ไม่มี GAP
 							</label>							
 						</div>
 						<div class="col-md-4">
