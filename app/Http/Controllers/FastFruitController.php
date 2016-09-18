@@ -24,13 +24,13 @@ class FastFruitController extends Controller
 {
     public function orchards()
     {
-        $orchards=Orchards::all();
+        $orchards=Orchards::latest()->get();
         return view('orchard',compact('orchards'));
     }
 
     public function products()
     {
-        $products=Product_sprints::all();
+        $products=Product_sprints::latest()->get();
         return view('product',compact('products'));
     }
 
@@ -45,7 +45,7 @@ class FastFruitController extends Controller
 
         if (Auth::check()){
             $matchings = Matchings::where('idUser',Auth::user()->id)->get();
-            $orchards = Orchards::all();
+            $orchards = Orchards::latest()->get();
             $matchedOrcs = array(); 
                    
             foreach ($matchings as $key => $matching) {
