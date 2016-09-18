@@ -26,11 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product_sprints::latest()->get();
-        for ($i=0; $i<4; $i++) { 
-            $latestProducts[] = $products[$i];
-        }
-        // return $latestProducts;
+        $latestProducts[] = Product_sprints::latest()->take(4)->get();
+        $latestProducts = array_collapse($latestProducts);
+        
         return view('home',compact('latestProducts'));
     }
 }
