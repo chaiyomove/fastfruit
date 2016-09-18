@@ -39,28 +39,39 @@
 
 
 	<!--Featured Properties-->
-				@foreach ($orchards as $key => $orchard)
-					@if ($key%4 == 0)		
+				@foreach ($matchedOrcs as $key => $orchard)
+					@if ($key%4 == 0)	
 						<div class="feature-section" style="padding:0em 0em 3em 0em;">
 							<div class="container">
 								<div class="feature-grids">
 					@endif
-									<div class="col-md-3 feature-grid">
+								<form method="GET" action="{{url('/orcharddetail')}}">
+								{{ csrf_field() }}
+									<div class="col-md-3 feature-grid" >
+									
 										<div class="frame">
+											<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+											<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
 											<img src="{{$orchard->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+											
 											<h5 class="space">{{$orchard->nameOrchard}}</h5>
-											<p class="space">{{$orchard->description}}</p>
-											<a href="ProductDetail1.html" class="space">
-												<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
-											</a>
+											<p class="space">{{$orchard->description}}</p>		
+											{{-- <a href="$matchedOrcs/{{$orchard->idOrchard}}" class="space"> --}}
+											<input type="hidden" name="idOrchard" value="{{$orchard->idOrchard}}">	
+												<button type="submit" class="btn btn-link">
+													<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+												</button>
+											{{-- </a> --}}
 										</div>
 									</div>
-					@if (($orchards->last()===$orchard) || $key%4 == 3)
+								</form>
+					@if ((count($matchedOrcs)===$key+1) || $key%4 == 3)
 									<div class="clearfix"></div>
 								</div>
 							</div>
 						</div>
+
 					@endif
-				@endforeach				
+				@endforeach	
 	<!--Featured Properties-->
 @endsection
