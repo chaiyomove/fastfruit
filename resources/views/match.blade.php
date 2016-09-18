@@ -206,8 +206,14 @@
 						{{ csrf_field() }}
 							<div class="col-md-3 feature-grid" >
 								<div class="frame">
-									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-									<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
+									@if ($key<=10)
+										<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+									@endif
+									@foreach ($matchedOrc->orchardPlots as $orchardPlot)
+										@if ($orchardPlot->idPlotStatus == 1)
+											<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
+										@endif
+									@endforeach
 									<img src="{{$matchedOrc->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
 									
 									<h5 class="space">{{$matchedOrc->nameOrchard}}</h5>
