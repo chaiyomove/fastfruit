@@ -47,7 +47,7 @@
 										<h5 class="space">{{$orchard->nameOrchard}}</h5>
 										<p class="space">{{$orchard->description}}</p>		
 										{{-- <a href="orchards/{{$orchard->idOrchard}}" class="space"> --}}
-										<input type="hidden" name="idOrchard" value="{{$orchard->idOrchard}}">	
+											<input type="hidden" name="idOrchard" value="{{$orchard->idOrchard}}">	
 											<button type="submit" class="btn btn-link">
 												<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
 											</button>

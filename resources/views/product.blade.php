@@ -42,8 +42,8 @@
 									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
 									<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
 									<img src="{{$product->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
-									<h5 class="space">{{$product->description}}</h5>
-									<p></p>
+									<h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>						
+									<p class="space">{{$product->description}}</p>
 									{{-- <a href="products/{{$product->idProductSprint}}" class="space"> --}}
 										<input type="hidden" name="idProductSprint" value="{{$product->idProductSprint}}">	
 										<button type="submit" class="btn btn-link">
