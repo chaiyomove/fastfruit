@@ -46,6 +46,7 @@ Route::get('home', 'HomeController@index');
 
 Route::get('orchards', 'FastFruitController@orchards');
 Route::get('products', 'FastFruitController@products');
+Route::get('products/{id}', 'FastFruitController@productDetail');
 Route::get('matching', 'FastFruitController@getMatching')->name('matching.show');
 Route::post('matching', 'FastFruitController@postMatching');
 Route::get('contactus', 'FastFruitController@contactUs');
@@ -54,7 +55,6 @@ Route::get('search', 'FastFruitController@search');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::delete('matching', 'FastFruitController@deleteMatching');
-	Route::get('products/{id}', 'FastFruitController@productDetail');
 	Route::get('chat', 'FastFruitController@chat');
 	Route::get('orchards/{id}', 'FastFruitController@orchardDetail');
 	Route::get('userprofile/{id}', 'FastFruitController@userProfile');

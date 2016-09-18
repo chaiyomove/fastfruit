@@ -121,7 +121,8 @@ class FastFruitController extends Controller
 
     public function productDetail($id)
     {
-        return view('product');
+        $product = Product_sprints::find($id);
+        return view('productDetail',compact('product'));
     }
 
     public function chat()
