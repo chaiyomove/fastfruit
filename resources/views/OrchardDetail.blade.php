@@ -93,8 +93,8 @@
 									                    <td></td>
 									                </tr>
 									                <tr>
-									                    <th scope="row">จังหวัด</th>
-									                    <td align="left" width="5%">{{$orchard->province->provinceName}}</td>
+									                    <th scope="row" width="15%">จังหวัด</th>
+									                    <td colspan="2" align="left">{{$orchard->province->provinceName}}</td>
 									                    <td></td>
 									                </tr>
 									                <tr>

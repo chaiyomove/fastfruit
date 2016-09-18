@@ -120,9 +120,11 @@
 
 				                            			{{-- <a href="OrchardDetail-bf.html"> --}}
 								                			
-								                			<input type="hidden" name="idOrchard" value="{{$product->orchardPlot->orchard->idOrchard}}" style="margin-left: -20px; margin-top:30px">	
-															<button type="submit" class="btn btn-danger">
-																<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+								                			<input type="hidden" name="idOrchard" value="{{$product->orchardPlot->orchard->idOrchard}}">	
+															<button type="submit" class="btn btn-danger btn-sm" style="margin-left: -15px; margin-top:10px">
+																<h5>
+																	<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+																</h5>
 															</button>														
 														{{-- </a> --}}
 								                    </td>
