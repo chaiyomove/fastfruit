@@ -7,7 +7,7 @@
 		  $("#slider").responsiveSlides({
 			auto:true,
 			nav: false,
-			speed: 500,
+			speed: 1000,
 			namespace: "callbacks",
 			pager:true,
 		  });
@@ -27,29 +27,10 @@
 		});
 		});
 	</script>
-
-<!---Gentelella-->
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <!-- Bootstrap -->
-    <!--<link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
-    <!-- Font Awesome -->
-    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- bootstrap-progressbar -->
-    <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-    <!-- jVectorMap -->
-    <link href="css/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
-
     <!-- Custom Theme Style -->
-    <link href="css/custom.css" rel="stylesheet">
-<!---Gentelella-->
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
 
 
 			<!--profile-->
@@ -58,7 +39,7 @@
 					<h3>ข้อมูลผลผลิต</h3>
 					<div id="owl-demo" class="owl-carousel">
 						<div class="item">		
-							<div class="testmonial-text" style="width: 97.5%; margin: auto; ">
+							<div style="width: 97.5%; margin: auto; ">
 								<div class="carousel slide" id="carousel-824332" 	>
 									<ol class="carousel-indicators" >
 										<li class="active" data-slide-to="0" data-target="#carousel-824332">
@@ -70,13 +51,13 @@
 									</ol>
 								<div class="carousel-inner">
 									<div class="item active">
-										<img src="images/f1.jpg" style="height: 350px; width: 860px;" />
+										<img src="../images/f1.jpg" style="height: 350px; width: 860px;" />
 									</div>
 									<div class="item">
-										<img src="images/f2.jpg" style="height: 350px; width: 860px;" />										
+										<img src="../images/f2.jpg" style="height: 350px; width: 860px;" />										
 									</div>
 									<div class="item">
-										<img src="images/f4.jpg" style="height: 350px; width: 860px;" />
+										<img src="../images/f4.jpg" style="height: 350px; width: 860px;" />
 									</div>
 								</div> 
 								<a class="left carousel-control" href="#carousel-824332" data-slide="prev">
@@ -150,7 +131,7 @@
 							                            			</button>
 											                    </td>
 											                    <td>
-											                    	<img src="images/gap.png" style="float:right;height:48px;width:50px">
+											                    	<img src="../images/gap.png" style="float:right;height:48px;width:50px">
 											                    </td>
 											                </tr>
 									                      </tbody>

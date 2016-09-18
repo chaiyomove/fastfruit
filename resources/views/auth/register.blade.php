@@ -37,6 +37,7 @@
 											<input type="text" name="lastName" placeholder="นามสกุล" onfocus="this.value = '';" required="">
 											<input type="text" name="email" placeholder="อีเมล์" onfocus="this.value = '';" required="">	
 											<input type="password" name="password" placeholder="รหัสผ่าน" onfocus="this.value = '';" required="">	
+											<input type="password" name="password_confirmation" placeholder="ยืนยันรหัสผ่าน" onfocus="this.value = '';" required="">	
 											
 											<input type="submit" value="สมัครสมาชิก" >
 									</form>
