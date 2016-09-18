@@ -40,7 +40,7 @@
 								</div>
 								<div class="col-md-3">
 									<div class="testmonial-img">
-										<img src="images/t1.png" width="70%" alt=""/>
+										<img src="images/pexels.jpeg" width="70%" alt=""/>
 									</div>
 								</div>
 								<div class="col-md-3">
@@ -63,13 +63,13 @@
 								</div>
 								<div class="col-md-2">
 									<div class="testmonial-text">
-										<a href="ShowProduct.html" class="btn btn-info btn-sm">
+										<a href="{{url('userproduct')}}" class="btn btn-info btn-sm">
           									<h4><span class="glyphicon glyphicon-info-sign"></span> ดูผลผลิต</h4>
        		 							</a>							    					
 									</div>
 								</div>
 								<div class="col-md-2">
-									<a href="EditOrchard.html" class="btn btn-info btn-sm">
+									<a href="{{url('updateorchard')}}" class="btn btn-info btn-sm">
 				          				<h4><span class="glyphicon glyphicon-cog"></span> แก้ไขข้อมูลสวน</h4>
 				        			</a>
 								</div>

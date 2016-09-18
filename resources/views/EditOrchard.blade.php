@@ -115,7 +115,7 @@
 						<div class="col-md-4">
 						</div>
 						<div class="col-md-2">
-							 <a href="OrchardProfile.html">
+							 <a href="{{url('userorchard')}}">
 								<button type="button" class="btn btn-primary btn-lg btn-block" >
 									บันทึก
 								</button>
