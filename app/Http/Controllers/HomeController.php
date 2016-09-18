@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product_sprints;
+// use Auth;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $products = Product_sprints::latest()->get();
+        for ($i=0; $i<4; $i++) { 
+            $latestProducts[] = $products[$i];
+        }
+        // return $latestProducts;
+        return view('home',compact('latestProducts'));
     }
 }

@@ -27,7 +27,7 @@ class Orchard_plots extends Model
     }
 
 
-      public function fruitSpecies()
+      public function fruitSpecie()
     {
     	return $this->belongsTo('App\Fruit_species','idFruitSpecie');
     }
