@@ -108,7 +108,20 @@
 						<div class="col-md-4">
 						</div>
 					</div>
-					<br />
+					<br>
+					<div class="row">
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-2">
+							<h4>รหัสแปลง : </h4>
+						</div>
+						<div class="col-md-4">
+							<input type="text" name="plotNumber" class="form-control"></input>
+						</div>
+						<div class="col-md-4">
+						</div>
+					</div>	
+					<br>
 					<div class="row">
 						<div class="col-md-2">
 						</div>
@@ -125,7 +138,7 @@
 						</div>
 						<div class="col-md-4">
 						</div>
-					</div>					
+					</div>			
 					<div class="row">
 						<div class="col-md-2">
 						</div>
