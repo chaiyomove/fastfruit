@@ -150,10 +150,15 @@ class FastFruitController extends Controller
         return view('orchardDetail',compact('orchard'));
     }
 
-    public function userProfile($id)
+    public function userProfile()
     {
-        return view('FristLogin');
+        return view('FirstLogin');
     }
+
+    // public function userProfile($id)
+    // {
+    //     return view('FristLogin');
+    // }
 
 
     public function getAddOrchard()

@@ -66,13 +66,13 @@
 								</div>
 								<div class="col-md-2">
 									<div class="testmonial-text">
-										<a href="AddOrchard.html" class="btn btn-info btn-sm">
+										<a href="{{url('addorchard')}}" class="btn btn-info btn-sm">
 							          		<h4><span class="glyphicon glyphicon-plus-sign"></span> เพิ่มสวน</h4>
 							       		</a>							    					
 									</div>
 								</div>
 								<div class="col-md-2">
-									<a href="EditProfile.html" class="btn btn-info btn-sm">
+									<a href="{{url('updateuserprofile')}}" class="btn btn-info btn-sm">
 						          		<h4><span class="glyphicon glyphicon-cog"></span> แก้ไขโปรไฟล์ของคุณ</h4>
 						        	</a> 
 								</div>

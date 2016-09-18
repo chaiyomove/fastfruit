@@ -60,6 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('chat', 'FastFruitController@chat');
 	Route::get('orchards/{id}', 'FastFruitController@orchardDetail');
 	Route::get('userprofile/{id}', 'FastFruitController@userProfile');
+	Route::get('userprofile', 'FastFruitController@userProfile');
 	Route::get('addorchard', 'FastFruitController@getAddOrchard');
 	Route::post('addorchard', 'FastFruitController@postAddOrchard');
 	Route::get('checkgap', 'FastFruitController@checkGap');

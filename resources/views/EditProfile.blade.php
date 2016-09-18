@@ -129,7 +129,7 @@
 						<div class="col-md-4">
 						</div>
 						<div class="col-md-2">
-							 <a href="FirstLogin.html">
+							 <a href="{{url('/userprofile')}}">
 								<button type="button" class="btn btn-primary btn-lg btn-block" >
 									บันทึก
 								</button>

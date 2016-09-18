@@ -86,14 +86,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </a>
                         </li>
                         <li>
-                            <select>
-                                <option value="sumet" selected>{{Auth::user()->firstName}}</option>
+                            <a href="{{url('userprofile')}}" style="margin-right:30px">
+                                 <i class="glyphicon glyphicon-user" aria-hidden="true"></i>{{Auth::user()->firstName}}
+                            </a>
+                            {{-- <select>
+                                <option value="sumet" onclick="funtion(header('/userprofile'))" selected>{{Auth::user()->firstName}}</option>
                                 <option value="suan1" >สวนเบ็ญจวรรณ์</option>
                                 <option value="suan2" >สวนกุลภัสร์</option>
                                 <option value="suan3" >สวนพุดทรัพย์</option>
                                 <option value="suan4" >สวนสิริจรรยา</option>
                                 <option value="suan5" >สวนรุจิระธราพันธุ์</option>
-                            </select>
+                            </select> --}}
+
+
                         </li>
                         <li>
                             <a href="logout">
