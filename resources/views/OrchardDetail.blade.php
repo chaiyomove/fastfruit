@@ -31,7 +31,7 @@
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
-    
+
 
 			<!--profile-->
 			<div class="feature-section">
@@ -84,6 +84,18 @@
 									                    <td colspan="2" align="left">
 									                    ติวเตอร์ไฟลท์โบรชัวร์บัตเตอร์สัตหีบ จัมโบ้หงวนอมาตยาธิปไตย เจลอินเตอร์สเตริโอหลวงพี่ไทเฮา รูบิกอึ๋มฟลอร์ฮอตแฟรี่ เรตโปรเจกต์แชเชือนแครอท ซูชินครพนมเอ๋อ เทคโนแครต ทอมวาซาบิลามะ วาซาบิเบอร์รี โบรชัวร์สมุยยะเยือก ฮาราคีรีเบิร์น เชฟเตี๊ยมอยุธยาซัพพลาย ราเม็งดอนเมืองอโยธยาตู้เซฟเอาต์ โทรโข่งคอลัมนิสต์ คอมเพล็กซ์ป๊อกแจ็กพ็อตบางปะกง ราเมนแคปลิสต์มัฟฟินโทรโข่ง	
 									                    </td>
+									                    <td></td>
+									                </tr>
+									                <tr>
+									                    <th scope="row" width="15%">ที่อยู่</th>
+									                    <td colspan="2" align="left">
+									                    	
+									                    </td>
+									                    <td></td>
+									                </tr>
+									                <tr>
+									                    <th scope="row">จังหวัด</th>
+									                    <td align="left" width="5%"></td>
 									                    <td></td>
 									                </tr>
 									                <tr>

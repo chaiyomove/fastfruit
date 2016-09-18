@@ -10,6 +10,7 @@ use Request;
 use Carbon\Carbon;
 use App\Product_sprints;
 use App\Orchards;
+use App\Orchard_plots;
 use App\Fruits;
 use App\Fruit_species;
 use App\provinces;
@@ -245,13 +246,43 @@ class FastFruitController extends Controller
 
     public function search()
     {
-        $orchards = Orchards::all();
-        // foreach ($orchards as $orchard) {
-        //     echo $orchard->nameOrchard." ".$orchard->description;
-        //     echo "<br><hr>";
-        // }
-        // return dd($orchards);
-        return view('search', compact('orchards'));
+        $search = Request::get('search');
+        $orchards = Orchards::latest()->get();
+        $fruitSpecies = fruit_species::all();
+        $provinces = provinces::all();
+        $matchedOrcs = array(); 
+
+        foreach ($orchards as $key => $orchard) {
+            if (str_contains($orchard->nameOrchard,$search)) {
+                $matchedOrcs[] = $orchard;
+            }
+            if (str_contains($orchard->description,$search)) {
+                $matchedOrcs[] = $orchard;
+            }  
+        }  
+
+        foreach ($fruitSpecies as $key => $fruitSpecie) {
+            if (str_contains($fruitSpecie->specieName,$search)) {
+                $orchardPlots = $fruitSpecie->orchardPlots;
+                foreach ($orchardPlots as $key => $orchardPlot) {
+                    $matchedOrcs[] = $orchardPlot->orchard;
+                }
+                
+            }   
+        }
+
+        foreach ($provinces as $key => $province) {
+            if (str_contains($province->provinceName,$search)) {
+                foreach ($province->orchards as $key => $orchard) {
+                    $matchedOrcs[] = $orchard;
+                }
+            }               
+        }
+
+        $matchedOrcs = array_unique($matchedOrcs);
+        $matchedOrcs = array_values($matchedOrcs);
+
+        return view('search', compact('matchedOrcs'));
     }
 
 

@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Orchard_plots extends Model
 {
     protected $fillable = [
-        'plotNumber','description', 'area', 'geolocation','picture','address','salesVolume','idOrchard','idFruitSpecie','idPlotStatus',
+        'plotNumber','description', 'area', 'geolocation','picture','address','salesVolume','idOrchard','idFruitSpecie','idPlotStatus'
     ];
-     protected $primaryKey = 'idOrchardPlot';
+
+    protected $primaryKey = 'idOrchardPlot';
 
       public function productSprints()
     {
@@ -23,9 +24,8 @@ class Orchard_plots extends Model
 
       public function orchard()
     {
-    	return $this->belongsTo('App\Orchards','idOrchards');
+    	return $this->belongsTo('App\Orchards','idOrchard');
     }
-
 
       public function fruitSpecie()
     {

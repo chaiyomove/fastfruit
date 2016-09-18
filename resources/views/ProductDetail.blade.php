@@ -96,12 +96,12 @@
 									                          <td></td>
 									                        </tr>
 									                        <tr>
-									                          <th scope="row">ลงวันที่</th>
+									                          <th scope="row">ตั้งแต่วันที่</th>
 									                          <td colspan="2" align="left">10  มิถุนายน  2558</td>
 									                          <td></td>
 									                        </tr>
 									                        <tr>
-									                          <th scope="row">หมดอายุวันที่</th>
+									                          <th scope="row">ถึงวันที่</th>
 									                          <td colspan="2" align="left" padding="20px">10  กันยายน  2558</td>
 									                          <td></td>
 									                        </tr>
