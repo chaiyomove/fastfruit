@@ -202,18 +202,25 @@
 					<div class="container">
 						<div class="feature-grids">
 			@endif
-			
-							<div class="col-md-3 feature-grid">
+						<form method="GET" action="{{url('/orcharddetail')}}">
+						{{ csrf_field() }}
+							<div class="col-md-3 feature-grid" >
 								<div class="frame">
+									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+									<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
 									<img src="{{$matchedOrc->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+									
 									<h5 class="space">{{$matchedOrc->nameOrchard}}</h5>
-									<p class="space">{{$matchedOrc->description}}</p>
-									<a href="orchards/{{$matchedOrc->idOrchard}}" class="space">
-										<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
-									</a>
+									<p class="space">{{$matchedOrc->description}}</p>		
+									{{-- <a href="orchards/{{$matchedOrc->idOrchard}}" class="space"> --}}
+									<input type="hidden" name="idOrchard" value="{{$matchedOrc->idOrchard}}">	
+										<button type="submit" class="btn btn-link">
+											<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+										</button>
+									{{-- </a> --}}
 								</div>
 							</div>
-
+						</form>
 			@if ((count($matchedOrcs)===$key+1) || $key%4 == 3)
 							<div class="clearfix"></div>
 						</div>

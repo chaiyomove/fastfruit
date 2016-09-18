@@ -35,6 +35,8 @@
 					<div class="container">
 						<div class="feature-grids">
 			@endif
+						<form method="GET" action="{{url('/productdetail')}}">
+							{{ csrf_field() }}
 							<div class="col-md-3 feature-grid">
 								<div class="frame">
 									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
@@ -42,11 +44,15 @@
 									<img src="{{$product->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
 									<h5 class="space">{{$product->description}}</h5>
 									<p></p>
-									<a href="products/{{$product->idProductSprint}}" class="space">
-										<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
-									</a>
+									{{-- <a href="products/{{$product->idProductSprint}}" class="space"> --}}
+										<input type="hidden" name="idProductSprint" value="{{$product->idProductSprint}}">	
+										<button type="submit" class="btn btn-link">
+											<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
+										</button>
+									{{-- </a> --}}
 								</div>
 							</div>
+						</form>
 			@if ((count($products)===$key+1) || $key%4 == 3)	
 							<div class="clearfix"></div>
 						</div>

@@ -35,7 +35,8 @@
 						<div class="container">
 							<div class="feature-grids">
 				@endif
-
+							<form method="GET" action="{{url('/orcharddetail')}}">
+							{{ csrf_field() }}
 								<div class="col-md-3 feature-grid" >
 								
 									<div class="frame">
@@ -45,13 +46,15 @@
 										
 										<h5 class="space">{{$orchard->nameOrchard}}</h5>
 										<p class="space">{{$orchard->description}}</p>		
-										<a href="orchards/{{$orchard->idOrchard}}" class="space">
-											<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
-										</a>
+										{{-- <a href="orchards/{{$orchard->idOrchard}}" class="space"> --}}
+										<input type="hidden" name="idOrchard" value="{{$orchard->idOrchard}}">	
+											<button type="submit" class="btn btn-link">
+												<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+											</button>
+										{{-- </a> --}}
 									</div>
-								
 								</div>
-
+							</form>
 				@if ((count($orchards)===$key+1) || $key%4 == 3)
 								<div class="clearfix"></div>
 							</div>

@@ -72,7 +72,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="container">
 						<h3>ผลผลิตที่ลงใหม่</h3>
 						<div class="feature-grids">
-			@endif
+			@endif			
+						<form method="GET" action="{{url('/productdetail')}}">
+							{{ csrf_field() }}
 							<div class="col-md-3 feature-grid">
 								<div class="frame">
 									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
@@ -80,11 +82,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<img src="{{$product->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
 									<h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>
 									<p class="space">{{$product->description}}</p>
-									<a href="products/{{$product->idProductSprint}}" class="space">
-										<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
-									</a>
+									{{-- <a href="products/{{$product->idProductSprint}}" class="space"> --}}
+										<input type="hidden" name="idProductSprint" value="{{$product->idProductSprint}}">	
+										<button type="submit" class="btn btn-link">
+											<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
+										</button>
+									{{-- </a> --}}
 								</div>
 							</div>
+						</form>
 			@if ((count($latestProducts)===$key+1) || $key%4 == 3)	
 							<div class="clearfix"></div>
 						</div>

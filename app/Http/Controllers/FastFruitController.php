@@ -121,7 +121,15 @@ class FastFruitController extends Controller
 
     public function productDetail($id)
     {
-        $product = Product_sprints::find($id);
+        $product = Product_sprints::findOrFail($id);
+        return view('productDetail',compact('product'));
+    }
+
+    public function productDetailTmp()
+    {
+        $idProductSprint = Request::get('idProductSprint');
+        // return $idProductSprint;
+        $product = Product_sprints::findOrFail($idProductSprint);
         return view('productDetail',compact('product'));
     }
 
@@ -133,6 +141,13 @@ class FastFruitController extends Controller
     public function orchardDetail($id)
     {
         return view('orchard');
+    }
+
+    public function orchardDetailTmp()
+    {
+        $idOrchard = Request::get('idOrchard');
+        $orchard = Orchards::findOrFail($idOrchard);   
+        return view('orchardDetail',compact('orchard'));
     }
 
     public function userProfile($id)
