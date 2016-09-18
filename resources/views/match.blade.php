@@ -205,7 +205,7 @@
 			
 							<div class="col-md-3 feature-grid">
 								<div class="frame">
-									<img src="images/o1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+									<img src="{{$matchedOrc->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
 									<h5 class="space">{{$matchedOrc->nameOrchard}}</h5>
 									<p class="space">{{$matchedOrc->description}}</p>
 									<a href="orchards/{{$matchedOrc->idOrchard}}" class="space">
