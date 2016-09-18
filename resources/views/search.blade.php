@@ -47,7 +47,7 @@
 					@endif
 									<div class="col-md-3 feature-grid">
 										<div class="frame">
-											<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+											<img src="{{$orchard->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
 											<h5 class="space">{{$orchard->nameOrchard}}</h5>
 											<p class="space">{{$orchard->description}}</p>
 											<a href="ProductDetail1.html" class="space">

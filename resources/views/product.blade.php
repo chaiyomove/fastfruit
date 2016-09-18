@@ -39,7 +39,7 @@
 								<div class="frame">
 									<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
 									<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
-									<img src="images/f1.jpg" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+									<img src="{{$product->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
 									<h5 class="space">{{$product->description}}</h5>
 									<p></p>
 									<a href="products/{{$product->idProductSprint}}" class="space">
