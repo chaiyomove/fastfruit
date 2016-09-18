@@ -45,7 +45,7 @@
 								</div>
 								<div class="col-md-3">
 									<div class="testmonial-text">
-										<p style="font-size: 22px">สุเมธ เบ็ญจวรรณ์</p>
+										<p style="font-size: 22px">{{Auth::user()->firstName}}&nbsp;{{Auth::user()->lastName}}</p>
 										<br>
 										<p style="font-size: 18px">
 											0873575912
