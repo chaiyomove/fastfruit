@@ -222,10 +222,16 @@ class FastFruitController extends Controller
         return view('AddAdmin');
     }
 
-     public function userProductDetail($id)
+     public function userProductDetail()
     {
         return view('ShowProduct');
     }
+
+    // public function userProductDetail($id)
+    // {
+    //     return view('ShowProduct');
+    // }
+
     public function postUserAddProduct()
     {
         $input = Request::all();

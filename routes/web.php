@@ -69,6 +69,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('userorchard', 'FastFruitController@userOrchard');
 	Route::get('userproduct', 'FastFruitController@userProduct');
 	Route::get('userproduct/{id}', 'FastFruitController@userProductDetail');
+	Route::get('userproduct', 'FastFruitController@userProductDetail');
 	Route::get('useraddproduct', 'FastFruitController@getUserAddProduct');
 	Route::post('useraddproduct', 'FastFruitController@postUserAddProduct');
 	Route::get('usermatching', 'FastFruitController@userMatching');
