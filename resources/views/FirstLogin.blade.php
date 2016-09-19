@@ -64,14 +64,12 @@
 								</div>
 								<div class="col-md-2">
 								</div>
-								<div class="col-md-2">
-									<div class="testmonial-text">
+								<div class="col-md-2" style="text-align: center;">
 										<a href="{{url('addorchard')}}" class="btn btn-info btn-sm">
 							          		<h4><span class="glyphicon glyphicon-plus-sign"></span> เพิ่มสวน</h4>
 							       		</a>							    					
-									</div>
 								</div>
-								<div class="col-md-2">
+								<div class="col-md-2" style="text-align: center;">
 									<a href="{{url('updateuserprofile')}}" class="btn btn-info btn-sm">
 						          		<h4><span class="glyphicon glyphicon-cog"></span> แก้ไขโปรไฟล์ของคุณ</h4>
 						        	</a> 

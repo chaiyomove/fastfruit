@@ -32,7 +32,7 @@
 			<!--profile-->
 			@foreach ($orchards as $key => $orchard)
 				@if ($key%4 == 0)	
-					<div class="feature-section" style="padding:0em 0em 3em 0em;">
+					<div class="feature-section" style="padding:5em 0em 0em 0em">
 						<div class="container">
 							<h3>สวนของคุณ</h3>
 							<br>
@@ -74,20 +74,18 @@
 
 				@endif
 			@endforeach
-			<div class="feature-section">
+			<div class="feature-section" style="padding:4em 0em 5em 0em">
 							<div class="row">
 								<div class="col-md-2">
 								</div>
 								<div class="col-md-2">
 								</div>
-								<div class="col-md-2">
-									<div class="testmonial-text">
-										<a href="{{url('userproduct')}}" class="btn btn-info btn-sm">
+								<div class="col-md-2" style="text-align: center;">
+										<a href="{{url('userproduct')}}" class="btn btn-info btn-sm" >
           									<h4><span class="glyphicon glyphicon-info-sign"></span> ดูผลผลิต</h4>
-       		 							</a>							    					
-									</div>
+       		 							</a>
 								</div>
-								<div class="col-md-2">
+								<div class="col-md-2" style="text-align: center;">
 									<a href="{{url('updateorchard')}}" class="btn btn-info btn-sm">
 				          				<h4><span class="glyphicon glyphicon-cog"></span> แก้ไขข้อมูลสวน</h4>
 				        			</a>
