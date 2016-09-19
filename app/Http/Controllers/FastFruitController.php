@@ -199,7 +199,13 @@ class FastFruitController extends Controller
 
     public function userOrchard()
     {
-        return view('OrchardProfile');
+        $admins = Auth::user()->admins;
+        $orchards = array();
+        foreach ($admins as $key => $admin) {
+            $orchards[] = $admin->orchard;
+        }
+        // return $orchards;
+        return view('OrchardProfile',compact('orchards'));
     }
 
     public function userProduct()
@@ -224,6 +230,20 @@ class FastFruitController extends Controller
 
      public function userProductDetail()
     {
+        $admins = Auth::user()->admins;
+        $orchardPlots = array();
+        $products = array();
+        foreach ($admins as $key => $admin) {
+            $orchardPlots[] = $admin->orchard->orchardPlots;
+        }
+
+        $orchardPlots = array_collapse($orchardPlots);
+        
+        foreach ($orchardPlots as $key => $orchardPlot) {
+            return $productSprints = $orchardPlot->productSprints;
+        }
+        // return $orchards;
+
         return view('ShowProduct');
     }
 

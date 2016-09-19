@@ -30,32 +30,51 @@
 
 
 			<!--profile-->
-			<div class="feature-section">
-				<div class="container">
-					<h3>สวนของคุณ</h3>
-					<br>
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-md-3">
-								</div>
-								<div class="col-md-3">
-									<div class="testmonial-img">
-										<img src="images/pexels.jpeg" width="70%" alt=""/>
+			@foreach ($orchards as $key => $orchard)
+				@if ($key%4 == 0)	
+					<div class="feature-section" style="padding:0em 0em 3em 0em;">
+						<div class="container">
+							<h3>สวนของคุณ</h3>
+							<br>
+
+							<div class="feature-grids">
+				@endif
+							<form method="GET" action="{{url('/orcharddetail')}}">
+							{{ csrf_field() }}
+								<div class="col-md-3 feature-grid" ></div>
+								<div class="col-md-3 feature-grid" >
+								
+									<div class="frame">
+										@if ($key<=10)
+											<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
+										@endif
+										@foreach ($orchard->orchardPlots as $orchardPlot)
+											@if ($orchardPlot->idPlotStatus == 1)
+												<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
+											@endif
+										@endforeach
+										<img src="{{$orchard->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+										
+										<h5 class="space">{{$orchard->nameOrchard}}</h5>
+										<p class="space">{{$orchard->description}}</p>		
+										{{-- <a href="orchards/{{$orchard->idOrchard}}" class="space"> --}}
+											<input type="hidden" name="idOrchard" value="{{$orchard->idOrchard}}">	
+											<button type="submit" class="btn btn-link">
+												<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+											</button>
+										{{-- </a> --}}
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="testmonial-text">
-										<p style="font-size: 22px">สวนเบ็ญจวรรณ์</p>
-										<br>
-										<p style="font-size: 18px">
-											0873575912
-										</p>
-									</div>
-								</div>
-								<div class="col-md-3">
-								</div>
+							</form>
+				@if ((count($orchards)===$key+1) || $key%4 == 3)
+								<div class="clearfix"></div>
 							</div>
-							<br><br>
+						</div>
+					</div>
+
+				@endif
+			@endforeach
+			<div class="feature-section">
 							<div class="row">
 								<div class="col-md-2">
 								</div>

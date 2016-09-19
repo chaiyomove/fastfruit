@@ -34,7 +34,7 @@ class Users extends Authenticatable
 
      public function admins()
     {
-        return $this->hasMany('App\Admins');
+        return $this->hasMany('App\Admins','idUser');
     }
 
      public function bookmarks()

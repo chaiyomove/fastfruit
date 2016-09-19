@@ -67,7 +67,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('updateorchard', 'FastFruitController@updateOrchard');
 	Route::get('updateuserprofile', 'FastFruitController@updateUserprofile');
 	Route::get('userorchard', 'FastFruitController@userOrchard');
-	Route::get('userproduct', 'FastFruitController@userProduct');
+	// Route::get('userproduct', 'FastFruitController@userProduct');
 	Route::get('userproduct/{id}', 'FastFruitController@userProductDetail');
 	Route::get('userproduct', 'FastFruitController@userProductDetail');
 	Route::get('useraddproduct', 'FastFruitController@getUserAddProduct');

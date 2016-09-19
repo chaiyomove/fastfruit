@@ -14,11 +14,11 @@ class Admins extends Model
 
      public function user()
     {
-    	return $this->belongsTo('App\Users');
+    	return $this->belongsTo('App\Users','idUser');
     }
 
      public function orchard()
     {
-    	return $this->belongsTo('App\Orchards','idOrchards');
+    	return $this->belongsTo('App\Orchards','idOrchard');
     }
 }
