@@ -36,6 +36,7 @@
 					<h3>เพิ่มผลผลิต</h3><br><br>
 					<form method="post" action="{{url('/useraddproduct')}}">
 					{{ csrf_field() }}
+					<input type="hidden" name="idOrchardPlot" value="35">
 					<div class="row">
 						<div class="col-md-2">
 						</div>
@@ -53,9 +54,9 @@
 							  	</select>
 							</div>
 							<div class="form-group" style="width:50%; float:right">
-							 	<select class="form-control" name="selectspecies">
+							 	<select class="form-control" name="fruitSpecie">
 							 		<option value="species" selected>เลือกสายพันธุ์</option>
-							   		<option value="sainamphueng">ส้มสายน้ำผึ้ง</option>					    	
+							   		<option value="78">มะม่วงมัน</option>					    	
 							  	</select>
 							</div>
 						</div>

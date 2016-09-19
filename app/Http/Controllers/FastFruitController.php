@@ -263,7 +263,8 @@ class FastFruitController extends Controller
         unset($input['picture2']);
         unset($input['picture3']);
         Product_sprints::create($input);
-        $sprint=new Product_sprints;
+
+        $sprint=new Product_sprints();
         $sprint->fruitSpecie=$input['fruitSpecie'];
        // return dd($input);
         return redirect('userproduct');

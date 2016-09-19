@@ -73,7 +73,7 @@
 								<div class="col-md-2">
 								</div>
 								<div class="col-md-2" style="text-align: center;">
-									<a href="{{url('addorchard')}}" class="btn btn-info btn-sm">
+									<a href="{{url('useraddproduct')}}" class="btn btn-info btn-sm">
 	          							<h4><span class="glyphicon glyphicon-plus-sign"></span> เพิ่มผลผลิต</h4>
 	       		 					</a>
 								</div>
