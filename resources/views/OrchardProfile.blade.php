@@ -41,7 +41,6 @@
 				@endif
 							<form method="GET" action="{{url('/orcharddetail')}}">
 							{{ csrf_field() }}
-								<div class="col-md-3 feature-grid" ></div>
 								<div class="col-md-3 feature-grid" >
 								
 									<div class="frame">
