@@ -240,11 +240,12 @@ class FastFruitController extends Controller
         $orchardPlots = array_collapse($orchardPlots);
         
         foreach ($orchardPlots as $key => $orchardPlot) {
-            return $productSprints = $orchardPlot->productSprints;
+            $products[] = $orchardPlot->productSprints;
         }
-        // return $orchards;
+        
+        $products = array_collapse($products);
 
-        return view('ShowProduct');
+        return view('ShowProduct',compact('products'));
     }
 
     // public function userProductDetail($id)
