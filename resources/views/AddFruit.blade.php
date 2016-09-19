@@ -28,10 +28,12 @@
 		});
 	</script>
 
+<link href="css/jquery.datepicker.css" rel="stylesheet">
+
 
 			<div class="feature-section">
 				<div class="container">
-					<h3>เพิ่มผลผลิต</h3><br>
+					<h3>เพิ่มผลผลิต</h3><br><br>
 					<form method="post" action="{{url('/useraddproduct')}}">
 					{{ csrf_field() }}
 					<div class="row">
@@ -93,6 +95,48 @@
 						<div class="col-md-2">
 						</div>
 						<div class="col-md-2">
+							<h4>ตั้งแต่วันที่ : </h4>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<div class='input-group date' id='datepickerstart'>
+					                <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" />
+					                <span class="input-group-addon" data-toggle="datepicker">
+					                    <span class="glyphicon glyphicon-calendar"></span>
+					                </span>
+					            </div>
+							</div>
+						</div>
+						<div class="col-md-4">
+						</div>
+						<div class="col-md-2">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-2">
+							<h4>ถึงวันที่ : </h4>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<div class='input-group date' id='datepickerend'>
+					                <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง"/>
+					                <span class="input-group-addon" data-toggle="datepicker">
+					                    <span class="glyphicon glyphicon-calendar"></span>
+					                </span>
+					            </div>
+							</div>	
+						</div>
+						<div class="col-md-4">
+						</div>
+						<div class="col-md-2">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-2">
 							<h4>อัพโหลดรูป : </h4>
 						</div>
 						<div class="col-md-2">
@@ -109,6 +153,7 @@
 						<div class="col-md-2">
 						</div>
 					</div>
+					<br><br>
 					<div class="row">
 						<div class="col-md-2">
 							<a href="ShowProduct.html">
@@ -132,6 +177,9 @@
 					</form>
 				</div>
 			</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/jquery.datepicker.js"></script>
 
 
 @endsection
