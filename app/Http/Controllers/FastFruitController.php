@@ -15,6 +15,7 @@ use App\Fruits;
 use App\Fruit_species;
 use App\provinces;
 use App\Matchings;
+use App\Admins;
 use Auth;
 use DB;
 
@@ -173,9 +174,11 @@ class FastFruitController extends Controller
         unset($input['picture1']);
         unset($input['picture2']);
         unset($input['picture3']);
-        unset($input['checkgap']);
         Orchards::create($input);
-       // return dd($input);
+        $admin = new Admins();
+        $admin->idUser = Auth::user()->id;
+        $admin->idOrchard = Orchards::latest()->first()->idOrchard;
+        $admin->save();
         return redirect('userorchard');
     }
 
