@@ -33,13 +33,13 @@
 									<form  method="POST" action="{{ url('/register') }}">
 									 {{ csrf_field() }}
 										<h3>สมัครสมาชิก</h3>
-										<input type="text" name="firstName" placeholder="ชื่อ" onfocus="this.value = '';" required="">
-											<input type="text" name="lastName" placeholder="นามสกุล" onfocus="this.value = '';" required="">
-											<input type="text" name="email" placeholder="อีเมล์" onfocus="this.value = '';" required="">	
-											<input type="password" name="password" placeholder="รหัสผ่าน" onfocus="this.value = '';" required="">	
-											<input type="password" name="password_confirmation" placeholder="ยืนยันรหัสผ่าน" onfocus="this.value = '';" required="">	
-											
-											<input type="submit" value="สมัครสมาชิก" >
+										<input type="text" name="firstName" placeholder="ชื่อ" required="">
+										<input type="text" name="lastName" placeholder="นามสกุล" required="">
+										<input type="text" name="email" placeholder="อีเมล์" required="">	
+										<input type="password" name="password" placeholder="รหัสผ่าน" required="">	
+										<input type="password" name="password_confirmation" placeholder="ยืนยันรหัสผ่าน" required="">	
+										
+										<input type="submit" value="สมัครสมาชิก" >
 									</form>
 								</div>																
 							</div>								

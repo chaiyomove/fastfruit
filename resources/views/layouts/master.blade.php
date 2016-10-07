@@ -56,11 +56,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="email">
                     <ul>                                
                         <li>
-                            <a href="login" >
-                                <i class="glyphicon glyphicon-comment" aria-hidden="true"></i>แชท
-                            </a>
-                        </li>
-                        <li>
                             <a href="login">
                                 <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>เข้าสู่ระบบ
                             </a>
