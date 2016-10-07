@@ -130,7 +130,7 @@
 						</div>
 						<div class="col-md-4">
 							<label class="radio-inline">
-								<input type="radio" name="inPlotStatus" value="1">มี GAP
+								<input type="radio" name="idPlotStatus" value="1">มี GAP
 							</label>
 							<label class="radio-inline">
 								<input type="radio" name="idPlotStatus" value="2">ไม่มี GAP
