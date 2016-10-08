@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +53,13 @@ Route::get('matching', 'FastFruitController@getMatching')->name('matching.show')
 Route::post('matching', 'FastFruitController@postMatching');
 Route::get('contactus', 'FastFruitController@contactUs');
 Route::get('search', 'FastFruitController@search');
+Route::get('upload', function(){
+			return view('test');
+});
+Route::post('upload', function(Request $request){
+	$pic1 = $request->file('pic1');
+	return dd($pic1->move(base_path('public_html\images'), $pic1->getClientOriginalName()));
+});
 
 
 Route::group(['middleware' => 'auth'], function () {
