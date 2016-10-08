@@ -113,7 +113,7 @@
 									        <h4>ข้อมูล {{$orchard->nameOrchard}}</h4>
 									        <div class="clearfix"></div>
 									    </div>
-									        <div class="x_content">
+									        <div class="x_content" style="font-size: 16px">
 
 									            <table class="table table-striped">
 									                <tbody>

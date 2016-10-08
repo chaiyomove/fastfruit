@@ -114,7 +114,7 @@
 						                    
 						                    <div class="clearfix"></div>
 						                  </div>
-						                  <div class="x_content">
+						                  <div class="x_content" style="font-size: 16px">
 
 						                    <table class="table table-striped">
 						                      <tbody>
