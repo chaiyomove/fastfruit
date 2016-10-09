@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -171,10 +171,21 @@ class FastFruitController extends Controller
     public function postAddOrchard()
     {
         $input = Request::all();
-        unset($input['picture1']);
-        unset($input['picture2']);
-        unset($input['picture3']);
+        $pictures = array_values(array_get($input,'pictures'));
+        $input['idProvince'] = Auth::user()->idProvince;
+
+        for ($i=0 ; $i<count($pictures) ; $i++){
+            if ($pictures[$i]!=NUll){
+                $picKeys = "picture".$i+1;
+                $picPath = $pictures[$i]->move(base_path('public_html\images'));
+                $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                $input["picture".($i+1)] = $picPath;   
+            }
+        }
+        // return dd($input);
+
         Orchards::create($input);
+        
         $admin = new Admins();
         $admin->idUser = Auth::user()->id;
         $admin->idOrchard = Orchards::latest()->first()->idOrchard;

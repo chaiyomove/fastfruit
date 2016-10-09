@@ -28,15 +28,17 @@
 		});
 	</script>
 
+			<div class="feature-section" style="padding:5em 0em 0em 0em">
+						<div class="container">
+							<h3>สวนของคุณ</h3>
+						</div>
+			</div>
 
 			<!--profile-->
 			@foreach ($orchards as $key => $orchard)
 				@if ($key%4 == 0)	
 					<div class="feature-section" style="padding:5em 0em 0em 0em">
 						<div class="container">
-							<h3>สวนของคุณ</h3>
-							<br>
-
 							<div class="feature-grids">
 				@endif
 							<form method="GET" action="{{url('/orcharddetail')}}">
@@ -52,7 +54,7 @@
 												<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
 											@endif
 										@endforeach
-										<img src="{{$orchard->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+										<img src="{{$orchard->picture1}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
 										
 										<h5 class="space">{{$orchard->nameOrchard}}</h5>
 										<p class="space">{{$orchard->description}}</p>		
