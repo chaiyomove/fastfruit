@@ -51,13 +51,13 @@
 									</ol>
 								<div class="carousel-inner">
 									<div class="item active">
-										<img src="{{$orchard->picture}}" style="height: 300px; width: 850px;" />
+										<img src="{{$orchard->picture1}}" style="height: 300px; width: 850px;" />
 									</div>
 									<div class="item">
-										<img src="{{$orchard->picture}}" style="height: 300px; width: 850px;" />										
+										<img src="{{$orchard->picture2}}" style="height: 300px; width: 850px;" />										
 									</div>
 									<div class="item">
-										<img src="{{$orchard->picture}}" style="height: 300px; width: 850px;" />
+										<img src="{{$orchard->picture3}}" style="height: 300px; width: 850px;" />
 									</div>
 								</div> 
 								<a class="left carousel-control" href="#carousel-824332" data-slide="prev">

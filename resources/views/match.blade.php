@@ -214,7 +214,7 @@
 											<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
 										@endif
 									@endforeach
-									<img src="{{$matchedOrc->picture}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+									<img src="{{$matchedOrc->picture1}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
 									
 									<h5 class="space">{{$matchedOrc->nameOrchard}}</h5>
 									<p class="space">{{$matchedOrc->description}}</p>		
