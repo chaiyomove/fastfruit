@@ -34,7 +34,7 @@
 			<div class="feature-section">
 				<div class="container">
 					<h3>เพิ่มผลผลิต</h3><br><br>
-					<form method="post" action="{{url('/useraddproduct')}}">
+					<form method="post" enctype="multipart/form-data" action="{{url('/useraddproduct')}}">
 					{{ csrf_field() }}
 					<input type="hidden" name="idOrchardPlot" value="35">
 					<div class="row">
@@ -143,9 +143,9 @@
 						<div class="col-md-2">
 														
 								<div class="form-group">				 
-									<input name="picture1" id="exampleInputFile" type="file" />
-									<input name="picture2" id="exampleInputFile" type="file" />
-									<input name="picture3" id="exampleInputFile" type="file" />
+									<input name="pictures[]" id="exampleInputFile" type="file" />
+									<input name="pictures[]" id="exampleInputFile" type="file" />
+									<input name="pictures[]" id="exampleInputFile" type="file" />
 								</div>							
 							
 						</div>

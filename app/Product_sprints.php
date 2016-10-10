@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product_sprints extends Model
 {
    protected $fillable = [
-        'description','fruitNum', 'picture', 'fruitSpecie','time','idOrchardPlot',
+        'description','fruitNum', 'picture1','picture2','picture3', 'fruitSpecie','time','idOrchardPlot',
     ];
     protected $primaryKey = 'idProductSprint';
 

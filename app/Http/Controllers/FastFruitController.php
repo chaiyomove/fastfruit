@@ -177,7 +177,7 @@ class FastFruitController extends Controller
         for ($i=0 ; $i<count($pictures) ; $i++){
             if ($pictures[$i]!=NUll){
                 $picKeys = "picture".$i+1;
-                $picPath = $pictures[$i]->move(base_path('public_html\images'));
+                $picPath = $pictures[$i]->move(base_path('public_html\images\orchards'));
                 $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
                 $input["picture".($i+1)] = $picPath;   
             }
@@ -279,11 +279,18 @@ class FastFruitController extends Controller
     public function postUserAddProduct()
     {
         $input = Request::all();
-        unset($input['picture1']);
-        unset($input['picture2']);
-        unset($input['picture3']);
-        Product_sprints::create($input);
+        $pictures = array_values(array_get($input,'pictures'));
+        
 
+        for ($i=0 ; $i<count($pictures) ; $i++){
+            if ($pictures[$i]!=NUll){
+                $picKeys = "picture".$i+1;
+                $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
+                $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                $input["picture".($i+1)] = $picPath;   
+            }
+        }
+        Product_sprints::create($input);
         $sprint=new Product_sprints();
         $sprint->fruitSpecie=$input['fruitSpecie'];
        // return dd($input);
