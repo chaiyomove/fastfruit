@@ -129,11 +129,11 @@
 						</div>
 						<div class="col-md-4">
 							<label class="radio-inline">
-								<input type="radio" name="idPlotStatus" value="1">
+								<input type="radio" name="idPlotStatus" value="2">
 								มี GAP
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="idPlotStatus" value="2">
+								<input type="radio" name="idPlotStatus" value="3">
 								ไม่มี GAP
 							</label>							
 						</div>
@@ -148,11 +148,9 @@
 						<div class="col-md-4">
 						</div>
 						<div class="col-md-2">
-							<a href="OrchardProfile.html">
-								<button type="submit" class="btn btn-success btn-lg btn-block">
-									เสร็จสิ้น
-								</button>
-							</a>
+							<button type="submit" class="btn btn-success btn-lg btn-block">
+								เสร็จสิ้น
+							</button>
 						</div>
 					</div>
 					</form>

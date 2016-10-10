@@ -182,9 +182,18 @@ class FastFruitController extends Controller
                 $input["picture".($i+1)] = $picPath;   
             }
         }
-        // return dd($input);
 
-        Orchards::create($input);
+        // return dd($input);
+        // return dd($input2);
+        $insertedOrd = Orchards::create($input);
+        
+        // $input2['_token'] = array_get($input, '_token');
+        $input2['plotNumber'] = array_get($input, 'plotNumber');
+        $input2['idPlotStatus'] = array_get($input, 'idPlotStatus');
+        $input2['idOrchard'] = $insertedOrd->idOrchard;
+        // return dd($input2);
+
+        Orchard_plots::create($input2);
         
         $admin = new Admins();
         $admin->idUser = Auth::user()->id;
