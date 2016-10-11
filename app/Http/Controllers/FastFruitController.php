@@ -171,15 +171,17 @@ class FastFruitController extends Controller
     public function postAddOrchard()
     {
         $input = Request::all();
-        $pictures = array_values(array_get($input,'pictures'));
         $input['idProvince'] = Auth::user()->idProvince;
 
-        for ($i=0 ; $i<count($pictures) ; $i++){
-            if ($pictures[$i]!=NUll){
-                $picKeys = "picture".$i+1;
-                $picPath = $pictures[$i]->move(base_path('public_html\images\orchards'));
-                $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
-                $input["picture".($i+1)] = $picPath;   
+        if (array_get($input,'pictures')!==NULL){
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchards'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
             }
         }
 
@@ -201,8 +203,6 @@ class FastFruitController extends Controller
         $admin->save();
         return redirect('userorchard');
     }
-
-
 
     public function checkGap()
     {
@@ -238,7 +238,10 @@ class FastFruitController extends Controller
 
     public function getUserAddProduct()
     {
-        return view('AddFruit');
+        $fruits = Fruits::all();
+        $fruitSpecies = Fruit_species::all();
+
+        return view('AddFruit', compact('fruits','fruitSpecies'));
     }
 
     public function userMatching()
@@ -267,6 +270,7 @@ class FastFruitController extends Controller
         }
         
         $products = array_collapse($products);
+        $products = array_reverse($products);
 
         return view('ShowProduct',compact('products'));
     }
@@ -279,21 +283,24 @@ class FastFruitController extends Controller
     public function postUserAddProduct()
     {
         $input = Request::all();
-        $pictures = array_values(array_get($input,'pictures'));
-        
-
-        for ($i=0 ; $i<count($pictures) ; $i++){
-            if ($pictures[$i]!=NUll){
-                $picKeys = "picture".$i+1;
-                $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
-                $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
-                $input["picture".($i+1)] = $picPath;   
+        if (array_get($input,'pictures')!==NULL){       
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
             }
         }
+        $input['fruitSpecie'] = $input['idFruitSpecie'];
+
+        // return dd($input);
         Product_sprints::create($input);
-        $sprint=new Product_sprints();
-        $sprint->fruitSpecie=$input['fruitSpecie'];
-       // return dd($input);
+        // $sprint=new Product_sprints();
+        // $sprint->fruitSpecie=$input['fruitSpecie'];
+       
         return redirect('userproduct');
     }
 

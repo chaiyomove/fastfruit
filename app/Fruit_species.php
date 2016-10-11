@@ -12,18 +12,24 @@ class Fruit_species extends Model
 
     protected $primaryKey = 'idFruitSpecie';
 
-      public function orchardPlots()
+    public function orchardPlots()
     {
     	return $this->hasMany('App\Orchard_plots','idFruitSpecie');
     }
 
-      public function fruit()
+    public function fruit()
     {
     	return $this->belongsTo('App\Fruits','idFruit');
     }
 
-     public function matchings()
+    public function matchings()
     {
-    	return $this->hasMany('App\Matchings','idFruitSpecie');
+        return $this->hasMany('App\Matchings','idFruitSpecie');
     }
+
+    public function productSprints()
+    {
+        return $this->hasMany('App\Product_sprints','FruitSpecie');
+    }
+
 }

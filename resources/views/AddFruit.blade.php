@@ -34,7 +34,7 @@
 			<div class="feature-section">
 				<div class="container">
 					<h3>เพิ่มผลผลิต</h3><br><br>
-					<form method="post" enctype="multipart/form-data" action="{{url('/useraddproduct')}}">
+					<form method="POST" enctype="multipart/form-data" action="{{url('/useraddproduct')}}">
 					{{ csrf_field() }}
 					<input type="hidden" name="idOrchardPlot" value="35">
 					<div class="row">
@@ -45,19 +45,21 @@
 						</div>
 						<div class="col-md-4">
 							<div class="form-group" style="width:40%; float:left">
-							 	<select class="form-control" name="selectfruit">
-							 		<option value="fruit" selected>เลือกผลไม้</option>
-							   		<option value="orange">ส้ม</option>
-							    	<option value="mango">มะม่วง</option>
-							    	<option value="durian">ทุเรียน</option>
-							    	<option value="rambutan">เงาะ</option>
+							 	<select class="form-control" name="fruit" >
+							 		<option  value="0" selected >เลือกชนิดผลไม้</option>
+							 		@foreach ($fruits as $fruit)
+								 		<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>				
+							 		@endforeach
 							  	</select>
 							</div>
 							<div class="form-group" style="width:50%; float:right">
-							 	<select class="form-control" name="fruitSpecie">
-							 		<option value="species" selected>เลือกสายพันธุ์</option>
-							   		<option value="78">มะม่วงมัน</option>					    	
-							  	</select>
+								<select class="form-control" name="idFruitSpecie">
+							 		<option value="0" selected>เลือกสายพันธุ์</option>
+							 		{{-- <option value="78">มะม่วงมัน</option>	 --}}
+							 		@foreach ($fruitSpecies as $fruitSpecie)
+								 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>
+							 		@endforeach				    	
+							  	</select>	
 							</div>
 						</div>
 						<div class="col-md-4">

@@ -21,8 +21,15 @@ class Product_sprints extends Model
         return $this->hasMany('App\Bookmarks','idProductSprint');
     }
 
+    public function fruitSpeciess()
+    {
+        return $this->belongsTo('App\Fruit_species','fruitSpecie');
+    }
+
     public function scopeNew($query)
     {
         $query->latest()->take(10)->get();
     }
+
+
 }

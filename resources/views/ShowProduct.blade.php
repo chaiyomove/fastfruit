@@ -49,7 +49,8 @@
 														<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
 													@endif
 													<img src="{{$product->picture1}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
-													<h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>						
+													{{-- <h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>						 --}}
+													<h5 class="space">{{array_get($product->fruitSpeciess,'specieName')}}</h5>							
 													<p class="space">{{$product->description}}</p>
 													{{-- <a href="products/{{$product->idProductSprint}}" class="space"> --}}
 														<input type="hidden" name="idProductSprint" value="{{$product->idProductSprint}}">	
