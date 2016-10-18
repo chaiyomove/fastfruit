@@ -117,7 +117,10 @@
 						<div class="col-md-2">
 							<form>
 								<select class="form-control" name="idProvince">
-								 		<option value="0" selected>กรุณาเลือก</option>		 	   	
+							 		<option value="0" selected>กรุณาเลือก</option>	
+							 		@foreach ($provinces as $province)
+								 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+							 		@endforeach		 			 	   	
 								</select>
 							</form>
 						</div>

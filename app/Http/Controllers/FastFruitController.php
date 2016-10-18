@@ -165,7 +165,8 @@ class FastFruitController extends Controller
 
     public function getAddOrchard()
     {
-        return view('AddOrchard');
+        $provinces = Provinces::all();
+        return view('AddOrchard', compact('provinces'));
     }
 
     public function postAddOrchard()
