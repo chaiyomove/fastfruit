@@ -43,7 +43,7 @@
 							<h4>ชื่อ : </h4>
 						</div>
 						<div class="col-md-4">
-							<input type="text" class="form-control" placeholder="สุเมธ"></input>
+							<input type="text" class="form-control"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -56,7 +56,7 @@
 							<h4>นามสกุล : </h4>
 						</div>
 						<div class="col-md-4">
-							<input type="text" class="form-control" placeholder="เบ็ญจวรรณ์"></input>
+							<input type="text" class="form-control"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
