@@ -102,9 +102,28 @@
 							<h4>ที่อยู่สวน : </h4>
 						</div>
 						<div class="col-md-4">
-							<textarea name="address" class="form-control" style="resize: none;" rows="3"></textarea>
+							<textarea name="address" class="form-control" style="resize: none;" rows="2"></textarea>
 						</div>
 						<div class="col-md-4">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-2">
+							<h4>จังหวัด : </h4>
+						</div>
+						<div class="col-md-2">
+							<form>
+								<select class="form-control" name="idProvince">
+								 		<option value="0" selected>กรุณาเลือก</option>		 	   	
+								</select>
+							</form>
+						</div>
+						<div class="col-md-4">
+						</div>
+						<div class="col-md-2">
 						</div>
 					</div>
 					<br>

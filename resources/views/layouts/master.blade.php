@@ -127,6 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li id="nav-products"><a href="products">ดูผลผลิต</a></li>
                         <li id="nav-matching"><a href="matching">จับคู่สวน</a></li>
                         <li id="nav-contactus"><a href="contactus">ติดต่อเรา</a></li>
+                        <li id="nav-addorchard"><a href="addorchard">เพิ่มสวน</a></li>
                     </ul>
                     <form method="GET" action="{{url('/search')}}" class="navbar-form navbar-right" role="search">
                     {{ csrf_field() }}
