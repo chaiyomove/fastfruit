@@ -115,11 +115,12 @@
 							<h4>จังหวัด : </h4>
 						</div>
 						<div class="col-md-2">
-							<form>
-								<select class="form-control" name="idProvince">
-								 		<option value="0" selected>กรุณาเลือก</option>		 	   	
-								</select>
-							</form>
+							<select class="form-control" name="idProvince">
+						 		<option value="0" selected>กรุณาเลือก</option>	
+						 		@foreach ($provinces as $province)
+							 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+						 		@endforeach		 			 	   	
+							</select>
 						</div>
 						<div class="col-md-4">
 						</div>
