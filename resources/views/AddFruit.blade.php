@@ -86,7 +86,7 @@
 							<h4>จำนวนผลผลิต : </h4>
 						</div>
 						<div class="col-md-2">
-							<input type="text" name="fruitNum" class="form-control" placeholder="หน่วยเป็นกิโลกรัม/รอบการผลิต"></input>
+							<input type="text" name="fruitNum" class="form-control" placeholder="กิโลกรัม/รอบการผลิต"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
