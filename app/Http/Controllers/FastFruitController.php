@@ -218,7 +218,8 @@ class FastFruitController extends Controller
 
     public function updateUserprofile()
     {
-        return view('EditProfile');
+        $provinces = Provinces::all();
+        return view('EditProfile', compact('provinces'));
     }
 
     public function userOrchard()
