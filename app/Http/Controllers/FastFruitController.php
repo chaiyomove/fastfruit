@@ -352,5 +352,10 @@ class FastFruitController extends Controller
         return view('search', compact('matchedOrcs'));
     }
 
+    public function productofrochard($id)
+    {
+        return Orchards::findOrFail($id);
+    }
+
 
 }

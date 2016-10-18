@@ -61,6 +61,7 @@ Route::get('matching', 'FastFruitController@getMatching')->name('matching.show')
 Route::post('matching', 'FastFruitController@postMatching');
 Route::get('contactus', 'FastFruitController@contactUs');
 Route::get('search', 'FastFruitController@search');
+Route::get('productofrochard/{id}', 'FastFruitController@productofrochard');
 
 
 Route::group(['middleware' => 'auth'], function () {

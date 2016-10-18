@@ -77,7 +77,7 @@
 							            </button>
 									</td>
 									<td>
-										<a href="ProductOfOrchard.html">
+										<a href="{{url('productofrochard',[25])}}">
 											<button type="button" class="btn btn-danger btn-sm" > 
 												<h5>
 												<i class="glyphicon glyphicon-eye-open">&nbsp;ผลผลิต</i>
@@ -137,7 +137,7 @@
 									                </tr>
 									                <tr>
 									                    <th scope="row" width="40%">พื้นที่</th>
-									                    <td align="left" width="5%">500</td>
+									                    <td align="left" width="5%">{{$orchard->area}}</td>
 									                    <td align="left">ไร่</td>
 									                </tr>
 									                <tr>
