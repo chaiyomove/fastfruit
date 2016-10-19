@@ -37,30 +37,24 @@
 							@if ($key%4 == 0)	
 										<div class="feature-grids">
 							@endif
-										<form method="GET" action="{{url('/productdetail')}}">
-											{{ csrf_field() }}
-											<div class="col-md-3 feature-grid">
-												<div class="frame">
-													@if ($key<=10)
-														<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
-													@endif
+							<div class="col-md-3 feature-grid">
+								<div class="frame">
+									@if ($key<=10)
+										<img src="{{ asset('images/new.png') }}" style="position: absolute; margin-left: -5px; margin-top: -2px">
+									@endif
 
-													@if ($product->orchardPlot->idPlotStatus == 1)
-														<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
-													@endif
-													<img src="{{$product->picture1}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
-													{{-- <h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>						 --}}
-													<h5 class="space">{{array_get($product->fruitSpeciess,'specieName')}}</h5>							
-													<p class="space">{{$product->description}}</p>
-													{{-- <a href="products/{{$product->idProductSprint}}" class="space"> --}}
-														<input type="hidden" name="idProductSprint" value="{{$product->idProductSprint}}">	
-														<button type="submit" class="btn btn-link">
-															<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
-														</button>
-													{{-- </a> --}}
-												</div>
-											</div>
-										</form>
+									@if ($product->orchardPlot->idPlotStatus == 1)
+										<img src="{{ asset('images/gap.png') }}" style="position: absolute; margin-left: 2px; margin-top: 115px">
+									@endif
+									<img src="{{$product->picture1}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+									{{-- <h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>						 --}}
+									<h5 class="space">{{array_get($product->fruitSpeciess,'specieName')}}</h5>						
+									<p class="space">{{$product->description}}</p>
+									<a href="products/{{$product->idProductSprint}}" class="space">
+										<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
+									</a>
+								</div>
+							</div>
 							@if ((count($products)===$key+1) || $key%4 == 3)	
 											<div class="clearfix"></div>
 										</div>
