@@ -36,17 +36,16 @@ class FastFruitController extends Controller
         return view('orchardDetail',compact('orchard'));
     }
 
-    public function orchardDetailTmp()
-    {
-        $idOrchard = Request::get('idOrchard');
-        $orchard = Orchards::findOrFail($idOrchard);   
-        return view('orchardDetail',compact('orchard'));
-    }
-
     public function products()
     {
         $products=Product_sprints::latest()->get();
         return view('products',compact('products'));
+    }
+
+    public function productDetail($id)
+    {
+        $product = Product_sprints::findOrFail($id);
+        return view('productDetail',compact('product'));
     }
 
     public function getMatching()
@@ -132,20 +131,6 @@ class FastFruitController extends Controller
     public function contactus()
     {
         return view('contact');
-    }
-
-    public function productDetail($id)
-    {
-        $product = Product_sprints::findOrFail($id);
-        return view('productDetail',compact('product'));
-    }
-
-    public function productDetailTmp()
-    {
-        $idProductSprint = Request::get('idProductSprint');
-        // return $idProductSprint;
-        $product = Product_sprints::findOrFail($idProductSprint);
-        return view('productDetail',compact('product'));
     }
 
     public function chat()
