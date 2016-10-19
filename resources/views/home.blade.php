@@ -42,24 +42,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<ul class="rslides" id="slider">
 					<div class="slid banner1" >
 						  <div class="caption" style="width:350px; height: 150px ">
-								<h3>เงาะ</h3>
-								<p>เงาะโรงเรียน</p>
+								<h3>สวนอุดมสิน</h3>
+								<p>สวนเรามีผลไม้หลากหลาย</p>
 								<a href="#" class="button">อ่านเพิ่ม</a>
 						  </div>
 					</div>
 					<div class="slid banner2">	
 						  <div class="caption" style="width:350px; height: 150px ">
-								<h3>มะม่วง</h3>
-								<p>มะม่วงหวานๆ</p>
+								<h3>สวนมนตรีขายกล้วย</h3>
+								<p>กล้วยหลากหลายชนิด</p>
 								<a href="#" class="button">อ่านเพิ่ม</a>
 						  </div>
 					</div>
 					<div class="slid banner3">	
-						<div class="caption" style="width:350px; height: 150px ">
-							<h3>ทุเรียน</h3>
-							<p>หวาน กรอบ อร่อย</p>
-							<a href="#" class="button">อ่านเพิ่ม</a>
-						</div>
+						{{-- <div class="caption" style="width:350px; height: 150px ">
+							
+						</div> --}}
 					</div>
 				</ul>
 			</div>
