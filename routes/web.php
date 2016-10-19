@@ -12,42 +12,16 @@ use Illuminate\Http\Request;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('zzzwelcome');
 // });
 
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
 
-Route::get('test', function(){
-	// $users = App\Users::all();
-	// // return $users;
-	// foreach ($users as $user) {
-	// 	echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
-	// 	echo "<br><hr>";
-	// }
 
-	$provinces = App\Provinces::first();
-	// return $provinces;
-	// foreach ($provinces as $province) {
-		$users = $provinces->users;
-		foreach ($users as $key => $user) {
-			echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
-			echo "<br><hr>";
-		}
-
-		echo "<br><hr>";
-	// }
-});
-Route::get('upload', function(){
-			return view('test');
-});
-Route::post('upload', function(Request $request){
-	$picture = $request->file('pic');
-	dd($picture);
-	// return dd($pic1->move(base_path('public_html\images'), $pic1->getClientOriginalName()));
-});
-
-// HOME
+/**
+ * HOME
+ */
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
 
@@ -64,6 +38,9 @@ Route::get('search', 'FastFruitController@search');
 Route::get('productofrochard/{id}', 'FastFruitController@productofrochard');
 
 
+/**
+ * login required pages
+ */
 Route::group(['middleware' => 'auth'], function () {
 	Route::delete('matching', 'FastFruitController@deleteMatching');
 	Route::get('chat', 'FastFruitController@chat');
@@ -86,3 +63,37 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('dashboard', 'FastFruitController@dashboard');
 });
 
+
+/**
+ * TEST
+ */
+Route::get('test', function(){
+	// $users = App\Users::all();
+	// // return $users;
+	// foreach ($users as $user) {
+	// 	echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
+	// 	echo "<br><hr>";
+	// }
+
+	$provinces = App\Provinces::first();
+	// return $provinces;
+	// foreach ($provinces as $province) {
+		$users = $provinces->users;
+		foreach ($users as $key => $user) {
+			echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
+			echo "<br><hr>";
+		}
+
+		echo "<br><hr>";
+	// }
+});
+
+Route::get('upload', function(){
+	return view('zzztest');
+});
+
+Route::post('upload', function(Request $request){
+	$picture = $request->file('pic');
+	dd($picture);
+	// return dd($pic1->move(base_path('public_html\images'), $pic1->getClientOriginalName()));
+});

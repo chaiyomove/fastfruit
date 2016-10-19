@@ -7,19 +7,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>FastFruit</title>
-<!---css--->
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<!---css--->
+<!---css -->
+<link href="{{ asset('css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+<link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' />
+<!---css-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Real Space Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!---js--->
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<!---js--->
+<!---js-->
+<script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+<!---js-->
 <!---fonts-->
 <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script type="text/javascript">
     window.onload = function(){
-        document.getElementById("{{"nav-".Request::path()}}").className="active";   
+        document.getElementById("{{ "nav-".Request::path() }}").className="active";   
     }
     
 </script>
@@ -48,21 +48,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="head-top" style="height: 80px">             
                 <div class="navbar-brand">
-                    <a href="/">
-                        <img src="images/fastfruit.png" style="width: 300px; height: 70px; position: absolute;">
+                    <a href="{{url('/')}}">
+                        <img src="{{ asset('images/fastfruit.png') }}" style="width: 300px; height: 70px; position: absolute;">
                     </a>
                 </div>
                 @if(!Auth::check())
                 <div class="email">
                     <ul>                                
                         <li>
-                            <a href="login">
-                                <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>เข้าสู่ระบบ
+                            <a href="{{ url('login') }}">
+                                <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>
+                                เข้าสู่ระบบ
                             </a>
                         </li>
                         <li>
-                            <a href="register">
-                                <i class="glyphicon glyphicon-lock" aria-hidden="true"></i>สมัครสมาชิก
+                            <a href="{{ url('register') }}">
+                                <i class="glyphicon glyphicon-lock" aria-hidden="true"></i>
+                                สมัครสมาชิก
                             </a>
                         </li>
                     </ul>
@@ -71,18 +73,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="email">
                     <ul>
                         <li>
-                            <a href="chat" >
-                                <i class="glyphicon glyphicon-comment" aria-hidden="true"></i>แชท
+                            <a href="{{ url('chat') }}" >
+                                <i class="glyphicon glyphicon-comment" aria-hidden="true"></i>
+                                แชท
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="glyphicon glyphicon-bell" aria-hidden="true"></i>แจ้งเตือน
+                            <a href="{{ url('#') }}">
+                                <i class="glyphicon glyphicon-bell" aria-hidden="true"></i>
+                                แจ้งเตือน
                             </a>
                         </li>
                         <li>
-                            <a href="{{url('userprofile')}}" style="margin-right:30px">
-                                 <i class="glyphicon glyphicon-user" aria-hidden="true"></i>{{Auth::user()->firstName}}
+                            <a href="{{ url('userprofile') }}" style="margin-right:30px">
+                                 <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+                                 {{ Auth::user()->firstName }}
                             </a>
                             {{-- <select>
                                 <option value="sumet" onclick="funtion(header('/userprofile'))" selected>{{Auth::user()->firstName}}</option>
@@ -96,8 +101,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         </li>
                         <li>
-                            <a href="logout">
-                                <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>ออกจากระบบ
+                            <a href="{{ url('logout') }}">
+                                <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>
+                                ออกจากระบบ
                             </a>
                         </li>
                     </ul>
@@ -123,13 +129,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="collapse navbar-collapse" >
                     <ul class="nav navbar-nav">
                         <li id="nav-/"><a href="/">หน้าแรก <span class="sr-only">(current)</span></a></li>
-                        <li id="nav-orchards"><a href="orchards">ชมสวน</a></li>
-                        <li id="nav-products"><a href="products">ดูผลผลิต</a></li>
-                        <li id="nav-matching"><a href="matching">จับคู่สวน</a></li>
-                        <li id="nav-contactus"><a href="contactus">ติดต่อเรา</a></li>
-                        <li id="nav-addorchard"><a href="addorchard">เพิ่มสวน</a></li>
+                        <li id="nav-orchards"><a href="{{ url('orchards') }}">ชมสวน</a></li>
+                        <li id="nav-products"><a href="{{ url('products') }}">ดูผลผลิต</a></li>
+                        <li id="nav-matching"><a href="{{ url('matching') }}">จับคู่สวน</a></li>
+                        <li id="nav-contactus"><a href="{{ url('contactus') }}">ติดต่อเรา</a></li>
+                        <li id="nav-addorchard"><a href="{{ url('addorchard')}}">เพิ่มสวน</a></li>
                     </ul>
-                    <form method="GET" action="{{url('/search')}}" class="navbar-form navbar-right" role="search">
+                    <form method="GET" action="{{ url('search') }}" class="navbar-form navbar-right" role="search">
                     {{ csrf_field() }}
                         <div class="form-group">
                             <input type="text" name="search" class="form-control" placeholder="ค้นหา">
@@ -172,51 +178,54 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     @endif
        
-              <!--footer-->
-                    <div class="footer-section">
-                        <div class="container">
-                            <div class="footer-grids">
-                                <div class="col-md-1 footer-grid">
-                                    
-                                </div>
-                                <div class="col-md-3 footer-grid">
-                                    <br><br><br>
-                                    <img src="images/fastfruit.png" style="width: 200px; height: 50px; ">
-                                </div>
-                                <div class="col-md-3 footer-grid">
-                                    <h4>เมนู</h4>
-                                    <ul>
-                                        <li><a href="/">หน้าแรก</a></li>
-                                        <li><a href="orchards">ชมสวน</a></li>
-                                        <li><a href="matching">จับคู่</a></li>
-                                        <li><a href="register">สมัครสมาชิก</a></li>
-                                        <li><a href="/">เข้าสู่ระบบ</a></li>
-                                        <li><a href="chat">แชท</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 footer-grid">
-                                    <h4>ติดต่อ</h4>
-                                    <ul>
-                                        <li><a href="contactus">ติดต่อเรา</a></li>
-                                    </ul>
-                                </div>      
-                                <div class="col-md-2 footer-grid">
-                                </div>                      
-                            <div class="clearfix"> </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <!---footer--->
-                    <!--copy-->
-                    <div class="copy-section">
-                        <div class="container">
-                            <p>&copy; All rights reserved by FASTFRUIT</p>
-                        </div>
-                    </div>
-                    <!--copy-->
+    <!--footer-->
+    <div class="footer-section">
+        <div class="container">
+            <div class="footer-grids">
+                <div class="col-md-1 footer-grid">
+                    
+                </div>
+                <div class="col-md-3 footer-grid">
+                    <br><br><br>
+                    <img src="{{ asset('images/fastfruit.png') }}" style="width: 200px; height: 50px; ">
+                </div>
+                <div class="col-md-3 footer-grid">
+                    <h4>เมนู</h4>
+                    <ul>
+                        <li><a href="{{ asset('/') }}">หน้าแรก</a></li>
+                        <li><a href="{{ asset('orchards') }}">ชมสวน</a></li>
+                        <li><a href="{{ asset('matching') }}">จับคู่</a></li>
+                        <li><a href="{{ asset('register') }}">สมัครสมาชิก</a></li>
+                        <li><a href="{{ asset('login') }}">เข้าสู่ระบบ</a></li>
+                        <li><a href="{{ asset('chat') }}">แชท</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-grid">
+                    <h4>ติดต่อ</h4>
+                    <ul>
+                        <li><a href="contactus">ติดต่อเรา</a></li>
+                    </ul>
+                </div>      
+                <div class="col-md-2 footer-grid">
+                </div>                      
+            <div class="clearfix"> </div>
+            </div>
+            
+        </div>
+    </div>
+    <!---footer--->
+    
+    <!--copy-->
+    <div class="copy-section">
+        <div class="container">
+            <p>&copy; All rights reserved by FASTFRUIT</p>
+        </div>
+    </div>
+    <!--copy-->
+
+
             <!-- login -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            {{-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content modal-info">
                         <div class="modal-header">
@@ -244,10 +253,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- //login -->
+
             <!-- Register -->
-            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+            {{-- <div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content modal-info">
                         <div class="modal-header">
@@ -274,7 +284,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- //Register -->
 </body>
 </html>
