@@ -44,14 +44,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						  <div class="caption" style="width:350px; height: 150px ">
 								<h3>สวนอุดมสิน</h3>
 								<p>สวนเรามีผลไม้หลากหลาย</p>
-								<a href="#" class="button">อ่านเพิ่ม</a>
+								<a href="{{'orchards/6'}}" class="button">อ่านเพิ่ม</a>
 						  </div>
 					</div>
 					<div class="slid banner2">	
 						  <div class="caption" style="width:350px; height: 150px ">
 								<h3>สวนมนตรีขายกล้วย</h3>
 								<p>กล้วยหลากหลายชนิด</p>
-								<a href="#" class="button">อ่านเพิ่ม</a>
+								<a href="{{'orchards/10'}}" class="button">อ่านเพิ่ม</a>
 						  </div>
 					</div>
 					<div class="slid banner3">	

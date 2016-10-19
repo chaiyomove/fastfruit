@@ -36,15 +36,13 @@ Route::post('matching', 'FastFruitController@postMatching');
 Route::get('contactus', 'FastFruitController@contactUs');
 Route::get('search', 'FastFruitController@search');
 Route::get('productofrochard/{id}', 'FastFruitController@productofrochard');
-
-
+Route::get('orchards/{id}', 'FastFruitController@orchardDetail');
 /**
  * login required pages
  */
 Route::group(['middleware' => 'auth'], function () {
 	Route::delete('matching', 'FastFruitController@deleteMatching');
 	Route::get('chat', 'FastFruitController@chat');
-	Route::get('orchards/{id}', 'FastFruitController@orchardDetail');
 	Route::get('userprofile/{id}', 'FastFruitController@userProfile');
 	Route::get('userprofile', 'FastFruitController@userProfile');
 	Route::get('addorchard', 'FastFruitController@getAddOrchard');
