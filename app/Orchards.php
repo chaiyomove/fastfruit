@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Orchards extends Model
 {
     protected $fillable = [
-        'nameOrchard','description', 'area', 'geolocation','picture1','picture2','picture3','address','phone','ownerId','idProvince'
+        'nameOrchard','description', 'area', 'geolocation','picture1','picture2','picture3','address','lat','lng','phone','ownerId','idProvince'
     ];
 
     protected $primaryKey = 'idOrchard';
