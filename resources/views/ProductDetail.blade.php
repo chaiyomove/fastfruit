@@ -85,14 +85,14 @@
 									{{ csrf_field() }}
 						            <input type="hidden" name="idProductSprint" value="{{$product->idProductSprint}}">
 
-									<td>
+									<!--<td>
 										<button type="button" class="btn btn-info btn-sm"> 
 											<h5>
 											<i class="glyphicon glyphicon-user"> </i>
 											<i class="glyphicon glyphicon-comment"> </i>&nbsp;&nbsp;แชท
 											</h5>
 							            </button>
-									</td>
+									</td>-->
 									<td>
 										{{-- <a href="OrchardDetail-bf.html"> --}}
 								                			

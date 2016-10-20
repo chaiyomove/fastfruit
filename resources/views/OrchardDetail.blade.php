@@ -29,6 +29,13 @@
 		});
 		});
 	</script>
+	<script>
+
+		function open_map() {
+		document.getElementById('map').style.display = "inherit";
+		}
+		
+	</script>
     <!-- Custom Theme Style -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
@@ -82,14 +89,14 @@
 							<div style="margin-top: 15px">
 							<table>
 								<tr>
-									<td>
+									<!--<td>
 										<button type="button" class="btn btn-info btn-sm"> 
 											<h5>
 											<i class="glyphicon glyphicon-user"> </i>
 											<i class="glyphicon glyphicon-comment"> </i>&nbsp;&nbsp;แชท
 											</h5>
 							            </button>
-									</td>
+									</td>-->
 									<td>
 										<a href="{{url('productofrochard',[25])}}">
 											<button type="button" class="btn btn-danger btn-sm" > 
@@ -107,13 +114,11 @@
 					                    </button>
 									</td>
 									<td>
-										<a href="{{url('map')}}">
-											<button type="button" class="btn btn-warning btn-sm"> 
+											<button type="button" class="btn btn-warning btn-sm" id="openmap" onclick="open_map()"> 
 										        <h5>
 											    <i class="glyphicon glyphicon-globe">&nbsp;แผนที่</i>
 											    </h5>
 						                    </button>
-						                </a>
 									</td>
 								</tr>
 							</table>
@@ -168,7 +173,25 @@
 										</div>
 									</div>
 
+										{{-- <h1>MAP</h1> --}}
+										<div id="map" style="display: none;">
+										</div>
+										    <script>
+										       function initMap() {
+										        var uluru = {lat: -25.363, lng: 131.044};
+										        var map = new google.maps.Map(document.getElementById('map'), {
+										          zoom: 4,
+										          center: uluru
+										        });
+										        var marker = new google.maps.Marker({
+										          position: uluru,
+										          map: map
+										        });
+										      }
+										    </script>
+										    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3gEIaUeZYIfOeIDdjhQDtobPsFl_raoc&callback=initMap&language=th" async defer></script>
 										
+										{{-- 	<Map>	 --}}
 									
 							<div class="clearfix"> </div>
 						</div>
