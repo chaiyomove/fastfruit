@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 //     return view('zzzwelcome');
 // });
 
+
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
 
@@ -41,6 +42,12 @@ Route::get('productofrochard/{id}', 'FastFruitController@productofrochard');
  * login required pages
  */
 Route::group(['middleware' => 'auth'], function () {
+	/**
+	 * user
+	 */
+	Route::get('user/{id}/edit', 'FastFruitController@editUser'); 	//edit page
+	Route::patch('user/{id}', 'FastFruitController@updateUser');				//update
+
 	Route::delete('matching', 'FastFruitController@deleteMatching');
 	Route::get('chat', 'FastFruitController@chat');
 	Route::get('userprofile/{id}', 'FastFruitController@userProfile');
@@ -49,7 +56,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('addorchard', 'FastFruitController@postAddOrchard');
 	Route::get('checkgap', 'FastFruitController@checkGap');
 	Route::get('updateorchard', 'FastFruitController@updateOrchard');
-	Route::get('updateuserprofile', 'FastFruitController@updateUserprofile');
 	Route::get('userorchard', 'FastFruitController@userOrchard');
 	// Route::get('userproduct', 'FastFruitController@userProduct');
 	Route::get('userproduct/{id}', 'FastFruitController@userProductDetail');
@@ -59,6 +65,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('usermatching', 'FastFruitController@userMatching');
 	Route::get('useraddadmin', 'FastFruitController@userAddadmin');
 	Route::get('dashboard', 'FastFruitController@dashboard');
+	
 });
 
 

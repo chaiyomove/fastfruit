@@ -16,6 +16,7 @@ use App\Fruit_species;
 use App\Provinces;
 use App\Matchings;
 use App\Admins;
+use App\Users;
 use Auth;
 use DB;
 
@@ -202,10 +203,29 @@ class FastFruitController extends Controller
         return view('EditOrchard');
     }
 
-    public function updateUserprofile()
+    public function editUser($id)
     {
+        $user =  Users::findOrFail($id);
         $provinces = Provinces::all();
-        return view('EditProfile', compact('provinces'));
+        return view('EditProfile', compact('user', 'provinces'));
+    }
+
+    public function updateUser($id)
+    {
+        $input = Request::all();
+        if (array_get($input,'picture')!==NULL){
+            $picture = array_get($input,'picture');
+            if ($picture!=NUll){
+                $picPath = $picture->move(base_path('public_html\images\users'));
+                $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                $input["userPicture"] = $picPath;   
+            }
+        }
+        // return $input;
+        $input['address'] = trim($input['address']);
+        Users::find($id)->update($input);
+        return redirect('dashboard');
+
     }
 
     public function userOrchard()
