@@ -13,7 +13,7 @@ use App\Orchards;
 use App\Orchard_plots;
 use App\Fruits;
 use App\Fruit_species;
-use App\provinces;
+use App\Provinces;
 use App\Matchings;
 use App\Admins;
 use Auth;
@@ -33,7 +33,7 @@ class FastFruitController extends Controller
     public function orchardDetail($id)
     {
         $orchard = Orchards::findOrFail($id);   
-        return view('orchardDetail',compact('orchard'));
+        return view('orcharddetail',compact('orchard'));
     }
 
     public function products()
@@ -45,7 +45,7 @@ class FastFruitController extends Controller
     public function productDetail($id)
     {
         $product = Product_sprints::findOrFail($id);
-        return view('productDetail',compact('product'));
+        return view('productdetail',compact('product'));
     }
 
     public function getMatching()

@@ -27,16 +27,16 @@ Route::get('home', 'HomeController@index');
 
 
 Route::get('orchards', 'FastFruitController@orchards');
-Route::get('orcharddetail', 'FastFruitController@orchardDetailTmp');
+Route::get('orchards/{id}', 'FastFruitController@orchardDetail');
 Route::get('products', 'FastFruitController@products');
 Route::get('products/{id}', 'FastFruitController@productDetail');
-Route::get('productdetail', 'FastFruitController@productDetailTmp');
 Route::get('matching', 'FastFruitController@getMatching')->name('matching.show');
 Route::post('matching', 'FastFruitController@postMatching');
 Route::get('contactus', 'FastFruitController@contactUs');
 Route::get('search', 'FastFruitController@search');
 Route::get('productofrochard/{id}', 'FastFruitController@productofrochard');
-Route::get('orchards/{id}', 'FastFruitController@orchardDetail');
+
+
 /**
  * login required pages
  */
