@@ -363,5 +363,9 @@ class FastFruitController extends Controller
         return Orchards::findOrFail($id);
     }
 
+      public function map()
+    {
+        return view('map');
+    }
 
 }

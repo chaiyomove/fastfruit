@@ -107,7 +107,7 @@
 					                    </button>
 									</td>
 									<td>
-										<a href="">
+										<a href="{{url('map')}}">
 											<button type="button" class="btn btn-warning btn-sm"> 
 										        <h5>
 											    <i class="glyphicon glyphicon-globe">&nbsp;แผนที่</i>
