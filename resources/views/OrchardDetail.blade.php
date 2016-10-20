@@ -107,11 +107,13 @@
 					                    </button>
 									</td>
 									<td>
-										<button type="button" class="btn btn-warning btn-sm"> 
-									        <h5>
-										    <i class="glyphicon glyphicon-globe">&nbsp;แผนที่</i>
-										    </h5>
-					                    </button>
+										<a href="">
+											<button type="button" class="btn btn-warning btn-sm"> 
+										        <h5>
+											    <i class="glyphicon glyphicon-globe">&nbsp;แผนที่</i>
+											    </h5>
+						                    </button>
+						                </a>
 									</td>
 								</tr>
 							</table>
@@ -166,25 +168,7 @@
 										</div>
 									</div>
 
-										{{-- <h1>MAP</h1> --}}
-										<div id="map"></div>
-										    <script>
-										       function initMap() {
-										        var uluru = {lat: -25.363, lng: 131.044};
-										        var map = new google.maps.Map(document.getElementById('map'), {
-										          zoom: 4,
-										          center: uluru
-										        });
-										        var marker = new google.maps.Marker({
-										          position: uluru,
-										          map: map
-										        });
-										      }
-										    </script>
-										    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3gEIaUeZYIfOeIDdjhQDtobPsFl_raoc&callback=initMap"
-    async defer></script>
-
-						{{-- 	<Map>	 --}}
+										
 									
 							<div class="clearfix"> </div>
 						</div>
