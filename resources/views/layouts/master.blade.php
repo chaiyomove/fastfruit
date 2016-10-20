@@ -81,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('userprofile') }}" style="margin-right:30px">
+                            <a href="{{ url('dashboard') }}" style="margin-right:30px">
                                  <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                                  {{ Auth::user()->firstName }}
                             </a>
