@@ -10,6 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!---css -->
 <link href="{{ asset('css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
 <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' />
+<link href="https://fonts.googleapis.com/css?family=Mitr:300" rel="stylesheet" type='text/css'/> 
 <!---css-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
