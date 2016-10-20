@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Follow_user;
 
 class Users extends Authenticatable
 {
@@ -56,5 +57,26 @@ class Users extends Authenticatable
     {
         return $this->hasMany('App\Follow_orchard');
     }
+
+    public function orchardFollowers()
+    {
+        return $this->belongsToMany('App\Users', 'App\Follow_orchard');
+    }
+
+    public function orchardFollowing()
+    {
+        return $this->belongsToMany('App\Users', 'App\Follow_orchard');            
+    }
+
+    public function userFollowers()
+    {
+        return $this->belongsToMany('App\Users', 'follow_user', 'idUser', 'idFollower');
+    }
+
+    public function userFollowings()
+    {
+        return $this->belongsToMany('App\Users', 'follow_user', 'idFollower', 'idUser');        
+    }
+
 
 }

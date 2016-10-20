@@ -65,7 +65,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('usermatching', 'FastFruitController@userMatching');
 	Route::get('useraddadmin', 'FastFruitController@userAddadmin');
 	Route::get('dashboard', 'FastFruitController@dashboard');
-	Route::get('map', 'FastFruitController@map');
 	
 });
 
@@ -74,6 +73,10 @@ Route::group(['middleware' => 'auth'], function () {
  * TEST
  */
 Route::get('test', function(){
+
+	// return App\Follow_user::all();
+	return App\Users::find(24)->userFollowers;
+
 	// $users = App\Users::all();
 	// // return $users;
 	// foreach ($users as $user) {
@@ -81,17 +84,17 @@ Route::get('test', function(){
 	// 	echo "<br><hr>";
 	// }
 
-	$provinces = App\Provinces::first();
-	// return $provinces;
-	// foreach ($provinces as $province) {
-		$users = $provinces->users;
-		foreach ($users as $key => $user) {
-			echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
-			echo "<br><hr>";
-		}
+	// $provinces = App\Provinces::first();
+	// // return $provinces;
+	// // foreach ($provinces as $province) {
+	// 	$users = $provinces->users;
+	// 	foreach ($users as $key => $user) {
+	// 		echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
+	// 		echo "<br><hr>";
+	// 	}
 
-		echo "<br><hr>";
-	// }
+	// 	echo "<br><hr>";
+	// // }
 });
 
 Route::get('upload', function(){

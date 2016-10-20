@@ -207,7 +207,7 @@ class FastFruitController extends Controller
     {
         $user =  Users::findOrFail($id);
         $provinces = Provinces::all();
-        return view('EditProfile', compact('user', 'provinces'));
+        return view('updateuser', compact('user', 'provinces'));
     }
 
     public function updateUser($id)
@@ -363,9 +363,5 @@ class FastFruitController extends Controller
         return Orchards::findOrFail($id);
     }
 
-      public function map()
-    {
-        return view('map');
-    }
 
 }
