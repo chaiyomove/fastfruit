@@ -113,7 +113,6 @@ class FastFruitController extends Controller
 
         }
 
-
         Matchings::create($input);
         // dd($input);
         return redirect('matching');
@@ -148,7 +147,6 @@ class FastFruitController extends Controller
     // {
     //     return view('FristLogin');
     // }
-
 
     public function getAddOrchard()
     {
@@ -196,7 +194,6 @@ class FastFruitController extends Controller
     {
         return view('checkgap');
     }
-
 
     public function updateOrchard()
     {
@@ -368,5 +365,9 @@ class FastFruitController extends Controller
         return Orchards::findOrFail($id);
     }
 
+    public function map()
+    {
+        return view('map');
+    }
 
 }
