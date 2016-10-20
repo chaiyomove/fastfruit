@@ -89,17 +89,17 @@
 										<img src="images/t1.png" width="40%" style="float: left;" />
 									</div>
 									<div>
-										<p style="font-size: x-large; float: right;">สุเมธ เบ็ญจวรรณ์</p>
+										<p style="font-size: x-large; float: right;">{{Auth::user()->firstName}}&nbsp;{{Auth::user()->lastName}}</p>
 									</div>
 									<br><br><br><br>							
 									<div class="testmonial-text">
-										<a href="AddOrchard.html" class="btn btn-info btn-sm" style="float: right;">
+										<a href="{{url('addorchard')}}" class="btn btn-info btn-sm" style="float: right;">
 						          			<h4><span class="glyphicon glyphicon-plus-sign"></span> เพิ่มสวน</h4>
 						       		 	</a>   					
 									</div>
 									<br><br>
 									<div class="testmonial-text">
-										<a href="EditProfile.html" class="btn btn-info btn-sm" style="float: right;">
+										<a href="{{url('updateuserprofile')}}" class="btn btn-info btn-sm" style="float: right;">
 					          				<h4><span class="glyphicon glyphicon-cog"></span> แก้ไขโปรไฟล์ของคุณ</h4>
 					        			</a>      					
 									</div>	
