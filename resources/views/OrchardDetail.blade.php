@@ -1,7 +1,7 @@
 @extends('layouts/master')
 @section('content')
 
- <link rel="stylesheet" href="{{asset('css/main.css')}}">
+ 	<link rel="stylesheet" href="{{asset('css/main.css')}}">
 
 	<script src="{{ asset('js/responsiveslides.min.js') }}"></script>
 		 <script>
@@ -31,8 +31,14 @@
 	</script>
 	<script>
 
-		function open_map() {
-		document.getElementById('map').style.display = "inherit";
+		function open_map() 
+		{
+			if (document.getElementById('map').style.visibility == "hidden"){
+				document.getElementById('map').style.visibility = "visible";	
+			} else {
+				document.getElementById('map').style.visibility = "hidden";					
+			}
+			
 		}
 		
 	</script>
@@ -174,8 +180,6 @@
 									</div>
 
 										{{-- <h1>MAP</h1> --}}
-										<div id="map" style="display: none;">
-										</div>
 										    <script>
 										       function initMap() {
 										        var uluru = {lat: -25.363, lng: 131.044};
@@ -189,7 +193,12 @@
 										        });
 										      }
 										    </script>
+										    {{-- <div id="map1" style="visibility: hidden;"> --}}
+										    <div id="map" style="visibility: hidden;"">
 										    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3gEIaUeZYIfOeIDdjhQDtobPsFl_raoc&callback=initMap&language=th" async defer></script>
+										   
+											</div>
+											</div>
 										
 										{{-- 	<Map>	 --}}
 									
