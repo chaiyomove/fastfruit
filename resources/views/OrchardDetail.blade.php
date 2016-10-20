@@ -1,6 +1,8 @@
 @extends('layouts/master')
 @section('content')
 
+ <link rel="stylesheet" href="{{asset('css/main.css')}}">
+
 	<script src="{{ asset('js/responsiveslides.min.js') }}"></script>
 		 <script>
 			$(function () {
@@ -164,8 +166,21 @@
 										</div>
 									</div>
 
+										{{-- <h1>MAP</h1> --}}
+										<div id="map"></div>
+										    <script>
+										      var map;
+										      function initMap() {
+										        map = new google.maps.Map(document.getElementById('map'), {
+										          center: {lat: -34.397, lng: 150.644},
+										          zoom: 8
+										        });
+										      }
+										    </script>
+										    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3gEIaUeZYIfOeIDdjhQDtobPsFl_raoc&callback=initMap"
+    async defer></script>
 
-								
+						{{-- 	<Map>	 --}}
 									
 							<div class="clearfix"> </div>
 						</div>
