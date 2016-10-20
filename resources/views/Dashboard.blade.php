@@ -72,7 +72,7 @@
                     	<a href="#bookmark" data-toggle="tab"><h4>สวนที่ติดดาว</h4></a>
                     </li>
                     <li>
-                    	<a href="#bookmark" data-toggle="tab"><h4>สวนของฉัน</h4></a>
+                    	<a href="#orchard" data-toggle="tab"><h4>สวนของฉัน</h4></a>
                     </li>
                 </ul>
             </div>
@@ -452,6 +452,35 @@
 			            </div>
 			            </div>
                     </div>
+
+                    <div class="tab-pane" id="orchard">
+                    	<br>
+	                	<p class="lead">&nbsp;&nbsp;&nbsp;สวนที่ติดตาม</p>
+			            <div class="row">
+			            <div class="col-md-11">
+			            <div class="x_panel tile overflow_hidden">
+			            <div class="x_content">
+			                <div class="row">
+				                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+				                    <div class="btn-toolbar">
+				                        <div class="btn-group">
+								            <button class="btn btn-info active" type="button">1</button>
+								            <button class="btn btn-info" type="button">2</button>
+								            <button class="btn btn-info" type="button">3</button>
+								            
+								        </div>
+				                    </div>
+				                </div>
+				                <br>
+				                <div class="clearfix"></div>
+				                <br>
+			                </div>
+		                </div>
+		                </div>
+				        </div>
+				        </div>
+                    </div>
+
                 </div>
             </div>
 
