@@ -88,27 +88,24 @@
 									<div class="testmonial-img">
 										<img src="{{asset(Auth::user()->userPicture)}}" width="40%" style="float: left; border-radius: 50%;" />
 									</div>
-									<div>
+									<div style="width: 50%; float: right; text-align: right;">
 										{{-- name --}}
-										<p style="font-size: x-large; float: right;">{{Auth::user()->firstName}}&nbsp;{{Auth::user()->lastName}}</p>
+										<p style="font-size: x-large;">{{Auth::user()->firstName}}&nbsp;{{Auth::user()->lastName}}</p>
 										{{-- address --}}
-										<p style="font-size: x-large; float: right;">{{Auth::user()->address}}</p>
+										<p style="font-size: medium; ">{{Auth::user()->address}}</p>
 										{{-- province --}}
-										<p style="font-size: x-large; float: right;">{{Auth::user()->province->provinceName}}</p>			
-									</div>
-									<br><br><br><br>							
-									<div class="testmonial-text">
-										<a href="{{url('addorchard')}}" class="btn btn-info btn-sm" style="float: right;">
-						          			<h4><span class="glyphicon glyphicon-plus-sign"></span> เพิ่มสวน</h4>
-						       		 	</a>   					
-									</div>
-									<br><br>
-									<div class="testmonial-text">
-										<a href="{{url('user/' . Auth::user()->id . '/edit')}}" class="btn btn-info btn-sm" style="float: right;">
-					          				<h4><span class="glyphicon glyphicon-cog"></span> แก้ไขโปรไฟล์ของคุณ</h4>
-					        			</a>      					
-									</div>	
-										
+										<p style="font-size: medium; ">{{Auth::user()->province->provinceName}}</p>
+
+										<div style="margin-top: 15px">
+											<a href="{{url('addorchard')}}" class="btn btn-info btn-sm" style="float: right;">
+							          			<h4><span class="glyphicon glyphicon-plus-sign"></span> เพิ่มสวน</h4>
+							       		 	</a> 
+							       		 	<a href="{{url('user/' . Auth::user()->id . '/edit')}}" class="btn btn-info btn-sm" style="float: right;">
+						          				<h4><span class="glyphicon glyphicon-cog"></span> แก้ไขโปรไฟล์ของคุณ</h4>
+						        			</a>  					
+										</div>		
+									</div>					
+							
 									<div class="clearfix"> </div>
 								</div>
 							</div>
