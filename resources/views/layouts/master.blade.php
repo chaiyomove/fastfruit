@@ -75,12 +75,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="email">
                     <ul>
                         <li>
-                            <a href="{{ url('chat') }}" >
-                                <i class="glyphicon glyphicon-comment" aria-hidden="true"></i>
-                                แชท
-                            </a>
-                        </li>
-                        <li>
                             <a href="{{ url('#') }}">
                                 <i class="glyphicon glyphicon-bell" aria-hidden="true"></i>
                                 แจ้งเตือน
@@ -91,16 +85,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                  <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                                  {{ Auth::user()->firstName }}
                             </a>
-                            {{-- <select>
-                                <option value="sumet" onclick="funtion(header('/userprofile'))" selected>{{Auth::user()->firstName}}</option>
-                                <option value="suan1" >สวนเบ็ญจวรรณ์</option>
-                                <option value="suan2" >สวนกุลภัสร์</option>
-                                <option value="suan3" >สวนพุดทรัพย์</option>
-                                <option value="suan4" >สวนสิริจรรยา</option>
-                                <option value="suan5" >สวนรุจิระธราพันธุ์</option>
-                            </select> --}}
-
-
                         </li>
                         <li>
                             <a href="{{ url('logout') }}">
@@ -135,7 +119,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li id="nav-products"><a href="{{ url('products') }}">ดูผลผลิต</a></li>
                         <li id="nav-matching"><a href="{{ url('matching') }}">จับคู่สวน</a></li>
                         <li id="nav-contactus"><a href="{{ url('contactus') }}">ติดต่อเรา</a></li>
-                        <li id="nav-addorchard"><a href="{{ url('addorchard')}}">เพิ่มสวน</a></li>
+                        @if (Auth::check())
+                            <li id="nav-addorchard"><a href="{{ url('addorchard')}}">เพิ่มสวน</a></li>
+                        @endif
                     </ul>
                     <form method="GET" action="{{ url('search') }}" class="navbar-form navbar-right" role="search">
                     {{ csrf_field() }}
@@ -199,7 +185,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="{{ asset('matching') }}">จับคู่</a></li>
                         <li><a href="{{ asset('register') }}">สมัครสมาชิก</a></li>
                         <li><a href="{{ asset('login') }}">เข้าสู่ระบบ</a></li>
-                        <li><a href="{{ asset('chat') }}">แชท</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-grid">
