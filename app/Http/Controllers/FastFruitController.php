@@ -19,6 +19,7 @@ use App\Admins;
 use App\Users;
 use Auth;
 use DB;
+use App\Http\Requests\AddOrchardRequest;
 
 
 
@@ -39,7 +40,7 @@ class FastFruitController extends Controller
     
     public function createPlot($id)
     {
-        $provinces = Provinces::all();
+        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
         $orchard = Orchards::findOrFail($id);
@@ -81,7 +82,7 @@ class FastFruitController extends Controller
     {
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
-        $provinces = Provinces::all();
+        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
         
 
         // $matchings = DB::table('Matchings')->where('idUser',Auth::user()->id);
@@ -178,11 +179,11 @@ class FastFruitController extends Controller
 
     public function getAddOrchard()
     {
-        $provinces = Provinces::all();
+        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
         return view('AddOrchard', compact('provinces'));
     }
 
-    public function postAddOrchard()
+    public function postAddOrchard(AddOrchardRequest $request)
     {
         $input = Request::all();
         $input['idProvince'] = Auth::user()->idProvince;
@@ -200,16 +201,7 @@ class FastFruitController extends Controller
         }
 
         // return dd($input);
-        // return dd($input2);
         $insertedOrd = Orchards::create($input);
-        
-        // $input2['_token'] = array_get($input, '_token');
-        $input2['plotNumber'] = array_get($input, 'plotNumber');
-        $input2['idPlotStatus'] = array_get($input, 'idPlotStatus');
-        $input2['idOrchard'] = $insertedOrd->idOrchard;
-        // return dd($input2);
-
-        Orchard_plots::create($input2);
         
         $admin = new Admins();
         $admin->idUser = Auth::user()->id;
@@ -231,7 +223,7 @@ class FastFruitController extends Controller
     public function editUser($id)
     {
         $user =  Users::findOrFail($id);
-        $provinces = Provinces::all();
+        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
         return view('updateuser', compact('user', 'provinces'));
     }
 
@@ -352,7 +344,7 @@ class FastFruitController extends Controller
         $search = Request::get('search');
         $orchards = Orchards::latest()->get();
         $fruitSpecies = fruit_species::all();
-        $provinces = provinces::all();
+        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
         $matchedOrcs = array(); 
 
         foreach ($orchards as $key => $orchard) {

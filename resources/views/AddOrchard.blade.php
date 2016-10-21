@@ -36,6 +36,7 @@
 					<h3>เพิ่มสวน</h3><br>
 					<form method="POST" enctype="multipart/form-data" action="{{url('/addorchard')}}">
 					{{ csrf_field() }}
+					<input type="hidden" name="idUser" value="{{Auth::user()->id}}">
 					<div class="row">
 						<div class="col-md-2">
 						</div>
@@ -43,7 +44,7 @@
 							<h4>ชื่อสวน : </h4>
 						</div>
 						<div class="col-md-4">
-							<input type="text" name="nameOrchard" class="form-control"></input>
+							<input type="text" name="nameOrchard" class="form-control" value="{{old('nameOrchard')}}"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -56,10 +57,10 @@
 							<h4>รายละเอียดสวน : </h4>
 						</div>
 						<div class="col-md-4">
-							<textarea name="description" class="form-control" style="resize: none;" rows="6"></textarea>
+							<textarea name="description" class="form-control" style="resize: none;" rows="6">{{old('description')}}</textarea>
 						</div>
 						<div class="col-md-4">
-						</div>
+						</div>	
 					</div>
 					<br>
 					<div class="row">
@@ -69,7 +70,7 @@
 							<h4>พื้นที่สวน : </h4>
 						</div>
 						<div class="col-md-2">
-							<input type="text" name="area" class="form-control" placeholder="หน่วยเป็นไร่"></input>
+							<input type="text" name="area" class="form-control" placeholder="หน่วยเป็นไร่" value="{{old('area')}}"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -102,7 +103,7 @@
 							<h4>ที่อยู่สวน : </h4>
 						</div>
 						<div class="col-md-4">
-							<textarea name="address" class="form-control" style="resize: none;" rows="2"></textarea>
+							<textarea name="address" class="form-control" style="resize: none;" rows="2">{{old('address')}}</textarea>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -118,7 +119,11 @@
 							<select class="form-control" name="idProvince">
 						 		<option value="0" selected>กรุณาเลือก</option>	
 						 		@foreach ($provinces as $province)
-							 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+						 			@if ($province->idProvince == old('idProvince'))
+							 			<option value="{{$province->idProvince}}" selected>{{$province->provinceName}}</option>				
+						 			@else
+							 			<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+						 			@endif
 						 		@endforeach		 			 	   	
 							</select>
 						</div>
@@ -127,39 +132,7 @@
 						<div class="col-md-2">
 						</div>
 					</div>
-					<br>
-					<div class="row">
-						<div class="col-md-2">
-						</div>
-						<div class="col-md-2">
-							<h4>รหัสแปลง : </h4>
-						</div>
-						<div class="col-md-4">
-							<input type="text" name="plotNumber" class="form-control"></input>
-						</div>
-						<div class="col-md-4">
-						</div>
-					</div>	
-					<br>
-					<div class="row">
-						<div class="col-md-2">
-						</div>
-						<div class="col-md-2">
-							<h4>GAP : </h4>
-						</div>
-						<div class="col-md-4">
-							<label class="radio-inline">
-								<input type="radio" name="idPlotStatus" value="2">
-								มี GAP
-							</label>
-							<label class="radio-inline">
-								<input type="radio" name="idPlotStatus" value="3">
-								ไม่มี GAP
-							</label>							
-						</div>
-						<div class="col-md-4">
-						</div>
-					</div>			
+					<br>			
 					<div class="row">
 						<div class="col-md-2">
 						</div>
