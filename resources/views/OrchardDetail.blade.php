@@ -113,18 +113,34 @@
 										</a>
 									</td>
 									<td>
+										<button type="button" class="btn btn-warning btn-sm" id="openmap" onclick="open_map()"> 
+										    <h5>
+											<i class="glyphicon glyphicon-globe">&nbsp;แผนที่</i>
+											</h5>
+						                </button>
+									</td>
+									<td>
 										<button type="button" class="btn btn-success btn-sm"> 
 									        <h5>
 										    <i class="glyphicon glyphicon-ok">&nbsp;ติดตาม</i>
 										    </h5>
 					                    </button>
+									</td>									
+								</tr>
+								<tr>
+									<td>
+										<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
+									        <h5>
+										    <i class="glyphicon glyphicon-eye-open">&nbsp;ดูแปลง</i>
+										    </h5>
+					                    </button>
 									</td>
 									<td>
-											<button type="button" class="btn btn-warning btn-sm" id="openmap" onclick="open_map()"> 
-										        <h5>
-											    <i class="glyphicon glyphicon-globe">&nbsp;แผนที่</i>
-											    </h5>
-						                    </button>
+										<button type="button" class="btn btn-success btn-sm" style="margin-top: 10px"> 
+									        <h5>
+										    <i class="glyphicon glyphicon-plus">&nbsp;เพิ่มแปลง</i>
+										    </h5>
+					                    </button>
 									</td>
 								</tr>
 							</table>
@@ -193,12 +209,12 @@
 										        });
 										      }
 										    </script>
-										    {{-- <div id="map1" style="visibility: hidden;"> --}}
+										    
 										    <div id="map" style="visibility: hidden;"">
 										    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3gEIaUeZYIfOeIDdjhQDtobPsFl_raoc&callback=initMap&language=th" async defer></script>
 										   
 											</div>
-											</div>
+											
 										
 										{{-- 	<Map>	 --}}
 									

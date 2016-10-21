@@ -113,6 +113,15 @@
 								    </td>
 								</form>
 								</tr>
+								<tr>
+									<td>
+										<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
+									        <h5>
+										    <i class="glyphicon glyphicon-eye-open">&nbsp;ดูแปลง</i>
+										    </h5>
+					                    </button>
+									</td>									
+								</tr>
 							</table>
 								
 					            
