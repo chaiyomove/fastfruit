@@ -474,45 +474,46 @@
 				                <br>
 				                <div class="clearfix"></div>
 				                <br>
-				                <div class="container">
-				                <div class="col-md-4 profile_details">
-				                    <div class="well profile_view" style="padding: 0px">
-				                        <div class="col-sm-12">
-					                        <div class="left col-xs-7">
-					                            <p style="font-size: 20px">สวนปาณระวี</p>
-					                            <p><strong>รายละเอียด: </strong></p>
-					                            <p>ขายมะม่วงเขียวเสวย</p>
-					                            <p>ลูกใหญ่ ผลสวย</p>
-					                        </div>
-									        <div class="right col-xs-5">
-									            <img src="images/a5.jpg" alt="" class="img-circle img-responsive">
-									        </div>
-				                        </div>
-				                        <div class="col-xs-12 bottom">
-				                        	<div class="emphasis" style="float: left; margin-left: 20px">
-					                            <button type="button" class="btn btn-info btn-xs"> 
-					                            	<i class="glyphicon glyphicon-user"> </i>
-						                            <i class="glyphicon glyphicon-comment"> </i>
-					                            </button>					                              
-					                        </div>                            
-				                            <div class="emphasis" style="float: right; margin-right: 15px">
-				                              	<button type="button" class="btn btn-warning btn-xs"> 
-					                              	<i class="fa fa-star"> </i> ติดดาว
-				                              	</button>
-				                              	<button type="button" class="btn btn-primary btn-xs">
-				                                	<i class="fa fa-user"> </i> ดูข้อมูล
-				                              	</button>
-				                            </div>
-				                        </div>
-				                    </div>
-				                </div>
-			                </div>
+				                @foreach ($orchards as $key => $orchard)
+				@if ($key%4 == 0)	
+					<div class="feature-section" style="padding:5em 0em 0em 0em">
+						<div class="container">
+							<div class="feature-grids">
+				@endif
+
+				<div class="col-md-3 feature-grid" >
+					<div class="frame">
+					@if ($key<=10)
+						<img src="{{asset('images/new.png')}}" style="position: absolute; margin-left: -5px; margin-top: -2px">
+					@endif
+					@foreach ($orchard->orchardPlots as $orchardPlot)
+						@if ($orchardPlot->idPlotStatus == 1)
+							<img src="{{asset('images/gap.png')}}" style="position: absolute; margin-left: 2px; margin-top: 115px">
+						@endif
+					@endforeach
+						<img src="{{asset($orchard->picture1)}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+						<h5 class="space">{{$orchard->nameOrchard}}</h5>
+						<p class="space">{{$orchard->description}}</p>		
+						<a href="{{'orchards/'.$orchard->idOrchard}}" class="space">
+							<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+						</a>
+					</div>
+				</div>
+				
+				@if ((count($orchards)===$key+1) || $key%4 == 3)
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+
+				@endif
+
 		                </div>
 		                </div>
 				        </div>
 				        </div>
                     </div>
-
+@endforeach
                 </div>
             </div>
 
