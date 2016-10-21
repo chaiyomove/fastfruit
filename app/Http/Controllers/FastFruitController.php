@@ -398,4 +398,15 @@ class FastFruitController extends Controller
         return view('map');
     }
 
+     public function plots($id)
+    {
+        $plots=Orchards::findOrFail($id)->orchardPlots;
+        return view('plot',compact('plots'));
+    }
+
+     public function plotsDetail($id)
+    {
+        $plot=Orchard_plots::findOrFail($id);
+        return view('plotDetail',compact('plot'));
+    }
 }

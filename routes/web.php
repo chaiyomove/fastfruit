@@ -36,6 +36,9 @@ Route::post('matching', 'FastFruitController@postMatching');
 Route::get('contactus', 'FastFruitController@contactUs');
 Route::get('search', 'FastFruitController@search');
 Route::get('productofrochard/{id}', 'FastFruitController@productofrochard');
+Route::get('plots/{id}', 'FastFruitController@plots');
+Route::get('plots/{id}/show', 'FastFruitController@plotsDetail');
+
 
 
 /**

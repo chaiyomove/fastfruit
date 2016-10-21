@@ -129,11 +129,13 @@
 								</tr>
 								<tr>
 									<td>
+										<a href="{{url('plots',[$orchard->idOrchard])}}">
 										<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
 									        <h5>
 										    <i class="glyphicon glyphicon-eye-open">&nbsp;ดูแปลง</i>
 										    </h5>
 					                    </button>
+					                    </a>
 									</td>
 									<td>
 										<a href="{{url('plot/' .$orchard->idOrchard. '/create')}}">
