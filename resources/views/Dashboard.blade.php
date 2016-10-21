@@ -455,7 +455,7 @@
 
                     <div class="tab-pane" id="orchard">
                     	<br>
-	                	<p class="lead">&nbsp;&nbsp;&nbsp;สวนที่ติดตาม</p>
+	                	<p class="lead">&nbsp;&nbsp;&nbsp;สวนของฉัน</p>
 			            <div class="row">
 			            <div class="col-md-11">
 			            <div class="x_panel tile overflow_hidden">
@@ -474,6 +474,38 @@
 				                <br>
 				                <div class="clearfix"></div>
 				                <br>
+				                <div class="container">
+				                <div class="col-md-4 profile_details">
+				                    <div class="well profile_view" style="padding: 0px">
+				                        <div class="col-sm-12">
+					                        <div class="left col-xs-7">
+					                            <p style="font-size: 20px">สวนปาณระวี</p>
+					                            <p><strong>รายละเอียด: </strong></p>
+					                            <p>ขายมะม่วงเขียวเสวย</p>
+					                            <p>ลูกใหญ่ ผลสวย</p>
+					                        </div>
+									        <div class="right col-xs-5">
+									            <img src="images/a5.jpg" alt="" class="img-circle img-responsive">
+									        </div>
+				                        </div>
+				                        <div class="col-xs-12 bottom">
+				                        	<div class="emphasis" style="float: left; margin-left: 20px">
+					                            <button type="button" class="btn btn-info btn-xs"> 
+					                            	<i class="glyphicon glyphicon-user"> </i>
+						                            <i class="glyphicon glyphicon-comment"> </i>
+					                            </button>					                              
+					                        </div>                            
+				                            <div class="emphasis" style="float: right; margin-right: 15px">
+				                              	<button type="button" class="btn btn-warning btn-xs"> 
+					                              	<i class="fa fa-star"> </i> ติดดาว
+				                              	</button>
+				                              	<button type="button" class="btn btn-primary btn-xs">
+				                                	<i class="fa fa-user"> </i> ดูข้อมูล
+				                              	</button>
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
 			                </div>
 		                </div>
 		                </div>
