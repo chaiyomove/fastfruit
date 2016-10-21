@@ -476,9 +476,8 @@
 				                <br>
 				                @foreach ($orchards as $key => $orchard)
 				@if ($key%4 == 0)	
-					<div class="feature-section" style="padding:5em 0em 0em 0em">
+					
 						<div class="container">
-							<div class="feature-grids">
 				@endif
 
 				<div class="col-md-3 feature-grid" >
@@ -502,9 +501,8 @@
 				
 				@if ((count($orchards)===$key+1) || $key%4 == 3)
 								<div class="clearfix"></div>
-							</div>
 						</div>
-					</div>
+					
 
 				@endif
 

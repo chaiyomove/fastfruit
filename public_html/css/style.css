@@ -33,7 +33,7 @@ ul{
 body{
 	padding:0 0;
 	margin:0 0; 
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 }
 .header-section {
         background: #333d47;
@@ -112,7 +112,7 @@ body{
     font-size: 1.3em;
     text-decoration: none;
 	color: #FFFFFF;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 	font-style: italic;
 }
 .navbar-brand h1 a span {
@@ -160,7 +160,7 @@ div#bs-example-navbar-collapse-1 {
 .navbar-nav > li > a {
     padding: 1.2em .8em;
     font-size: 1.15em;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #fff;
@@ -253,7 +253,7 @@ div#bs-example-navbar-collapse-1 {
     font-size: 2em;
     text-transform: capitalize;
     color: #3A3B3C;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 }
 .caption p{
 	font-size: 1em;
@@ -264,7 +264,7 @@ div#bs-example-navbar-collapse-1 {
 .callbacks_tabs a:after {
 	content: "\f111";
 	font-size: 0;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 	visibility: visible;
 	display: block;
 	height: 20px;
@@ -361,7 +361,7 @@ a.button:hover {
     font-size: 3em;
     text-transform: capitalize;
 	 text-align: center;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 	 color: #000;
 }
 .place-grids {
@@ -370,7 +370,7 @@ a.button:hover {
 .place-grid h5,.place-grid1 h5 {
     font-size: 1.3em;
     text-transform: capitalize;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 	color: #000;
 }
 .sel {
@@ -404,7 +404,7 @@ a.button:hover {
 .friend-grid h4 {
     font-size: 1.5em;
     padding: .8em 0 .5em 0;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .friend-grid img:hover {
@@ -445,7 +445,7 @@ a.button:hover {
     font-size: 2.5em;
     text-transform: capitalize;
     text-align: center;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .offer-grids {
@@ -453,7 +453,7 @@ a.button:hover {
 }
 .offer-grid h4 a {
     font-size: 1.1em;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
     color: #000;
     margin-bottom: .5em;
     display: block;
@@ -462,13 +462,13 @@ a.button:hover {
 .offer-right h5 {
 	font-size: 1.2em;
     padding: .5em 0 .5em .5em;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
     color: #fff;
     background: #34ABE2;
 }
 .offer-right h5 label {
     font-size: 1.2em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
 }
 .offer-right h5 span {
     font-size: .75em;
@@ -526,7 +526,7 @@ img.zoom-img {
 }
 .feature-grid h5{
     font-size: 1.2em;
-  font-family: 'Mitr', sans-serif;
+  font-family: 'Prompt', sans-serif;
     color: #000;
     font-style: italic;
 	padding: .5em 0 .2em 0;
@@ -562,13 +562,13 @@ img.zoom-img {
     background: #34ABE2;
     padding: .8em 0;
     font-size: 1.8em;
-  font-family: 'Mitr', sans-serif;
+  font-family: 'Prompt', sans-serif;
     color: #fff;
 }
 .membership1 h5 {
     font-size: 2.5em;
     color: #000;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 }
 .membership1 {
     padding: 2em 0 0 0;
@@ -610,7 +610,7 @@ ul.member {
     font-size: 1.1em;
     text-decoration: none;
     margin-top: 1em;
-  font-family: 'Mitr', sans-serif;
+  font-family: 'Prompt', sans-serif;
     display: block;
     float: left;
 }
@@ -628,7 +628,7 @@ div#owl-demo {
     font-size: 1.5em;
     color: #fff;
     margin-bottom: .5em;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 }
 .footer-grid p {
     font-size: .96em;
@@ -683,7 +683,7 @@ div#owl-demo {
     font-size: 3em;
     text-transform: capitalize;
     text-align: center;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #fff;
 }
 /**about**/
@@ -693,7 +693,7 @@ div#owl-demo {
 .about-section h3 {
     font-size: 2.5em;
     text-transform: capitalize;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 	margin-bottom: .5em;
 }
@@ -711,7 +711,7 @@ div#owl-demo {
 }
 .about-right h5,.about-right1 h5{
 	font-size: 1.2em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .about-right p {
@@ -773,7 +773,7 @@ div#owl-demo {
 }
 .aboutbottom-right h5 {
     font-size: 1.2em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .about5 {
@@ -787,7 +787,7 @@ div#owl-demo {
 }
 .about-bottom2 h5 {
     font-size: 1.2em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .about-bottom2 a {
@@ -817,7 +817,7 @@ div#owl-demo {
 }
 .agent-right h4{
 	font-size: 1.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .agent-right ul li {
@@ -872,7 +872,7 @@ a.button3 {
 }
 .forsale-grids h4 a {
     font-size: 1.1em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
     margin-bottom: .5em;
     display: block;
@@ -889,7 +889,7 @@ a.button3 {
 .forsale-right h5 {
     font-size: 1.2em;
     padding: .5em 0 .5em .5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #fff;
     background: #34ABE2;
 }
@@ -959,7 +959,7 @@ a.button4 {
 .services-grid h4 {
     font-size: 1.5em;
     padding: .8em 0 .5em 0;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 	text-transform: capitalize;
     text-align: center;
@@ -1026,7 +1026,7 @@ a.button4 {
 .main-service h3,.operation-consulting h3 {
     font-size: 2.5em;
     text-transform: capitalize;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .service-grids {
@@ -1043,7 +1043,7 @@ a.button4 {
 .service-grid h4 {
     font-size: 1.5em;
     padding: .8em 0 .5em 0;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 	line-height: 1.5em;
 }
@@ -1129,7 +1129,7 @@ a.button4 {
 }
 .operation-right h4{
 	font-size: 1.5em;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
     color: #000;
 	text-align: left;
 }
@@ -1150,7 +1150,7 @@ a.button4 {
     font-size: 2.5em;
     text-transform: capitalize;
     text-align: center;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .test-list {
@@ -1203,7 +1203,7 @@ a.button4 {
 }
 .blog h3 a {
     font-size: 1em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
     text-decoration: none;
 }
@@ -1213,7 +1213,7 @@ a.button4 {
 }
 .blog-grid1 h3,.blog h3 {
     font-size: 2.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .blog-grid1 {
@@ -1280,7 +1280,7 @@ a.button5 {
 .tags h4{
 	font-size: 1.5em;
     padding: .8em 0 .5em 0;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
 	color: #000;
 }
 .tags {
@@ -1288,7 +1288,7 @@ a.button5 {
 }
 .history h4,.rules h4,.traditions h4{
 	font-size: 1.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
 	color: #000;
 }
 .history p {
@@ -1394,7 +1394,7 @@ p.trad {
 }
 .coment-form h3{
     font-size: 2.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 	margin-bottom: .8em;
 }
@@ -1413,7 +1413,7 @@ p.trad {
     font-size: 2em;
     text-transform: capitalize;
     color: #fff;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
 }
 .price-bottom h5 {
     font-size: 1.8em;
@@ -1528,7 +1528,7 @@ a.view:hover {
 }
 .profile-left h4 ,.about-me h4{
     font-size: 2em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .profile-left p {
@@ -1544,7 +1544,7 @@ a.view:hover {
 }
 .profile-right h5 {
     font-size: 1.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #fff;
     background: #2DA9E1;
     padding: .8em 1em;
@@ -1566,7 +1566,7 @@ a.view:hover {
 }
 .contact-me h4{
     font-size: 2em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 	margin-bottom:1em;
 }
@@ -1639,7 +1639,7 @@ a.view:hover {
 .idxpres-right h5 {
     font-size: 1.2em;
     padding: .5em 0 .5em .5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #fff;
     background: #34ABE2;
 }
@@ -1731,7 +1731,7 @@ ul.bottom-right {
 }
 .note h4 {
     font-size: 1.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 	margin-bottom: .5em;
 }
@@ -1740,7 +1740,7 @@ ul.bottom-right {
 }
 .video h4 {
     font-size: 1.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #fff;
     background-color: #faa43d;
     padding: 1em;
@@ -1751,7 +1751,7 @@ ul.bottom-right {
 }
 .similar-grid h5,.feature-top h5,.forsale-grid1 h5{
     font-size: 1.2em;
-  font-family: 'Mitr', sans-serif;
+  font-family: 'Prompt', sans-serif;
     color: #000;
     font-style: italic;
 	padding: .5em 0 .2em 0;
@@ -1761,7 +1761,7 @@ ul.bottom-right {
 }
 .similar-grids h4 {
     font-size: 1.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
     margin:0 0 .5em .5em;
 	text-transform: capitalize;
@@ -1772,7 +1772,7 @@ ul.bottom-right {
 }
 .properties-top h4,.properties-middle h4,.feature h4{
 	font-size: 1.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #fff;
     padding: 1em 0;
     background: #FAA43D;
@@ -1826,7 +1826,7 @@ a.button2 {
 }
 .send-message h5{
     font-size: 1.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
     margin-bottom: .5em;
 }
@@ -1894,7 +1894,7 @@ a.button2 {
 .yourplace h5,.yourplace-grid h5 {
     font-size: 1.1em;
     text-transform: capitalize;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 	color: #777;
 }
 .sel2 {
@@ -2050,7 +2050,7 @@ li.list-group-item1 {
 	margin-bottom: 1em;
     color: #000;
     text-transform: capitalize;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
   border-top: none !important;
@@ -2280,7 +2280,7 @@ li.list-group-item1 {
 }
 .contact-grid h5,.agent-info h5{
     font-size: 1.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .contact-grid  p {
@@ -2291,12 +2291,12 @@ li.list-group-item1 {
 }
 .contact-grid1 h4{
     font-size: 1.5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 }
 .agent-info h6{
     font-size: 1.1em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #000;
 	padding-top: .5em;
 }
@@ -2346,7 +2346,7 @@ li.list-group-item1 {
     font-size: 2.5em;
     text-transform: capitalize;
     text-align: center;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
     color: #faa43d;
 }
 .login-right input[type="text"] ,.login-right input[type="password"] {
@@ -2359,7 +2359,7 @@ li.list-group-item1 {
     outline: none;
     font-size: 14px;
     margin-top: 20px;
-   font-family: 'Mitr', sans-serif;
+   font-family: 'Prompt', sans-serif;
 }
 .login-right h4{
 	color:#C53743;
@@ -2387,7 +2387,7 @@ li.list-group-item1 {
   -moz-transition: 0.5s all;
   -o-transition: 0.5s all;
     margin-top: .5em;
-    font-family: 'Mitr', sans-serif;
+    font-family: 'Prompt', sans-serif;
 }
 .login-right input[type="submit"]:hover {
 	background:#faa43d;
@@ -2418,7 +2418,7 @@ li.list-group-item1 {
 .terms h4 {
   	font-size: 1.5em;
   	color:#2da9e1;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 }
 .terms p{
 	font-size: 1em;
@@ -2466,7 +2466,7 @@ ul.terms-start li a i{
 .privacy h4 {
   	font-size: 1.5em;
   	color:#faa43d;
-	font-family: 'Mitr', sans-serif;
+	font-family: 'Prompt', sans-serif;
 }
 .privacy p{
 	font-size: 1em;
