@@ -122,9 +122,14 @@
 									<td>
 										<button type="button" class="btn btn-success btn-sm"> 
 									        <h5>
-										    <i class="glyphicon glyphicon-ok">&nbsp;ติดตาม</i>
+										    <i class="glyphicon glyphicon-plus">&nbsp;ติดตาม</i>
 										    </h5>
-					                    </button>
+					                    </button><!--
+					                    <button type="button" class="btn btn-success btn-sm"> 
+									        <h5>
+										    <i class="glyphicon glyphicon-ok">&nbsp;กำลังติดตาม</i>
+										    </h5>
+					                    </button>-->
 									</td>									
 								</tr>
 								<tr>
