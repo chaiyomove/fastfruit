@@ -142,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     @yield('content')
     
 
-    <!--  Error handle -->
+    <!--  Error handling -->
     @if($errors->any())
         <div class="row">
             <div class="col-md-4"></div>
@@ -165,6 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     @endif
+    <!--  Error handling -->
        
     <!--footer-->
     <div class="footer-section">

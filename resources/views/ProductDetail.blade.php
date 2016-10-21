@@ -81,10 +81,6 @@
 							<div style="margin-top: 15px">
 							<table>
 								<tr>
-								<form method="GET" action="{{url('/orcharddetail')}}">
-									{{ csrf_field() }}
-						            <input type="hidden" name="idProductSprint" value="{{$product->idProductSprint}}">
-
 									<!--<td>
 										<button type="button" class="btn btn-info btn-sm"> 
 											<h5>
@@ -94,15 +90,13 @@
 							            </button>
 									</td>-->
 									<td>
-										{{-- <a href="OrchardDetail-bf.html"> --}}
-								                			
-								            <input type="hidden" name="idOrchard" value="{{$product->orchardPlot->orchard->idOrchard}}">	
+										<a href="{{url('orchards',[$product->orchardPlot->orchard->idOrchard])}}">
 												<button type="submit" class="btn btn-danger btn-sm">
 													<h5>
 													<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
 													</h5>
 												</button>														
-										{{-- </a> --}}
+										</a>
 									</td>
 									<td>
 								        <button type="button" class="btn btn-warning btn-sm"> 
@@ -111,7 +105,6 @@
 									        </h5>
 				                        </button>
 								    </td>
-								</form>
 								</tr>
 								<tr>
 									<td>

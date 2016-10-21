@@ -33,9 +33,9 @@
 									<form  method="POST" action="{{ url('/register') }}">
 									 {{ csrf_field() }}
 										<h3>สมัครสมาชิก</h3>
-										<input type="text" name="firstName" placeholder="ชื่อ" required="">
-										<input type="text" name="lastName" placeholder="นามสกุล" required="">
-										<input type="text" name="email" placeholder="อีเมล์" required="">	
+										<input type="text" name="firstName" placeholder="ชื่อ" required="" value="{{old('firstName')}}">
+										<input type="text" name="lastName" placeholder="นามสกุล" required="" value="{{old('lastName')}}">
+										<input type="text" name="email" placeholder="อีเมล์" required="" value="{{old('email')}}">	
 										<input type="password" name="password" placeholder="รหัสผ่าน" required="">	
 										<input type="password" name="password_confirmation" placeholder="ยืนยันรหัสผ่าน" required="">	
 										
