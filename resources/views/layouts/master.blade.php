@@ -136,6 +136,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </nav>
         </div>
     </div>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!--header-->
 
 

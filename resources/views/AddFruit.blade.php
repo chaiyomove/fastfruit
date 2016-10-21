@@ -45,10 +45,15 @@
 						</div>
 						<div class="col-md-4">
 							<div class="form-group" style="width:40%; float:left">
-							 	<select class="form-control" name="fruit" >
+							 	<select class="form-control" name="idFruit" >
 							 		<option  value="0" selected >เลือกชนิดผลไม้</option>
 							 		@foreach ($fruits as $fruit)
-								 		<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>				
+								 		@if ($fruit->idFruit == old('idFruit'))
+								 			<option value="{{$fruit->idFruit}}" selected>{{$fruit->fruitName}}</option>
+								 		@else
+								 			<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>
+								 		@endif
+								 						
 							 		@endforeach
 							  	</select>
 							</div>
@@ -57,7 +62,11 @@
 							 		<option value="0" selected>เลือกสายพันธุ์</option>
 							 		{{-- <option value="78">มะม่วงมัน</option>	 --}}
 							 		@foreach ($fruitSpecies as $fruitSpecie)
-								 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>
+								 		@if ($fruitSpecie->idFruitSpecie == old('idFruitSpecie'))
+								 			<option value="{{$fruitSpecie->idFruitSpecie}}" selected>{{$fruitSpecie->specieName}}</option>
+								 		@else
+								 			<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>
+								 		@endif
 							 		@endforeach				    	
 							  	</select>	
 							</div>
@@ -102,7 +111,7 @@
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
-								<div class='input-group date' id='datepickerstart'>
+								<div class='input-group date' id='addplot'>
 					                <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" />
 					                <span class="input-group-addon" data-toggle="datepicker">
 					                    <span class="glyphicon glyphicon-calendar"></span>

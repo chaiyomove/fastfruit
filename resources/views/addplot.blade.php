@@ -45,20 +45,29 @@
 						</div>
 						<div class="col-md-4">
 							<div class="form-group" style="width:40%; float:left">
-							 	<select class="form-control" name="fruit" >
-							 		<option  value="0" selected >เลือกชนิดผลไม้</option>
+							 	<select class="form-control" name="idFruit" >
+							 		<option  value="" selected >เลือกชนิดผลไม้</option>
 							 		@foreach ($fruits as $fruit)
-								 		<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>				
+								 		@if ($fruit->idFruit == old('idFruit'))
+								 			<option value="{{$fruit->idFruit}}" selected>{{$fruit->fruitName}}</option>
+								 		@else
+								 			<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>
+								 		@endif
+								 						
 							 		@endforeach
 							  	</select>
 							</div>
 							<div class="form-group" style="width:50%; float:right">
 								<select class="form-control" name="idFruitSpecie">
-							 		<option value="0" selected>เลือกสายพันธุ์</option>
+							 		<option value="" selected>เลือกสายพันธุ์</option>
 							 		{{-- <option value="78">มะม่วงมัน</option>	 --}}
 							 		@foreach ($fruitSpecies as $fruitSpecie)
-								 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>
-							 		@endforeach				    	
+								 		@if ($fruitSpecie->idFruitSpecie == old('idFruitSpecie'))
+								 			<option value="{{$fruitSpecie->idFruitSpecie}}" selected>{{$fruitSpecie->specieName}}</option>
+								 		@else
+								 			<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>
+								 		@endif
+							 		@endforeach					    	
 							  	</select>	
 							</div>
 						</div>
@@ -73,7 +82,7 @@
 							<h4>รหัสแปลง : </h4>
 						</div>
 						<div class="col-md-4">
-							<input type="text" name="plotNumber" class="form-control"></input>
+							<input type="text" name="plotNumber" class="form-control" value="{{old('plotNumber')}}"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -86,7 +95,7 @@
 							<h4>รายละเอียดแปลง : </h4>
 						</div>
 						<div class="col-md-4">
-							<textarea name="description" class="form-control" style="resize: none;" rows="6"></textarea>
+							<textarea name="description" class="form-control" style="resize: none;" rows="6">{{old('plotNumber')}}</textarea>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -99,7 +108,7 @@
 							<h4>พื้นที่แปลง : </h4>
 						</div>
 						<div class="col-md-2">
-							<input type="text" name="area" class="form-control" placeholder="หน่วยเป็นไร่"></input>
+							<input type="text" name="area" class="form-control" placeholder="หน่วยเป็นไร่" value="{{old('area')}}"></input>
 						</div>
 						<div class="col-md-4">
 						</div>

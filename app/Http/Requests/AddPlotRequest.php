@@ -13,7 +13,7 @@ class AddPlotRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,15 @@ class AddPlotRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'plotNumber' => 'min:13',
+            'idOrchard' => 'required|numeric',
+            'description' => 'required',
+            'area' => 'required|numeric',
+            'address' => 'required',
+            'idProvince' => 'required|numeric|not_in:0',
+            'idPlotStatus' => 'required|numeric',
+            'idFruitSpecie' => 'required|numeric',
+            'pictures' => ''
         ];
     }
 }

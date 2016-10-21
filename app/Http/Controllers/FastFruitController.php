@@ -20,6 +20,7 @@ use App\Users;
 use Auth;
 use DB;
 use App\Http\Requests\AddOrchardRequest;
+use App\Http\Requests\AddPlotRequest;
 
 
 
@@ -47,7 +48,7 @@ class FastFruitController extends Controller
         return view('addplot', compact('provinces', 'fruits', 'fruitSpecies', 'id', 'orchard'));
     }    
 
-    public function storePlot()
+    public function storePlot(AddPlotRequest $request)
     {
         $input = Request::all();
         if (array_get($input,'pictures')!==NULL){

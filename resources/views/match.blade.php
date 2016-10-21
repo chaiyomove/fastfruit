@@ -11,6 +11,38 @@
 				</script>
 
 <link href="css/jquery.datepicker.css" rel="stylesheet">
+
+<script>
+
+	$('#idFruit').on('select', function(e){
+		alert("change");
+    	var idFruit = e.target.value;
+
+       //ajax
+
+       $.get('/fruitdropdown?idFruit=' + idFruit, function(data){
+
+           //success data
+           $('#idFruitSpecie').empty();
+
+           $('#idFruitSpecie').append(' Please choose one');
+
+           $.each(data, function(index, subcatObj){
+
+               $('#idFruitSpecie').append(''
+               + subcatObj.specieName + '</option');
+
+
+           });
+
+
+
+       });
+
+
+   });
+</script>
+
 <!-- pop-up -->
 
 
@@ -25,7 +57,7 @@
 			<div class="row">
 				<div class="col-md-1">
 				</div>
-				<form method="post" action="{{url('/matching')}}" data-toggle="validator" role="form" novalidate="true">
+				<form method="post" action="{{url('/matching')}}">
 				{{ csrf_field() }}
 					<div class="col-lg-6 box">
 						<div class="col-md-4">
@@ -34,7 +66,7 @@
 							</p>
 							<br>
 							<div class="form-group" style="width:90%">
-							 	<select class="form-control" name="fruit" >
+							 	<select class="form-control" name="idFruit" id="idFruit">
 							 		<option  value="0" selected >กรุณาเลือก</option>
 							 		@foreach ($fruits as $fruit)
 								 		<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>				
@@ -68,7 +100,7 @@
 							</p>
 							<br>
 							<div class="form-group" style="width:90%">
-							 	<select class="form-control" name="idFruitSpecie">
+							 	<select class="form-control" name="idFruitSpecie" id="idFruitSpecie">
 							 		<option value="0" selected>กรุณาเลือก</option>
 							 		@foreach ($fruitSpecies as $fruitSpecie)
 								 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>		
