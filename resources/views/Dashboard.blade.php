@@ -55,7 +55,7 @@
 	<!--Featured Properties-->
 	<div class="feature-section">
 		<div class="container">
-		<div class="x_panel" style="height: 650px">
+		<div class="x_panel" style="height: auto;">
 		<div class="x_content">
 
 			<div class="col-xs-2">
@@ -184,7 +184,7 @@
                     <br>
                     	<p class="lead">&nbsp;&nbsp;&nbsp;สวนที่ติดตาม</p>
 			            <div class="row">
-			            <div class="col-md-11">
+			            <div class="col-md-12">
 			            <div class="x_panel tile overflow_hidden">
 			            <div class="x_content">
 			                <div class="row">
@@ -340,7 +340,7 @@
                     <br>
                     	<p class="lead">&nbsp;&nbsp;&nbsp;สวนที่ติดดาว</p>
                     	<div class="row">
-			            <div class="col-md-11">
+			            <div class="col-md-12">
 			            <div class="x_panel tile overflow_hidden">
 			            <div class="x_content">
 			                <div class="row">
@@ -457,7 +457,7 @@
                     	<br>
 	                	<p class="lead">&nbsp;&nbsp;&nbsp;สวนของฉัน</p>
 			            <div class="row">
-			            <div class="col-md-11">
+			            <div class="col-md-12">
 			            <div class="x_panel tile overflow_hidden">
 			            <div class="x_content">
 			                <div class="row">
@@ -475,16 +475,14 @@
 				                <div class="clearfix"></div>
 				                <br>
 				                @foreach ($orchards as $key => $orchard)
-				@if ($key%4 == 0)	
+				@if ($key%3 == 0)	
 					
-						<div class="container">
+						<div class="container" style="margin-bottom: 15px">
 				@endif
 
 				<div class="col-md-3 feature-grid" >
 					<div class="frame">
-					@if ($key<=10)
-						<img src="{{asset('images/new.png')}}" style="position: absolute; margin-left: -5px; margin-top: -2px">
-					@endif
+					
 					@foreach ($orchard->orchardPlots as $orchardPlot)
 						@if ($orchardPlot->idPlotStatus == 1)
 							<img src="{{asset('images/gap.png')}}" style="position: absolute; margin-left: 2px; margin-top: 115px">
@@ -499,7 +497,7 @@
 					</div>
 				</div>
 				
-				@if ((count($orchards)===$key+1) || $key%4 == 3)
+				@if ((count($orchards)===$key+1) || $key%3 == 2)
 								<div class="clearfix"></div>
 						</div>
 					
