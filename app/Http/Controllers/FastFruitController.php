@@ -404,6 +404,10 @@ class FastFruitController extends Controller
 
     public function followorchards()
     {
-        return view('');
+        
+        $user = Users::findOrFail(Auth::user()->id);
+        $orchard = Orchards::findOrFail(array_get(Request::all(),'idOrchard'));
+        $user->orchardFollowing()->save($orchard);
+        return redirect('orchards');
     }
 }

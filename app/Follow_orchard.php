@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Follow_orchard extends Model
 {
-     protected $fillable = [
-        'idUser','idOrchard',
+    protected $fillable = [
+      'idUser','idOrchard',
     ];
+
+    protected $table = "follow_orchard";
 
     protected $primaryKey = 'idFollowOrchard';
 
@@ -19,6 +21,6 @@ class Follow_orchard extends Model
 
       public function user()
     {
-    	return $this->belongsTo('App\Users');
+    	return $this->belongsTo('App\Users','idUser');
     }
 }
