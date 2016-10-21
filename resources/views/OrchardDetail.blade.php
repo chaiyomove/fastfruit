@@ -42,6 +42,18 @@
 		}
 		
 	</script>
+	<script>
+		jQuery(function ($) {
+
+    $('#swapFollow').on('click', function () {
+        var $el = $(this),
+            textNode = this.lastChild;
+        $el.find('i').toggleClass('glyphicon-ok glyphicon-plus');
+        textNode.nodeValue = ($el.hasClass('follow') ? 'กำลังติดตาม' : 'ติดตาม')
+        $el.toggleClass('follow');
+    });
+});
+	</script>
     <!-- Custom Theme Style -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
@@ -106,48 +118,45 @@
 									<td>
 										<a href="{{url('productofrochard',[25])}}">
 											<button type="button" class="btn btn-danger btn-sm" > 
-												<h5>
-												<i class="glyphicon glyphicon-eye-open">&nbsp;ผลผลิต</i>
-												</h5>
+												
+												<i class="glyphicon glyphicon-eye-open">&nbsp;</i>ผลผลิต
+												
 							                </button>														
 										</a>
 									</td>
 									<td>
 										<button type="button" class="btn btn-warning btn-sm" id="openmap" onclick="open_map()"> 
-										    <h5>
-											<i class="glyphicon glyphicon-globe">&nbsp;แผนที่</i>
-											</h5>
+										    
+											<i class="glyphicon glyphicon-globe">&nbsp;</i>
+											แผนที่
 						                </button>
 									</td>
 									<td>
-										<button type="button" class="btn btn-success btn-sm"> 
-									        <h5>
-										    <i class="glyphicon glyphicon-plus">&nbsp;ติดตาม</i>
-										    </h5>
-					                    </button><!--
-					                    <button type="button" class="btn btn-success btn-sm"> 
-									        <h5>
-										    <i class="glyphicon glyphicon-ok">&nbsp;กำลังติดตาม</i>
-										    </h5>
-					                    </button>-->
+										<button type="button" class="btn btn-success btn-sm follow"
+										 id="swapFollow"> 
+									        
+										    <i class="glyphicon glyphicon-plus" >&nbsp;</i>
+										    ติดตาม
+										    
+					                    </button>
 									</td>									
 								</tr>
 								<tr>
 									<td>
 										<a href="{{url('plots',[$orchard->idOrchard])}}">
 										<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
-									        <h5>
-										    <i class="glyphicon glyphicon-eye-open">&nbsp;ดูแปลง</i>
-										    </h5>
+									        
+										    <i class="glyphicon glyphicon-eye-open">&nbsp;</i>
+										    ดูแปลง
 					                    </button>
 					                    </a>
 									</td>
 									<td>
 										<a href="{{url('plot/' .$orchard->idOrchard. '/create')}}">
-											<button type="button" class="btn btn-success btn-sm" style="margin-top: 10px"> 
-										        <h5>
-											    <i class="glyphicon glyphicon-plus">&nbsp;เพิ่มแปลง</i>
-											    </h5>
+											<button type="button" class="btn btn-primary btn-sm" style="margin-top: 10px"> 
+										        
+											    <i class="glyphicon glyphicon-plus">&nbsp;</i>
+											    เพิ่มแปลง
 						                    </button>
 					                    </a>
 									</td>

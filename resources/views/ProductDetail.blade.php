@@ -92,26 +92,26 @@
 									<td>
 										<a href="{{url('orchards',[$product->orchardPlot->orchard->idOrchard])}}">
 												<button type="submit" class="btn btn-danger btn-sm">
-													<h5>
-													<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
-													</h5>
+													
+													<span class="glyphicon glyphicon-eye-open">&nbsp;</span>
+													ชมสวน
 												</button>														
 										</a>
 									</td>
 									<td>
 								        <button type="button" class="btn btn-warning btn-sm"> 
-								            <h5>
+								            
 									        <i class="glyphicon glyphicon-star"> </i>
-									        </h5>
+									        
 				                        </button>
 								    </td>
 								</tr>
 								<tr>
 									<td>
 										<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
-									        <h5>
-										    <i class="glyphicon glyphicon-eye-open">&nbsp;ดูแปลง</i>
-										    </h5>
+									        
+										    <i class="glyphicon glyphicon-eye-open">&nbsp;</i>
+										    ดูแปลง
 					                    </button>
 									</td>									
 								</tr>

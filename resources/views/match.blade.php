@@ -25,7 +25,7 @@
 			<div class="row">
 				<div class="col-md-1">
 				</div>
-				<form method="post" action="{{url('/matching')}}">
+				<form method="post" action="{{url('/matching')}}" data-toggle="validator" role="form" novalidate="true">
 				{{ csrf_field() }}
 					<div class="col-lg-6 box">
 						<div class="col-md-4">
@@ -79,8 +79,8 @@
 								จำนวน
 							</p>
 							<br>
-							<div class="form-group" style="width:90%">
-								<input name="fruitNum" type="text" class="form-control"/>
+							<div class="form-group has-error" style="width:90%">
+								<input name="fruitNum" type="text" class="form-control" required="" />
 							</div>
 							<div class="form-group">
 								<p class="text-left size" style="float:left">
