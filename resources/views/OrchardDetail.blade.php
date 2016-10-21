@@ -136,11 +136,13 @@
 					                    </button>
 									</td>
 									<td>
-										<button type="button" class="btn btn-success btn-sm" style="margin-top: 10px"> 
-									        <h5>
-										    <i class="glyphicon glyphicon-plus">&nbsp;เพิ่มแปลง</i>
-										    </h5>
-					                    </button>
+										<a href="{{url('plot/' .$orchard->idOrchard. '/create')}}">
+											<button type="button" class="btn btn-success btn-sm" style="margin-top: 10px"> 
+										        <h5>
+											    <i class="glyphicon glyphicon-plus">&nbsp;เพิ่มแปลง</i>
+											    </h5>
+						                    </button>
+					                    </a>
 									</td>
 								</tr>
 							</table>

@@ -36,6 +36,34 @@ class FastFruitController extends Controller
         $orchard = Orchards::findOrFail($id);   
         return view('orcharddetail',compact('orchard'));
     }
+    
+    public function createPlot($id)
+    {
+        $provinces = Provinces::all();
+        $fruits = Fruits::all();
+        $fruitSpecies = Fruit_species::all();
+        $orchard = Orchards::findOrFail($id);
+        return view('addplot', compact('provinces', 'fruits', 'fruitSpecies', 'id', 'orchard'));
+    }    
+
+    public function storePlot()
+    {
+        $input = Request::all();
+        if (array_get($input,'pictures')!==NULL){
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchard_plots'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+        // return $input;
+        Orchard_plots::create($input);
+        return redirect(url()->previous());
+    }
 
     public function products()
     {

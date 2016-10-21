@@ -46,14 +46,21 @@ Route::group(['middleware' => 'auth'], function () {
 	 * user
 	 */
 	Route::get('user/{id}/edit', 'FastFruitController@editUser'); 	//edit page
-	Route::patch('user/{id}', 'FastFruitController@updateUser');				//update
+	Route::patch('user/{id}', 'FastFruitController@updateUser');	//update
+
+	Route::get('addorchard', 'FastFruitController@getAddOrchard');
+	Route::post('addorchard', 'FastFruitController@postAddOrchard');
+
+	Route::get('plot/{id}/create', 'FastFruitController@createPlot');
+	Route::post('plot', 'FastFruitController@storePlot');
 
 	Route::delete('matching', 'FastFruitController@deleteMatching');
 	Route::get('chat', 'FastFruitController@chat');
 	Route::get('userprofile/{id}', 'FastFruitController@userProfile');
 	Route::get('userprofile', 'FastFruitController@userProfile');
-	Route::get('addorchard', 'FastFruitController@getAddOrchard');
-	Route::post('addorchard', 'FastFruitController@postAddOrchard');
+
+	
+
 	Route::get('checkgap', 'FastFruitController@checkGap');
 	Route::get('updateorchard', 'FastFruitController@updateOrchard');
 	Route::get('userorchard', 'FastFruitController@userOrchard');

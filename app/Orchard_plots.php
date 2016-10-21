@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Orchard_plots extends Model
 {
     protected $fillable = [
-        'plotNumber','description', 'area', 'geolocation','picture','address','salesVolume','idOrchard','idFruitSpecie','idPlotStatus'
+        'plotNumber','description', 'area', 'geolocation','picture1','picture2','picture3','address','salesVolume','idOrchard','idFruitSpecie','idPlotStatus','idProvince'
     ];
 
     protected $primaryKey = 'idOrchardPlot';
