@@ -26,4 +26,9 @@ class Provinces extends Model
     {
         return $this->hasMany('App\Matchings','idProvince');
     }
+
+     public function orchardPlots()
+    {
+        return $this->hasMany('App\Orchards','idProvince');
+    }
 }

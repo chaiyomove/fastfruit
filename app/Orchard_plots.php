@@ -12,24 +12,29 @@ class Orchard_plots extends Model
 
     protected $primaryKey = 'idOrchardPlot';
 
-      public function productSprints()
+    public function productSprints()
     {
     	return $this->hasMany('App\Product_sprints','idOrchardPlot');
     }
 
-     public function plotStatus()
+    public function plotStatus()
     {
     	return $this->belongsTo('App\Plot_status','idPlotStatus');
     }
 
-      public function orchard()
+    public function orchard()
     {
     	return $this->belongsTo('App\Orchards','idOrchard');
     }
 
-      public function fruitSpecie()
+    public function fruitSpecie()
     {
     	return $this->belongsTo('App\Fruit_species','idFruitSpecie');
+    }
+
+    public function province()
+    {
+        return $this->belongsTo('App\Provinces','idProvince');
     }
 }
 

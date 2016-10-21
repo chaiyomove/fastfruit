@@ -113,12 +113,14 @@
 								</tr>
 								<tr>
 									<td>
-										<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
-									        <h5>
-										    <i class="glyphicon glyphicon-eye-open">&nbsp;ดูแปลง</i>
-										    </h5>
-					                    </button>
-									</td>									
+										<a href="{{url('productofrochard',[25])}}">
+											<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
+												<h5>
+												<i class="glyphicon glyphicon-eye-open">&nbsp;ผลผลิต</i>
+												</h5>
+							                </button>														
+										</a>
+									</td>								
 								</tr>
 							</table>
 								
@@ -139,17 +141,52 @@
 
 						                    <table class="table table-striped">
 						                      <tbody>
+
+						                      	<tr>
+						                          <th scope="row" width="40%">รหัสแปลง</th>
+						                          <td colspan="2" align="left">{{$plot->plotNumber}}	</td>
+						                          <td></td>
+						                        </tr>
+
 						                        <tr>
 						                          <th scope="row" width="40%">รายละเอียด</th>
 						                          <td colspan="2" align="left">{{$plot->description}}	</td>
 						                          <td></td>
 						                        </tr>
 						                    
-						                        <tr>
-						                          <th scope="row" width="40%">ติดต่อผู้ขาย</th>
-						                          <td colspan="2" align="left">{{$plot->orchard->phone}}</td>
+						                         <tr>
+						                          <th scope="row" width="40%">พื่นที่</th>
+						                          <td colspan="2" align="left">{{$plot->area}}</td>
 						                          <td></td>
 						                        </tr>
+
+						                        <tr>
+						                          <th scope="row" width="40%">ที่อยู่แปลง</th>
+						                          <td colspan="2" align="left">{{$plot->address}}</td>
+						                          <td></td>
+						                        </tr>
+
+						                        <tr>
+						                          <th scope="row" width="40%">จังหวัด</th>
+						                          <td colspan="2" align="left">{{$plot->idProvince!=0?$plot->province->provinceName:$plot->orchard->province->provinceName}}</td>
+						                          <td></td>
+						                        </tr>
+
+						                        <tr>
+						                          <th scope="row" width="40%">จำนวนที่ขายได้</th>
+						                          <td colspan="2" align="left">{{$plot->salesVolume}}</td>
+						                          <td></td>
+						                        </tr>
+
+						                         <tr>
+						                          <th scope="row" width="40%">สถานะการรับรอง</th>
+						                          <td colspan="2" align="left">{{$plot->plotStatus->status}}</td>
+						                          <td></td>
+						                        </tr>
+
+						                      
+
+						                       
 
 						                        <tr>
 						                        	

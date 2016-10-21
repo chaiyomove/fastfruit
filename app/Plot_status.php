@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Plot_status extends Model
 {
+    protected $table = "plot_status";    
     protected $fillable = [
         'status'
     ];
