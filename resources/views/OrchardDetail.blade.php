@@ -202,7 +202,7 @@
 										{{-- <h1>MAP</h1> --}}
 										    <script>
 										       function initMap() {
-										        var uluru = {lat: -25.363, lng: 131.044};
+										        var uluru = {lat: {{App\Orchards::find($orchard->idOrchard)->lat}}, lng: {{App\Orchards::find($orchard->idOrchard)->lng}} };
 										        var map = new google.maps.Map(document.getElementById('map'), {
 										          zoom: 4,
 										          center: uluru
