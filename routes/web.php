@@ -76,7 +76,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('useraddadmin', 'FastFruitController@userAddadmin');
 	Route::get('dashboard', 'FastFruitController@dashboard');
 	Route::get('map', 'FastFruitController@map');
-	
+	Route::post('followorchards', 'FastFruitController@followorchards');
 });
 
 
@@ -86,7 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('test', function(){
 
 	// return App\Follow_user::all();
-	return App\Users::find(24)->userFollowers;
+	return App\Orchards::find(18)->orchardFollowers;
 
 	// $users = App\Users::all();
 	// // return $users;

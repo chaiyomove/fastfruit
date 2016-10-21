@@ -401,4 +401,9 @@ class FastFruitController extends Controller
         $plot=Orchard_plots::findOrFail($id);
         return view('plotDetail',compact('plot'));
     }
+
+    public function followorchards()
+    {
+        return view('');
+    }
 }
