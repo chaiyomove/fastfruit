@@ -108,11 +108,13 @@
 								</tr>
 								<tr>
 									<td>
-										<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
-									        
-										    <i class="glyphicon glyphicon-eye-open">&nbsp;</i>
-										    ดูแปลง
-					                    </button>
+										<a href="{{url('plot',[$product->orchardPlot->idOrchardPlot])}}">
+											<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
+										        
+											    <i class="glyphicon glyphicon-eye-open">&nbsp;</i>
+											    ดูแปลง
+						                    </button>
+						                </a>    
 									</td>									
 								</tr>
 							</table>

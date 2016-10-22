@@ -382,9 +382,22 @@ class FastFruitController extends Controller
         return view('search', compact('matchedOrcs'));
     }
 
-    public function productofrochard($id)
+    public function orchardProducts($id)
     {
-        return Orchards::findOrFail($id);
+        $products = array();
+
+        if (str_contains(url()->previous(), "orchard")){
+            foreach (Orchards::findOrFail($id)->orchardPlots as $key => $plot) {
+                foreach ($plot->productSprints as $key => $product) {
+                    $products[] = $product;
+                }    
+            }
+        } else {
+            foreach (Orchard_plots::findOrFail($id)->productSprints as $key => $product) {
+                $products[] = $product;
+            }    
+        }
+        return view('orchardProducts' , compact('products'));
     }
 
     public function map()

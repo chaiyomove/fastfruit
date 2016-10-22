@@ -116,7 +116,7 @@
 							            </button>
 									</td>-->
 									<td>
-										<a href="{{url('productofrochard',[25])}}">
+										<a href="{{url('products',[$orchard->idOrchard])}}">
 											<button type="button" class="btn btn-danger btn-sm" > 
 												
 												<i class="glyphicon glyphicon-eye-open">&nbsp;</i>ผลผลิต

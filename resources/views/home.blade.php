@@ -84,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					{{-- <h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>						 --}}
 					<h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>	
 					<p class="space">{{$product->description}}</p>
-					<a href="products/{{$product->idProductSprint}}" class="space">
+					<a href="{{url('product', [$product->idProductSprint])}}" class="space">
 						<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
 					</a>
 				</div>

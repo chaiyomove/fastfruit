@@ -92,15 +92,13 @@
 							            </button>
 									</td>-->
 									<td>
-										{{-- <a href="OrchardDetail-bf.html"> --}}
-								                			
-								            
-												<button type="submit" class="btn btn-danger btn-sm">
-													<h5>
-													<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
-													</h5>
-												</button>														
-										{{-- </a> --}}
+										<a href="{{url('orchards',[$plot->orchard->idOrchard])}}">        
+											<button type="submit" class="btn btn-danger btn-sm">
+												<h5>
+												<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+												</h5>
+											</button>														
+										</a>
 									</td>
 									<td>
 								        <button type="button" class="btn btn-warning btn-sm"> 
@@ -113,7 +111,7 @@
 								</tr>
 								<tr>
 									<td>
-										<a href="{{url('productofrochard',[25])}}">
+										<a href="{{url('products',[$plot->idOrchardPlot])}}">
 											<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
 												<h5>
 												<i class="glyphicon glyphicon-eye-open">&nbsp;ผลผลิต</i>

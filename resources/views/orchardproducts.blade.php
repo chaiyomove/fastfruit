@@ -26,10 +26,10 @@
 		<!--Featured Properties-->
 		<div class="feature-section" style="padding:2em 0em 0em 0em;">
 			<div class="container">
-				<h3>แปลงทั้งหมด</h3>
+				<h3>ผลผลิตทั้งหมด</h3>
 			</div>
 		</div>
-		@foreach ($plots as $key => $plot)
+		@foreach ($products as $key => $product)
 			@if ($key%4 == 0)	
 				<div class="feature-section" style="padding:0em 0em 3em 0em;">
 					<div class="container">
@@ -42,26 +42,25 @@
 						<img src="{{ asset('images/new.png') }}" style="position: absolute; margin-left: -5px; margin-top: -2px">
 					@endif
 
-					@if ($plot->idPlotStatus == 1)
+					@if ($product->orchardPlot->idPlotStatus == 1)
 						<img src="{{ asset('images/gap.png') }}" style="position: absolute; margin-left: 2px; margin-top: 115px">
 					@endif
-					<img src="{{asset($plot->picture1)}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
-					{{-- <h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>						 --}}
-					<h5 class="space">{{array_get($plot->fruitSpecies,'specieName')}}</h5>						
-					<p class="space">{{$plot->description}}</p>
-					<a href="{{url('plot', [$plot->idOrchardPlot])}}" class="space">
+					<img src="{{asset($product->picture1)}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+					<h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>						
+					<p class="space">{{$product->description}}</p>
+					<a href="{{url('product', [$product->idProductSprint])}}" class="space">
 						<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
 					</a>
 				</div>
 			</div>
 			
-			@if ((count($plots)===$key+1) || $key%4 == 3)	
+			@if ((count($products)===$key+1) || $key%4 == 3)	
 							<div class="clearfix"></div>
 						</div>
 					</div>
 				</div>
 			@endif
-		@endforeach	
+		@endforeach		
 		<div class="feature-section" style="padding:0em 0em 2em 0em;">
 			<div class="container" style="text-align: center;">
 				<ul class="pagination pagination-lg">
