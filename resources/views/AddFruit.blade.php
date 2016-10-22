@@ -34,9 +34,9 @@
 			<div class="feature-section">
 				<div class="container">
 					<h3>เพิ่มผลผลิต</h3><br><br>
-					<form method="POST" enctype="multipart/form-data" action="{{url('/useraddproduct')}}">
+					<form method="POST" enctype="multipart/form-data" action="{{url('/product')}}">
 					{{ csrf_field() }}
-					<input type="hidden" name="idOrchardPlot" value="35">
+					<input type="hidden" name="idOrchardPlot" value="{{$id}}">
 					<div class="row">
 						<div class="col-md-2">
 						</div>
@@ -45,8 +45,8 @@
 						</div>
 						<div class="col-md-4">
 							<div class="form-group" style="width:40%; float:left">
-							 	<select class="form-control" name="idFruit" >
-							 		<option  value="0" selected >เลือกชนิดผลไม้</option>
+							 	<select class="form-control disable" name="idFruit" style="color: #DCDAD1" disabled>
+							 		<option  value="" selected >เลือกชนิดผลไม้</option>
 							 		@foreach ($fruits as $fruit)
 								 		@if ($fruit->idFruit == old('idFruit'))
 								 			<option value="{{$fruit->idFruit}}" selected>{{$fruit->fruitName}}</option>
@@ -58,14 +58,12 @@
 							  	</select>
 							</div>
 							<div class="form-group" style="width:50%; float:right">
-								<select class="form-control" name="idFruitSpecie">
-							 		<option value="0" selected>เลือกสายพันธุ์</option>
+								<select class="form-control" name="idFruitSpecie" style="color: #DCDAD1" disabled>
+							 		<option value="" selected>เลือกสายพันธุ์</option>
 							 		{{-- <option value="78">มะม่วงมัน</option>	 --}}
 							 		@foreach ($fruitSpecies as $fruitSpecie)
-								 		@if ($fruitSpecie->idFruitSpecie == old('idFruitSpecie'))
+								 		@if ($fruitSpecie->idFruitSpecie == App\Orchard_plots::findOrFail($id)->idFruitSpecie))
 								 			<option value="{{$fruitSpecie->idFruitSpecie}}" selected>{{$fruitSpecie->specieName}}</option>
-								 		@else
-								 			<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>
 								 		@endif
 							 		@endforeach				    	
 							  	</select>	
@@ -82,7 +80,7 @@
 							<h4>รายละเอียดผลผลิต : </h4>
 						</div>
 						<div class="col-md-4">
-							<textarea name="description" class="form-control" style="resize: none;" rows="6"></textarea>
+							<textarea name="description" class="form-control" style="resize: none;" rows="6">{{old('description')}}</textarea>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -95,7 +93,7 @@
 							<h4>จำนวนผลผลิต : </h4>
 						</div>
 						<div class="col-md-2">
-							<input type="text" name="fruitNum" class="form-control" placeholder="กิโลกรัม/รอบการผลิต"></input>
+							<input type="text" name="fruitNum" class="form-control" placeholder="กิโลกรัม/รอบการผลิต" value="{{old('fruitNum')}}"></input>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -112,7 +110,7 @@
 						<div class="col-md-2">
 							<div class="form-group">
 								<div class='input-group date' id='addplot'>
-					                <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" />
+					                <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" value="{{old('startDate')}}"/>
 					                <span class="input-group-addon" data-toggle="datepicker">
 					                    <span class="glyphicon glyphicon-calendar"></span>
 					                </span>
@@ -133,7 +131,7 @@
 						<div class="col-md-2">
 							<div class="form-group">
 								<div class='input-group date' id='datepickerend'>
-					                <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง"/>
+					                <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง" value="{{old('endDate')}}"/>
 					                <span class="input-group-addon" data-toggle="datepicker">
 					                    <span class="glyphicon glyphicon-calendar"></span>
 					                </span>
@@ -168,22 +166,15 @@
 					<br><br>
 					<div class="row">
 						<div class="col-md-2">
-							<a href="ShowProduct.html">
-								<button type="button" class="btn btn-primary btn-lg btn-block" >
-									ย้อนกลับ
-								</button>
-							</a>
 						</div>
 						<div class="col-md-4">
 						</div>
 						<div class="col-md-4">
 						</div>
 						<div class="col-md-2">
-							 <a href="AfterLogin.html">
-								<button type="submit" class="btn btn-success btn-lg btn-block" >
-									เสร็จสิ้น
-								</button>
-							</a>
+							<button type="submit" class="btn btn-success btn-lg btn-block" >
+								เสร็จสิ้น
+							</button>
 						</div>
 					</div>
 					</form>

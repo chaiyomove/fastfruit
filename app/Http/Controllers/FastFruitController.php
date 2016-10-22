@@ -21,6 +21,7 @@ use Auth;
 use DB;
 use App\Http\Requests\AddOrchardRequest;
 use App\Http\Requests\AddPlotRequest;
+use App\Http\Requests\AddProductRequest;
 
 
 
@@ -262,12 +263,35 @@ class FastFruitController extends Controller
         return view('AfterLogin');
     }
 
-    public function getUserAddProduct()
+    public function getUserAddProduct($id)
     {
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
 
-        return view('AddFruit', compact('fruits','fruitSpecies'));
+        return view('AddFruit', compact('fruits','fruitSpecies','id'));
+    }
+
+     public function postUserAddProduct(AddProductRequest $request)
+    {
+        $input = Request::all();
+        if (array_get($input,'pictures')!==NULL){       
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+
+        // return dd($input);
+        Product_sprints::create($input);
+        // $sprint=new Product_sprints();
+        // $sprint->fruitSpecie=$input['fruitSpecie'];
+       
+        return redirect('userproduct');
     }
 
     public function userMatching()
@@ -306,29 +330,6 @@ class FastFruitController extends Controller
     //     return view('ShowProduct');
     // }
 
-    public function postUserAddProduct()
-    {
-        $input = Request::all();
-        if (array_get($input,'pictures')!==NULL){       
-            $pictures = array_values(array_get($input,'pictures'));
-            for ($i=0 ; $i<count($pictures) ; $i++){
-                if ($pictures[$i]!=NUll){
-                    $picKeys = "picture".$i+1;
-                    $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
-                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
-                    $input["picture".($i+1)] = $picPath;   
-                }
-            }
-        }
-        $input['fruitSpecie'] = $input['idFruitSpecie'];
-
-        // return dd($input);
-        Product_sprints::create($input);
-        // $sprint=new Product_sprints();
-        // $sprint->fruitSpecie=$input['fruitSpecie'];
-       
-        return redirect('userproduct');
-    }
 
      public function dashboard()
     {

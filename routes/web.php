@@ -70,8 +70,8 @@ Route::group(['middleware' => 'auth'], function () {
 	// Route::get('userproduct', 'FastFruitController@userProduct');
 	Route::get('userproduct/{id}', 'FastFruitController@userProductDetail');
 	Route::get('userproduct', 'FastFruitController@userProductDetail');
-	Route::get('useraddproduct', 'FastFruitController@getUserAddProduct');
-	Route::post('useraddproduct', 'FastFruitController@postUserAddProduct');
+	Route::get('product/{id}/create', 'FastFruitController@getUserAddProduct');
+	Route::post('product', 'FastFruitController@postUserAddProduct');
 	Route::get('usermatching', 'FastFruitController@userMatching');
 	Route::get('useraddadmin', 'FastFruitController@userAddadmin');
 	Route::get('dashboard', 'FastFruitController@dashboard');

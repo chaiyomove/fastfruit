@@ -120,7 +120,16 @@
 												</h5>
 							                </button>														
 										</a>
-									</td>								
+									</td>	
+									<td>
+										<a href="{{url('product/' .$plot->idOrchardPlot. '/create')}}">
+											<button type="button" class="btn btn-primary btn-sm" style="margin-top: 10px"> 
+										        
+											    <i class="glyphicon glyphicon-plus">&nbsp;</i>
+											    เพิ่มผลผลิต
+						                    </button>
+					                    </a>
+									</td>							
 								</tr>
 							</table>
 								
