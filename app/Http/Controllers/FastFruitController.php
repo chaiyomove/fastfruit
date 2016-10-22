@@ -22,8 +22,7 @@ use DB;
 use App\Http\Requests\AddOrchardRequest;
 use App\Http\Requests\AddPlotRequest;
 use App\Http\Requests\AddProductRequest;
-
-
+use App\Http\Requests\MatchOrchardRequest;
 
 
 class FastFruitController extends Controller
@@ -126,7 +125,7 @@ class FastFruitController extends Controller
         // return view('match', compact('fruits','fruitSpecies','provinces'));
     }
 
-    public function postMatching()
+    public function postMatching(MatchOrchardRequest $request)
     {
         $input = Request::all();
 
@@ -144,6 +143,7 @@ class FastFruitController extends Controller
 
         }
 
+        dd($input);
         Matchings::create($input);
         // dd($input);
         return redirect('matching');
