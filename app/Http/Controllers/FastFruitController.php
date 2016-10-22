@@ -423,6 +423,6 @@ class FastFruitController extends Controller
         $user = Users::findOrFail(Auth::user()->id);
         $orchard = Orchards::findOrFail(array_get(Request::all(),'idOrchard'));
         $user->orchardFollowing()->save($orchard);
-        return redirect('orchards');
+        return redirect(url()->previous());
     }
 }
