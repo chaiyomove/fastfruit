@@ -144,22 +144,24 @@
 								<tr>
 									<td>
 										<a href="{{url('plots',[$orchard->idOrchard])}}">
-										<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
-									        
-										    <i class="glyphicon glyphicon-eye-open">&nbsp;</i>
-										    ดูแปลง
-					                    </button>
-					                    </a>
-									</td>
-									<td>
-										<a href="{{url('plot/' .$orchard->idOrchard. '/create')}}">
-											<button type="button" class="btn btn-primary btn-sm" style="margin-top: 10px"> 
-										        
-											    <i class="glyphicon glyphicon-plus">&nbsp;</i>
-											    เพิ่มแปลง
+											<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
+											    <i class="glyphicon glyphicon-eye-open">&nbsp;</i>
+											    ดูแปลง
 						                    </button>
 					                    </a>
 									</td>
+									@foreach ($orchard->admins as $admin)
+										@if ($admin->user == Auth::user())
+											<td>
+												<a href="{{url('plot/' .$orchard->idOrchard. '/create')}}">
+													<button type="button" class="btn btn-primary btn-sm" style="margin-top: 10px"> 
+													    <i class="glyphicon glyphicon-plus">&nbsp;</i>
+													    เพิ่มแปลง
+								                    </button>
+							                    </a>
+											</td>
+										@endif
+									@endforeach																		
 								</tr>
 							</table>
 								
