@@ -64,8 +64,13 @@
 </script>
 <!-- fruitspecies-dropdown -->
 
-
-
+<!-- auto-refill_radio-button-->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("input[name=idPlotStatus][value=" + {{old('idPlotStatus')}} + "]").attr('checked', 'checked');
+	});
+</script>
+<!-- auto-refill_radio-button-
 
 			<!--Add-->
 
