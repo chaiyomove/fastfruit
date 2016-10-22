@@ -132,13 +132,17 @@
 						                </button>
 									</td>
 									<td>
-										<button type="button" class="btn btn-success btn-sm follow"
+										<form method="POST"  action="{{url('/followorchards')}}">
+										{{ csrf_field() }}
+										<input type="hidden" name="idOrchard" value="{{$orchard->idOrchard}}">
+										<button type="submit" class="btn btn-success btn-sm follow"
 										 id="swapFollow"> 
 									        
 										    <i class="glyphicon glyphicon-plus" >&nbsp;</i>
 										    ติดตาม
 										    
 					                    </button>
+					                    </form>
 									</td>									
 								</tr>
 								<tr>
