@@ -11,39 +11,43 @@
 				</script>
 
 <link href="css/jquery.datepicker.css" rel="stylesheet">
-
-<script>
-
-	$('#idFruit').on('select', function(e){
-		alert("change");
-    	var idFruit = e.target.value;
-
-       //ajax
-
-       $.get('/fruitdropdown?idFruit=' + idFruit, function(data){
-
-           //success data
-           $('#idFruitSpecie').empty();
-
-           $('#idFruitSpecie').append(' Please choose one');
-
-           $.each(data, function(index, subcatObj){
-
-               $('#idFruitSpecie').append(''
-               + subcatObj.specieName + '</option');
-
-
-           });
-
-
-
-       });
-
-
-   });
-</script>
-
 <!-- pop-up -->
+
+<!-- fruitspecies-dropdown -->
+<script>
+	$(document).ready(function(){
+		$('#idFruit').on('change', function(e){
+	    	var idFruit = e.target.value;
+
+	        //ajax
+	        $.get('{{url('api/fruitspecies')}}/'+idFruit, function(data){ 
+
+		        //success data
+	            $('#idFruitSpecie').empty();
+
+	            // $('#idFruitSpecie').append('<option value="0" selected>กรุณาเลือก</option>');
+
+	            $.each(data, function(index, fruitSpecie){
+
+	            	if(index==0){
+		            	$('#idFruitSpecie').append('<option value="' + fruitSpecie.idFruitSpecie + '"selected>' +  fruitSpecie.specieName + '</option>');
+
+	            	} else {
+		            	$('#idFruitSpecie').append('<option value="' + fruitSpecie.idFruitSpecie + '">' +  fruitSpecie.specieName + '</option>');            		
+	            	}
+
+
+	           });
+
+
+
+	       });
+
+
+	   });
+	});
+</script>
+<!-- fruitspecies-dropdown -->
 
 
 		<!--banner-->
@@ -264,7 +268,6 @@
 			@endif
 		@endforeach			
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/jquery.datepicker.js"></script>
 
 @endsection

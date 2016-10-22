@@ -24,7 +24,7 @@ class AddPlotRequest extends FormRequest
     public function rules()
     {
         return [
-            'plotNumber' => 'min:13',
+            'plotNumber' => 'min:13|max:16',
             'idOrchard' => 'required|numeric',
             'description' => 'required',
             'area' => 'required|numeric',

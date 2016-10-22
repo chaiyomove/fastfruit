@@ -10,6 +10,8 @@ class Fruit_species extends Model
         'specieName','idFruit'
     ];
 
+    protected $table = 'fruit_species';
+
     protected $primaryKey = 'idFruitSpecie';
 
     public function orchardPlots()

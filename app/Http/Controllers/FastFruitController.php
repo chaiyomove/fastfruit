@@ -63,8 +63,8 @@ class FastFruitController extends Controller
             }
         }
         // return $input;
-        Orchard_plots::create($input);
-        return redirect(url()->previous());
+        $plot = Orchard_plots::create($input);
+        return redirect(url('orchards', [$plot->orchard->idOrchard]));
     }
 
     public function products()
@@ -143,7 +143,7 @@ class FastFruitController extends Controller
 
         }
 
-        dd($input);
+        // dd($input);
         Matchings::create($input);
         // dd($input);
         return redirect('matching');

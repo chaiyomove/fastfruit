@@ -1,7 +1,7 @@
 @extends('layouts/master')
 @section('content')
 
-<script src="js/responsiveslides.min.js"></script>
+<script src="{{asset('js/responsiveslides.min.js')}}"></script>
 	 <script>
 		$(function () {
 		  $("#slider").responsiveSlides({
@@ -13,20 +13,58 @@
 		  });
 		});
 	</script>
-<link href="css/owl.carousel.css" rel="stylesheet">
-<script src="js/owl.carousel.js"></script>
-	<script>
-		$(document).ready(function() {
-		$("#owl-demo").owlCarousel({
-			items : 1,
-			lazyLoad : true,
-			autoPlay : true,
-			navigation : false,
-			navigationText :  false,
-			pagination : true,
-		});
-		});
-	</script>
+<link href="{{asset('css/owl.carousel.css')}}" rel="stylesheet">
+<script src="{{asset('js/owl.carousel.js')}}"></script>
+<script>
+	$(document).ready(function() {
+	$("#owl-demo").owlCarousel({
+		items : 1,
+		lazyLoad : true,
+		autoPlay : true,
+		navigation : false,
+		navigationText :  false,
+		pagination : true,
+	});
+	});
+</script>
+
+<!-- fruitspecies-dropdown -->
+<script>
+	$(document).ready(function(){
+		$('#idFruit').on('change', function(e){
+	    	var idFruit = e.target.value;
+
+	        //ajax
+	        $.get('{{url('api/fruitspecies')}}/'+idFruit, function(data){ 
+
+		        //success data
+	            $('#idFruitSpecie').empty();
+
+	            // $('#idFruitSpecie').append('<option value="0" selected>กรุณาเลือก</option>');
+
+	            $.each(data, function(index, fruitSpecie){
+
+	            	if(index==0){
+		            	$('#idFruitSpecie').append('<option value="' + fruitSpecie.idFruitSpecie + '"selected>' +  fruitSpecie.specieName + '</option>');
+
+	            	} else {
+		            	$('#idFruitSpecie').append('<option value="' + fruitSpecie.idFruitSpecie + '">' +  fruitSpecie.specieName + '</option>');            		
+	            	}
+
+
+	           });
+
+
+
+	       });
+
+
+	   });
+	});
+</script>
+<!-- fruitspecies-dropdown -->
+
+
 
 
 			<!--Add-->
@@ -45,7 +83,7 @@
 						</div>
 						<div class="col-md-4">
 							<div class="form-group" style="width:40%; float:left">
-							 	<select class="form-control" name="idFruit" >
+							 	<select class="form-control" name="idFruit" id="idFruit">
 							 		<option  value="" selected >เลือกชนิดผลไม้</option>
 							 		@foreach ($fruits as $fruit)
 								 		@if ($fruit->idFruit == old('idFruit'))
@@ -58,7 +96,7 @@
 							  	</select>
 							</div>
 							<div class="form-group" style="width:50%; float:right">
-								<select class="form-control" name="idFruitSpecie">
+								<select class="form-control" name="idFruitSpecie" id="idFruitSpecie">
 							 		<option value="" selected>เลือกสายพันธุ์</option>
 							 		{{-- <option value="78">มะม่วงมัน</option>	 --}}
 							 		@foreach ($fruitSpecies as $fruitSpecie)
@@ -179,11 +217,11 @@
 						</div>
 						<div class="col-md-4">
 							<label class="radio-inline">
-								<input type="radio" name="idPlotStatus" value="3">
+								<input type="radio" name="idPlotStatus" id="idPlotStatus" value="3">
 								มี GAP
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="idPlotStatus" value="2">
+								<input type="radio" name="idPlotStatus" id="idPlotStatus" value="2">
 								ไม่มี GAP
 							</label>							
 						</div>

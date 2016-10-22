@@ -14,14 +14,17 @@ use Illuminate\Support\Facades\Input;
 
 use App\Subcategory;
 
+use App\Fruit_species;
+
 class ApiController extends Controller
 {
-    public function fruitDropdown()
+    public function fruitSpecies($id)
     {
-    	$idFruit = Input::get('idFruit');
-
-
-	   	$fruitSpecies = Fruit_species::where('idFruit', '=', $idFruit)
+    	// return "alert";
+	    $idFruit = Input::get('idFruit');
+	    // echo "<script>alert("1231")</script>";
+	   	$fruitSpecies = Fruit_species::where('idFruit', '=', $id)
+    	                ->orderBy('specieName', 'asc')
     	                ->get();
 
     	return Response::json($fruitSpecies);
