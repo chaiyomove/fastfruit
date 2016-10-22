@@ -87,7 +87,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('test', function(){
 
 	// return App\Follow_user::all();
-	return App\Orchards::find(18)->orchardFollowers;
+	return App\Orchards::find(22)->users;
 
 	// $users = App\Users::all();
 	// // return $users;

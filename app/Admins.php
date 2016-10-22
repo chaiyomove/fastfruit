@@ -6,13 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admins extends Model
 {
-     protected $fillable = [
-        'idUser','idOrchard',
-    ];
+    protected $table = 'admins';
 
     protected $primaryKey = 'idAdmin';
 
-     public function user()
+    protected $fillable = [
+        'idUser','idOrchard',
+    ];
+
+    public function user()
     {
     	return $this->belongsTo('App\Users','idUser');
     }

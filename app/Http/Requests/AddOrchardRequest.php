@@ -28,6 +28,7 @@ class AddOrchardRequest extends FormRequest
             'description' => 'required',
             'area' => 'required|numeric',
             'address' => 'required',
+            'phone' => 'numeric',
             'idProvince' => 'required|numeric|not_in:0',
             'pictures' => ''
 

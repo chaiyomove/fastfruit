@@ -58,6 +58,10 @@ class Users extends Authenticatable
         return $this->hasMany('App\Follow_orchard');
     }
 
+    public function orchards()
+    {
+        return $this->belongsToMany('App\Orchards', 'admins' , 'idUser', 'idOrchard');
+    }
     
     public function orchardFollowing()
     {

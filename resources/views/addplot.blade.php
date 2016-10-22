@@ -222,11 +222,11 @@
 						</div>
 						<div class="col-md-4">
 							<label class="radio-inline">
-								<input type="radio" name="idPlotStatus" id="idPlotStatus" value="3">
+								<input type="radio" name="idPlotStatus" value="3">
 								มี GAP
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="idPlotStatus" id="idPlotStatus" value="2">
+								<input type="radio" name="idPlotStatus" value="2">
 								ไม่มี GAP
 							</label>							
 						</div>

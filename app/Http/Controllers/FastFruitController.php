@@ -188,7 +188,6 @@ class FastFruitController extends Controller
     public function postAddOrchard(AddOrchardRequest $request)
     {
         $input = Request::all();
-        $input['idProvince'] = Auth::user()->idProvince;
 
         if (array_get($input,'pictures')!==NULL){
             $pictures = array_values(array_get($input,'pictures'));
@@ -203,12 +202,16 @@ class FastFruitController extends Controller
         }
 
         // return dd($input);
-        $insertedOrd = Orchards::create($input);
-        
-        $admin = new Admins();
-        $admin->idUser = Auth::user()->id;
-        $admin->idOrchard = Orchards::latest()->first()->idOrchard;
-        $admin->save();
+
+        $orchard = Orchards::create($input);
+        $user = Auth::user();
+
+        $user->orchards()->save($orchard);
+
+        // $admin = new Admins();
+        // $admin->idUser = Auth::user()->id;
+        // $admin->idOrchard = Orchards::latest()->first()->idOrchard;
+        // $admin->save();
         return redirect('userorchard');
     }
 

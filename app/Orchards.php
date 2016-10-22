@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Orchards extends Model
 {
+    protected $primaryKey = 'idOrchard';
+
     protected $fillable = [
         'nameOrchard','description', 'area', 'geolocation','picture1','picture2','picture3','address','lat','lng','phone','ownerId','idProvince'
     ];
-
-    protected $primaryKey = 'idOrchard';
 
     public function province()
     {
@@ -30,6 +30,11 @@ class Orchards extends Model
     public function admins()
     {
         return $this->hasMany('App\Admins','idOrchard');
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\Users', 'admins', 'idOrchard', 'idAdmin');
     }
 
     public function orchardFollowers()
