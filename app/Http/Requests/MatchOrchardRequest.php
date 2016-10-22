@@ -27,7 +27,7 @@ class MatchOrchardRequest extends FormRequest
             'fruitNum' => 'required|numeric',
             'idFruitSpecie' => 'required',
             'idPlotStatus' => 'required',
-            'idProvince' => 'required';
+            'idProvince' => 'required',
             'startDate' => 'required|date',
             'endDate' => 'required|date',
             'unit' => 'required'
