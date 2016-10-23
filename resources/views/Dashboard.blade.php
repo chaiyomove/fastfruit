@@ -469,36 +469,41 @@
 				                <br>
 				                <div class="clearfix"></div>
 				                <br>
-				                @foreach ($orchards as $key => $orchard)
-				@if ($key%3 == 0)	
-					
-						<div class="container" style="margin-bottom: 15px">
-				@endif
 
-				<div class="col-md-3 feature-grid" >
-					<div class="frame">
-					
-					@foreach ($orchard->orchardPlots as $orchardPlot)
-						@if ($orchardPlot->idPlotStatus == 1)
-							<img src="{{asset('images/gap.png')}}" style="position: absolute; margin-left: 2px; margin-top: 115px">
-						@endif
-					@endforeach
-						<img src="{{asset($orchard->picture1)}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
-						<h5 class="space">{{$orchard->nameOrchard}}</h5>
-						<p class="space">{{$orchard->description}}</p>		
-						<a href="{{'orchards/'.$orchard->idOrchard}}" class="space">
-							<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
-						</a>
-					</div>
-				</div>
-				
-				@if ((count($orchards)===$key+1) || $key%3 == 2)
-								<div class="clearfix"></div>
-						</div>
-					
+				                @foreach ($orchards as $key => $orchardTmp)
 
-				@endif
-				@endforeach
+								@if ($key%3 == 0)	
+										<div class="container" style="margin-bottom: 15px">
+								@endif
+
+								<div class="col-md-3 feature-grid" >
+									<div class="frame">
+
+									{{-- cast array into model --}}
+									<?php $orchard = new App\Orchards($orchardTmp) ?>
+									@foreach ($orchard->orchardPlots as $orchardPlot)
+										@if ($orchardPlot->idPlotStatus == 1)
+											<img src="{{asset('images/gap.png')}}" style="position: absolute; margin-left: 2px; margin-top: 115px">
+										@endif
+									@endforeach
+										<img src="{{asset($orchard->picture1)}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+										<h5 class="space">{{$orchard->nameOrchard}}</h5>
+										<p class="space">{{$orchard->description}}</p>		
+										<a href="{{'orchards/'.$orchard->idOrchard}}" class="space">
+											<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+										</a>
+									</div>
+								</div>
+								
+								@if ((count($orchards)===$key+1) || $key%3 == 2)
+												<div class="clearfix"></div>
+										</div>
+									
+
+								@endif
+								@endforeach
+								{!! $orchards->links() !!}
+
 				<div class="text-center">
 			
 

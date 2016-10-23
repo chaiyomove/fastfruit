@@ -23,13 +23,16 @@ use App\Http\Requests\AddOrchardRequest;
 use App\Http\Requests\AddPlotRequest;
 use App\Http\Requests\AddProductRequest;
 use App\Http\Requests\MatchOrchardRequest;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 
 class FastFruitController extends Controller
 {
     public function orchards()
     {
-        $orchards=Orchards::orderBy('idOrchard','desc')->paginate(16);
+        return dd($orchards=Orchards::orderBy('idOrchard','desc')->paginate(16));
         return view('orchards',compact('orchards'));
     }
 
@@ -342,10 +345,29 @@ class FastFruitController extends Controller
             $orchardsTmp->push($admin->orchard);
         }
 
-        $orchards = $orchardsTmp->forPage($_GET['page'], 6);
-        // return($orchards);       
+        // $orchards = $orchardsTmp->forPage($_GET['page'], 6);
+
+        // $currentPageSearchResults = $col->slice(($currentPage - 1) * $perPage, $perPage)->all();
+
+        // Get the current page from the url if it's not set default to 1
+        $page = Input::get('page', 1); 
+
+        // Number of items per page
+        $perPage = 6;
+
+        // Start displaying items from this number;
+        $offSet = ($page * $perPage) - $perPage; // Start displaying items from this number
+
+        // Get only the items you need using array_slice (only get 10 items since that's what you need)
+        $itemsForCurrentPage = array_slice($orchardsTmp->toArray(), $offSet, $perPage, true);
+
+        // Return the paginator with only 10 items but with the count of all items and set the it on the correct page
+        // return new LengthAwarePaginator($itemsForCurrentPage, count($orchardsTmp), $perPage, $page);
+        // return dd($orchards = new LengthAwarePaginator($itemsForCurrentPage, count($orchardsTmp), $perPage, $page));
+        ($orchards = new LengthAwarePaginator($itemsForCurrentPage, count($orchardsTmp), $perPage, $page, ['path' => Request::url(), 'query' => Request::query()]));
+        // return dd($orchards);       
        
-        return view('DashBoard', compact('orchards'));
+        return view('DashBoard', compact('orchards','orchardsTmp'));
     }
 
     public function search()
