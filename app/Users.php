@@ -42,6 +42,10 @@ class Users extends Authenticatable
     {
         return $this->hasMany('App\Bookmarks');
     }
+    public function userBookmarks()
+    {
+        return $this->belongsToMany('App\Product_sprints', 'bookmarks','idUser','idProductSprint');            
+    }
 
     public function followUsers()
     {

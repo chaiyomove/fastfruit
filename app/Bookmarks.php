@@ -10,6 +10,8 @@ class Bookmarks extends Model
         'idUser','idProductSprint',
     ];
 
+     protected $table = "bookmarks";
+
     protected $primaryKey = 'idBookmark';
 
      public function productSprint()

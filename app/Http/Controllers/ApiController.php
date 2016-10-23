@@ -20,6 +20,8 @@ use App\Users;
 
 use App\Orchards;
 
+use App\Product_sprints;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -58,6 +60,25 @@ class ApiController extends Controller
         $user = Users::findOrFail($uid);
         $orchard = Orchards::findOrFail($id);
         $user->orchardFollowing()->detach($orchard->idOrchard);
+        
+        return;
+    }
+
+     public function Bookmark($uid, $id)
+    {
+
+        $user = Users::findOrFail($uid);
+        $product = Product_sprints::findOrFail($id);
+        $user->userBookmarks()->save($product);
+        
+        return;
+    }
+
+    public function UnBookmark($uid, $id)
+    {
+        $user = Users::findOrFail($uid);
+        $product = Product_sprints::findOrFail($id);
+        $user->userBookmarks()->detach($product->idProductSprint);
         
         return;
     }

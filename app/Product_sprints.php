@@ -21,6 +21,12 @@ class Product_sprints extends Model
         return $this->hasMany('App\Bookmarks','idProductSprint');
     }
 
+    public function bookmarkUsers()
+    {
+        return $this->belongsToMany('App\Users', 'bookmarks','idProductSprint','idUser');            
+    }
+
+
     public function fruitSpeciess()
     {
         return $this->belongsTo('App\Fruit_species','fruitSpecie');

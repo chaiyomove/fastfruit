@@ -147,16 +147,16 @@ $(document).ready(function() {
 	});
 	
 	$('.noo-simple-product-slider').owlCarousel({
-		items : 5,
-		itemsDesktop : [1199,5],
-		itemsDesktopSmall : [979,3],
-		itemsTablet: [768, 2],
+		items : 3,
+		itemsDesktop : [1199,3],
+		itemsDesktopSmall : [991,2],
+		itemsTablet: [768, 1],
 		slideSpeed:500,
 		paginationSpeed:800,
 		rewindSpeed:1000,
 		autoHeight: true,
 		addClassActive: true,
-		autoPlay: false,
+		autoPlay: true,
 		loop:true,
 		pagination: false
 	});
