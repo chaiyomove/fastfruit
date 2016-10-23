@@ -335,12 +335,16 @@ class FastFruitController extends Controller
 
 
      public function dashboard()
-    {
+    {   
         $admins = Auth::user()->admins;
-        $orchards = array();
+        $orchardsTmp = new Collection;
         foreach ($admins as $key => $admin) {
-            $orchards[] = $admin->orchard;
+            $orchardsTmp->push($admin->orchard);
         }
+
+        $orchards = $orchardsTmp->forPage($_GET['page'], 6);
+        // return($orchards);       
+       
         return view('DashBoard', compact('orchards'));
     }
 

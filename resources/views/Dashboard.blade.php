@@ -462,14 +462,9 @@
 			            <div class="x_content">
 			                <div class="row">
 				                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-				                    <div class="btn-toolbar">
-				                        <div class="btn-group">
-								            <button class="btn btn-info active" type="button">1</button>
-								            <button class="btn btn-info" type="button">2</button>
-								            <button class="btn btn-info" type="button">3</button>
-								            
-								        </div>
-				                    </div>
+				                    
+				                        
+				                  
 				                </div>
 				                <br>
 				                <div class="clearfix"></div>
@@ -504,6 +499,10 @@
 
 				@endif
 				@endforeach
+				<div class="text-center">
+			
+
+				</div>
 		                </div>
 		                </div>
 				        </div>
