@@ -423,4 +423,13 @@ class FastFruitController extends Controller
         $plot=Orchard_plots::findOrFail($id);
         return view('plotDetail',compact('plot'));
     }
+
+    public function followorchards()
+    {
+        
+        $user = Users::findOrFail(Auth::user()->id);
+        $orchard = Orchards::findOrFail(array_get(Request::all(),'idOrchard'));
+        $user->orchardFollowing()->save($orchard);
+        return redirect(url()->previous());
+    }
 }
