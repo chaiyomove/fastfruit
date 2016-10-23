@@ -18,3 +18,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::get('fruitspecies/{id}', 'ApiController@fruitSpecies');
+Route::get('user/{uid}/followorchard/{id}', 'ApiController@followOrchard');
+Route::get('user/{uid}/unfolloworchard/{id}', 'ApiController@unFollowOrchard');

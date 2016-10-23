@@ -16,8 +16,21 @@ use App\Subcategory;
 
 use App\Fruit_species;
 
+use App\Users;
+
+use App\Orchards;
+
+use Illuminate\Support\Facades\Auth;
+
+
+
 class ApiController extends Controller
 {
+    /**
+     * dependent dropdown for Fruits->FruitSpecies
+     * @param  [type] $id [description]
+     * @return json     $fruitSpecies
+     */
     public function fruitSpecies($id)
     {
     	// return "alert";
@@ -29,5 +42,23 @@ class ApiController extends Controller
 
     	return Response::json($fruitSpecies);
 	
+    }
+
+    public function followOrchard($uid, $id)
+    {
+        $user = Users::findOrFail($uid);
+        $orchard = Orchards::findOrFail($id);
+        $user->orchardFollowing()->save($orchard);
+        
+        return;
+    }
+
+    public function UnFollowOrchard($uid, $id)
+    {
+        $user = Users::findOrFail($uid);
+        $orchard = Orchards::findOrFail($id);
+        $user->orchardFollowing()->detach($orchard->idOrchard);
+        
+        return;
     }
 }

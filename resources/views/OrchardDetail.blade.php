@@ -29,8 +29,9 @@
 		});
 		});
 	</script>
-	<script>
 
+	<!-- hide/show-map -->
+	<script>
 		function open_map() 
 		{
 			if (document.getElementById('map').style.visibility == "hidden"){
@@ -39,21 +40,36 @@
 				document.getElementById('map').style.visibility = "hidden";					
 			}
 			
-		}
-		
+		}		
 	</script>
-	<script>
-		jQuery(function ($) {
+	<!-- hide/show-map -->
 
-    $('#swapFollow').on('click', function () {
-        var $el = $(this),
-            textNode = this.lastChild;
-        $el.find('i').toggleClass('glyphicon-ok glyphicon-plus');
-        textNode.nodeValue = ($el.hasClass('follow') ? 'กำลังติดตาม' : 'ติดตาม')
-        $el.toggleClass('follow');
-    });
-});
+	<!-- click-follow -->
+	<script>
+	jQuery(function ($) {
+	    $('#follow').on('click', function () {
+	        var $el = $(this),
+	        textNode = this.lastChild;
+	        $el.find('i').toggleClass('glyphicon-ok glyphicon-plus');
+	        textNode.nodeValue = ($el.hasClass('follow') ? 'กำลังติดตาม' : 'ติดตาม')
+	        $el.toggleClass('follow');
+
+	        //ajax
+	        if (!$el.hasClass('follow')){
+	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/followorchard/{{$orchard->idOrchard}}', function(data){ 
+	        		// alert(data);
+	        	});	
+	        } else {
+	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/unfolloworchard/{{$orchard->idOrchard}}', function(data){ 
+	        		// alert(data);
+	        	});
+	        }
+	        
+	    });
+	});
 	</script>
+	<!-- click-follow -->
+
     <!-- Custom Theme Style -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
@@ -132,17 +148,22 @@
 						                </button>
 									</td>
 									<td>
-										<form method="POST"  action="{{url('/followorchards')}}">
-										{{ csrf_field() }}
-										<input type="hidden" name="idOrchard" value="{{$orchard->idOrchard}}">
-										<button type="submit" class="btn btn-success btn-sm follow"
-										 id="swapFollow"> 
-									        
-										    <i class="glyphicon glyphicon-plus" >&nbsp;</i>
-										    ติดตาม
-										    
-					                    </button>
-					                    </form>
+									<?php $i = 0?>
+									@foreach (Auth::user()->orchardFollowing as $key => $followedOrchard)
+										@if ($followedOrchard->idOrchard == $orchard->idOrchard)
+											<button type="button" class="btn btn-success btn-sm" id="follow"> 
+										    	<i class="glyphicon glyphicon-ok">&nbsp;</i>กำลังติดตาม
+					                    	</button>
+					                    	<?php $i++; ?>
+					                    	
+					                    	@if ($i==0) 										
+												<button type="button" class="btn btn-success btn-sm follow" id="follow"> 									        
+												    <i class="glyphicon glyphicon-plus">&nbsp;</i>ติดตาม
+							                    </button>
+							                    <?php $i++; ?>
+							                @endif
+										@endif
+					                @endforeach
 									</td>									
 								</tr>
 								<tr>
