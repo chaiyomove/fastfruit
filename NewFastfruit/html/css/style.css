@@ -294,7 +294,7 @@ html {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-size: 14px;
     line-height: 1.428571429;
     color: #696969;
@@ -408,7 +408,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     font-weight: 400;
     line-height: 1.2;
     color: #212121;
@@ -2610,7 +2610,7 @@ input[type="button"].btn-block {
 .pagination .page-numbers {
     color: #696969;
     font-size: 14px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     display: inline-block;
     margin: 0px 3px;
     background: transparent;
@@ -3145,7 +3145,7 @@ img {
 }
 
 #comments #respond .comment-reply-title small {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     padding-left: 14px;
     font-size: 14px;
 }
@@ -3533,7 +3533,7 @@ blockquote.right {
 }
 
 .widget .textwidget h5 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-size: 14px;
     font-weight: 600;
     padding-top: 10px;
@@ -5103,7 +5103,7 @@ ul.post_list_widget li a .post-date {
     font-size: 16px;
     font-weight: 400;
     text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
 }
 
 .noo-header .menu-position .navbar-nav > li.noo_megamenu > .sub-menu > li .noo_megamenu_widget_area li {
@@ -6115,14 +6115,14 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
 .noo-instagram .noo-instagram-info .noo-instagram-table .instagram-sh-title .on-instagram span {
     display: inline-block;
     text-align: left;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     font-size: 18px;
     color: #ffffff;
 }
 
 .noo-instagram .noo-instagram-info .noo-instagram-table .instagram-sh-title .on-instagram span a {
     display: block;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
     color: #ffffff;
     font-weight: 700;
@@ -6758,7 +6758,7 @@ div.products-sh-title h4 {
 }
 
 .inheader-sh-title h2 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
     margin: 12px 0 0 0;
     padding: 0;
@@ -6928,7 +6928,7 @@ div.products-sh-title h4 {
 }
 
 .custom_countdown_wrap h2 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
     margin: 12px 0 0 0;
     padding: 0;
@@ -6950,7 +6950,7 @@ div.products-sh-title h4 {
 .custom_countdown_wrap .price em {
     font-size: 18px;
     color: #696969;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     font-style: normal;
     font-weight: 400;
     line-height: 32px;
@@ -7021,7 +7021,7 @@ div.products-sh-title h4 {
 }
 
 .noo-countdown-product h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
     margin-bottom: 10px;
     position: relative;
@@ -7234,7 +7234,7 @@ div.products-sh-title h4 {
 }
 
 .noo-countdown-product.style_white h3 {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     padding: 25px 0 25px 0;
     font-size: 30px;
     text-transform: none;
@@ -7269,7 +7269,7 @@ div.products-sh-title h4 {
 }
 
 .defaultCountdown {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     font-size: 48px;
     color: #f5a64a;
     margin-top: 12px;
@@ -7713,7 +7713,7 @@ div.products-sh-title h4 {
 }
 
 .noo-short-intro h2 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-size: 56px;
     line-height: 56px;
     margin: 0;
@@ -7748,7 +7748,7 @@ div.products-sh-title h4 {
 
 .noo-short-intro .price span {
     display: block;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     color: #212121;
     font-size: 20px;
     font-weight: 400;
@@ -7765,21 +7765,16 @@ div.products-sh-title h4 {
 }
 
 .noo-simple-product-slider li {
-    padding: 15px 7.5px;
+    padding: 0 7.5px;
 }
 
 .noo-simple-product-slider li .noo-simple-slider-item {
+    height: 367px;
     position: relative;
-    height: 265px;
     background-repeat: no-repeat;
     background-color: #fff;
     background-size: cover;
     background-position: center;
-    width: 100%;
-    display: table;
-    -webkit-transition: all 0.6s ease 0s;
-    -o-transition: all 0.6s ease 0s;
-    transition: all 0.6s ease 0s;
 }
 
 .noo-simple-product-slider li .noo-simple-slider-item:before {
@@ -7811,7 +7806,7 @@ div.products-sh-title h4 {
 }
 
 .noo-simple-product-slider li .noo-simple-slider-item .n-simple-content h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 700;
@@ -7911,7 +7906,7 @@ div.creative-product-title p {
 }
 
 .noo-simple-slider-content h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     padding: 55px 0 20px 0;
     margin-bottom: 20px;
     font-size: 24px;
@@ -8370,7 +8365,7 @@ div.creative-product-title p {
 .noo-our-story2 .story-bk h2 {
     font-size: 24px;
     text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     margin: 0 0 33px;
     padding: 0;
 }
@@ -8462,7 +8457,7 @@ div.creative-product-title p {
 }
 
 .noo-blog-list li h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     margin: 9px 0 11px;
 }
 
@@ -8598,7 +8593,7 @@ div.blog-sh-title2 p {
     position: relative;
     padding: 0 50px;
     margin-top: 132px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-size: 16px;
     font-style: italic;
     line-height: 22px;
@@ -8614,7 +8609,7 @@ div.blog-sh-title2 p {
 .blog-item .blog-quote cite {
     position: relative;
     font-size: 20px;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     display: block;
     color: #79cba8;
     font-style: normal;
@@ -8651,7 +8646,7 @@ div.blog-sh-title2 p {
 
 .blog-item .blog-description h1,
 .blog-item .blog-description h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     line-height: 32px;
     padding: 10px 3% 15px;
     margin: 0;
@@ -8802,7 +8797,7 @@ div.blog-sh-title2 p {
 }
 
 .single #author-bio .author-info h4 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
 }
 
@@ -8969,7 +8964,7 @@ div.blog-sh-title2 p {
 .single .blog-item h4,
 .single .blog-item h5,
 .single .blog-item h6 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-weight: 400;
     margin-bottom: 20px;
 }
@@ -9515,7 +9510,7 @@ article.format-video .blog-item .video-inner iframe {
     font-size: 18px;
     color: #212121;
     text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
 }
 
 .noo_testimonial_wrap.noo_farmer_wrap .noo-testimonial-sync2 .testimonial-content {
@@ -9575,7 +9570,7 @@ article.format-video .blog-item .video-inner iframe {
 .noo-image-signature h6 {
     margin-top: 38px;
     font-size: 18px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
 }
 
@@ -9603,7 +9598,7 @@ article.format-video .blog-item .video-inner iframe {
 }
 
 .product-list-item .left-content h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
     margin: 30px 0 20px;
 }
@@ -10582,7 +10577,7 @@ div.product-style2 .noo-sh-title img {
 }
 
 div.product-style2 .noo-sh-title h2 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
     font-weight: 900;
 }
@@ -11202,7 +11197,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     background: #79cba8;
     border: 0;
     font-size: 20px;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     color: #ffffff;
     padding: 18px 0;
 }
@@ -11399,7 +11394,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 }
 
 .quick-view-wrap .quick-content .quick-right .product_title {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
     font-size: 24px;
     margin-bottom: 16px;
@@ -11719,7 +11714,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 }
 
 .wigetized .widget-title {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 600;
@@ -12353,7 +12348,7 @@ fieldset[disabled] .mailchimp-widget .mc-subscribe-form button.active {
 
 .widget_noo_happyhours .widget-title {
     display: inline-block;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     color: #79cba8;
     text-transform: none;
     position: relative;
@@ -12499,7 +12494,7 @@ fieldset[disabled] .mailchimp-widget .mc-subscribe-form button.active {
 }
 
 .noo-footer-shop-now h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-size: 48px;
     line-height: 48px;
     color: #ffffff;
@@ -15621,7 +15616,7 @@ input[type='checkbox'] {
 }
 
 .commerce .product-grid .noo-product-title h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
@@ -15646,7 +15641,7 @@ input[type='checkbox'] {
 }
 
 .commerce .product-grid .noo-product-title .noo-product-action h4 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-weight: 500;
     text-transform: uppercase;
     margin: 0;
@@ -15898,7 +15893,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 }
 
 .commerce .product-list .noo-product-title h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
@@ -16328,7 +16323,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 }
 
 .single-product div.product .entry-summary .product_title {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
     font-size: 24px;
     margin-bottom: 16px;
@@ -16774,7 +16769,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     background: #79cba8;
     border: 0;
     font-size: 20px;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     color: #ffffff;
     padding: 18px 0;
     font-weight: 400;
@@ -16943,7 +16938,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 
     margin-top: 0;
     display: block;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Prompt', cursive;
     font-weight: 400;
     color: #212121;
 }
