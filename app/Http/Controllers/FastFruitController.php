@@ -432,4 +432,6 @@ class FastFruitController extends Controller
         $user->orchardFollowing()->save($orchard);
         return redirect(url()->previous());
     }
+
+    
 }
