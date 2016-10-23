@@ -1,6 +1,8 @@
 @extends('layouts/master')
 @section('content')
 
+ <link rel="stylesheet" href="{{asset('css/main.css')}}">
+
 <script src="{{ asset('js/responsiveslides.min.js') }}"></script>
 	 <script>
 		$(function () {
@@ -27,6 +29,20 @@
 		});
 		});
 	</script>
+
+	<script >
+		   jQuery(function ($) {
+		    $('#clickable').on('click', function () {
+		        var $el = $(this),
+		          textNode = this.lastChild;
+		        $el.find('i').toggleClass('glyphicon-star glyphicon-star-empty');
+		        textNode.nodeValue = ($el.hasClass('bookmark') ? '' : '')
+		        $el.toggleClass('bookmark');
+		    });
+});
+
+	</script>
+
     <!-- Custom Theme Style -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
@@ -99,11 +115,11 @@
 										</a>
 									</td>
 									<td>
-								        <button type="button" class="btn btn-warning btn-sm"> 
+								        <button type="button" class="btn btn-default btn-sm" id="clickable"> 
 								            
-									        <i class="glyphicon glyphicon-star"> </i>
-									        
-				                        </button>
+											 <i class="glyphicon glyphicon-star-empty "> </i>
+																		        
+										 </button>
 								    </td>
 								</tr>
 								<tr>
