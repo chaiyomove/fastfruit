@@ -150,20 +150,18 @@
 									<td>
 									<?php $i = 0?>
 									@foreach (Auth::user()->orchardFollowing as $key => $followedOrchard)
-										@if ($followedOrchard->idOrchard == $orchard->idOrchard)
+										@if ($followedOrchard->idOrchard == $orchard->idOrchard && $i==0)
 											<button type="button" class="btn btn-success btn-sm" id="follow"> 
 										    	<i class="glyphicon glyphicon-ok">&nbsp;</i>กำลังติดตาม
 					                    	</button>
 					                    	<?php $i++; ?>
-					                    	
-					                    	@if ($i==0) 										
-												<button type="button" class="btn btn-success btn-sm follow" id="follow"> 									        
-												    <i class="glyphicon glyphicon-plus">&nbsp;</i>ติดตาม
-							                    </button>
-							                    <?php $i++; ?>
-							                @endif
-										@endif
+						                @endif
 					                @endforeach
+					                @if ($i==0) 										
+										<button type="button" class="btn btn-success btn-sm follow" id="follow"> 									        
+										    <i class="glyphicon glyphicon-plus">&nbsp;</i>ติดตาม
+					                    </button>
+							        @endif
 									</td>									
 								</tr>
 								<tr>
