@@ -29,7 +29,7 @@ class FastFruitController extends Controller
 {
     public function orchards()
     {
-        $orchards=Orchards::latest()->get();
+        $orchards=Orchards::orderBy('idOrchard','desc')->paginate(16);
         return view('orchards',compact('orchards'));
     }
 
@@ -69,7 +69,7 @@ class FastFruitController extends Controller
 
     public function products()
     {
-        $products=Product_sprints::latest()->get();
+        $products=Product_sprints::orderBy('idProductSprint','desc')->paginate(16);
         return view('products',compact('products'));
     }
 

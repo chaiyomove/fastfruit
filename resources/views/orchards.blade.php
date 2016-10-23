@@ -63,7 +63,11 @@
 
 				@endif
 			@endforeach	
-		<div class="feature-section" style="padding:0em 0em 2em 0em;">
+			<div class="text-center">
+				{!! $orchards->Links(); !!}
+
+			</div>
+		{{-- <div class="feature-section" style="padding:0em 0em 2em 0em;">
 			<div class="container" style="text-align: center;">
 				<ul class="pagination pagination-lg">
 					<li>
@@ -83,6 +87,6 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> --}}
 		
 @endsection
