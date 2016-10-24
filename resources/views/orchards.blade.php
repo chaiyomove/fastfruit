@@ -56,7 +56,7 @@
 					@if (!array_has($speciesTmp, $orchardPlot->fruitSpecie->specieName))
 						<?php $speciesTmp[] =  $orchardPlot->fruitSpecie->specieName; ?>
 						@if($plotKey==0)	
-							<i class="glyphicon glyphicon-apple"></i><p class="space">{{$orchardPlot->fruitSpecie->specieName}}
+							<p class="space"><i class="fa fa-lemon-o" style="color: green;"></i>&nbsp;{{$orchardPlot->fruitSpecie->specieName}}
 						@elseif(count($orchard->orchardPlot)===$plotKey+1)
 							{{$orchardPlot->fruitSpecie->specieName}}
 							</p>

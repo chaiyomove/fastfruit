@@ -2400,6 +2400,11 @@ input[type="button"].btn-block {
 .glyphicon-asterisk:before {
   content: "\2a";
 }
+
+.glyphicon-apple:before{
+  content:"\f8ff"
+}
+
 .glyphicon-plus:before {
   content: "\2b";
 }
@@ -5791,7 +5796,7 @@ button.close {
     display: none !important;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
+
 .box {
     border-color:#BFBFBF;
     border-style:solid;
@@ -5822,3 +5827,5 @@ p.size{
   width:100%;
   box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.25);
 }
+
+/*# sourceMappingURL=bootstrap.css.map */

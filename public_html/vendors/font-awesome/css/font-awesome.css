@@ -611,6 +611,8 @@
 }
 .fa-lemon-o:before {
   content: "\f094";
+  color: #67c315;
+  font-weight: bold;
 }
 .fa-phone:before {
   content: "\f095";
