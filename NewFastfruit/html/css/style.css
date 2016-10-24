@@ -7797,12 +7797,19 @@ div.products-sh-title h4 {
     filter: alpha(opacity=0);
 }
 
-.noo-simple-product-slider li .noo-simple-slider-item .n-simple-content {
+/*.noo-simple-product-slider li .noo-simple-slider-item .n-simple-content {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
     position: relative;
     z-index: 2;
+}*/
+.noo-simple-product-slider li .noo-simple-slider-item .n-simple-content{
+	width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
 }
 
 .noo-simple-product-slider li .noo-simple-slider-item .n-simple-content h3 {
