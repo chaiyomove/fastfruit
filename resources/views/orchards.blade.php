@@ -37,18 +37,39 @@
 				@endif
 				
 				<div class="col-md-3 feature-grid" >
-					<div class="frame">
-					@if ($key<=10)
-						<img src="{{asset('images/new.png')}}" style="position: absolute; margin-left: -5px; margin-top: -2px">
+				<div class="frame">
+				@if ($key<=10)
+					<img src="{{asset('images/new.png')}}" style="position: absolute; margin-left: -5px; margin-top: -2px">
+				@endif
+
+				@foreach ($orchard->orchardPlots as $orchardPlot)
+					@if ($orchardPlot->idPlotStatus == 1)
+						<img src="{{asset('images/gap.png')}}" style="position: absolute; margin-left: 2px; margin-top: 115px">
 					@endif
-					@foreach ($orchard->orchardPlots as $orchardPlot)
-						@if ($orchardPlot->idPlotStatus == 1)
-							<img src="{{asset('images/gap.png')}}" style="position: absolute; margin-left: 2px; margin-top: 115px">
-						@endif
-					@endforeach
-						<img src="{{asset($orchard->picture1)}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
-						<h5 class="space">{{$orchard->nameOrchard}}</h5>
-						<p class="space">{{$orchard->description}}</p>		
+				@endforeach
+				<img src="{{asset($orchard->picture1)}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+				<h5 class="space">{{$orchard->nameOrchard}}</h5>
+				<p class="space">{{$orchard->description}}</p>	
+
+				<?php $speciesTmp = array(); ?>
+				@foreach ($orchard->orchardPlots as $plotKey => $orchardPlot)
+					@if (!array_has($speciesTmp, $orchardPlot->fruitSpecie->specieName))
+						<?php $speciesTmp[] =  $orchardPlot->fruitSpecie->specieName; ?>
+						@if($plotKey==0)	
+							<i class="glyphicon glyphicon-apple"></i><p class="space">{{$orchardPlot->fruitSpecie->specieName}}
+						@elseif(count($orchard->orchardPlot)===$plotKey+1)
+							{{$orchardPlot->fruitSpecie->specieName}}
+							</p>
+						@else
+						, {{$orchardPlot->fruitSpecie->specieName}}
+							
+						@endif	
+					@endif
+					
+				@endforeach
+						<br>
+						<i class="glyphicon glyphicon-map-marker">&nbsp;{{$orchard->province->provinceName}}</i>
+						<br>	
 						<a href="{{'orchards/'.$orchard->idOrchard}}" class="space">
 							<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
 						</a>
