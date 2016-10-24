@@ -122,3 +122,5 @@ Route::post('upload', function(Request $request){
 	dd($picture);
 	// return dd($pic1->move(base_path('public_html\images'), $pic1->getClientOriginalName()));
 });
+
+Route::get('blog', 'BlogController@showPosts');
