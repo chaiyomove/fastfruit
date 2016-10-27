@@ -5821,11 +5821,17 @@ p.size{
 .frame {
   background-color:#FFF; 
   width:100%;
+  height: 370px;
 }
 .frame:hover {
   background-color:#FFF; 
   width:100%;
   box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.25);
+}
+.aaa {
+  position: absolute;
+ 
+    bottom: 0;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */

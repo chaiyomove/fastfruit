@@ -49,17 +49,19 @@
 				@endforeach
 				<img src="{{asset($orchard->picture1)}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
 				<h5 class="space">{{$orchard->nameOrchard}}</h5>
+				
 				<p class="space">{{$orchard->description}}</p>	
-
+				
 				<?php $speciesTmp = array(); ?>
 				@foreach ($orchard->orchardPlots as $plotKey => $orchardPlot)
 					@if (!array_has($speciesTmp, $orchardPlot->fruitSpecie->specieName))
 						<?php $speciesTmp[] =  $orchardPlot->fruitSpecie->specieName; ?>
-						@if($plotKey==0)	
+						@if($plotKey==0)
+							
 							<p class="space"><i class="fa fa-lemon-o" style="color: green;"></i>&nbsp;{{$orchardPlot->fruitSpecie->specieName}}
 						@elseif(count($orchard->orchardPlot)===$plotKey+1)
 							{{$orchardPlot->fruitSpecie->specieName}}
-							</p>
+							
 						@else
 						, {{$orchardPlot->fruitSpecie->specieName}}
 							
@@ -67,12 +69,14 @@
 					@endif
 					
 				@endforeach
-						<br>
+				</p>
+						<div class="aaa">
 						<i class="glyphicon glyphicon-map-marker">&nbsp;{{$orchard->province->provinceName}}</i>
 						<br>	
-						<a href="{{'orchards/'.$orchard->idOrchard}}" class="space">
-							<span class="glyphicon glyphicon-eye-open">&nbsp;ชมสวน</span>
+						<a href="{{'orchards/'.$orchard->idOrchard}}" class="space" >
+							<span class="glyphicon glyphicon-eye-open" >&nbsp;ชมสวน</span> 
 						</a>
+						</div>
 					</div>
 				</div>
 
