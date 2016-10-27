@@ -31,26 +31,28 @@
 	</script>
 
 	<script >
-		   jQuery(function ($) {
-		    $('#bookmark').on('click', function () {
-		        var $el = $(this),
-		          textNode = this.lastChild;
-		        $el.find('i').toggleClass('glyphicon-star glyphicon-star-empty');
-		        textNode.nodeValue = ($el.hasClass('bookmark') ? '' : '')
-		        $el.toggleClass('bookmark');
+		jQuery(function ($) {
+			$('#bookmark').on('click', function () {
+				@if (Auth::user())
+					var $el = $(this),
+					textNode = this.lastChild;
+					$el.find('i').toggleClass('glyphicon-star glyphicon-star-empty');
+					textNode.nodeValue = ($el.hasClass('bookmark') ? '' : '')
+					$el.toggleClass('bookmark');
 
-		        if (!$el.hasClass('bookmark')){
-	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/bookmark/{{$product->idProductSprint}}', function(data){ 
-	        		// alert(data);
-	        	});	
-	        } else {
-	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/unbookmark/{{$product->idProductSprint}}', function(data){ 
-	        		// alert(data);
-	        	});
-	        }
+					if (!$el.hasClass('bookmark')){
+						$.get('{{url('api/user')}}/{{Auth::user()->id}}/bookmark/{{$product->idProductSprint}}', function(data){ 
+		        		// alert(data);
+		        		});	
+					} else {
+						$.get('{{url('api/user')}}/{{Auth::user()->id}}/unbookmark/{{$product->idProductSprint}}', function(data){ 
+		        		// alert(data);
+		        		});
+					}
+				@endif
 
-		    });
-});
+			});
+		});
 
 	</script>
 
@@ -125,22 +127,28 @@
 												</button>														
 										</a>
 									</td>
-									<td>
-									<?php $i = 0?>
-									@foreach (Auth::user()->userBookmarks as $key => $bookmark)
-										@if ($bookmark->idProductSprint == $product->idProductSprint && $i==0)
-								        <button type="button" class="btn btn-default btn-sm" id="bookmark"> 
-											 <i class="glyphicon glyphicon-star "> </i>						    
-										 </button>
-										 <?php $i++; ?>
-										  @endif
-					                @endforeach
-					                @if ($i==0) 
-					                <button type="button" class="btn btn-default btn-sm bookmark" id="bookmark"> 
-											 <i class="glyphicon glyphicon-star-empty "> </i>						    
-										 </button>
-										 @endif
-								    </td>
+									
+									
+									@if (Auth::user())
+										<td>
+											<?php $i = 0?>
+											@foreach (Auth::user()->userBookmarks as $key => $bookmark)
+												@if ($bookmark->idProductSprint == $product->idProductSprint && $i==0)
+										        <button type="button" class="btn btn-default btn-sm" id="bookmark"> 
+													 <i class="glyphicon glyphicon-star "> </i>						    
+												 </button>
+												 <?php $i++; ?>
+												  @endif
+							                @endforeach
+							                @if ($i==0) 
+							                <button type="button" class="btn btn-default btn-sm bookmark" id="bookmark"> 
+													 <i class="glyphicon glyphicon-star-empty "> </i>						    
+											</button>
+										 	@endif
+									 	</td>
+									@endif
+									
+								    
 								</tr>
 								<tr>
 									<td>

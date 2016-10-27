@@ -55,6 +55,7 @@
 	        $el.toggleClass('follow');
 
 	        //ajax
+	        @if (Auth::user())
 	        if (!$el.hasClass('follow')){
 	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/followorchard/{{$orchard->idOrchard}}', function(data){ 
 	        		// alert(data);
@@ -64,6 +65,7 @@
 	        		// alert(data);
 	        	});
 	        }
+	        @endif
 	        
 	    });
 	});
@@ -147,22 +149,24 @@
 											แผนที่
 						                </button>
 									</td>
-									<td>
-									<?php $i = 0?>
-									@foreach (Auth::user()->orchardFollowing as $key => $followedOrchard)
-										@if ($followedOrchard->idOrchard == $orchard->idOrchard && $i==0)
-											<button type="button" class="btn btn-success btn-sm" id="follow"> 
-										    	<i class="glyphicon glyphicon-ok">&nbsp;</i>กำลังติดตาม
-					                    	</button>
-					                    	<?php $i++; ?>
-						                @endif
-					                @endforeach
-					                @if ($i==0) 										
-										<button type="button" class="btn btn-success btn-sm follow" id="follow"> 									        
-										    <i class="glyphicon glyphicon-plus">&nbsp;</i>ติดตาม
-					                    </button>
-							        @endif
-									</td>									
+									@if (Auth::user())
+										<td>
+											<?php $i = 0?>
+											@foreach (Auth::user()->orchardFollowing as $key => $followedOrchard)
+												@if ($followedOrchard->idOrchard == $orchard->idOrchard && $i==0)
+													<button type="button" class="btn btn-success btn-sm" id="follow"> 
+												    	<i class="glyphicon glyphicon-ok">&nbsp;</i>กำลังติดตาม
+							                    	</button>
+							                    	<?php $i++; ?>
+								                @endif
+							                @endforeach
+							                @if ($i==0) 										
+												<button type="button" class="btn btn-success btn-sm follow" id="follow"> 									        
+												    <i class="glyphicon glyphicon-plus">&nbsp;</i>ติดตาม
+							                    </button>
+									        @endif
+										</td>		
+									@endif
 								</tr>
 								<tr>
 									<td>
