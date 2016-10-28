@@ -11712,7 +11712,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 }
 
 .wigetized {
-    margin-bottom: 100px;
+    /*margin-bottom: 100px;*/
 }
 
 .wigetized .noo-row {
@@ -11722,7 +11722,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 
 .wigetized .widget-title {
     font-family: 'Prompt', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -11954,7 +11954,8 @@ fieldset[disabled] .mailchimp-widget .mc-subscribe-form button.active {
 }
 
 .footer-2 {
-    padding-top: 68px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .footer-2 .mailchimp-widget {
@@ -15704,8 +15705,16 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     display: none;
 }
 
-.commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button {
-    font-size: 14px;
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button{
+    font-size: 16px;
+    height: 48px;
+    line-height: 48px;
+    background: none;
+    display: block;
+}
+
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .info_circle_button{
+    font-size: 16px;
     height: 48px;
     line-height: 48px;
     background: none;
@@ -15735,8 +15744,20 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     padding-right: 10px;
 }
 
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .info_circle_button span:before {
+    font-family: 'FontAwesome';
+    content: '';
+    content: "\f05a";
+    padding-right: 10px;
+}
+
 .commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button:hover,
 .commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button:focus {
+    background: none;
+}
+
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .info_circle_button:hover,
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .info_circle_button:focus {
     background: none;
 }
 
