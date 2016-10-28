@@ -5899,7 +5899,7 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
     color: #ffffff;
     margin: 0;
     text-align: center;
-    font-size: 56px;
+    font-size: 70px;
     opacity: 0;
     filter: alpha(opacity=0);
     -webkit-transform: translate(0, 80px);
@@ -15705,7 +15705,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     display: none;
 }
 
-.commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button{
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .eye_button{
     font-size: 16px;
     height: 48px;
     line-height: 48px;
@@ -15737,10 +15737,10 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     outline-color: transparent;
 }
 
-.commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button span:before {
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .eye_button span:before {
     font-family: 'FontAwesome';
     content: '';
-    content: "\f07a";
+    content: "\f06e";
     padding-right: 10px;
 }
 
@@ -15751,8 +15751,8 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     padding-right: 10px;
 }
 
-.commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button:hover,
-.commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button:focus {
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .eye_button:hover,
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .eye_button:focus {
     background: none;
 }
 
