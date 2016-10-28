@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $latestProducts[] = Product_sprints::latest()->take(4)->get();
         $latestProducts = array_collapse($latestProducts);
-        
+        // $product = $latestProducts[1];
         return view('home',compact('latestProducts'));
     }
 }
