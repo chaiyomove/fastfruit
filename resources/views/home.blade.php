@@ -190,7 +190,7 @@
 														<img src="images/gap.png" style="position: absolute; margin-left: 2px; margin-top: 115px">
 													@endif
 													<a href="{{url('product', [$product->idProductSprint])}}">
-														<img width="600" height="760" src="{{$product->picture1}}" alt="" />
+														<img style="width: 260px; height: 160px;" src="{{$product->picture1}}" alt="" />
 													</a>
 													<!-- <div class="noo-rating">
 														<div class="star-rating">
