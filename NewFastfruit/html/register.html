@@ -127,20 +127,21 @@
 								<div id="customer_login">
 									<div class="col-md-6">
 										<h2>สมัครสมาชิก</h2>
-										<form class="register">
+										<form class="register" method="POST" action="{{ url('/register') }}">
+											{{ csrf_field() }}
 											<div class="form-row form-row-wide">
 												<label for="reg_fname">
 													ชื่อ
 													<span class="required">*</span>
 												</label>
-												<input type="text" class="input-text" name="fname" id="reg_fname" value="" />
+												<input type="text" class="input-text" name="firstName" id="reg_fname" value="" />
 											</div>
 											<div class="form-row form-row-wide">
 												<label for="reg_lname">
 													นามสกุล
 													<span class="required">*</span>
 												</label>
-												<input type="email" class="input-text" name="lname" id="reg_lname" value="" />
+												<input type="email" class="input-text" name="lastName" id="reg_lname" value="" />
 											</div>
 											<div class="form-row form-row-wide">
 												<label for="reg_email">
@@ -161,7 +162,7 @@
 													ยืนยันรหัสผ่าน
 													<span class="required">*</span>
 												</label>
-												<input type="password" class="input-text" name="password" id="reg_password" />
+												<input type="password" class="input-text" name="password_confirmation" id="reg_password" />
 											</div>
 											<div class="form-row">
 												<input type="submit" class="button" name="register" value="สมัครสมาชิก" />

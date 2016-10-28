@@ -1,57 +1,271 @@
-@extends('layouts/master')
-@section('content')
-<!-- pop-up -->
-<link rel="stylesheet" href="css/swipebox.css">
-			<script src="js/jquery.swipebox.min.js"></script> 
-			    <script type="text/javascript">
-					jQuery(function($) {
-						$(".swipebox").swipebox();
-					});
-				</script>
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<link rel="shortcut icon" href="images/favicon.ico"/>
+		<title>สมัครสมาชิก | FastFruit</title>
 
-<!-- pop-up -->
+		<link rel='stylesheet' href='css/bootstrap.min.css' type='text/css' media='all' />
+		<link rel='stylesheet' href='css/owl.carousel.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/owl.theme.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/font-awesome.min.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Prompt:100,300,400,700,900,300italic,400italic,700italic,900italic' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/style.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/custom.css' type='text/css' media='all'/>
+		<link rel="stylesheet" href='css/magnific-popup.css' type='text/css' media='all' />
 
-
-										
-
-		<!--banner-->
-		<div class="banner-section">
-			<div class="container">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+	</head>
+	<body>
+		<div class="noo-spinner">
+			<div class="spinner">
+				<div class="cube1"></div>
+				<div class="cube2"></div>
 			</div>
 		</div>
-		<!--banner-->
-		<br><br><br>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4">
-				</div>
-				<div class="col-md-4">
-					<div class="modal-body real-spa">
-						<div class="login-grids">
-							<div class="login">									
-								<div class="login-right">
-									<form  method="POST" action="{{ url('/register') }}">
-									 {{ csrf_field() }}
-										<h3>สมัครสมาชิก</h3>
-										<input type="text" name="firstName" placeholder="ชื่อ" required="" value="{{old('firstName')}}" autofocus>
-										<input type="text" name="lastName" placeholder="นามสกุล" required="" value="{{old('lastName')}}">
-										<input type="text" name="email" placeholder="อีเมล์" required="" value="{{old('email')}}">	
-										<input type="password" name="password" placeholder="รหัสผ่าน" required="">	
-										<input type="password" name="password_confirmation" placeholder="ยืนยันรหัสผ่าน" required="">	
-										
-										<input type="submit" value="สมัครสมาชิก" >
-									</form>
-								</div>																
-							</div>								
+		<div class="site">
+			<header class="noo-header header-3 header-static">
+				<div class="navbar-wrapper">
+					<div class="navbar navbar-default">
+						<div class="container">
+							<div class="menu-position">
+								<div class="navbar-header pull-left">
+									<div class="noo_menu_canvas">
+										<div class="btn-search noo-search">
+											<i class="fa fa-search"></i>
+										</div>
+										<div data-target=".nav-collapse" class="btn-navbar">
+											<span></span>
+											<span></span>
+											<span></span>
+										</div>
+									</div>
+									<a href="index-Fastfruit.html" class="navbar-brand">
+										<img class="noo-logo-img noo-logo-normal" src="images/fastfruit4.png" alt="">
+									</a>
+								</div>  
+								<nav class="pull-right noo-menu-option">
+									<a href="#" class="button-expand-option"><i class="fa fa-ellipsis-v"></i></a>
+									<ul>
+										<li class="menu-item fly-right">
+											<a href="login.html">
+												<i class="fa fa-sign-in"></i>เข้าสู่ระบบ 
+											</a>
+										</li>
+										<li class="menu-item fly-right">
+											<a href="register.html">
+												<i class="fa fa-lock"></i>สมัครสมาชิก
+											</a>
+										</li>
+										<li class="menu-item fly-right">
+											<a id="noo-search" class="search-button noo-search" href="#">
+												<i class="fa fa-search"></i> ค้นหา
+											</a>
+										</li>
+									</ul>
+									<a href="#" class="button-menu-extend"><i class="fa fa-bars"></i></a>
+								</nav>
+								<nav class="pull-left noo-main-menu">
+									<ul class="nav-collapse navbar-nav">
+										<li class="current-menu-item">
+											<a href="index-Fastfruit.html">หน้าแรก</a>
+										</li>
+										<li>
+											<a href="orchard.html">ชมสวน</a>
+										</li>
+										<li>
+											<a href="product.html">ดูผลผลิต</a>			
+										</li>
+										<li>
+											<a href="our-story.html">จับคู่สวน</a>
+										</li>
+										<li>
+											<a href="contact.html">ติดต่อเรา</a>
+										</li>
+										<li>
+											<a href="boxes.html">เพิ่มสวน</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="search-header5">
+					<div class="remove-form"></div>
+					<div class="container">
+						<form class="form-horizontal">
+							<label class="note-search">Type and Press Enter to Search</label>
+							<input type="search" name="s" class="form-control" value="" placeholder="Search...">
+							<input type="submit" value="Search">
+						</form> 
+					</div>
+				</div>
+			</header>
+			<section class="noo-page-heading eff">
+				<div class="container">
+					<div class="noo-heading-content">
+						<h1 class="page-title eff">สมัครสมาชิก</h1>
+						<div class="noo-page-breadcrumb eff">
+							<a href="index-Fastfruit.html" class="home">FastFruit</a>/<span>สมัครสมาชิก</span>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="main">
+				<div class="commerce commerce-account noo-shop-main pt-5 pb-7">
+					<div class="container">
+						<div class="row">
+							<div class="noo-main col-md-12">
+								<div class="col-md-3"></div>
+								<div id="customer_login">
+									<div class="col-md-6">
+										<h2>สมัครสมาชิก</h2>
+										<form class="register" method="POST" action="{{ url('/register') }}">
+											{{ csrf_field() }}
+											<div class="form-row form-row-wide">
+												<label for="reg_fname">
+													ชื่อ
+													<span class="required">*</span>
+												</label>
+												<input type="text" class="input-text" name="firstName" id="reg_fname" value="{{old('firstName')}}" />
+											</div>
+											<div class="form-row form-row-wide">
+												<label for="reg_lname">
+													นามสกุล
+													<span class="required">*</span>
+												</label>
+												<input type="test" class="input-text" name="lastName" id="reg_lname" value="{{old('lastName')}}" />
+											</div>
+											<div class="form-row form-row-wide">
+												<label for="reg_email">
+													อีเมล
+													<span class="required">*</span>
+												</label>
+												<input type="email" class="input-text" name="email" id="reg_email" value="{{old('email')}}" />
+											</div>
+											<div class="form-row form-row-wide">
+												<label for="reg_password">
+													รหัสผ่าน
+													<span class="required">*</span>
+												</label>
+												<input type="password" class="input-text" name="password" id="reg_password" />
+											</div>
+											<div class="form-row form-row-wide">
+												<label for="reg_password">
+													ยืนยันรหัสผ่าน
+													<span class="required">*</span>
+												</label>
+												<input type="password" class="input-text" name="password_confirmation" id="reg_password" />
+											</div>
+											<div class="form-row">
+												<input type="submit" class="button" name="register" value="สมัครสมาชิก" />
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="col-md-3"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="noo-footer-shop-now">
+					<div class="container">
+						<div class="col-md-7">
+							<h4>- Every day fresh -</h4>
+							<h3>organic food</h3>
+						</div>
+						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
+					</div>
 				</div>
 			</div>
-			
+			<footer class="wrap-footer footer-2 colophon wigetized newsletter">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-1"></div>
+						<div class="col-md-3 col-sm-6 item-footer-four">
+							<div class="widget widget_about"> 
+								<div class="noo_about_widget">
+									<a href="#">
+										<img src="images/fastfruit1.png" alt="" />
+									</a>
+									<p>
+										เว็บแอพสื่อกลางระหว่างสวนและคุณ
+									</p>
+									<p>
+										ที่จะทำให้การเลือกผลไม้
+									</p>
+									<p>
+										เป็นเรื่องง่ายและสะดวกขึ้น
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-1"></div>
+						<div class="col-md-3 col-sm-6 item-footer-four">
+							<div class="widget widget_text">
+								<h4 class="widget-title">ติดต่อ</h4> 
+								<div class="textwidget">
+									<h5>ที่อยู่</h5>
+									<p>75 ซ.28 ถ.ประชาอุทิศ บางมด ทุ่งครุ กทม. 10140</p>
+									<h5>โทร</h5>
+									<p>
+										<a href="#">090 970 9049</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 item-footer-four">
+							<div class="widget widget_text">
+								<h4 class="widget-title">อีเมล</h4> 
+								<div class="textwidget">
+									<p>
+										<a href="mailto:fastfruit@gmail.com">
+											fastfruit@gmail.com
+										</a>
+									</p>
+								</div>
+								<div class="widget widget_noo_social"> 
+									<div class="noo_social">
+										<div class="social-all">
+											<a href="#" class="fa fa-facebook"></a>
+											<a href="#" class="fa fa-google-plus"></a>
+											<a href="#" class="fa fa-twitter"></a>
+											<a href="#" class="fa fa-youtube"></a>
+											<a href="#" class="fa fa-skype"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-1"></div>
+					</div>
+				</div>
+			</footer>
 		</div>
-@endsection
+		<a href="#" class="go-to-top hidden-print"><i class="fa fa-angle-up"></i></a>
 
-	
-		
+		<script type='text/javascript' src='js/jquery.min.js'></script>
+		<script type='text/javascript' src='js/bootstrap.min.js'></script>
+		<script type='text/javascript' src='js/jquery-migrate.min.js'></script>
+		<script type='text/javascript' src='js/modernizr-2.7.1.min.js'></script>
+		<script type='text/javascript' src='js/off-cavnass.js'></script>
+		<script type='text/javascript' src='js/script.js'></script>
+		<script type='text/javascript' src='js/custom.js'></script>
+		<script type='text/javascript' src='js/imagesloaded.pkgd.min.js'></script>
+		<script type='text/javascript' src='js/isotope.pkgd.min.js'></script>
+		<script type='text/javascript' src='js/portfolio.js'></script>
+		<script type='text/javascript' src='js/jquery.touchSwipe.min.js'></script>
+		<script type='text/javascript' src='js/jquery.carouFredSel-6.2.1.js'></script>
+		<script type='text/javascript' src='js/jquery.isotope.min.js'></script>
+		<script type='text/javascript' src='js/owl.carousel.min.js'></script>
+		<script type='text/javascript' src='js/jflickrfeed.min.js'></script>
+		<script type='text/javascript' src='js/jquery.magnific-popup.js'></script>
+	</body>
+</html>
