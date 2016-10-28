@@ -46,11 +46,16 @@
 						<img src="{{ asset('images/gap.png') }}" style="position: absolute; margin-left: 2px; margin-top: 115px">
 					@endif
 					<img src="{{asset($product->picture1)}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
-					<h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}</h5>						
+					<h5 class="space">{{$product->orchardPlot->fruitSpecie->specieName}}จาก {{$product->orchardPlot->orchard->nameOrchard}}</h5>						
 					<p class="space">{{$product->description}}</p>
+					<p class="space">จำนวนผลผลิต: {{$product->fruitNum}} กิโลกรัม</p>
+					<p class="space">รอบการผลิต </p>
+					<p class="space">ตั้งแต่:{{$product->startDate}} ถึง: {{$product->endDate}}</p>
+					<div class="aaa">
 					<a href="{{url('product', [$product->idProductSprint])}}" class="space">
 						<span class="glyphicon glyphicon-info-sign">&nbsp;ดูรายละเอียด</span>
 					</a>
+					</div>
 				</div>
 			</div>
 			
