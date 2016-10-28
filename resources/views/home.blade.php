@@ -176,13 +176,13 @@
 										<h2>ผลผลิตที่ลงใหม่</h2> 
 									</div>
 									@foreach ($latestProducts as $key => $product)
-									@if ($key%4 == 0)
-									<div class="noo-product-grid products row product-grid noo-grid-4">
-									@endif
+										@if ($key%4 == 0)
+											<div class="noo-product-grid products row product-grid noo-grid-4">
+										@endif
 										<div class="fruit organic-fruits masonry-item col-md-4 col-sm-6">
 											<div class="noo-product-inner">
 												<div class="noo-product-thumbnail">
-												@if ($key<=10)
+													@if ($key<=10)
 														<img src="images/new.png" style="position: absolute; margin-left: -5px; margin-top: -2px">
 													@endif
 
@@ -216,6 +216,7 @@
 											</div>
 										</div>
 										@if ((count($latestProducts)===$key+1) || $key%4 == 3)
+											</div>
 										@endif
 									@endforeach	
 
