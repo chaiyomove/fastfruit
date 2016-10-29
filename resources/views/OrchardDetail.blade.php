@@ -1,249 +1,128 @@
 @extends('layouts/master')
 @section('content')
 
- 	<link rel="stylesheet" href="{{asset('css/main.css')}}">
-
-	<script src="{{ asset('js/responsiveslides.min.js') }}"></script>
-		 <script>
-			$(function () {
-			  $("#slider").responsiveSlides({
-				auto:true,
-				nav: false,
-				speed: 1000,
-				namespace: "callbacks",
-				pager:true,
-			  });
-			});
-		</script>
-	<link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
-	<script src="{{ asset('js/owl.carousel.js') }}"></script>
-	<script>
-		$(document).ready(function() {
-		$("#owl-demo").owlCarousel({
-			items : 1,
-			lazyLoad : true,
-			autoPlay : true,
-			navigation : false,
-			navigationText :  false,
-			pagination : true,
-		});
-		});
-	</script>
-
-	<!-- hide/show-map -->
-	<script>
-		function open_map() 
-		{
-			if (document.getElementById('map').style.visibility == "hidden"){
-				document.getElementById('map').style.visibility = "visible";	
-			} else {
-				document.getElementById('map').style.visibility = "hidden";					
-			}
-			
-		}		
-	</script>
-	<!-- hide/show-map -->
-
-	<!-- click-follow -->
-	<script>
-	jQuery(function ($) {
-	    $('#follow').on('click', function () {
-	        var $el = $(this),
-	        textNode = this.lastChild;
-	        $el.find('i').toggleClass('glyphicon-ok glyphicon-plus');
-	        textNode.nodeValue = ($el.hasClass('follow') ? 'กำลังติดตาม' : 'ติดตาม')
-	        $el.toggleClass('follow');
-
-	        //ajax
-	        @if (Auth::user())
-	        if (!$el.hasClass('follow')){
-	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/followorchard/{{$orchard->idOrchard}}', function(data){ 
-	        		// alert(data);
-	        	});	
-	        } else {
-	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/unfolloworchard/{{$orchard->idOrchard}}', function(data){ 
-	        		// alert(data);
-	        	});
-	        }
-	        @endif
-	        
-	    });
-	});
-	</script>
-	<!-- click-follow -->
-
-    <!-- Custom Theme Style -->
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
-
-
-			<!--profile-->
-			<div class="feature-section">
+<link rel="stylesheet" href="{{asset('css/main.css')}}">
+			<section class="noo-page-heading eff heading-3">
 				<div class="container">
-					<h3>{{$orchard->nameOrchard}}</h3>
-					<div id="owl-demo" class="owl-carousel">
-						<div class="item">		
-							<div class="testmonial-text" style="width: 55%; margin: auto; float: left;">
-								<div class="carousel slide" id="carousel-824332" 	>
-									<ol class="carousel-indicators" >
-										<li class="active" data-slide-to="0" data-target="#carousel-824332">
-										</li>
-
-										@if (!str_contains($orchard->picture2, "no11"))
-											<li data-slide-to="1" data-target="#carousel-824332">
-											</li>
-										@endif
-										@if (!str_contains($orchard->picture3, "no11"))
-											<li data-slide-to="2" data-target="#carousel-824332">
-											</li>
-										@endif
-
-									</ol>
-								<div class="carousel-inner">
-									<div class="item active">
-										<img src="{{ asset($orchard->picture1)}}" style="height: 300px; width: 850px;" />
-									</div>
-
-									@if (!str_contains($orchard->picture2, "no11"))
-									<div class="item">
-										<img src="{{ asset($orchard->picture2)}}" style="height: 300px; width: 850px;" />										
-									</div>
-									@endif
-									@if (!str_contains($orchard->picture3, "no11"))
-									<div class="item">
-										<img src="{{ asset($orchard->picture3)}}" style="height: 300px; width: 850px;" />
-									</div>
-									@endif
-
-								</div> 
-								<a class="left carousel-control" href="#carousel-824332" data-slide="prev">
-								<span class="glyphicon glyphicon-chevron-left"></span></a> 
-								<a class="right carousel-control" href="#carousel-824332" data-slide="next">
-								<span class="glyphicon glyphicon-chevron-right"></span></a>
-							</div>
-							<div style="margin-top: 15px">
-							<table>
-								<tr>
-									<!--<td>
-										<button type="button" class="btn btn-info btn-sm"> 
-											<h5>
-											<i class="glyphicon glyphicon-user"> </i>
-											<i class="glyphicon glyphicon-comment"> </i>&nbsp;&nbsp;แชท
-											</h5>
-							            </button>
-									</td>-->
-									<td>
-										<a href="{{url('products',[$orchard->idOrchard])}}">
-											<button type="button" class="btn btn-danger btn-sm" > 
-												
-												<i class="glyphicon glyphicon-eye-open">&nbsp;</i>ผลผลิต
-												
-							                </button>														
-										</a>
-									</td>
-									<td>
-										<button type="button" class="btn btn-warning btn-sm" id="openmap" onclick="open_map()"> 
-										    
-											<i class="glyphicon glyphicon-globe">&nbsp;</i>
-											แผนที่
-						                </button>
-									</td>
-									@if (Auth::user())
-										<td>
-											<?php $i = 0?>
-											@foreach (Auth::user()->orchardFollowing as $key => $followedOrchard)
-												@if ($followedOrchard->idOrchard == $orchard->idOrchard && $i==0)
-													<button type="button" class="btn btn-success btn-sm" id="follow"> 
-												    	<i class="glyphicon glyphicon-ok">&nbsp;</i>กำลังติดตาม
-							                    	</button>
-							                    	<?php $i++; ?>
-								                @endif
-							                @endforeach
-							                @if ($i==0) 										
-												<button type="button" class="btn btn-success btn-sm follow" id="follow"> 									        
-												    <i class="glyphicon glyphicon-plus">&nbsp;</i>ติดตาม
-							                    </button>
-									        @endif
-										</td>		
-									@endif
-								</tr>
-								<tr>
-									<td>
-										<a href="{{url('plots',[$orchard->idOrchard])}}">
-											<button type="button" class="btn btn-info btn-sm" style="margin-top: 10px"> 
-											    <i class="glyphicon glyphicon-eye-open">&nbsp;</i>
-											    ดูแปลง
-						                    </button>
-					                    </a>
-									</td>
-									@foreach ($orchard->admins as $admin)
-										@if ($admin->user == Auth::user())
-											<td>
-												<a href="{{url('plot/' .$orchard->idOrchard. '/create')}}">
-													<button type="button" class="btn btn-primary btn-sm" style="margin-top: 10px"> 
-													    <i class="glyphicon glyphicon-plus">&nbsp;</i>
-													    เพิ่มแปลง
-								                    </button>
-							                    </a>
-											</td>
-										@endif
-									@endforeach																		
-								</tr>
-							</table>
-								
-					            
-							</div>
-						</div>
-
-								<!--Gentelela_table-->
-									<div class="col-md-12 col-sm-12 col-xs-12" style="width: 45%; margin: auto; float: right;">
-									    <div class="x_panel">
-									    <div class="x_title">
-									        <h4>ข้อมูล {{$orchard->nameOrchard}}</h4>
-									        <div class="clearfix"></div>
-									    </div>
-									        <div class="x_content" style="font-size: 16px">
-
-									            <table class="table table-striped">
-									                <tbody>
-									                <tr>
-									                    <th scope="row" width="40%">รายละเอียด</th>
-									                    <td colspan="2" align="left">
-									                    {{$orchard->description}}	
-									                    </td>
-									                    <td></td>
-									                </tr>
-									                <tr>
-									                    <th scope="row" width="40%">ที่อยู่</th>
-									                    <td colspan="2" align="left">{{$orchard->address}}               	
-									                    </td>
-									                    <td></td>
-									                </tr>
-									                <tr>
-									                    <th scope="row" width="40%">จังหวัด</th>
-									                    <td colspan="2" align="left">{{$orchard->province->provinceName}}</td>
-									                    <td></td>
-									                </tr>
-									                <tr>
-									                    <th scope="row" width="40%">พื้นที่</th>
-									                    <td align="left" width="5%">{{$orchard->area}}</td>
-									                    <td align="left">ไร่</td>
-									                </tr>
-									                <tr>
-									                    <th scope="row" width="40%">ติดต่อผู้ขาย</th>
-									                    <td colspan="2" align="left">{{$orchard->phone}}</td>
-									                    <td></td>
-									                </tr>							                
-									                </tbody>
-									            </table>
-
-									        </div>
+					<div class="noo-heading-content">
+						<h1 class="page-title eff">ข้อมูลสวน</h1>
+					</div>
+				</div>
+			</section>
+			<div class="main">
+				<div class="commerce single-product noo-shop-main">
+					<div class="container">
+						<div class="row">
+							<div class="noo-main col-md-9">
+								<div class="product">
+									<div class="single-inner">
+										<div class="images">
+											<div class="project-slider">
+												<div class="owl-carousel sync1">
+													<div class="item">
+														<img style="width: 100%; height: 100%" src="{{ asset($orchard->picture1)}}" alt="" />
+													</div>
+													<div class="item">
+														<img style="width: 100%; height: 100%" src="{{ asset($orchard->picture2)}}" alt="" />
+													</div>
+													<div class="item">
+														<img style="width: 100%; height: 100%" src="{{ asset($orchard->picture3)}}" alt="" />
+													</div>
+													<div class="item">
+														<img style="width: 100%; height: 100%" src="images/product/features/product_6.jpg" alt="" />
+													</div>
+												</div>
+												<div class="owl-carousel sync2">
+													<div class="item">
+														<img src="{{ asset($orchard->picture1)}}" alt="" />
+													</div>
+													<div class="item">
+														<img src="{{ asset($orchard->picture2)}}" alt="" />
+													</div>
+													<div class="item">
+														<img src="{{ asset($orchard->picture3)}}" alt="" />
+													</div>
+													<div class="item">
+														<img src="images/product/features/product_6.jpg" alt="" />
+													</div>
+												</div>
+											</div>
 										</div>
-									</div>
+										<div class="summary entry-summary">
+											<h1 class="product_title entry-title border_bottom">{{$orchard->nameOrchard}}</h1>
+											<div class="product_meta">
+												<table class="detail">
+													<tr>
+														<td>ที่อยู่:</td>
+														<td>{{$orchard->address}}</td>
+													</tr>
+													<tr>
+														<td>จังหวัด:</td>
+														<td>{{$orchard->province->provinceName}}</td>
+													</tr>
+													<tr>
+														<td>พื้นที่:</td>
+														<td>{{$orchard->area}}&nbsp;ไร่</td>
+													</tr>
+													<tr>
+														<td>ติดต่อผู้ขาย:</td>
+														<td>{{$orchard->phone}}</td>
+													</tr>
+												</table>
+											</div>
+											
+											<div>
+												<!-- <button type="submit" class="single_add_to_cart_button button">
+													<i class="fa fa-eye">&nbsp;</i>ดูผลผลิต
+												</button>
+												<button type="submit" class="single_add_to_cart_button plot">
+													<i class="fa fa-eye">&nbsp;</i>ดูแปลง
+												</button>
+												<button type="submit" class="single_add_to_cart_button map">
+													<i class="fa fa-globe">&nbsp;</i>แผนที่
+												</button> -->
+												<button type="submit" class="single_add_to_cart_button follow">
+													<i class="fa fa-plus">&nbsp;</i>ติดตาม
+												</button>
+												<!-- <button type="submit" class="single_add_to_cart_button follow">
+													<i class="fa fa-check">&nbsp;</i>กำลังติดตาม
+												</button> -->
+											</div>
 
-										{{-- <h1>MAP</h1> --}}
-										    <script>
+											<div class="clear"></div>
+											
+										</div> 
+									</div>
+									<div class="commerce-tabs">
+										<ul class="nav nav-tabs tabs">
+									    	<li class="active">
+									    		<a data-toggle="tab" href="#tab-1">รายละเอียด</a>
+									    	</li>
+									    	<li>
+									    		<a data-toggle="tab" href="#tab-2">ดูผลผลิต</a>
+									    	</li>
+									    	<li>
+									    		<a data-toggle="tab" href="#tab-3">ดูแปลง</a>
+									    	</li>
+									    	<li>
+									    		<a data-toggle="tab" href="#tab-4">แผนที่</a>
+									    	</li>
+									    	<li>
+									    		<a data-toggle="tab" href="#tab-5">รีวิว</a>
+									    	</li>
+									  	</ul>
+										<div class="tab-content">
+											<div class="tab-pane fade in active" id="tab-1">
+												<p>{{$orchard->description}}</p>
+											</div>
+											<div id="tab-2" class="tab-pane fade">
+												<p>ผลผลิต</p>
+											</div>
+											<div id="tab-3" class="tab-pane fade">
+												<p>แปลง</p>
+											</div>
+											<div id="tab-4" class="tab-pane fade">
+												<script>
 										       function initMap() {
 										        var uluru = {lat: {{App\Orchards::find($orchard->idOrchard)->lat}}, lng: {{App\Orchards::find($orchard->idOrchard)->lng}} };
 										        var map = new google.maps.Map(document.getElementById('map'), {
@@ -257,20 +136,231 @@
 										      }
 										    </script>
 										    
-										    <div id="map" style="visibility: hidden;"">
+										    <div id="map" >
 										    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3gEIaUeZYIfOeIDdjhQDtobPsFl_raoc&callback=initMap&language=th" async defer></script>
 										   
 											</div>
+											</div>
+											<div id="tab-5" class="tab-pane fade">
+												<div id="comments" class="comments-area">
+						                        	<h2 class="comments-title">2 Comments</h2>
+						                        	<ol class="comments-list">
+									        			<li class="comment">
+						            						<div class="comment-wrap">
+						                						<div class="comment-img">
+						                    						<img alt='' src='http://placehold.it/100x100' height='80' width='80' />
+						                    					</div>
+						                						<article class="comment-block">
+						                    						<header class="comment-header">
+						                        						<cite class="comment-author">
+						                        							admin
+						                        						</cite>
+												                        <div class="comment-meta">
+												                            <span class="time">
+												                                4 months ago
+												                            </span>
+												                        </div>
+						                                            </header>
+						                    						<div class="comment-content">
+						                        						<p>fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus</p>
+						                    						</div>
+						                    						<span class="comment-reply">
+						                        						<a class='comment-reply-link' href='#'><i class="fa fa-reply"></i> Reply</a>
+						                        					</span>
+						                						</article>
+						            						</div>
+						        							<ol class="children">
+						        								<li class="comment">
+						            								<div class="comment-wrap">
+						                								<div class="comment-img">
+						                    								<img alt='' src='http://placehold.it/100x100' height='80' width='80' />
+						                    							</div>
+						                								<article class="comment-block">
+						                    								<header class="comment-header">
+						                        								<cite class="comment-author">
+						                        									admin
+						                                                    	</cite>
+														                        <div class="comment-meta">
+														                            <span class="time">
+														                                4 months ago
+														                            </span>
+														                        </div>
+						                                            		</header>
+														                    <div class="comment-content">
+														                        <p>fSames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus</p>
+														                    </div>
+						                    								<span class="comment-reply">
+								                        						<a class='comment-reply-link' href='#'><i class="fa fa-reply"></i> Reply</a>
+								                        					</span>
+						                								</article>
+														            </div>
+														        </li><!-- #comment-## -->
+															</ol><!-- .children -->
+														</li><!-- #comment-## -->
+													</ol> <!-- /.comments-list -->
+													<div id="respond-wrap">
+						        						<div id="respond" class="comment-respond">
+															<h3 id="reply-title" class="comment-reply-title">
+																<span>Leave your thought</span>
+															</h3>
+															<form class="comment-form">
+																<div class="row">
+																	<div class="comment-form-author col-sm-6">
+																		<input id="author" name="author" type="text" placeholder="Enter Your Name*" class="form-control" value="" size="30" />
+																	</div>
+																	<div class="comment-form-email col-sm-6">
+																		<input id="email" name="email" type="text" placeholder="Enter Your Email*" class="form-control" value="" size="30" />
+																	</div>
+																	<div class="col-sm-12">
+																		<div class="comment-form-comment">
+																			<textarea class="form-control" placeholder="Enter Your Comment" id="comment" name="comment" cols="40" rows="6"></textarea>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-submit">
+																	<input name="submit" type="submit" id="submit" class="submit" value="Post Comments" />
+																</div>
+															</form>
+														</div><!-- #respond -->
+									    			</div>
+						    					</div>
+											</div>
+										</div>
+									</div>
+									<div class="related products">
+									<h2>สวนที่คล้ายกัน</h2>
+										<div class="products row product-grid">
+											<div class="masonry-item noo-product-column col-md-3 col-sm-6 product">
+												<div class="noo-product-inner">
+													<div class="noo-product-thumbnail">
+														<a href="orchardDetail.html">
+															<img width="600" height="760" src="images/product/product_1.jpg" alt="" />
+														</a>
+														<!-- <div class="noo-rating">
+															<div class="star-rating">
+																<span style="width:0%"></span>
+															</div>
+														</div> -->
+													</div>
+													<div class="noo-product-title"> 
+														<h3><a href="orchardDetail.html">Apples</a></h3>
+														<span class="price"><span class="amount">&#36;3.95</span></span>
+														<div class="noo-product-action">
+															<div class="noo-action">
+																<a href="orchardDetail.html" class="button product_type_simple eye_button">
+																	<span>ชมสวน</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="masonry-item noo-product-column col-md-3 col-sm-6 product">
+												<div class="noo-product-inner">
+													<div class="noo-product-thumbnail">
+														<a href="orchardDetail.html">
+															<img width="600" height="760" src="images/product/product_2.jpg" alt="" />
+														</a>
+														<!-- <div class="noo-rating">
+															<div class="star-rating">
+																<span style="width:60%"></span>
+															</div>
+														</div> -->
+													</div>
+													<div class="noo-product-title"> 
+														<h3><a href="orchardDetail.html">Broccoli</a></h3>
+														<span class="price"><span class="amount">&#36;2.05</span></span>
+														<div class="noo-product-action">
+															<div class="noo-action">
+																<a href="orchardDetail.html" class="button product_type_simple eye_button">
+																	<span>ชมสวน</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="masonry-item noo-product-column col-md-3 col-sm-6 product">
+												<div class="noo-product-inner">
+													<div class="noo-product-thumbnail">
+														<a href="orchardDetail.html">
+															<img width="600" height="760" src="images/product/product_3.jpg" alt="" />
+														</a>
+														<!-- <div class="noo-rating">
+															<div class="star-rating">
+																<span style="width:100%"></span>
+															</div>
+														</div> -->
+													</div>
+													<div class="noo-product-title"> 
+														<h3><a href="orchardDetail.html">Brown Bread</a></h3>
+														<span class="price"><span class="amount">&#36;12.00</span></span>
+														<div class="noo-product-action">
+															<div class="noo-action">
+																<a href="orchardDetail.html" class="button product_type_simple eye_button">
+																	<span>ชมสวน</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="masonry-item noo-product-column col-md-3 col-sm-6 product">
+												<div class="noo-product-inner">
+													<div class="noo-product-thumbnail">
+														<a href="orchardDetail.html">
+															<img width="600" height="760" src="images/product/product_4.jpg" alt="" />
+														</a>
+														<!-- <div class="noo-rating">
+															<div class="star-rating">
+																<span style="width:20%"></span>
+															</div>
+														</div> -->
+													</div>
+													<div class="noo-product-title"> 
+														<h3><a href="orchardDetail.html">Carrots</a></h3>
+														<span class="price"><span class="amount">&#36;1.05</span></span>
+														<div class="noo-product-action">
+															<div class="noo-action">
+																<a href="orchardDetail.html" class="button product_type_simple eye_button">
+																	<span>ชมสวน</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="noo-sidebar col-md-3">
+								<div class="noo-sidebar-wrap">
+									<div class="widget commerce widget_product_search">
+										<h3 class="widget-title">ค้นหา</h3>
+										<form>
+											<input type="search" class="search-field" placeholder="ค้นหาสวน&hellip;" value="" name="s"/>
+											<input type="submit" value="Search"/>
+										</form>
+									</div>
+									<div class="widget commerce widget_products">
+										<h3 class="widget-title">สวนยอดนิยม</h3>
+										<ul class="product_list_widget">
+											<li>
+												<a href="{{'orchards/'.$orchard->idOrchard}}">
+													<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
+													<span class="product-title">{{$orchard->nameOrchard}}</span>
+												</a>
+												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
+											</li>
 											
-										
-										{{-- 	<Map>	 --}}
-									
-							<div class="clearfix"> </div>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!--profile-->
-			
-@endsection
+@endsection			
