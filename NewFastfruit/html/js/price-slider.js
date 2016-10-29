@@ -15,8 +15,8 @@ jQuery( function( $ ) {
 	$( document.body ).on( 'price_slider_create price_slider_slide', function( event, min, max ) {
 		if ( currency_pos === 'left' ) {
 
-			$( '.price_slider_amount span.from' ).html( currency_symbol + min );
-			$( '.price_slider_amount span.to' ).html( currency_symbol + max );
+			$( '.price_slider_amount span.from' ).html( min );
+			$( '.price_slider_amount span.to' ).html( max );
 
 		} else if ( currency_pos === 'left_space' ) {
 

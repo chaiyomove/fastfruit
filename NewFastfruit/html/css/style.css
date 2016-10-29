@@ -17119,7 +17119,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 .commerce-account input:not([type='submit']) {
     display: block;
     height: 40px;
-    border: 0;
+    /*border: 0;*/
     width: 100%;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -17299,4 +17299,8 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.datepicker{
+    cursor: pointer;
 }
