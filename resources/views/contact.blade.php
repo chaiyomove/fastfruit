@@ -1,50 +1,59 @@
 @extends('layouts/master')
 @section('content')
-
-<!-- pop-up -->
-<link rel="stylesheet" href="css/swipebox.css">
-			<script src="js/jquery.swipebox.min.js"></script> 
-			    <script type="text/javascript">
-					jQuery(function($) {
-						$(".swipebox").swipebox();
-					});
-				</script>
-
-<!-- pop-up -->
-
-
-		<!--banner-->
-		<div class="banner-section">
-			<div class="container">
-			</div>
-		</div>
-		<!--banner-->
-
-		<div class="content">
-			<div class="contact-section">
+			<section class="noo-page-heading eff">
 				<div class="container">
-					<!--
-					<div class="google-map">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25314.705189576223!2d-122.04163718289803!3d37.52352544242605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbee225b54b73%3A0xd9e9e38c14446fd!2sReal+Estate+Residential+Homes!5e0!3m2!1sen!2sin!4v1453458032800" ></iframe>
+					<div class="noo-heading-content">
+						<h1 class="page-title eff">ติดต่อเรา</h1>
 					</div>
-					-->
-					<div class="contact-grids">
-						<div class="col-md-8 contact-grid">
-							<h5>ติดต่อเรา</h5>
-							<br>							
-							<form>
-								<input type="text" value="ชื่อ " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'ชื่อ';}" required="">
-								<input type="email" value="อีเมล์" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'อีเมล์';}" required="">
-								<input type="text" value="เบอร์โทรศัพท์" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'เบอร์โทรศัพท์';}" required="">
-								<textarea type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'รายละเอียดที่จะแจ้ง';}" required="">รายละเอียดที่จะแจ้ง</textarea>
-								<input type="submit" value="ส่งอีเมล์" >
-							</form>
+				</div>
+			</section>
+			<div class="main">
+				<div class="pt-5 pb-7">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3"></div>
+							<div class="col-md-6">
+								<form class="form">
+									<h3>ติดต่อเรา</h3>
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-control-wrap your-name">
+												<input type="text" name="your-name" value="" size="40" class="form-control" placeholder="ชื่อ"/>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-control-wrap your-phone">
+												<input type="text" name="your-phone" value="" size="40" class="form-control" placeholder="เบอร์โทรศัพท์"/>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-control-wrap your-email">
+												<input type="email" name="your-email" value="" size="40" class="form-control" placeholder="อีเมล"/>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-control-wrap your-message">
+												<textarea name="your-message" cols="40" rows="10" class="form-control" placeholder="ข้อความ"></textarea>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<input type="submit" value="ส่งเมล" class="form-control submit btn-primary"/>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="col-md-3"></div>
 						</div>
-						
-						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="noo-footer-shop-now">
+					<div class="container">
+						<div class="col-md-7">
+							<h4>- Medium between orchards and you -</h4>
+							<h3>FastFruit</h3>
+						</div>
+						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
 					</div>
 				</div>
 			</div>
-		</div>
-
 @endsection
