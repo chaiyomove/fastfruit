@@ -101,46 +101,21 @@
 											</div>
 										</form>
 									</div>
+
 									<div class="widget commerce widget_products">
 										<h3 class="widget-title">ผลผลิตยอดนิยม</h3>
 										<ul class="product_list_widget">
 											<li>
-												<a href="productDetail.html">
-													<img width="100" height="100" src="images/product/product_8.jpg" alt="" /> 
-													<span class="product-title">French Bread</span>
+												<a href="{{url('product', [$product->idProductSprint])}}">
+													<img style="width: 70px; height: 70px;" src="{{asset($product->picture1)}}" alt="" /> 
+													<span class="product-title">{{$product->orchardPlot->fruitSpecie->specieName}}จาก {{$product->orchardPlot->orchard->nameOrchard}}</span>
 												</a>
-												<span class="amount">&#36;10.00</span>
+												<span class="amount">จังหวัด</span>
 											</li>
-											<li>
-												<a href="productDetail.html">
-													<img width="100" height="100" src="images/product/product_6.jpg" alt="" /> 
-													<span class="product-title">Cookie</span>
-												</a>
-												<span class="amount">&#36;15.00</span>
-											</li>
-											<li>
-												<a href="productDetail.html">
-													<img width="100" height="100" src="images/product/product_3.jpg" alt="" /> 
-													<span class="product-title">Brown Bread</span>
-												</a>
-												<span class="amount">&#36;12.00</span>
-											</li>
-											<li>
-												<a href="productDetail.html">
-													<img width="100" height="100" src="images/product/product_1.jpg" alt="" /> 
-													<span class="product-title">Apples</span>
-												</a>
-												<span class="amount">&#36;3.95</span>
-											</li>
-											<li>
-												<a href="productDetail.html">
-													<img width="100" height="100" src="images/product/product_16.jpg" alt="" /> 
-													<span class="product-title">Onions</span>
-												</a>
-												<span class="amount">&#36;3.90</span>
-											</li>
+
 										</ul>
 									</div>
+
 								</div>
 							</div>
 						</div>

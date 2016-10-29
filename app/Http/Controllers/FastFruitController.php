@@ -33,8 +33,8 @@ class FastFruitController extends Controller
     public function orchards()
     {
         $orchards=Orchards::orderBy('idOrchard','desc')->paginate(9);
-         // $orchard=$orchards[2];
-        return view('orchards',compact('orchards'));
+         $orchard=$orchards[2];
+        return view('orchards',compact('orchards','orchard'));
     }
 
     public function orchardDetail($id)
