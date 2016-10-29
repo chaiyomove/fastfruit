@@ -33,8 +33,8 @@ class FastFruitController extends Controller
     public function orchards()
     {
         $orchards=Orchards::orderBy('idOrchard','desc')->paginate(9);
-         $orchard=$orchards[2];
-        return view('orchards',compact('orchards','orchard'));
+         // $orchard=$orchards[2];
+        return view('orchards',compact('orchards'));
     }
 
     public function orchardDetail($id)
@@ -73,8 +73,9 @@ class FastFruitController extends Controller
 
     public function products()
     {
-        $products=Product_sprints::orderBy('idProductSprint','desc')->paginate(16);
-        return view('products',compact('products'));
+        $products=Product_sprints::orderBy('idProductSprint','desc')->paginate(9);
+        $product=$products[2];
+        return view('products',compact('products','product'));
     }
 
     public function productDetail($id)
