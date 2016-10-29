@@ -149,7 +149,7 @@
 						<div class="col-md-3 col-sm-6 item-footer-four">
 							<div class="widget widget_about"> 
 								<div class="noo_about_widget">
-									<a href="#">
+									<a href="javascript:void(0)">
 										<img src="images/fastfruit1.png" alt="" />
 									</a>
 									<p>
