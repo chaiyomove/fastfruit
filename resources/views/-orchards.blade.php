@@ -47,7 +47,7 @@
 						<img src="{{asset('images/gap.png')}}" style="position: absolute; margin-left: 2px; margin-top: 115px">
 					@endif
 				@endforeach
-				<img src="{{asset($orchard->picture1)}}" class="img-responsive" alt="/" style=" max-height:155px; width:255px;">
+				<img style="width: 260px; height: 160px;" src="{{asset($orchard->picture1)}}" class="img-responsive" alt="/">
 				<h5 class="space">{{$orchard->nameOrchard}}</h5>
 				
 				<p class="space">{{$orchard->description}}</p>	
@@ -72,7 +72,7 @@
 				</p>
 						<div class="aaa">
 						<i class="glyphicon glyphicon-map-marker">&nbsp;{{$orchard->province->provinceName}}</i>
-						<br>	
+						<br>
 						<a href="{{'orchards/'.$orchard->idOrchard}}" class="space" >
 							<span class="glyphicon glyphicon-eye-open" >&nbsp;ชมสวน</span> 
 						</a>

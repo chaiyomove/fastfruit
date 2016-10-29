@@ -17169,6 +17169,28 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     font-size: 20px;
 }
 
+.commerce-account #matching h2 {
+    padding: 0 0 0 37px;
+    margin: 0 0 34px 0;
+    color: #212121;
+    font-size: 24px;
+    position: relative;
+}
+
+.commerce-account #matching h2:before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    content: "\f24d";
+    font-family: 'FontAwesome';
+    color: #79cba8;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-size: 20px;
+}
+
 .commerce-account #customer_login .col-2 h2:before {
     content: "\f25d";
 }
@@ -17188,12 +17210,12 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 }
 
 .commerce form.lost_reset_password input {
-    border: 1px solid #f4eede;
+    border: 1px solid #cccac6;
 }
 
 .commerce form.login,
 .commerce form.register {
-    border: 1px dashed #f4eede;
+    border: 1px dashed #cccac6;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
@@ -17251,4 +17273,30 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     background-color: #79cba8;
     border-color: #79cba8;
     color: #ffffff;
+}
+
+.form-matching {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #767676;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #f4eede;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-matching:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
 }

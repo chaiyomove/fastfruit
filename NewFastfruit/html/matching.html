@@ -116,11 +116,124 @@
 				</div>
 			</section>
 			<div class="main">
-				<div class="commerce noo-shop-main">
+				<div class="commerce commerce-account noo-shop-main pt-5 pb-7">
 					<div class="container">
 						<div class="row">
-							
+							<div class="noo-main col-md-12">
+								<div id="matching">
+	                				<div class="col-md-8">
+	                					<h2>เลือกจับคู่</h2>
+	                					<form class="login" method="POST" action="{{ url('/login') }}">
+	                						<div class="col-md-4">
+		                						<div class="form-row form-row-wide">
+													<label for="username">
+														เลือกผลไม้
+														<span class="required">*</span>
+													</label>
+													<select name="idFruit" id="idFruit" class="form-matching">
+														<option value="0" selected='selected'>กรุณาเลือก</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-4">
+		                						<div class="form-row form-row-wide">
+													<label for="username">
+														เลือกสายพันธุ์
+														<span class="required">*</span>
+													</label>
+													<select name="idFruitSpecie" id="idFruitSpecie" class="form-matching">
+														<option value="0" selected='selected'>กรุณาเลือก</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-4">
+		                						<div class="form-row form-row-wide">
+													<label for="username">
+														เลือกจังหวัด
+														<span class="required">*</span>
+													</label>
+													<select name="idProvince" id="idProvince" class="form-matching">
+														<option value="0" selected='selected'>กรุณาเลือก</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-4">
+		                						<div class="form-row form-row-wide">
+													<label for="username">
+														เลือกเดือนและปี
+														<span class="required">*</span>
+													</label>
+													<input type="text" class="input-text" name="email" id="username" value=""/>
+													<input type="text" class="input-text" name="email" id="username" value=""/>
+												</div>
+											</div>
+											<div class="col-md-4">
+		                						<div class="form-row form-row-wide">
+													<label for="username">
+														จำนวน
+														<span class="required">*</span>
+													</label>
+													<input type="text" class="input-text" name="email" id="username" value=""/>
+												</div>
+											</div>
+											<div class="col-md-4">
+		                						<div class="form-row form-row-wide">
+													<label for="username">
+														เลือกหน่วย
+														<span class="required">*</span>
+													</label>
+													<select name="unit" class="form-matching">
+														<option value="0" selected='selected'>หน่วย</option>
+														<option value="1">กิโลกรัม</option>
+							   							<option value="2">ตัน</option>	
+													</select>
+												</div>
+											</div>
+											<div class="form-row form-row-wide">
+												<input type="submit" class="button" name="login" value="เข้าสู่ระบบ" />
+											</div>
+										</form>
+									</div>
+								</div>
+								<div id="matching">
+	                				<div class="col-md-4">
+	                					<h2>เลือกจับคู่</h2>
+	                					<form class="login" method="POST" action="{{ url('/login') }}">
+	                						<div class="form-row form-row-wide">
+												<label for="username">
+													เลือกผลไม้
+													<span class="required">*</span>
+												</label>
+												<input type="text" class="input-text" name="email" id="username" value="" autofocus/>
+											</div>
+											<div class="form-row form-row-wide">
+												<label for="password">
+													รหัสผ่าน
+													<span class="required">*</span>
+												</label>
+												<input class="input-text" type="password" name="password" id="password" />
+											</div>
+											<div class="form-row">
+												<input type="submit" class="button" name="login" value="เข้าสู่ระบบ" />
+											</div>
+											<div class="lost_password">
+												<a href="#">ลืมรหัสผ่าน?</a>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3"></div>
 						</div>
+					</div>
+				</div>
+				<div class="noo-footer-shop-now">
+					<div class="container">
+						<div class="col-md-7">
+							<h4>- Every day fresh -</h4>
+							<h3>organic food</h3>
+						</div>
+						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
 					</div>
 				</div>
 			</div>

@@ -167,7 +167,7 @@
 															<img src="{{asset('images/gap.png')}}" style="position: absolute; margin-left: 2px; margin-top: 115px">
 														@endif
 													@endforeach
-													<img width="600" height="760" src="{{asset($orchard->picture1)}}" alt="" />
+													<img style="width: 260px; height: 160px;" src="{{asset($orchard->picture1)}}" alt="" />
 												</a>
 												<!-- <div class="noo-rating">
 													<div class="star-rating">
@@ -184,7 +184,7 @@
 														<?php $speciesTmp[] =  $orchardPlot->fruitSpecie->specieName; ?>
 														@if($plotKey==0)
 															
-															<p class="space"><i class="fa fa-lemon-o" style="color: green;"></i>&nbsp;{{$orchardPlot->fruitSpecie->specieName}}
+															<p class="space"><i class="fa fa-lemon-o" style="color: green; margin-top: 10px;"></i>&nbsp;{{$orchardPlot->fruitSpecie->specieName}}
 														@elseif(count($orchard->orchardPlot)===$plotKey+1)
 															{{$orchardPlot->fruitSpecie->specieName}}
 															
@@ -195,9 +195,9 @@
 													@endif
 													
 												@endforeach
-												</p>
+															</p>
 
-												<span class="fa fa-map-marker">&nbsp;{{$orchard->province->provinceName}}</span>
+												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
 												<div class="noo-product-action">
 													<div class="noo-action">
 														<a href="{{'orchards/'.$orchard->idOrchard}}" class="button product_type_simple eye_button">
