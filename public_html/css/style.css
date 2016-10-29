@@ -3408,20 +3408,33 @@ blockquote.left {
     float: left;
 }
 
-table {
+table.detail {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0 0 1.6em;
+    table-layout: fixed;
+    width: 100%;
+}
+
+/*table {
     border-collapse: separate;
     border-spacing: 0;
     border: 1px solid rgba(51, 51, 51, 0.1);
     margin: 0 0 1.6em;
     table-layout: fixed;
     width: 100%;
+}*/
+
+table.detail td,
+table.detail th {
+    padding: 0.4em 1.5em 0.4em 0.4em;
 }
 
-table td,
+/*table td,
 table th {
     border: 1px solid rgba(51, 51, 51, 0.1);
     padding: 0.4em;
-}
+}*/
 
 blockquote.right {
     margin-left: 20px;
@@ -5862,7 +5875,7 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 420px;
+    height: 330px;
     position: relative;
 }
 
@@ -5899,7 +5912,7 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
     color: #ffffff;
     margin: 0;
     text-align: center;
-    font-size: 56px;
+    font-size: 70px;
     opacity: 0;
     filter: alpha(opacity=0);
     -webkit-transform: translate(0, 80px);
@@ -14241,7 +14254,11 @@ p.demo_store a {
 .commerce #respond input#submit,
 .commerce a.button,
 .commerce button.button,
-.commerce input.button {
+.commerce input.button,
+.commerce button.plot,
+.commerce button.map,
+.commerce button.follow,
+.commerce button.bookmark {
     font-size: 100%;
     margin: 0;
     line-height: 1;
@@ -15705,7 +15722,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     display: none;
 }
 
-.commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button{
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .eye_button{
     font-size: 16px;
     height: 48px;
     line-height: 48px;
@@ -15737,10 +15754,10 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     outline-color: transparent;
 }
 
-.commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button span:before {
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .eye_button span:before {
     font-family: 'FontAwesome';
     content: '';
-    content: "\f07a";
+    content: "\f06e";
     padding-right: 10px;
 }
 
@@ -15751,8 +15768,8 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     padding-right: 10px;
 }
 
-.commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button:hover,
-.commerce .product-grid .noo-product-title .noo-product-action .noo-action .add_to_cart_button:focus {
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .eye_button:hover,
+.commerce .product-grid .noo-product-title .noo-product-action .noo-action .eye_button:focus {
     background: none;
 }
 
@@ -15961,12 +15978,94 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     transition: all 0.4s ease 0s;
 }
 
+.commerce button.plot{
+    font-size: 12px;
+    background: #3ebfc5;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 400;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+.commerce button.map{
+    font-size: 12px;
+    background: #f5d84a;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 400;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+.commerce button.follow{
+    font-size: 12px;
+    background: #5ccc55;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 400;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+.commerce button.bookmark{
+    font-size: 12px;
+    background: #f5d84a;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 400;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
 .commerce #respond input#submit:hover,
 .commerce a.button:hover,
 .commerce a.button.alt:hover,
 .commerce button.button:hover,
 .commerce input.button:hover {
     background: #45b284;
+    color: #ffffff;
+}
+
+.commerce button.plot:hover {
+    background: #32a1a7;
+    color: #ffffff;
+}
+.commerce button.map:hover {
+    background: #f5c04a;
+    color: #ffffff;
+}
+.commerce button.follow:hover {
+    background: #49b142;
+    color: #ffffff;
+}
+.commerce button.bookmark:hover {
+    background: #f5c04a;
     color: #ffffff;
 }
 
@@ -16353,8 +16452,8 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 .single-product div.product .entry-summary .product_title {
     font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
-    font-size: 24px;
-    margin-bottom: 16px;
+    font-size: 26px;
+    margin-bottom: 15px;
     padding-right: 150px;
 }
 
@@ -16401,6 +16500,11 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     color: #79cba8;
     border-bottom: 1px solid #f4eede;
     padding-bottom: 25px;
+}
+
+.single-product div.product .entry-summary .border_bottom {
+    border-bottom: 1px solid #f4eede;
+    padding-bottom: 15px;
 }
 
 .single-product div.product .entry-summary .description {
@@ -16492,7 +16596,14 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 .single-product div.product .product_meta .tagged_as {
     display: block;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+.single-product div.product .product_meta .detail {
+    display: block;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: black;
 }
 
 .single-product div.product .product_meta .posted_in a,
