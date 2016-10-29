@@ -80,7 +80,7 @@
 								<nav class="pull-right noo-main-menu">
 									<ul class="nav-collapse navbar-nav">
 										<li class="current-menu-item">
-											<a href="index-Fastfruit.html">หน้าแรก</a>
+											<a href="{{url('/')}}">หน้าแรก</a>
 										</li>
 										<li>
 											<a href="{{ url('orchards') }}">ชมสวน</a>
@@ -109,7 +109,8 @@
 				<div class="search-header5">
 					<div class="remove-form"></div>
 					<div class="container">
-						<form class="form-horizontal">
+						<form method="GET" action="{{ url('search') }}" class="form-horizontal">
+						{{ csrf_field() }}
 							<label class="note-search">ค้นหา</label>
 							<input type="search" name="s" class="form-control" value="" placeholder="Search...">
 							<input type="submit" value="Search">
@@ -250,8 +251,8 @@
 				<div class="noo-footer-shop-now">
 					<div class="container">
 						<div class="col-md-7">
-							<h4>- Every day fresh -</h4>
-							<h3>organic food</h3>
+							<h4>- Medium between orchards and you -</h4>
+							<h3>FastFruit</h3>
 						</div>
 						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
 					</div>
