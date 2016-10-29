@@ -61,20 +61,37 @@
 												<a href="#">090 970 9049</a>
 											</div>
 										</li>
-										<li>
-											<div>
-												<span><i class="fa fa-sign-in"></i></span>
-											</div>
-											<div>
-												<a href="{{ url('login') }}">เข้าสู่ระบบ</a>
-											</div>
-											<div>
-												<span><i class="fa fa-lock"></i></span>
-											</div>
-											<div>
-												<a href="{{ url('register') }}">สมัครสมาชิก</a>
-											</div>
-										</li>
+										@if (Auth::user())							
+											<li>	
+												<div>
+													<span><i class="fa fa-user""></i></span>
+												</div>
+												<div>
+													<a href="{{ url('logout') }}">{{Auth::user()->firstName}} </a>
+												</div>
+												<div>
+													<span><i class="fa fa-sign-out"></i></span>
+												</div>
+												<div>
+													<a href="{{ url('logout') }}">ออกจากระบบ</a>
+												</div>
+											</li>	
+										@else
+											<li>
+												<div>
+													<span><i class="fa fa-sign-in"></i></span>
+												</div>
+												<div>
+													<a href="{{ url('login') }}">เข้าสู่ระบบ</a>
+												</div>
+												<div>
+													<span><i class="fa fa-lock"></i></span>
+												</div>
+												<div>
+													<a href="{{ url('register') }}">สมัครสมาชิก</a>
+												</div>
+											</li>
+										@endif
 									</ul>
 								</nav>
 								<nav class="pull-right noo-main-menu">
@@ -94,9 +111,11 @@
 										<li>
 											<a href="{{ url('contactus') }}">ติดต่อเรา</a>
 										</li>
-										<li>
-											<a href="{{ url('addorchard')}}">เพิ่มสวน</a>
-										</li>
+										@if (Auth::user())
+											<li>
+												<a href="{{ url('addorchard')}}">เพิ่มสวน</a>
+											</li>
+										@endif
 										<li>
 											<a href="#" class="fa fa-search noo-search" id="noo-search"></a>
 										</li>
@@ -112,7 +131,7 @@
 						<form method="GET" action="{{ url('search') }}" class="form-horizontal">
 						{{ csrf_field() }}
 							<label class="note-search">ค้นหา</label>
-							<input type="search" name="s" class="form-control" value="" placeholder="Search...">
+							<input type="search" name="search" class="form-control" value="" placeholder="Search...">
 							<input type="submit" value="Search">
 						</form> 
 					</div>

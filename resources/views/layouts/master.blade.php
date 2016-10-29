@@ -59,26 +59,31 @@
 								<nav class="pull-right noo-menu-option">
 									<a href="#" class="button-expand-option"><i class="fa fa-ellipsis-v"></i></a>
 									<ul>
-										<!-- <li class="menu-item fly-right">
-											<a href="index-Fastfruit.html">
-												<i class="fa fa-user"></i>ฉัน 
-											</a>
-										</li> -->
-										<li class="menu-item fly-right">
-											<a href="{{ url('login') }}">
-												<i class="fa fa-sign-in"></i>เข้าสู่ระบบ 
-											</a>
-										</li>
-										<li class="menu-item fly-right">
-											<a href="{{ url('register') }}">
-												<i class="fa fa-lock"></i>สมัครสมาชิก
-											</a>
-										</li>
-										<!-- <li class="menu-item fly-right">
-											<a href="index-Fastfruit.html">
-												<i class="fa fa-sign-out"></i>ออกจากระบบ
-											</a>
-										</li> -->
+
+										@if (Auth::user())
+											<li class="menu-item fly-right">
+												<a href="index-Fastfruit.html">
+													<i class="fa fa-user"></i>{{Auth::user()->firstName}} 
+												</a>
+											</li>									
+											<li class="menu-item fly-right">
+												<a href="{{url('logout')}}">
+													<i class="fa fa-sign-out"></i>ออกจากระบบ
+												</a>
+											</li>
+										@else
+											<li class="menu-item fly-right">
+												<a href="{{ url('login') }}">
+													<i class="fa fa-sign-in"></i>เข้าสู่ระบบ 
+												</a>
+											</li>
+											<li class="menu-item fly-right">
+												<a href="{{ url('register') }}">
+													<i class="fa fa-lock"></i>สมัครสมาชิก
+												</a>
+											</li>
+										@endif
+										
 										
 										<li class="menu-item fly-right">
 										<form method="GET" action="{{ url('search') }}" class="form-horizontal">
@@ -109,9 +114,11 @@
 										<li>
 											<a href="{{ url('contactus') }}">ติดต่อเรา</a>
 										</li>
-										<li>
-											<a href="{{ url('addorchard')}}">เพิ่มสวน</a>
-										</li>
+										@if (Auth::user())
+											<li>
+												<a href="{{ url('addorchard')}}">เพิ่มสวน</a>
+											</li>
+										@endif
 									</ul>
 								</nav>
 							</div>
@@ -124,7 +131,7 @@
 						<form method="GET" action="{{ url('search') }}" class="form-horizontal">
 						{{ csrf_field() }}
 							<label class="note-search">ค้นหา</label>
-							<input type="search" name="s" class="form-control" value="" placeholder="Search...">
+							<input type="search" name="search" class="form-control" value="" placeholder="Search...">
 							<input type="submit" value="Search">
 						</form> 
 					</div>
@@ -146,10 +153,10 @@
 										<img src="images/fastfruit1.png" alt="" />
 									</a>
 									<p>
-										เว็บแอพสื่อกลางระหว่างสวนและคุณ
+										เว็บแอพพลิเคชันสื่อกลางระหว่างสวนและคุณ
 									</p>
 									<p>
-										ที่จะทำให้การเลือกผลไม้
+										ที่จะทำให้การซื้อขายผลไม้
 									</p>
 									<p>
 										เป็นเรื่องง่ายและสะดวกขึ้น
