@@ -103,7 +103,7 @@
 											<a href="{{ url('orchards') }}">ชมสวน</a>
 										</li>
 										<li>
-											<a href="{{ url('products') }}"><h1>ดูผลผลิต</h1></a>			
+											<a href="{{ url('products') }}">ดูผลผลิต</a>			
 										</li>
 										<li>
 											<a href="{{ url('matching') }}">จับคู่สวน</a>
