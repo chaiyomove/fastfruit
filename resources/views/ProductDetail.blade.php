@@ -4,11 +4,9 @@
  <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
 <script >
-		jQuery(function ($) {
-			document.getElementById('bookmark').click(function(){
-   			document.getElementById('bookmark').setAttribute('bookmark','after_bookmark');
-		});
-	});
+	function clickstar() {
+		document.getElementById('bookmark').id = "after_bookmark";
+	};
 
 </script>
 
@@ -92,7 +90,7 @@
 													<i class="fa fa-eye">&nbsp;</i>ดูแปลง
 												</button>
 												</a>
-												<a href="#" id="bookmark" class="bookbefor"><i class="fa fa-star fa-2x"></i></a>
+												<a href="#" class="fa fa-star" id="bookmark" onclick="clickstar()"></a>
 												{{-- <a href="#" class="fa fa-star fa-2x" id="bookmark"></a>
 												<a href="#" class="fa fa-star" id="after_bookmark"></a> --}}
 											</div>
