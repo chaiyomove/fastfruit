@@ -104,11 +104,11 @@ a:hover {
 
 .navbar-default .navbar-nav>li>a:focus, 
 .navbar-default .navbar-nav>li>a:hover {
-	color: #79cba8;
+    color: #79cba8;
 }
 
 a:focus, a {
-	outline: none !important;
+    outline: none !important;
 }
 
 abbr[title] {
@@ -3999,13 +3999,13 @@ ul.post_list_widget li a .post-date {
 }
 
 .noo-header.header-5 .noo-main-menu > ul.navbar-nav {
-	width: 100%;
+    width: 100%;
     text-align: center;
 }
 
 .noo-header.header-5 .menu-position .navbar-nav > li.noo_megamenu > .sub-menu > li,
 .noo-header.header-5 .noo-main-menu .navbar-nav li > .sub-menu {
-	text-align: left;
+    text-align: left;
 }
 
 .noo-main-menu .navbar-nav:after {
@@ -4048,7 +4048,7 @@ ul.post_list_widget li a .post-date {
     opacity: 0;
     filter: alpha(opacity=0);
     visibility: hidden;
-	z-index: 1;
+    z-index: 1;
 }
 
 .noo-main-menu .navbar-nav li > .sub-menu li {
@@ -4322,7 +4322,7 @@ ul.post_list_widget li a .post-date {
 
 @media (min-width: 1200px) {
   .noo-header.header-1 .container {
-	  width: 100%;
+      width: 100%;
   }
 }
 
@@ -4732,8 +4732,8 @@ ul.post_list_widget li a .post-date {
 }
 
 .noo-header.header-6 .navbar-brand {
-	height: auto;
-	padding: 0;
+    height: auto;
+    padding: 0;
 }
 
 .noo-header.header-6 .noo-main-menu.noo-left-menu {
@@ -5990,7 +5990,7 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
     width: 90%;
     max-width: 1400px;
-	overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 .boxed-layout .site .fixed_top .navbar-wrapper {
@@ -6000,11 +6000,11 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
 }
 
 .boxed-layout .site .header-1 .noo-menu-option a {
-	font-size: 0;
+    font-size: 0;
 }
 
 .boxed-layout .site .header-1 .noo-menu-option a i {
-	font-size: 14px;
+    font-size: 14px;
 }
 
 /* === 4.3. IMAGE GRID === */
@@ -6349,7 +6349,7 @@ div.services-sh-title p {
 }
 
 .noo-services-columns li .line-top.style-2 {
-	background-color: #f4eede;
+    background-color: #f4eede;
 }
 
 .noo-services-columns li .line-top span:first-child {
@@ -6374,7 +6374,7 @@ div.services-sh-title p {
 }
 
 .noo-services-columns li .line-top.style-2 span:first-child:before {
-	border-color: #f4eede;
+    border-color: #f4eede;
 }
 
 .noo-services-columns li .line-top span:last-child {
@@ -6399,7 +6399,7 @@ div.services-sh-title p {
 }
 
 .noo-services-columns li .line-top.style-2 span:last-child:before {
-	border-color: #f4eede;
+    border-color: #f4eede;
 }
 
 .noo-services-columns li .line-left {
@@ -6413,7 +6413,7 @@ div.services-sh-title p {
 }
 
 .noo-services-columns li .line-left.style-2 {
-	background-color: #f4eede;
+    background-color: #f4eede;
 }
 
 .noo-services-columns li .line-left span:first-child {
@@ -6438,7 +6438,7 @@ div.services-sh-title p {
 }
 
 .noo-services-columns li .line-left.style-2 span:first-child:before {
-	border-color: #f4eede;
+    border-color: #f4eede;
 }
 
 .noo-services-columns li .line-left span:last-child {
@@ -6463,7 +6463,7 @@ div.services-sh-title p {
 }
 
 .noo-services-columns li .line-left.style-2 span:last-child:before {
-	border-color: #f4eede;
+    border-color: #f4eede;
 }
 
 .noo-services-columns li .service-content {
@@ -7818,7 +7818,7 @@ div.products-sh-title h4 {
     z-index: 2;
 }*/
 .noo-simple-product-slider li .noo-simple-slider-item .n-simple-content{
-	width: 100%;
+    width: 100%;
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
@@ -9183,8 +9183,8 @@ article.format-video .blog-item .video-inner iframe {
 }
 
 .testimonial-4 .noo_testimonial_wrap .testimonial-content div i {
-	color: #fff;
-	opacity: 0.5;
+    color: #fff;
+    opacity: 0.5;
 }
 
 @media (max-width: 479px) {
@@ -11672,7 +11672,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     border: none;
     width: 75%;
     max-width: 532px;
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .noo-sh-mailchimp .newsletter-form-fields input[type="submit"] {
@@ -11688,9 +11688,9 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 }
 
 @media (max-width: 586px) {
-	.noo-sh-mailchimp .newsletter-form-fields input[type="submit"] {
-		margin-left: 0;
-	}
+    .noo-sh-mailchimp .newsletter-form-fields input[type="submit"] {
+        margin-left: 0;
+    }
 }
 
 .noo-sh-mailchimp .newsletter-form-fields input[type="submit"]:hover {
@@ -12482,7 +12482,7 @@ fieldset[disabled] .mailchimp-widget .mc-subscribe-form button.active {
     font-weight: 400;
     position: relative;
     text-align: center;
-	background-image: url(../images/grapes2.png);
+    background-image: url(../images/grapes2.png);
 }
 
 .noo-footer-shop-now:before {
@@ -14979,13 +14979,13 @@ p.demo_store a {
     margin: 0;
     outline: 0;
     line-height: 1;
-	border: 1px solid #f4eede;
-	font-weight: 300;
+    border: 1px solid #f4eede;
+    font-weight: 300;
     font-style: italic;
 }
 
 .commerce form .form-row textarea {
-    height: 4em;
+    height: 5em;
     line-height: 1.5;
     display: block;
     -moz-box-shadow: none;
@@ -15451,42 +15451,42 @@ p.demo_store a {
 }
 
 @media (max-width: 767px) {
-	.commerce #content div.product div.summary, 
-	.commerce div.product div.summary, 
-	.commerce-page #content div.product div.summary, 
-	.commerce-page div.product div.summary {
-		width: 100%;
-		float: none;
-		margin-top: 30px;
-	}
-	.commerce #content div.product div.images, 
-	.commerce div.product div.images, 
-	.commerce-page #content div.product div.images, 
-	.commerce-page div.product div.images {
-		width: 100%;
-		float: none;
-	}
+    .commerce #content div.product div.summary, 
+    .commerce div.product div.summary, 
+    .commerce-page #content div.product div.summary, 
+    .commerce-page div.product div.summary {
+        width: 100%;
+        float: none;
+        margin-top: 30px;
+    }
+    .commerce #content div.product div.images, 
+    .commerce div.product div.images, 
+    .commerce-page #content div.product div.images, 
+    .commerce-page div.product div.images {
+        width: 100%;
+        float: none;
+    }
 }
 
 @media (max-width: 414px) {
     .commerce-page .cart-collaterals .noocart-coupon,
-	.commerce .cart-collaterals .cart_totals, 
-	.commerce-page .cart-collaterals .cart_totals {
+    .commerce .cart-collaterals .cart_totals, 
+    .commerce-page .cart-collaterals .cart_totals {
         width: 100%;
-		float: none;
+        float: none;
     }
-	.commerce-cart table.cart td.product-thumbnail a:last-child {
-		padding-left: 0;
-	}
-	.commerce-cart table.cart .product-thumbnail {
-		text-align: center;
-	}
-	.commerce-wishlist table.wishlist_table td.product-thumbnail img {
-		display: none;
-	}
-	.commerce-wishlist .noo-main {
-		overflow-x: auto;
-	}
+    .commerce-cart table.cart td.product-thumbnail a:last-child {
+        padding-left: 0;
+    }
+    .commerce-cart table.cart .product-thumbnail {
+        text-align: center;
+    }
+    .commerce-wishlist table.wishlist_table td.product-thumbnail img {
+        display: none;
+    }
+    .commerce-wishlist .noo-main {
+        overflow-x: auto;
+    }
 }
 
 .commerce .widget_price_filter .price_slider_wrapper {
@@ -15572,7 +15572,7 @@ input[type='checkbox'] {
     transition: all 0.6s ease 0s;
     position: relative;
     margin: 15px 0;
-	z-index: 10;
+    z-index: 10;
 }
 
 .commerce .product-grid .noo-product-inner:hover {
@@ -15679,11 +15679,11 @@ input[type='checkbox'] {
 
 .commerce .product-grid .noo-product-title .noo-product-action .noo-action {
     display: block;
-	position: relative;
+    position: relative;
 }
 
 div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .noo-action {
-	position: static;
+    position: static;
 }
 
 .commerce .product-grid .noo-product-title .noo-product-action .noo-action:before,
@@ -16026,21 +16026,25 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
 }
-.commerce button.bookmark{
-    font-size: 12px;
-    background: #f5d84a;
-    -webkit-border-radius: 0;
-    border-radius: 0;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 0 20px;
-    height: 40px;
-    line-height: 40px;
-    font-weight: 400;
-    -webkit-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
+
+.commerce #bookmark {
+    font-size: 24px;
+    position: relative;
+    margin-left: 15px;
+    top: 5px;
+}
+
+.commerce a#bookmark:hover {
+    background: #ffffff;
+    color: #ffd402;
+}
+
+.commerce #after_bookmark {
+    font-size: 24px;
+    position: relative;
+    margin-left: 15px;
+    top: 5px;
+    color: #ffd402;
 }
 
 .commerce #respond input#submit:hover,
@@ -16062,10 +16066,6 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 }
 .commerce button.follow:hover {
     background: #49b142;
-    color: #ffffff;
-}
-.commerce button.bookmark:hover {
-    background: #f5c04a;
     color: #ffffff;
 }
 
@@ -17119,7 +17119,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 .commerce-account input:not([type='submit']) {
     display: block;
     height: 40px;
-    border: 0;
+    /*border: 0;*/
     width: 100%;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -17169,6 +17169,50 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     font-size: 20px;
 }
 
+.commerce-account #matching h2 {
+    padding: 0 0 0 37px;
+    margin: 0 0 34px 0;
+    color: #212121;
+    font-size: 24px;
+    position: relative;
+}
+
+.commerce-account #matching h2:before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    content: "\f24d";
+    font-family: 'FontAwesome';
+    color: #79cba8;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-size: 20px;
+}
+
+.commerce-account #addOrchard h2 {
+    padding: 0 0 0 37px;
+    margin: 0 0 34px 0;
+    color: #212121;
+    font-size: 24px;
+    position: relative;
+}
+
+.commerce-account #addOrchard h2:before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    content: "\f1bb";
+    font-family: 'FontAwesome';
+    color: #79cba8;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-size: 20px;
+}
+
 .commerce-account #customer_login .col-2 h2:before {
     content: "\f25d";
 }
@@ -17188,12 +17232,12 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 }
 
 .commerce form.lost_reset_password input {
-    border: 1px solid #f4eede;
+    border: 1px solid #cccac6;
 }
 
 .commerce form.login,
 .commerce form.register {
-    border: 1px dashed #f4eede;
+    border: 1px dashed #cccac6;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
@@ -17251,4 +17295,34 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     background-color: #79cba8;
     border-color: #79cba8;
     color: #ffffff;
+}
+
+.form-matching {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #767676;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #f4eede;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-matching:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.datepicker{
+    cursor: pointer;
 }

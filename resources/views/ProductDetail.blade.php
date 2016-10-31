@@ -80,9 +80,8 @@
 													<i class="fa fa-eye">&nbsp;</i>ดูแปลง
 												</button>
 												</a>
-												<button type="submit" class="single_add_to_cart_button bookmark">
-													<i class="fa fa-star-o fa-lg"></i>
-												</button>
+												<a href="#" class="fa fa-star" id="bookmark"></a>
+												<!-- <a href="#" class="fa fa-star" id="after_bookmark"></a> -->
 											</div>
 
 											<div class="clear"></div>
