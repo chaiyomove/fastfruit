@@ -14985,7 +14985,7 @@ p.demo_store a {
 }
 
 .commerce form .form-row textarea {
-    height: 4em;
+    height: 5em;
     line-height: 1.5;
     display: block;
     -moz-box-shadow: none;
@@ -17182,6 +17182,28 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     left: 0;
     top: 50%;
     content: "\f24d";
+    font-family: 'FontAwesome';
+    color: #79cba8;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-size: 20px;
+}
+
+.commerce-account #addOrchard h2 {
+    padding: 0 0 0 37px;
+    margin: 0 0 34px 0;
+    color: #212121;
+    font-size: 24px;
+    position: relative;
+}
+
+.commerce-account #addOrchard h2:before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    content: "\f1bb";
     font-family: 'FontAwesome';
     color: #79cba8;
     -webkit-transform: translate(0, -50%);
