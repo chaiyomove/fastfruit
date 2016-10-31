@@ -150,7 +150,7 @@
 							<div class="widget widget_about"> 
 								<div class="noo_about_widget">
 									<a href="javascript:void(0)">
-										<img src="images/fastfruit1.png" alt="" />
+										<img src="{{asset('images/fastfruit1.png')}}" alt="" />
 									</a>
 									<p>
 										เว็บแอพพลิเคชันสื่อกลางระหว่างสวนและคุณ

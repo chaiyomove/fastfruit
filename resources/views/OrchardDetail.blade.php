@@ -1,6 +1,32 @@
 @extends('layouts/master')
 @section('content')
 
+<script>
+	jQuery(function ($) {
+	    $('#follow').on('click', function () {
+	        var $el = $(this),
+	        textNode = this.lastChild;
+	        $el.find('i').toggleClass('fa fa-check fa fa-plus');
+	        textNode.nodeValue = ($el.hasClass('follow') ? 'กำลังติดตาม' : 'ติดตาม')
+	        $el.toggleClass('follow');
+
+	        //ajax
+	        @if (Auth::user())
+	        if (!$el.hasClass('follow')){
+	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/followorchard/{{$orchard->idOrchard}}', function(data){ 
+	        		// alert(data);
+	        	});	
+	        } else {
+	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/unfolloworchard/{{$orchard->idOrchard}}', function(data){ 
+	        		// alert(data);
+	        	});
+	        }
+	        @endif
+	        
+	    });
+	});
+	</script>
+
 <link rel="stylesheet" href="{{asset('css/main.css')}}">
 			<section class="noo-page-heading eff heading-3">
 				<div class="container">
@@ -29,7 +55,7 @@
 														<img style="width: 100%; height: 100%" src="{{ asset($orchard->picture3)}}" alt="" />
 													</div>
 													<div class="item">
-														<img style="width: 100%; height: 100%" src="images/product/features/product_6.jpg" alt="" />
+														<img style="width: 100%; height: 100%" src="{{ asset($orchard->picture4)}}" alt="" />
 													</div>
 												</div>
 												<div class="owl-carousel sync2">
@@ -43,7 +69,7 @@
 														<img src="{{ asset($orchard->picture3)}}" alt="" />
 													</div>
 													<div class="item">
-														<img src="images/product/features/product_6.jpg" alt="" />
+														<img src="{{ asset($orchard->picture4)}}" alt="" />
 													</div>
 												</div>
 											</div>
@@ -72,6 +98,10 @@
 											</div>
 											
 											<div>
+											@if (Auth::user())
+											<?php $i = 0?>
+											@foreach (Auth::user()->orchardFollowing as $key => $followedOrchard)
+												@if ($followedOrchard->idOrchard == $orchard->idOrchard && $i==0)
 												<!-- <button type="submit" class="single_add_to_cart_button button">
 													<i class="fa fa-eye">&nbsp;</i>ดูผลผลิต
 												</button>
@@ -81,12 +111,18 @@
 												<button type="submit" class="single_add_to_cart_button map">
 													<i class="fa fa-globe">&nbsp;</i>แผนที่
 												</button> -->
-												<button type="submit" class="single_add_to_cart_button follow">
+												<button type="button" class="single_add_to_cart_button follow" id="follow">
+													<i class="fa fa-check">&nbsp;</i>กำลังติดตาม
+												</button>
+												<?php $i++; ?>
+								                @endif
+								            @endforeach
+								                @if ($i==0) 
+												<button type="button" class="single_add_to_cart_button follow" id="follow">
 													<i class="fa fa-plus">&nbsp;</i>ติดตาม
 												</button>
-												<!-- <button type="submit" class="single_add_to_cart_button follow">
-													<i class="fa fa-check">&nbsp;</i>กำลังติดตาม
-												</button> -->
+												 @endif
+												@endif	 
 											</div>
 
 											<div class="clear"></div>
@@ -233,8 +269,8 @@
 											<div class="masonry-item noo-product-column col-md-3 col-sm-6 product">
 												<div class="noo-product-inner">
 													<div class="noo-product-thumbnail">
-														<a href="orchardDetail.html">
-															<img width="600" height="760" src="images/product/product_1.jpg" alt="" />
+														<a href="{{'orchards/'.$orchard->idOrchard}}">
+															<img style="width: 260px; height: 160px;" src="{{asset($orchard->picture1)}}"alt="" />
 														</a>
 														<!-- <div class="noo-rating">
 															<div class="star-rating">
@@ -243,11 +279,30 @@
 														</div> -->
 													</div>
 													<div class="noo-product-title"> 
-														<h3><a href="orchardDetail.html">Apples</a></h3>
-														<span class="price"><span class="amount">&#36;3.95</span></span>
+														<h3><a href="{{'orchards/'.$orchard->idOrchard}}">{{$orchard->nameOrchard}}</a></h3>
+														<?php $speciesTmp = array(); ?>
+												@foreach ($orchard->orchardPlots as $plotKey => $orchardPlot)
+													@if (!array_has($speciesTmp, $orchardPlot->fruitSpecie->specieName))
+														<?php $speciesTmp[] =  $orchardPlot->fruitSpecie->specieName; ?>
+														@if($plotKey==0)
+															
+															<p class="space"><i class="fa fa-lemon-o" style="color: green; margin-top: 10px;"></i>&nbsp;{{$orchardPlot->fruitSpecie->specieName}}
+														@elseif(count($orchard->orchardPlot)===$plotKey+1)
+															{{$orchardPlot->fruitSpecie->specieName}}
+															
+														@else
+														, {{$orchardPlot->fruitSpecie->specieName}}
+															
+														@endif	
+													@endif
+													
+												@endforeach
+															</p>
+
+												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
 														<div class="noo-product-action">
 															<div class="noo-action">
-																<a href="orchardDetail.html" class="button product_type_simple eye_button">
+																<a href="{{'orchards/'.$orchard->idOrchard}}" class="button product_type_simple eye_button">
 																	<span>ชมสวน</span>
 																</a>
 															</div>
@@ -255,81 +310,9 @@
 													</div>
 												</div>
 											</div>
-											<div class="masonry-item noo-product-column col-md-3 col-sm-6 product">
-												<div class="noo-product-inner">
-													<div class="noo-product-thumbnail">
-														<a href="orchardDetail.html">
-															<img width="600" height="760" src="images/product/product_2.jpg" alt="" />
-														</a>
-														<!-- <div class="noo-rating">
-															<div class="star-rating">
-																<span style="width:60%"></span>
-															</div>
-														</div> -->
-													</div>
-													<div class="noo-product-title"> 
-														<h3><a href="orchardDetail.html">Broccoli</a></h3>
-														<span class="price"><span class="amount">&#36;2.05</span></span>
-														<div class="noo-product-action">
-															<div class="noo-action">
-																<a href="orchardDetail.html" class="button product_type_simple eye_button">
-																	<span>ชมสวน</span>
-																</a>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="masonry-item noo-product-column col-md-3 col-sm-6 product">
-												<div class="noo-product-inner">
-													<div class="noo-product-thumbnail">
-														<a href="orchardDetail.html">
-															<img width="600" height="760" src="images/product/product_3.jpg" alt="" />
-														</a>
-														<!-- <div class="noo-rating">
-															<div class="star-rating">
-																<span style="width:100%"></span>
-															</div>
-														</div> -->
-													</div>
-													<div class="noo-product-title"> 
-														<h3><a href="orchardDetail.html">Brown Bread</a></h3>
-														<span class="price"><span class="amount">&#36;12.00</span></span>
-														<div class="noo-product-action">
-															<div class="noo-action">
-																<a href="orchardDetail.html" class="button product_type_simple eye_button">
-																	<span>ชมสวน</span>
-																</a>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="masonry-item noo-product-column col-md-3 col-sm-6 product">
-												<div class="noo-product-inner">
-													<div class="noo-product-thumbnail">
-														<a href="orchardDetail.html">
-															<img width="600" height="760" src="images/product/product_4.jpg" alt="" />
-														</a>
-														<!-- <div class="noo-rating">
-															<div class="star-rating">
-																<span style="width:20%"></span>
-															</div>
-														</div> -->
-													</div>
-													<div class="noo-product-title"> 
-														<h3><a href="orchardDetail.html">Carrots</a></h3>
-														<span class="price"><span class="amount">&#36;1.05</span></span>
-														<div class="noo-product-action">
-															<div class="noo-action">
-																<a href="orchardDetail.html" class="button product_type_simple eye_button">
-																	<span>ชมสวน</span>
-																</a>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
+											
+											
+											
 										</div>
 									</div>
 								</div>
