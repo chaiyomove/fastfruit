@@ -134,16 +134,16 @@
 											<?php $i = 0?>
 											@foreach (Auth::user()->userBookmarks as $key => $bookmark)
 												@if ($bookmark->idProductSprint == $product->idProductSprint && $i==0)
-										        <button type="button" class="btn btn-default btn-sm" id="bookmark"> 
-													 <i class="glyphicon glyphicon-star "> </i>						    
-												 </button>
-												 <?php $i++; ?>
-												  @endif
+											        <button type="button" class="btn btn-default btn-sm" id="bookmark"> 
+														 <i class="glyphicon glyphicon-star "> </i>						    
+												 	</button>
+												 	<?php $i++; ?>
+												@endif
 							                @endforeach
 							                @if ($i==0) 
-							                <button type="button" class="btn btn-default btn-sm bookmark" id="bookmark"> 
-													 <i class="glyphicon glyphicon-star-empty "> </i>						    
-											</button>
+								                <button type="button" class="btn btn-default btn-sm bookmark" id="bookmark"> 
+														 <i class="glyphicon glyphicon-star-empty "> </i>						    
+												</button>
 										 	@endif
 									 	</td>
 									@endif

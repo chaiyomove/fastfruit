@@ -3,12 +3,12 @@
 
 <script>
 	jQuery(function ($) {
-	    $('#follow').on('click', function () {
-	        var $el = $(this),
-	        textNode = this.lastChild;
-	        $el.find('i').toggleClass('fa fa-check fa fa-plus');
-	        textNode.nodeValue = ($el.hasClass('follow') ? 'กำลังติดตาม' : 'ติดตาม')
-	        $el.toggleClass('follow');
+		$('#follow').on('click', function () {
+			var $el = $(this),
+			textNode = this.lastChild;
+			$el.find('i').toggleClass('fa fa-check fa fa-plus');
+			textNode.nodeValue = ($el.hasClass('follow') ? 'กำลังติดตาม' : 'ติดตาม')
+			$el.toggleClass('follow');
 
 	        //ajax
 	        @if (Auth::user())
@@ -25,7 +25,7 @@
 	        
 	    });
 	});
-	</script>
+</script>
 
 <link rel="stylesheet" href="{{asset('css/main.css')}}">
 			<section class="noo-page-heading eff heading-3">
@@ -99,30 +99,30 @@
 											
 											<div>
 											@if (Auth::user())
-											<?php $i = 0?>
-											@foreach (Auth::user()->orchardFollowing as $key => $followedOrchard)
-												@if ($followedOrchard->idOrchard == $orchard->idOrchard && $i==0)
-												<!-- <button type="submit" class="single_add_to_cart_button button">
-													<i class="fa fa-eye">&nbsp;</i>ดูผลผลิต
-												</button>
-												<button type="submit" class="single_add_to_cart_button plot">
-													<i class="fa fa-eye">&nbsp;</i>ดูแปลง
-												</button>
-												<button type="submit" class="single_add_to_cart_button map">
-													<i class="fa fa-globe">&nbsp;</i>แผนที่
-												</button> -->
-												<button type="button" class="single_add_to_cart_button follow" id="follow">
-													<i class="fa fa-check">&nbsp;</i>กำลังติดตาม
-												</button>
-												<?php $i++; ?>
-								                @endif
-								            @endforeach
-								                @if ($i==0) 
-												<button type="button" class="single_add_to_cart_button follow" id="follow">
-													<i class="fa fa-plus">&nbsp;</i>ติดตาม
-												</button>
-												 @endif
-												@endif	 
+												<?php $i = 0?>
+												@foreach (Auth::user()->orchardFollowing as $key => $followedOrchard)
+													@if ($followedOrchard->idOrchard == $orchard->idOrchard && $i==0)
+													<!-- <button type="submit" class="single_add_to_cart_button button">
+														<i class="fa fa-eye">&nbsp;</i>ดูผลผลิต
+													</button>
+													<button type="submit" class="single_add_to_cart_button plot">
+														<i class="fa fa-eye">&nbsp;</i>ดูแปลง
+													</button>
+													<button type="submit" class="single_add_to_cart_button map">
+														<i class="fa fa-globe">&nbsp;</i>แผนที่
+													</button> -->
+														<button type="button" class="single_add_to_cart_button follow" id="follow">
+															<i class="fa fa-check">&nbsp;</i>กำลังติดตาม
+														</button>
+													<?php $i++; ?>
+									                @endif
+									            @endforeach
+									                @if ($i==0) 
+													<button type="button" class="single_add_to_cart_button follow" id="follow">
+														<i class="fa fa-plus">&nbsp;</i>ติดตาม
+													</button>
+													@endif
+											@endif	 
 											</div>
 
 											<div class="clear"></div>
@@ -158,7 +158,8 @@
 												<p>แปลง</p>
 											</div>
 											<div id="tab-4" class="tab-pane fade">
-												<script>
+											
+											<script>
 										       function initMap() {
 										        var uluru = {lat: {{App\Orchards::find($orchard->idOrchard)->lat}}, lng: {{App\Orchards::find($orchard->idOrchard)->lng}} };
 										        var map = new google.maps.Map(document.getElementById('map'), {
@@ -172,10 +173,11 @@
 										      }
 										    </script>
 										    
-										    <div id="map" >
-										    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3gEIaUeZYIfOeIDdjhQDtobPsFl_raoc&callback=initMap&language=th" async defer></script>
+										    <div id="map" ></div>
+										    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3gEIaUeZYIfOeIDdjhQDtobPsFl_raoc&callback=initMap&language=th" async defer>
+										    </script>
 										   
-											</div>
+											
 											</div>
 											<div id="tab-5" class="tab-pane fade">
 												<div id="comments" class="comments-area">
