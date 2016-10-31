@@ -1,5 +1,17 @@
 @extends('layouts/master')
 @section('content')
+
+ <link rel="stylesheet" href="{{asset('css/main.css')}}">
+
+<script >
+		jQuery(function ($) {
+			document.getElementById('bookmark').click(function(){
+   			document.getElementById('bookmark').setAttribute('bookmark','after_bookmark');
+		});
+	});
+
+</script>
+
 			<section class="noo-page-heading eff heading-3">
 				<div class="container">
 					<div class="noo-heading-content">
@@ -80,8 +92,9 @@
 													<i class="fa fa-eye">&nbsp;</i>ดูแปลง
 												</button>
 												</a>
-												<a href="#" class="fa fa-star" id="bookmark"></a>
-												<!-- <a href="#" class="fa fa-star" id="after_bookmark"></a> -->
+												<a href="#" id="bookmark" class="bookbefor"><i class="fa fa-star fa-2x"></i></a>
+												{{-- <a href="#" class="fa fa-star fa-2x" id="bookmark"></a>
+												<a href="#" class="fa fa-star" id="after_bookmark"></a> --}}
 											</div>
 
 											<div class="clear"></div>
