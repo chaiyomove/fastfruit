@@ -81,7 +81,7 @@
 												</button>
 												</a>
 												<button type="submit" class="single_add_to_cart_button bookmark">
-													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o fa-lg"></i>
 												</button>
 											</div>
 
