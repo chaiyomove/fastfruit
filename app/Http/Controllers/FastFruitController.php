@@ -376,6 +376,7 @@ class FastFruitController extends Controller
     {
         $search = Request::get('search');
         $orchards = Orchards::latest()->get();
+        // $orchard=$orchards[2];
         $fruitSpecies = fruit_species::all();
         $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
         $matchedOrcs = array(); 
