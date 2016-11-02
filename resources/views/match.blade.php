@@ -1,5 +1,40 @@
 @extends('layouts/master')
 @section('content')
+
+<script>
+	$(document).ready(function(){
+		$('#idFruit').on('change', function(e){
+	    	var idFruit = e.target.value;
+
+	        //ajax
+	        $.get('{{url('api/fruitspecies')}}/'+idFruit, function(data){ 
+
+		        //success data
+	            $('#idFruitSpecie').empty();
+
+	            // $('#idFruitSpecie').append('<option value="0" selected>กรุณาเลือก</option>');
+
+	            $.each(data, function(index, fruitSpecie){
+
+	            	if(index==0){
+		            	$('#idFruitSpecie').append('<option value="' + fruitSpecie.idFruitSpecie + '"selected>' +  fruitSpecie.specieName + '</option>');
+
+	            	} else {
+		            	$('#idFruitSpecie').append('<option value="' + fruitSpecie.idFruitSpecie + '">' +  fruitSpecie.specieName + '</option>');            		
+	            	}
+
+
+	           });
+
+
+
+	       });
+
+
+	   });
+	});
+</script>
+
 			<section class="noo-page-heading eff">
 				<div class="container">
 					<div class="noo-heading-content">
@@ -15,7 +50,8 @@
 								<div id="matching">
 	                				<div class="col-md-8">
 	                					<h2>เลือกจับคู่</h2>
-	                					<form class="login" method="POST" action="{{ url('/login') }}">
+	                					<form method="post" action="{{url('/matching')}}">
+	                						{{ csrf_field() }}
 	                						<div class="col-md-4">
 		                						<div class="form-row form-row-wide">
 													<label for="username">
@@ -24,6 +60,9 @@
 													</label>
 													<select name="idFruit" id="idFruit" class="form-matching">
 														<option value="0" selected='selected'>กรุณาเลือก</option>
+														@foreach ($fruits as $fruit)
+												 		<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>				
+											 			@endforeach
 													</select>
 												</div>
 											</div>
@@ -35,6 +74,9 @@
 													</label>
 													<select name="idFruitSpecie" id="idFruitSpecie" class="form-matching">
 														<option value="0" selected='selected'>กรุณาเลือก</option>
+														@foreach ($fruitSpecies as $fruitSpecie)
+													 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>		
+												 		@endforeach		
 													</select>
 												</div>
 											</div>
@@ -46,6 +88,9 @@
 													</label>
 													<select name="idProvince" id="idProvince" class="form-matching">
 														<option value="0" selected='selected'>กรุณาเลือก</option>
+														@foreach ($provinces as $province)
+													 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+												 		@endforeach	
 													</select>
 												</div>
 											</div>
@@ -115,14 +160,33 @@
 								<div id="matching">
 	                				<div class="col-md-4">
 	                					<h2>ผลไม้ที่สนใจ</h2>
-	                					<form class="login" method="POST" action="{{ url('/login') }}">
+	                					@if (Auth::check())
+										@foreach ($matchings as $key => $matching)
+											@if ($key % 2 == 0)
 	                						<div class="form-row form-row-wide">
+											@else
+											@endif
+											<form method="POST" action="{{url('/matching')}}">
+											{{ csrf_field() }}
+											<input name="_method" type="hidden" value="DELETE" />
+											{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}
+											<button type="submit" class="btn btn-link pull-right">
 												
+													<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
+											
+											</button>
+											<input type="hidden" name="idMatching" value="{{$matching->idMatching}}">
+											</form>
+											@endforeach
+											@endif
 											</div>
 											<div class="form-row">
+											<form method="get" action="{{url('/matching')}}">
+												{{ csrf_field() }}
 												<button type="submit" class="button" style="float: right;">
 													จับคู่
 												</button>
+												</form>
 											</div>
 											<div class="form-row form-row-wide"></div>
 										</form>
@@ -140,42 +204,62 @@
 													<img width="40" height="39" src="images/organicfood-2.png" alt=""
 													style="margin-bottom: 15px;" />
 													<h2>ผลลัพธ์</h2> 
+													<ul class="breadcrumb">
+													@if (Auth::check())
+														@foreach ($matchings as $key => $matching)
+														<li>
+															<a href="javascript:;">{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}</a>
+														</li>
+														@endforeach
+													@endif
+												</ul>
 												</div>
 												<div class="noo-product-filter masonry-filters" style="margin-top: 0px;">
 													<ul class="noo-header-filter" data-option-key="filter">
 														<li>
 															<a data-option-value="*" href="#all" class="selected">
-																<span>All products</span>
+																<span>ทั้งหมด</span>
 															</a>
 														</li>
 														<li>
 															<a data-option-value=".fruit" href="#fruit">
-																<span>Fruit</span>
+																<span>ระยะทาง</span>
 															</a>
 														</li>
 														<li>
 															<a data-option-value=".vegetable" href="#vegetable">
-																<span>Vegetable</span>
+																<span>จำนวน</span>
 															</a>
 														</li>
 														<li>
 															<a data-option-value=".bread" href="#bread">
-																<span>Bread</span>
+																<span>ผลไม้</span>
 															</a>
 														</li>
 														<li>
 															<a data-option-value=".others" href="#others">
-																<span>Others</span>
+																<span>อื่น</span>
 															</a>
 														</li>
 													</ul>
 												</div>
+												@foreach ($matchedOrcs as $key => $matchedOrc)
+												@if ($key%4 == 0)	
 												<div class="noo-product-grid products row product-grid noo-grid-4">
+												@endif
 													<div class="fruit organic-fruits masonry-item col-md-4 col-sm-6">
 														<div class="noo-product-inner">
 															<div class="noo-product-thumbnail">
-																<a href="shop-detail.html">
-																	<img width="600" height="760" src="images/product/product_1.jpg" alt="" />
+																<a href="{{url('orchards/'.$matchedOrc->idOrchard)}}">
+																@if ($key<=10)
+																<img src="{{asset('images/new.png')}}" style="position: absolute; margin-left: -5px; margin-top: -2px">
+															@endif
+															@foreach ($matchedOrc->orchardPlots as $orchardPlot)
+																@if ($orchardPlot->idPlotStatus == 1)
+																	<img src="{{asset('images/gap.png')}}" style="position: absolute; margin-left: 2px; margin-top: 115px">
+																@endif
+															@endforeach
+																	<img width="600" height="760" src="{{$matchedOrc->picture1}}" alt="" />
 																</a>
 																<!-- <div class="noo-rating">
 																	<div class="star-rating">
@@ -184,11 +268,11 @@
 																</div> -->
 															</div>
 															<div class="noo-product-title"> 
-																<h3><a href="shop-detail.html">Apples</a></h3>
+																<h3><a href="{{url('orchards/'.$matchedOrc->idOrchard)}}">{{$matchedOrc->nameOrchard}}</a></h3>
 																<span class="price"><span class="amount">&#36;3.95</span></span>
 																<div class="noo-product-action">
 																	<div class="noo-action">
-																		<a href="#" class="button product_type_simple info_circle_button">
+																		<a href="{{url('orchards/'.$matchedOrc->idOrchard)}}" class="button product_type_simple info_circle_button">
 																			<span>ดูรายละเอียด</span>
 																		</a>
 																	</div>
@@ -196,7 +280,10 @@
 															</div>
 														</div>
 													</div>
-												</div>
+													@if ((count($matchedOrcs)===$key+1) || $key%4 == 3)
+												</div>									
+												@endif
+											@endforeach			
 											</div>
 										</div>
 									</div>
@@ -208,11 +295,12 @@
 				<div class="noo-footer-shop-now">
 					<div class="container">
 						<div class="col-md-7">
-							<h4>- Every day fresh -</h4>
-							<h3>organic food</h3>
+							<h4>-  -</h4>
+							<h3></h3>
 						</div>
 						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
 					</div>
 				</div>
 			</div>
+			<script src="js/jquery.datepicker.js"></script>
 @endsection			

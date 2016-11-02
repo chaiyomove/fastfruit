@@ -1,188 +1,112 @@
 @extends('layouts/master')
 @section('content')
-
-<script src="js/responsiveslides.min.js"></script>
-	 <script>
-		$(function () {
-		  $("#slider").responsiveSlides({
-			auto:true,
-			nav: false,
-			speed: 500,
-			namespace: "callbacks",
-			pager:true,
-		  });
-		});
-	</script>
-<link href="css/owl.carousel.css" rel="stylesheet">
-<script src="js/owl.carousel.js"></script>
-	<script>
-		$(document).ready(function() {
-		$("#owl-demo").owlCarousel({
-			items : 1,
-			lazyLoad : true,
-			autoPlay : true,
-			navigation : false,
-			navigationText :  false,
-			pagination : true,
-		});
-		});
-	</script>
-
-<link href="css/jquery.datepicker.css" rel="stylesheet">
-
-
-			<div class="feature-section">
+			<section class="noo-page-heading eff">
 				<div class="container">
-					<h3>เพิ่มผลผลิต</h3><br><br>
-					<form method="POST" enctype="multipart/form-data" action="{{url('/product')}}">
-					{{ csrf_field() }}
-					<input type="hidden" name="idOrchardPlot" value="{{$id}}">
-					<div class="row">
-						<div class="col-md-2">
-						</div>
-						<div class="col-md-2">
-							<h4>ผลผลิต : </h4>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group" style="width:40%; float:left">
-							 	<select class="form-control disable" name="idFruit" style="color: #DCDAD1" disabled>
-							 		<option  value="" selected >เลือกชนิดผลไม้</option>
-							 		@foreach ($fruits as $fruit)
-								 		@if ($fruit->idFruit == old('idFruit'))
-								 			<option value="{{$fruit->idFruit}}" selected>{{$fruit->fruitName}}</option>
-								 		@else
-								 			<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>
-								 		@endif
-								 						
-							 		@endforeach
-							  	</select>
+					<div class="noo-heading-content">
+						<h1 class="page-title eff">เพิ่มผลผลิต</h1>
+					</div>
+				</div>
+			</section>
+			<div class="main">
+				<div class="commerce commerce-account noo-shop-main pt-5 pb-7">
+					<div class="container">
+						<div class="row">
+							<div class="noo-main col-md-12">
+								<div class="col-md-3"></div>
+								<div id="addOrchard">
+	                				<div class="col-md-6">
+	                					<h2>เพิ่มผลผลิต</h2>
+	                					<form class="login" method="POST" action="{{ url('/login') }}">
+	                						<div class="form-row form-row-wide">
+												<label for="username">
+													ผลผลิต :
+													<span class="required">*</span>
+													<div style="float: right; width: 70%">
+														<select name="idFruit" class="form-matching" style="width: 50%; float: left;">
+															<option value="" selected='selected'>เลือกผลไม้</option>
+														</select>
+														<select name="idFruitSpecie" class="form-matching" style="width: 50%; float: left;">
+															<option value="" selected='selected'>เลือกสายพันธุ์</option>
+														</select>
+													</div>
+												</label>
+											</div>
+											<div class="form-row form-row-wide">
+												<label for="username">
+													รายละเอียดผลผลิต :
+													<span class="required">*</span>
+													<textarea name="description" class="input-text" style="resize: none; width: 70%; float: right;"></textarea>
+												</label>
+											</div>
+											<div class="form-row form-row-wide">
+												<label for="username">
+													จำนวนผลผลิต :
+													<span class="required">*</span>
+													<input type="text" class="input-text" name="fruitNum" id="username" placeholder="กิโลกรัมต่อรอบการผลิต" value="" style="width: 70%; float: right;" />
+												</label>
+											</div>
+											<div class="form-row form-row-wide">
+												<label for="username">
+													ตั้งแต่วันที่ :
+													<span class="required">*</span>
+													<div style="width: 70%; float: right;">
+														<div class='input-group date' id='datepickerstart' style="width: 50%; float: left;">
+												            <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่"/>
+												            <span class="input-group-addon datepicker" data-toggle="datepicker">
+												            	<span class="fa fa-calendar"></span>
+												            </span>
+												        </div>
+											        </div>
+												</label>
+											</div>
+											<div class="form-row form-row-wide">
+												<label for="username">
+													ถึงวันที่ :
+													<span class="required">*</span>
+													<div style="width: 70%; float: right;">
+														<div class='input-group date' id='datepickerend' style="width: 50%; float: left;">
+												            <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง"/>
+												            <span class="input-group-addon datepicker" data-toggle="datepicker">
+												            	<span class="fa fa-calendar"></span>
+												            </span>
+												        </div>
+											        </div>
+												</label>
+											</div>
+											<div class="form-row form-row-wide">
+												<label for="username">
+													อัพโหลดรูป :
+													<span class="required">*</span>
+													<div style="float: right;">
+														<input name="pictures[]" id="exampleInputFile" type="file" />
+														<input name="pictures[]" id="exampleInputFile" type="file" />
+														<input name="pictures[]" id="exampleInputFile" type="file" />
+														<input name="pictures[]" id="exampleInputFile" type="file" />
+													</div>
+												</label>
+											</div>
+											<div class="form-row form-row-wide">
+												<button type="submit" class="button" style="float: right;">
+													เสร็จสิ้น
+												</button>
+											</div>
+	                						<div class="form-row form-row-wide"></div>
+										</form>
+									</div>
+								</div>
 							</div>
-							<div class="form-group" style="width:50%; float:right">
-								<select class="form-control" name="idFruitSpecie" style="color: #DCDAD1" disabled>
-							 		<option value="" selected>เลือกสายพันธุ์</option>
-							 		{{-- <option value="78">มะม่วงมัน</option>	 --}}
-							 		@foreach ($fruitSpecies as $fruitSpecie)
-								 		@if ($fruitSpecie->idFruitSpecie == App\Orchard_plots::findOrFail($id)->idFruitSpecie))
-								 			<option value="{{$fruitSpecie->idFruitSpecie}}" selected>{{$fruitSpecie->specieName}}</option>
-								 		@endif
-							 		@endforeach				    	
-							  	</select>	
-							</div>
-						</div>
-						<div class="col-md-4">
+							<div class="col-md-3"></div>
 						</div>
 					</div>
-					<br>
-					<div class="row">
-						<div class="col-md-2">
+				</div>
+				<div class="noo-footer-shop-now">
+					<div class="container">
+						<div class="col-md-7">
+							<h4>- Every day fresh -</h4>
+							<h3>organic food</h3>
 						</div>
-						<div class="col-md-2">
-							<h4>รายละเอียดผลผลิต : </h4>
-						</div>
-						<div class="col-md-4">
-							<textarea name="description" class="form-control" style="resize: none;" rows="6">{{old('description')}}</textarea>
-						</div>
-						<div class="col-md-4">
-						</div>
+						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
 					</div>
-					<br>
-					<div class="row">
-						<div class="col-md-2">
-						</div>
-						<div class="col-md-2">
-							<h4>จำนวนผลผลิต : </h4>
-						</div>
-						<div class="col-md-2">
-							<input type="text" name="fruitNum" class="form-control" placeholder="กิโลกรัม/รอบการผลิต" value="{{old('fruitNum')}}"></input>
-						</div>
-						<div class="col-md-4">
-						</div>
-						<div class="col-md-2">
-						</div>
-					</div>
-					<br>
-					<div class="row">
-						<div class="col-md-2">
-						</div>
-						<div class="col-md-2">
-							<h4>ตั้งแต่วันที่ : </h4>
-						</div>
-						<div class="col-md-2">
-							<div class="form-group">
-								<div class='input-group date' id='addplot'>
-					                <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" value="{{old('startDate')}}"/>
-					                <span class="input-group-addon" data-toggle="datepicker">
-					                    <span class="glyphicon glyphicon-calendar"></span>
-					                </span>
-					            </div>
-							</div>
-						</div>
-						<div class="col-md-4">
-						</div>
-						<div class="col-md-2">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-2">
-						</div>
-						<div class="col-md-2">
-							<h4>ถึงวันที่ : </h4>
-						</div>
-						<div class="col-md-2">
-							<div class="form-group">
-								<div class='input-group date' id='datepickerend'>
-					                <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง" value="{{old('endDate')}}"/>
-					                <span class="input-group-addon" data-toggle="datepicker">
-					                    <span class="glyphicon glyphicon-calendar"></span>
-					                </span>
-					            </div>
-							</div>	
-						</div>
-						<div class="col-md-4">
-						</div>
-						<div class="col-md-2">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-2">
-						</div>
-						<div class="col-md-2">
-							<h4>อัพโหลดรูป : </h4>
-						</div>
-						<div class="col-md-2">
-														
-								<div class="form-group">				 
-									<input name="pictures[]" id="exampleInputFile" type="file" />
-									<input name="pictures[]" id="exampleInputFile" type="file" />
-									<input name="pictures[]" id="exampleInputFile" type="file" />
-								</div>							
-							
-						</div>
-						<div class="col-md-4">
-						</div>
-						<div class="col-md-2">
-						</div>
-					</div>
-					<br><br>
-					<div class="row">
-						<div class="col-md-2">
-						</div>
-						<div class="col-md-4">
-						</div>
-						<div class="col-md-4">
-						</div>
-						<div class="col-md-2">
-							<button type="submit" class="btn btn-success btn-lg btn-block" >
-								เสร็จสิ้น
-							</button>
-						</div>
-					</div>
-					</form>
 				</div>
 			</div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="js/jquery.datepicker.js"></script>
-
-
 @endsection
