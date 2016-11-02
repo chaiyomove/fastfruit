@@ -52,9 +52,9 @@
 												<h3><a href="{{url('product', [$product->idProductSprint])}}">{{$product->orchardPlot->fruitSpecie->specieName}}จาก {{$product->orchardPlot->orchard->nameOrchard}}</a></h3>
 													<span class="price"><span class="amount">จำนวนผลผลิต: {{$product->fruitNum}} กิโลกรัม</span></span>
 													<p class="space">รอบการผลิต:{{$product->startDate}} ถึง {{$product->endDate}}</p>
-													<span class="price"><span class="amount">
-														จังหวัด
-													</span></span>
+													<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;
+														{{$product->orchardPlot->province->provinceName}}
+													</span>
 												<div class="noo-product-action">
 													<div class="noo-action">
 														<a href="{{url('product', [$product->idProductSprint])}}" class="button product_type_simple info_circle_button">
