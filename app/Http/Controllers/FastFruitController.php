@@ -443,7 +443,7 @@ class FastFruitController extends Controller
         return view('plot',compact('plots'));
     }
 
-     public function plotsDetail($id)
+    public function plotsDetail($id)
     {
         $plot=Orchard_plots::findOrFail($id);
         return view('plotDetail',compact('plot'));

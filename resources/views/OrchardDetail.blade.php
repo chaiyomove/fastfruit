@@ -180,7 +180,7 @@
 										   
 											
 											</div>
-											<div id="tab-5" class="tab-pane fade">
+											{{-- <div id="tab-5" class="tab-pane fade">
 												<div id="comments" class="comments-area">
 						                        	<h2 class="comments-title">2 Comments</h2>
 						                        	<ol class="comments-list">
@@ -263,7 +263,7 @@
 														</div><!-- #respond -->
 									    			</div>
 						    					</div>
-											</div>
+											</div> --}}
 										</div>
 									</div>
 									<div class="related products">
