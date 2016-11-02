@@ -132,13 +132,13 @@
 														จำนวน
 														<span class="required">*</span>
 													</label>
-													<input type="text" class="input-text" name="email" id="username" value=""/>
+													<input type="text" class="input-text" name="fruitNum" id="username" value=""/>
 												</div>
 												<div class="form-row form-row-wide">
 													<label for="username">
 														GAP
 														<span class="required">*</span>
-														<select name="unit" class="form-matching" style="width: 60%; float: right;">
+														<select name="idPlotStatus" class="form-matching" style="width: 60%; float: right;">
 															<option value="1" selected='selected'>มี GAP</option>
 									   						<option value="2">ไม่มี GAP</option>	
 														</select>
@@ -175,6 +175,7 @@
 											@if ($key % 2 == 0)
 	                						<div class="form-row form-row-wide">
 											@else
+											
 											@endif
 											<form method="POST" action="{{url('/matching')}}">
 											{{ csrf_field() }}
@@ -190,16 +191,18 @@
 											@endforeach
 											@endif
 											</div>
-											<div class="form-row">
 											<form method="get" action="{{url('/matching')}}">
 												{{ csrf_field() }}
+											<div class="form-row">
+											
 												<button type="submit" class="button" style="float: right;">
 													จับคู่
 												</button>
-												</form>
+												
 											</div>
+											</form>
 											<div class="form-row form-row-wide"></div>
-										</form>
+										
 									</div>
 								</div>
 							</div>
