@@ -1,6 +1,16 @@
 @extends('layouts/master')
 @section('content')
 
+<link rel="stylesheet" href="css/swipebox.css">
+			<script src="js/jquery.swipebox.min.js"></script> 
+			    <script type="text/javascript">
+					jQuery(function($) {
+						$(".swipebox").swipebox();
+					});
+				</script>
+
+<link href="css/jquery.datepicker.css" rel="stylesheet">
+
 <script>
 	$(document).ready(function(){
 		$('#idFruit').on('change', function(e){
@@ -302,5 +312,7 @@
 					</div>
 				</div>
 			</div>
-			<script src="js/jquery.datepicker.js"></script>
+
+<script src="js/jquery.datepicker.js"></script>
+
 @endsection			
