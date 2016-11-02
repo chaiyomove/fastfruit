@@ -60,7 +60,7 @@
 								<div id="matching">
 	                				<div class="col-md-8">
 	                					<h2>เลือกจับคู่</h2>
-	                					<form method="post" action="{{url('/matching')}}">
+	                					<form class="login" method="post" action="{{url('/matching')}}">
 	                						{{ csrf_field() }}
 	                						<div class="col-md-4">
 		                						<div class="form-row form-row-wide">
@@ -175,15 +175,16 @@
 											@if ($key % 2 == 0)
 	                						<div class="form-row form-row-wide">
 											@else
-											
+
 											@endif
-											<form method="POST" action="{{url('/matching')}}">
+											<form class="login" method="POST" action="{{url('/matching')}}" 
+											style="padding: 5px 0px 5px 15px; margin:1em 0;">
 											{{ csrf_field() }}
 											<input name="_method" type="hidden" value="DELETE" />
 											{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}
-											<button type="submit" class="btn btn-link pull-right">
+											<button type="submit" class="btn btn-link">
 												
-													<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
+													<i class="fa fa-minus-circle" aria-hidden="true"></i>
 											
 											</button>
 											<input type="hidden" name="idMatching" value="{{$matching->idMatching}}">
