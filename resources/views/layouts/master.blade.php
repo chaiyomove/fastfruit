@@ -6,15 +6,17 @@
 		<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}"/>
 		<title>FASTFRUIT</title>
 
+		{{-- <link rel='stylesheet' href='{{asset('css/font-awesome.min.css')}}' type='text/css' media='all'/> --}}
 		<link rel='stylesheet' href='{{asset('css/bootstrap.min.css')}}' type='text/css' media='all' />
 		<link rel='stylesheet' href='{{asset('css/owl.carousel.css')}}' type='text/css' media='all'/>
 		<link rel='stylesheet' href='{{asset('css/owl.theme.css')}}' type='text/css' media='all'/>
-		<link rel='stylesheet' href='{{asset('css/font-awesome.min.css')}}' type='text/css' media='all'/>
 		<link rel='stylesheet' href='{{asset('https://fonts.googleapis.com/css?family=Prompt:100,300,400,700,900,300italic,400italic,700italic,900italic')}}' type='text/css' media='all'/>
 		<link rel='stylesheet' href='{{asset('css/style.css')}}' type='text/css' media='all'/>
 		<link rel='stylesheet' href='{{asset('css/custom.css')}}' type='text/css' media='all'/>
 		<link rel="stylesheet" href='{{asset('css/magnific-popup.css')}}' type='text/css' media='all' />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="https://use.fontawesome.com/03b93caede.js"></script>
+
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

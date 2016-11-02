@@ -30,7 +30,7 @@
 		});
 	</script>
 
-	<script >
+	<script>
 		jQuery(function ($) {
 			$('#bookmark').on('click', function () {
 				@if (Auth::user())

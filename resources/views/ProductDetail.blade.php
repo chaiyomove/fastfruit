@@ -10,6 +10,33 @@
 
 </script>
 
+{{-- bookmark --}}
+<script>
+	jQuery(function ($) {
+		$('#bookmark').on('click', function () {
+			@if (Auth::user())
+				var $el = $(this),
+				textNode = this.lastChild;
+				$el.find('i').toggleClass('fa-star fa-star-o');
+				textNode.nodeValue = ($el.hasClass('bookmark') ? '' : '')
+				$el.toggleClass('bookmark');
+
+				if (!$el.hasClass('bookmark')){
+					$.get('{{url('api/user')}}/{{Auth::user()->id}}/bookmark/{{$product->idProductSprint}}', function(data){ 
+	        		// alert(data);
+	        		});	
+				} else {
+					$.get('{{url('api/user')}}/{{Auth::user()->id}}/unbookmark/{{$product->idProductSprint}}', function(data){ 
+	        		// alert(data);
+	        		});
+				}
+			@endif
+
+		});
+	});
+
+</script>
+
 			<section class="noo-page-heading eff heading-3">
 				<div class="container">
 					<div class="noo-heading-content">
@@ -78,21 +105,46 @@
 													</tr>
 												</table>
 											</div>
-											
+
 											<div>
 												<a href="{{url('orchards',[$product->orchardPlot->orchard->idOrchard])}}">
-												<button type="submit" class="single_add_to_cart_button button">
+												<button type="button" class="single_add_to_cart_button button">
 													<i class="fa fa-eye">&nbsp;</i>ชมสวน
 												</button>
 												</a>
 												<a href="{{url('plot',[$product->orchardPlot->idOrchardPlot])}}">
-												<button type="submit" class="single_add_to_cart_button plot">
+												<button type="button" class="single_add_to_cart_button plot">
 													<i class="fa fa-eye">&nbsp;</i>ดูแปลง
 												</button>
 												</a>
-												<a href="#" class="fa fa-star" id="bookmark" onclick="clickstar()"></a>
-												{{-- <a href="#" class="fa fa-star fa-2x" id="bookmark"></a>
-												<a href="#" class="fa fa-star" id="after_bookmark"></a> --}}
+
+												{{-- <a href="#" class="fa fa-star" id="bookmark"></a> --}}
+
+												@if (Auth::user())
+													<?php $i = 0 ?>
+													@foreach (Auth::user()->userBookmarks as $key => $bookmark)
+														@if ($bookmark->idProductSprint == $product->idProductSprint && $i==0)
+														<!-- <button type="submit" class="single_add_to_cart_button button">
+															<i class="fa fa-eye">&nbsp;</i>ดูผลผลิต
+														</button>
+														<button type="submit" class="single_add_to_cart_button plot">
+															<i class="fa fa-eye">&nbsp;</i>ดูแปลง
+														</button>
+														<button type="submit" class="single_add_to_cart_button map">
+															<i class="fa fa-globe">&nbsp;</i>แผนที่
+														</button> -->
+															<button type="button" class="single_add_to_cart_button button" id="bookmark">	
+																<i class="fa fa-star fa-lg"> </i>	    
+														 	</button>
+															<?php $i++; ?>
+										                @endif
+										            @endforeach
+											        @if ($i==0) 
+										                <button type="button" class="single_add_to_cart_button button bookmark" id="bookmark"> 
+															<i class="fa fa-star-o fa-lg"> </i>						    
+														</button>
+												 	@endif
+												@endif
 											</div>
 
 											<div class="clear"></div>

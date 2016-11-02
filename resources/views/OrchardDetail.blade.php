@@ -1,6 +1,7 @@
 @extends('layouts/master')
 @section('content')
 
+{{-- Follow --}}
 <script>
 	jQuery(function ($) {
 		$('#follow').on('click', function () {
@@ -111,21 +112,21 @@
 													<button type="submit" class="single_add_to_cart_button map">
 														<i class="fa fa-globe">&nbsp;</i>แผนที่
 													</button> -->
-														<button type="button" class="single_add_to_cart_button follow" id="follow">
+														<button type="button" class="single_add_to_cart_button button" id="follow">
 															<i class="fa fa-check">&nbsp;</i>กำลังติดตาม
 														</button>
 													<?php $i++; ?>
 									                @endif
 									            @endforeach
 									                @if ($i==0) 
-													<button type="button" class="single_add_to_cart_button follow" id="follow">
+													<button type="button" class="single_add_to_cart_button button follow" id="follow">
 														<i class="fa fa-plus">&nbsp;</i>ติดตาม
 													</button>
 													@endif
 											@endif	 
-											</div>
+										</div>
 
-											<div class="clear"></div>
+										<div class="clear"></div>
 											
 										</div> 
 									</div>
