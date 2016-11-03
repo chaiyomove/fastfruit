@@ -16027,11 +16027,8 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     transition: all 0.4s ease 0s;
 }
 
-.commerce a#bookmark {
-    font-size: 24px;
-    position: relative;
-    margin-left: 15px;
-    top: 5px;
+.commerce button#bookmark {
+    color: #ffd402;
 }
 
 .commerce a#bookmark:hover {
