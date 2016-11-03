@@ -9,7 +9,8 @@
 					});
 				</script>
 
-<link href="css/jquery.datepicker.css" rel="stylesheet">
+<link href="{{asset('css/jquery.datepicker.css')}}" rel="stylesheet">
+
 
 <script>
 	$(document).ready(function(){
@@ -317,6 +318,6 @@
 				</div>
 			</div>
 
-<script src="js/jquery.datepicker.js"></script>
+<script src="{{asset('js/jquery.datepicker.js')}}"></script>
 
 @endsection			
