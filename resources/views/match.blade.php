@@ -113,7 +113,7 @@
 													</label>
 													<div class='input-group date' id='datepickerstart'>
 											            <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" />
-											            <span class="input-group-addon datepicker" data-toggle="datepicker">
+											            <span class="input-group-addon" data-toggle="datepicker">
 											            	<span class="fa fa-calendar"></span>
 											            </span>
 											        </div>
@@ -121,7 +121,7 @@
 											    <div class="form-row form-row-wide">    
 											        <div class='input-group date' id='datepickerend'>
 											            <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง" />
-											            <span class="input-group-addon datepicker" data-toggle="datepicker">
+											            <span class="input-group-addon" data-toggle="datepicker">
 											                <span class="fa fa-calendar"></span>
 											            </span>
 											        </div>
@@ -274,7 +274,7 @@
 																	<img src="{{asset('images/gap.png')}}" style="position: absolute; margin-left: 2px; margin-top: 115px">
 																@endif
 															@endforeach
-																	<img width="600" height="760" src="{{$matchedOrc->picture1}}" alt="" />
+																	<img style="width: 260px; height: 160px;" src="{{$matchedOrc->picture1}}" alt="" />
 																</a>
 																<!-- <div class="noo-rating">
 																	<div class="star-rating">

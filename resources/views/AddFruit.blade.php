@@ -52,7 +52,7 @@
 													<div style="width: 70%; float: right;">
 														<div class='input-group date' id='datepickerstart' style="width: 50%; float: left;">
 												            <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่"/>
-												            <span class="input-group-addon datepicker" data-toggle="datepicker">
+												            <span class="input-group-addon" data-toggle="datepicker">
 												            	<span class="fa fa-calendar"></span>
 												            </span>
 												        </div>
@@ -66,7 +66,7 @@
 													<div style="width: 70%; float: right;">
 														<div class='input-group date' id='datepickerend' style="width: 50%; float: left;">
 												            <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง"/>
-												            <span class="input-group-addon datepicker" data-toggle="datepicker">
+												            <span class="input-group-addon" data-toggle="datepicker">
 												            	<span class="fa fa-calendar"></span>
 												            </span>
 												        </div>
