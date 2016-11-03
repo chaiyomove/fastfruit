@@ -1,6 +1,6 @@
 @extends('layouts/master')
 @section('content')
- <link rel="stylesheet" href="{{asset('css/main.css')}}">
+<link rel="stylesheet" href="{{asset('css/main.css')}}">
 
 			<section class="noo-page-heading eff">
 				<div class="container">

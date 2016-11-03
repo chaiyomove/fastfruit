@@ -36,7 +36,9 @@
     <div class="tab-pane fade" id="profile">
         <div id="largemap">12354</div>   
     </div>
-    <div id="map_canvas" style="display:none;">
+</div>
+<div class="tab-pane fade in active" id="profile">
+        <div id="map_canvas" style="display:none;"></div>  
 </div>
 
 	    
@@ -58,15 +60,7 @@
 		        console.dir(map);
 		        google.maps.event.trigger(map, 'resize');
 		        document.getElementById("largemap").style.display="block";
-		        $('a[href="#profile"]').on('click', function(e) {
-		        	
-		        	document.getElementById("largemap").style.display="none";		
-		        	document.getElementById("map_canvas").style.display="block";		
-	            	var center = map.getCenter();
-	                google.maps.event.trigger(map, "resize");
-	                map.setCenter(center);
-		        });
-
+		        
 		        $('a[href="#profile"]').on('click', function(e) {
 		        	
 		        	document.getElementById("largemap").style.display="none";		

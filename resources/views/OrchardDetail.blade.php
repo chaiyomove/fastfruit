@@ -158,27 +158,7 @@
 											<div id="tab-3" class="tab-pane fade">
 												<p>แปลง</p>
 											</div>
-											<div id="tab-4" class="tab-pane fade">
-											
-											<script>
-										       function initMap() {
-										        var uluru = {lat: {{App\Orchards::find($orchard->idOrchard)->lat}}, lng: {{App\Orchards::find($orchard->idOrchard)->lng}} };
-										        var map = new google.maps.Map(document.getElementById('map'), {
-										          zoom: 4,
-										          center: uluru
-										        });
-										        var marker = new google.maps.Marker({
-										          position: uluru,
-										          map: map
-										        });
-										      }
-										    </script>
-										    
-										    <div id="map" ></div>
-										    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3gEIaUeZYIfOeIDdjhQDtobPsFl_raoc&callback=initMap&language=th" async defer>
-										    </script>
-										   
-											
+											<div id="tab-4" class="tab-pane fade" style = "display:none;">
 											</div>
 											<div id="tab-5" class="tab-pane fade">
 												<div id="comments" class="comments-area">
@@ -264,6 +244,45 @@
 									    			</div>
 						    					</div>
 											</div>
+										</div>
+										<div id="tab-6" class="tab-pane fade in active" style="display: none;">											
+											<script>
+												jQuery(function($) {
+												    $(document).ready(function() {
+												    	// var center = {lat: -25.363, lng: 131.044 };
+												        var latlng = new google.maps.LatLng(-34.397, 150.644);
+												        var myOptions = {
+												            zoom: 8,
+												            center: latlng,
+												            mapTypeId: google.maps.MapTypeId.ROADMAP
+												        };
+												        
+												        var map = new google.maps.Map(document.getElementById("map"), myOptions);
+												        var marker = new google.maps.Marker({
+													          position: latlng,
+													          map: map
+													        });
+
+												        console.dir(map);
+
+												        $('a[href="#tab-4"]').on('click', function(e) {
+												            $("#tab-6").show();
+												            google.maps.event.trigger(map, 'resize');
+												            map.setCenter(latlng);
+												        	$("#map").css("width", 500).css("height", 500);
+												        });
+
+												        $('a[href="#tab-1"],a[href="#tab-2"],a[href="#tab-3"],a[href="#tab-5"]').on('click', function(e) {
+												        	$("#tab-6").hide();
+												        });
+												        
+												    });
+												});							     
+										    </script>
+										    
+										    <div id="map"></div>
+										    
+										    
 										</div>
 									</div>
 									<div class="related products">
