@@ -391,5 +391,5 @@
 					</div>
 				</div>
 			</div>
-
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKPwTquIvNcVchkVTbdougmPk9xbOt38&callback=initMap&language=th" async defer>
 @endsection			
