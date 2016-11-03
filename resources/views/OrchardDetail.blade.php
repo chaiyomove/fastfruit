@@ -153,10 +153,34 @@
 												<p>{{$orchard->description}}</p>
 											</div>
 											<div id="tab-2" class="tab-pane fade">
-												<p>ผลผลิต</p>
+												<div class="widget commerce widget_products">
+													<h3 class="widget-title">สวนยอดนิยม</h3>
+													<ul class="product_list_widget">
+														<li>
+															<a href="{{'orchards/'.$orchard->idOrchard}}">
+																<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
+																<span class="product-title">{{$orchard->nameOrchard}}</span>
+															</a>
+															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
+														</li>
+														
+													</ul>
+												</div>
 											</div>
 											<div id="tab-3" class="tab-pane fade">
-												<p>แปลง</p>
+												<div class="widget commerce widget_products">
+													<h3 class="widget-title">สวนยอดนิยม</h3>
+													<ul class="product_list_widget">
+														<li>
+															<a href="{{'orchards/'.$orchard->idOrchard}}">
+																<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
+																<span class="product-title">{{$orchard->nameOrchard}}</span>
+															</a>
+															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
+														</li>
+														
+													</ul>
+												</div>
 											</div>
 											<div id="tab-4" class="tab-pane fade">
 											
