@@ -32,12 +32,12 @@
 		    }
 		    
 		</script> --}}
-		<div class="noo-spinner">
+		{{-- <div class="noo-spinner"> --}}
 			<div class="spinner">
 				<div class="cube1"></div>
 				<div class="cube2"></div>
 			</div>
-		</div>
+		{{-- </div> --}}
 		<div class="site">
 			<header class="noo-header header-3 header-static">
 				<div class="navbar-wrapper">

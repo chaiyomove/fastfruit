@@ -1,5 +1,7 @@
 @extends('layouts/master')
 @section('content')
+ <link rel="stylesheet" href="{{asset('css/main.css')}}">
+
 			<section class="noo-page-heading eff">
 				<div class="container">
 					<div class="noo-heading-content">
@@ -82,6 +84,74 @@
 													</select>
 												</label>
 											</div>
+											<div>
+												<input type="text" name="lat" id="lat">
+												<input type="text" name="lng" id="lng">
+											</div>
+
+											 <script>
+													
+											   		jQuery(function($) {
+											   		    $(document).ready(function() {
+											   		    	var lat= $("#lat");
+											   		    	var lng= $("#lng");
+													        var center = {lat: -25.363, lng: 131.044 };
+													        var map = new google.maps.Map(document.getElementById('map'), {
+													          zoom: 4,
+													          center: center
+													        });
+
+													        var marker = new google.maps.Marker({
+													          position: center,
+													          map: map
+													        });
+
+													        var infoWindow = new google.maps.InfoWindow({map: map});
+
+											                // Try HTML5 geolocation.
+											                if (navigator.geolocation) {
+											                  navigator.geolocation.getCurrentPosition(function(position) {
+											                    var pos = {
+											                      lat: position.coords.latitude,
+											                      lng: position.coords.longitude
+											                    };
+											                    lat.val(position.coords.latitude);
+											                    lng.val(position.coords.longitude);
+											                    infoWindow.setPosition(pos);
+											                    infoWindow.setContent('Location found.');
+											                    map.setCenter(pos);
+											                  }, function() {
+											                    handleLocationError(true, infoWindow, map.getCenter());
+											                  });
+											                } else {
+											                  // Browser doesn't support Geolocation
+											                  handleLocationError(false, infoWindow, map.getCenter());
+											                }
+
+											                map.addListener('click', function(e) {
+											                    var marker = new google.maps.Marker({
+											                      position: e.latLng,
+											                      map: map
+											                    });
+											                    map.panTo(latLng);
+											                  });
+											                
+
+											                // function placeMarkerAndPanTo(latLng, map) {
+											                //   var marker = new google.maps.Marker({
+											                //     position: latLng,
+											                //     map: map
+											                //   });
+											                //   map.panTo(latLng);
+											                // }
+
+
+													       
+												    	});
+												    });	
+											   		
+											    </script>		
+											    <div id="map"></div>
 											<div class="form-row">
 												<button type="submit" class="button" style="float: right;">
 													เสร็จสิ้น
@@ -106,4 +176,7 @@
 					</div>
 				</div>
 			</div>
+
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKPwTquIvNcVchkVTbdougmPk9xbOt38&callback=initMap&language=th" async defer>
+
 @endsection
