@@ -47,30 +47,30 @@
 											<div class="project-slider">
 												<div class="owl-carousel sync1">
 													<div class="item">
-														<img style="width: 100%; height: 100%" src="{{ asset($orchard->picture1)}}" alt="" />
+														<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture1)}}" alt="" />
 													</div>
 													<div class="item">
-														<img style="width: 100%; height: 100%" src="{{ asset($orchard->picture2)}}" alt="" />
+														<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture2)}}" alt="" />
 													</div>
 													<div class="item">
-														<img style="width: 100%; height: 100%" src="{{ asset($orchard->picture3)}}" alt="" />
+														<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture3)}}" alt="" />
 													</div>
 													<div class="item">
-														<img style="width: 100%; height: 100%" src="{{ asset($orchard->picture4)}}" alt="" />
+														<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture4)}}" alt="" />
 													</div>
 												</div>
 												<div class="owl-carousel sync2">
 													<div class="item">
-														<img src="{{ asset($orchard->picture1)}}" alt="" />
+														<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture1)}}" alt="" />
 													</div>
 													<div class="item">
-														<img src="{{ asset($orchard->picture2)}}" alt="" />
+														<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture2)}}" alt="" />
 													</div>
 													<div class="item">
-														<img src="{{ asset($orchard->picture3)}}" alt="" />
+														<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture3)}}" alt="" />
 													</div>
 													<div class="item">
-														<img src="{{ asset($orchard->picture4)}}" alt="" />
+														<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture4)}}" alt="" />
 													</div>
 												</div>
 											</div>
@@ -154,7 +154,7 @@
 											</div>
 											<div id="tab-2" class="tab-pane fade">
 												<div class="widget commerce widget_products">
-													<h3 class="widget-title">สวนยอดนิยม</h3>
+													<h3 class="widget-title"></h3>
 													<ul class="product_list_widget">
 														<li>
 															<a href="{{'orchards/'.$orchard->idOrchard}}">
@@ -169,7 +169,7 @@
 											</div>
 											<div id="tab-3" class="tab-pane fade">
 												<div class="widget commerce widget_products">
-													<h3 class="widget-title">สวนยอดนิยม</h3>
+													<h3 class="widget-title"></h3>
 													<ul class="product_list_widget">
 														<li>
 															<a href="{{'orchards/'.$orchard->idOrchard}}">

@@ -55,30 +55,30 @@
 											<div class="project-slider">
 												<div class="owl-carousel sync1">
 													<div class="item">
-														<img style="width: 100%; height: 100%" src="{{ asset($product->picture1) }}" alt="" />
+														<img style="width: 400px; height: 265px" src="{{ asset($product->picture1) }}" alt="" />
 													</div>
 													<div class="item">
-														<img style="width: 100%; height: 100%" src="{{ asset($product->picture2) }}" alt="" />
+														<img style="width: 400px; height: 265px" src="{{ asset($product->picture2) }}" alt="" />
 													</div>
 													<div class="item">
-														<img style="width: 100%; height: 100%" src="{{ asset($product->picture3) }}" alt="" />
+														<img style="width: 400px; height: 265px" src="{{ asset($product->picture3) }}" alt="" />
 													</div>
 													<div class="item">
-														<img style="width: 100%; height: 100%" src="{{ asset($product->picture4) }}" alt="" />
+														<img style="width: 400px; height: 265px" src="{{ asset($product->picture4) }}" alt="" />
 													</div>
 												</div>
 												<div class="owl-carousel sync2">
 													<div class="item">
-														<img src="{{ asset($product->picture1) }}" alt="" />
+														<img style="width: 90px; height: 60px" src="{{ asset($product->picture1) }}" alt="" />
 													</div>
 													<div class="item">
-														<img src="{{ asset($product->picture2) }}" alt="" />
+														<img style="width: 90px; height: 60px" src="{{ asset($product->picture2) }}" alt="" />
 													</div>
 													<div class="item">
-														<img src="{{ asset($product->picture3) }}" alt="" />
+														<img style="width: 90px; height: 60px" src="{{ asset($product->picture3) }}" alt="" />
 													</div>
 													<div class="item">
-														<img src="{{ asset($product->picture4) }}" alt="" />
+														<img style="width: 90px; height: 60px" src="{{ asset($product->picture4) }}" alt="" />
 													</div>
 												</div>
 											</div>
@@ -102,6 +102,10 @@
 													<tr>
 														<td>ถึงวันที่:</td>
 														<td>{{$product->endDate}}</td>
+													</tr>
+													<tr>
+														<td>ผลผลิตของสวน:</td>
+														<td></td>
 													</tr>
 												</table>
 											</div>
