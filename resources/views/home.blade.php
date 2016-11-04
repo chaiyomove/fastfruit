@@ -62,7 +62,13 @@
 											</div>
 										</li>
 										@if (Auth::user())							
-											<li>	
+											<li>
+												<div>
+													<span class="has-cart">
+													<i class="fa fa-bell"></i>
+													<em>1</em>
+												</span>
+												</div>	
 												<div>
 													<span><i class="fa fa-user""></i></span>
 												</div>

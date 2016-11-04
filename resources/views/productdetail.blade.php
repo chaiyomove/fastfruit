@@ -121,11 +121,7 @@
 													<i class="fa fa-eye">&nbsp;</i>ชมสวน
 												</button>
 												</a>
-												<a href="{{url('plot',[$product->orchardPlot->idOrchardPlot])}}">
-												<button type="button" class="single_add_to_cart_button plot">
-													<i class="fa fa-eye">&nbsp;</i>ดูแปลง
-												</button>
-												</a>
+												
 
 												{{-- <a href="#" class="fa fa-star" id="bookmark"></a> --}}
 
@@ -154,6 +150,13 @@
 														</button>
 												 	@endif
 												@endif
+
+													<a href="{{url('product/' .$plot->idOrchardPlot. '/create')}}">
+														<button type="button" class="single_add_to_cart_button plot">
+														<i class="fa fa-eye">&nbsp;</i>เพิ่มผลผลิต
+														</button>
+													</a>
+
 											</div>
 
 											<div class="clear"></div>

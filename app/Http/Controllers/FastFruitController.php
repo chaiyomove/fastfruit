@@ -33,14 +33,23 @@ class FastFruitController extends Controller
     public function orchards()
     {
         $orchards=Orchards::orderBy('idOrchard','desc')->paginate(9);
-         $orchard=$orchards[2];
-        return view('orchards',compact('orchards','orchard'));
+         // $orchard=$orchards[2];
+        return view('orchards',compact('orchards'));
     }
 
     public function orchardDetail($id)
     {
-        $orchard = Orchards::findOrFail($id);   
-        return view('orcharddetail',compact('orchard'));
+        $orchard = Orchards::findOrFail($id);  
+        $products = array();
+        
+        foreach (Orchards::findOrFail($id)->orchardPlots as $key => $plot) {
+            foreach ($plot->productSprints as $key => $product) {
+                $products[] = $product;
+            }    
+        }
+
+
+        return view('orcharddetail',compact('orchard','products'));
     }
     
     public function createPlot($id)
@@ -81,7 +90,9 @@ class FastFruitController extends Controller
     public function productDetail($id)
     {
         $product = Product_sprints::findOrFail($id);
-        return view('productdetail',compact('product'));
+        $plot = $product->orchardPlot;
+        $history= $plot->productSprints;
+        return view('productdetail',compact('product','plot','history'));
     }
 
     public function getMatching()

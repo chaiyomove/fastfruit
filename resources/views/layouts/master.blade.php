@@ -64,6 +64,14 @@
 									<ul>
 
 										@if (Auth::user())
+										<li>
+											<a href="cart.html">
+												<span class="has-cart">
+													<i class="fa fa-bell"></i>
+													<em>1</em>
+												</span>
+											</a>
+										</li>
 											<li class="menu-item fly-right">
 												<a href="index-Fastfruit.html">
 													<i class="fa fa-user"></i>{{Auth::user()->firstName}} 

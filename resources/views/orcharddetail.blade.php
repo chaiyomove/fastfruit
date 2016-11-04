@@ -139,9 +139,6 @@
 									    		<a data-toggle="tab" href="#tab-2">ดูผลผลิต</a>
 									    	</li>
 									    	<li>
-									    		<a data-toggle="tab" href="#tab-3">ดูแปลง</a>
-									    	</li>
-									    	<li>
 									    		<a data-toggle="tab" href="#tab-4">แผนที่</a>
 									    	</li>
 									    	<li>
@@ -156,29 +153,15 @@
 												<div class="widget commerce widget_products">
 													<h3 class="widget-title"></h3>
 													<ul class="product_list_widget">
+													@foreach ($products as $key => $product)
 														<li>
-															<a href="{{'orchards/'.$orchard->idOrchard}}">
-																<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
-																<span class="product-title">{{$orchard->nameOrchard}}</span>
+															<a href="{{url('product', [$product->idProductSprint])}}">
+																<img style="width: 70px; height: 70px;" src="{{asset($product->picture1)}}" alt="" /> 
+																<span class="product-title">{{$product->orchardPlot->fruitSpecie->specieName}}</span>
 															</a>
-															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
+															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$product->orchardPlot->province->provinceName}}</span>
 														</li>
-														
-													</ul>
-												</div>
-											</div>
-											<div id="tab-3" class="tab-pane fade">
-												<div class="widget commerce widget_products">
-													<h3 class="widget-title"></h3>
-													<ul class="product_list_widget">
-														<li>
-															<a href="{{'orchards/'.$orchard->idOrchard}}">
-																<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
-																<span class="product-title">{{$orchard->nameOrchard}}</span>
-															</a>
-															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
-														</li>
-														
+													@endforeach
 													</ul>
 												</div>
 											</div>
