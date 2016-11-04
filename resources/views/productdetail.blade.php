@@ -18,7 +18,6 @@
 				var $el = $(this),
 				textNode = this.lastChild;
 				$el.find('i').toggleClass('fa-star fa-star-o');
-				textNode.nodeValue = ($el.hasClass('bookmark') ? '' : '')
 				$el.toggleClass('bookmark');
 
 				if (!$el.hasClass('bookmark')){

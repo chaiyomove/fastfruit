@@ -273,8 +273,8 @@
 											<script>
 												jQuery(function($) {
 												    $(document).ready(function() {
-												    	// var center = {lat: -25.363, lng: 131.044 };
-												        var latlng = {lat: {{App\Orchards::find($orchard->idOrchard)->lat}}, lng: {{App\Orchards::find($orchard->idOrchard)->lng}} };
+														var latlng = {lat: 13.755243, lng: 100.495771 };												 
+												        
 												        var myOptions = {
 												            zoom: 8,
 												            center: latlng,
@@ -282,10 +282,31 @@
 												        };
 												        
 												        var map = new google.maps.Map(document.getElementById("map"), myOptions);
-												        var marker = new google.maps.Marker({
-													          position: latlng,
-													          map: map
-													        });
+												        
+
+													    @if ($orchard->lat == NULL || $orchard->lng == NULL)
+												    		// Bubble
+												    		var infoWindow = new google.maps.InfoWindow({
+												    			map: map,
+												    			position: latlng,
+												    			content: "ไม่ทราบตำแหน่งของสวน"
+												    		});
+
+
+
+												        @else
+												        	var latlng = {lat: {{$orchard->lat}}, lng: {{$orchard->lng}} };
+												        	map.setCenter(latlng);
+												        	
+										                    var marker = new google.maps.Marker({
+													         	position: latlng,
+													          	map: map
+														    });
+
+												    	@endif
+
+												        
+
 
 												        console.dir(map);
 
