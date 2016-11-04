@@ -274,7 +274,7 @@
 												jQuery(function($) {
 												    $(document).ready(function() {
 												    	// var center = {lat: -25.363, lng: 131.044 };
-												        var latlng = new google.maps.LatLng(-34.397, 150.644);
+												        var latlng = {lat: {{App\Orchards::find($orchard->idOrchard)->lat}}, lng: {{App\Orchards::find($orchard->idOrchard)->lng}} };
 												        var myOptions = {
 												            zoom: 8,
 												            center: latlng,
