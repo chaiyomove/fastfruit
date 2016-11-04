@@ -85,42 +85,53 @@
 												</label>
 											</div>
 											<div>
-												<input type="text" name="lat" id="lat">
-												<input type="text" name="lng" id="lng">
+												<input type="hidden" name="lat" id="lat" >
+												<input type="hidden" name="lng" id="lng">
 											</div>
 
 											 <script>
 													
 											   		jQuery(function($) {
 											   		    $(document).ready(function() {
-											   		    	var lat= $("#lat");
-											   		    	var lng= $("#lng");
 													        var center = {lat: -25.363, lng: 131.044 };
+													        var curLat;
+													        var curLng;
+
+													        // MAP
 													        var map = new google.maps.Map(document.getElementById('map'), {
 													          zoom: 4,
-													          center: center
+													          // center: center
 													        });
-
+													        // Marker
 													        var marker = new google.maps.Marker({
-													          position: center,
+													          // position: center,
 													          map: map
 													        });
-
+													        // Bubble
 													        var infoWindow = new google.maps.InfoWindow({map: map});
 
 											                // Try HTML5 geolocation.
 											                if (navigator.geolocation) {
-											                  navigator.geolocation.getCurrentPosition(function(position) {
-											                    var pos = {
-											                      lat: position.coords.latitude,
-											                      lng: position.coords.longitude
-											                    };
-											                    lat.val(position.coords.latitude);
-											                    lng.val(position.coords.longitude);
-											                    infoWindow.setPosition(pos);
-											                    infoWindow.setContent('Location found.');
-											                    map.setCenter(pos);
-											                  }, function() {
+											                  	navigator.geolocation.getCurrentPosition(function(position) {
+											                  		curLat = position.coords.latitude;
+											                  		curLng = position.coords.longitude;
+											                    	var pos = {
+											                      		lat: curLat,
+											                      		lng: curLng
+											                    	};
+
+												                 	//set map,marker   
+												                    map.setCenter(pos);
+												                    marker.setPosition(pos);
+
+												                    //set bubble
+												                    infoWindow.setPosition(pos);
+												                    infoWindow.setContent('Location found.');
+
+												                    //set input's value
+												                    $("#lat").val(curLat);
+												                    $("#lng").val(curLng);
+											                  	}, function() {
 											                    handleLocationError(true, infoWindow, map.getCenter());
 											                  });
 											                } else {
@@ -128,13 +139,16 @@
 											                  handleLocationError(false, infoWindow, map.getCenter());
 											                }
 
-											                map.addListener('click', function(e) {
-											                    var marker = new google.maps.Marker({
-											                      position: e.latLng,
-											                      map: map
-											                    });
-											                    map.panTo(latLng);
-											                  });
+											                
+
+
+											                // map.addListener('click', function(e) {
+											                //     var marker = new google.maps.Marker({
+											                //       position: e.latLng,
+											                //       map: map
+											                //     });
+											                //     map.panTo(latLng);
+											                //   });
 											                
 
 											                // function placeMarkerAndPanTo(latLng, map) {
