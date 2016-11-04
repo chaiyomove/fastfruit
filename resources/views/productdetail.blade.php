@@ -104,9 +104,15 @@
 														<td>{{$product->endDate}}</td>
 													</tr>
 													<tr>
+														<td>สถานะการรับรอง:</td>
+														<td>{{$product->orchardPlot->plotStatus->status}} </td>
+													</tr>
+													<tr>
 														<td>ผลผลิตของสวน:</td>
 														<td></td>
 													</tr>
+													
+
 												</table>
 											</div>
 
