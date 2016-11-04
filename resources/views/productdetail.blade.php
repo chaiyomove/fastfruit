@@ -180,6 +180,20 @@
 												<p>{{$product->description}}</p>
 											</div>
 											<div id="tab-2" class="tab-pane fade">
+												<div class="widget commerce widget_products">
+													<h3 class="widget-title"></h3>
+													<ul class="product_list_widget">
+													@foreach ($historys as $key => $history)
+														<li>
+															<a href="{{url('product', [$history->idProductSprint])}}">
+																<img style="width: 70px; height: 70px;" src="{{asset($history->picture1)}}" alt="" /> 
+																<span class="product-title">{{$history->orchardPlot->fruitSpecie->specieName}}</span>
+															</a>
+															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$history->orchardPlot->province->provinceName}}</span>
+														</li>
+													@endforeach
+													</ul>
+												</div>
 											</div>
 										{{-- 	<div id="tab-3" class="tab-pane fade">
 												<div id="comments" class="comments-area">

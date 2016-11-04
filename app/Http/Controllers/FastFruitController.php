@@ -91,8 +91,8 @@ class FastFruitController extends Controller
     {
         $product = Product_sprints::findOrFail($id);
         $plot = $product->orchardPlot;
-        $history= $plot->productSprints;
-        return view('productdetail',compact('product','plot','history'));
+        $historys = $plot->productSprints;
+        return view('productdetail',compact('product','plot','historys'));
     }
 
     public function getMatching()
