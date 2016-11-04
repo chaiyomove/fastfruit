@@ -13,7 +13,7 @@
 						<div class="row">
 							<div class="noo-main col-md-9">
 								<div class="noo-catalog">
-									<p class="commerce-result-count">แสดง 1&ndash;9 of 18 ทั้งหมด</p>
+									<p class="commerce-result-count">แสดง {{$orchards->count()}} จากทั้งหมด {{App\Orchards::all()->count()}}</p>
 								
 									<form class="commerce-ordering">
 										<select name="orderby" class="orderby">
