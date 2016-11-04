@@ -167,14 +167,19 @@
 									    		<a data-toggle="tab" href="#tab-1">รายละเอียด</a>
 									    	</li>
 									    	<li>
-									    		<a data-toggle="tab" href="#tab-2">รีวิว</a>
+									    		<a data-toggle="tab" href="#tab-2">ประวัติการผลิต</a>
+									    	</li>
+									    	<li>
+									    		<a data-toggle="tab" href="#tab-3">รีวิว</a>
 									    	</li>
 									  	</ul>
 										<div class="tab-content">
 											<div class="tab-pane fade in active" id="tab-1">
 												<p>{{$product->description}}</p>
 											</div>
-										{{-- 	<div id="tab-2" class="tab-pane fade">
+											<div id="tab-2" class="tab-pane fade">
+											</div>
+										{{-- 	<div id="tab-3" class="tab-pane fade">
 												<div id="comments" class="comments-area">
 						                        	<h2 class="comments-title">2 Comments</h2>
 						                        	<ol class="comments-list">
