@@ -39,7 +39,7 @@
 												<input type="submit" class="button" name="login" value="เข้าสู่ระบบ" />
 											</div>
 											<div class="lost_password">
-												<a href="#">ลืมรหัสผ่าน?</a>
+												<a href="{{url('/password/reset')}}">ลืมรหัสผ่าน?</a>
 											</div>
 										</form>
 									</div>
