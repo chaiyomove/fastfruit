@@ -150,10 +150,34 @@
 			</header>
 			
 
-			    @yield('content')
+		    @yield('content')
+
+		    <!--Error-Handling-->
+		    @if($errors->any())
+		        <div class="row">
+		            <div class="col-md-4"></div>
+		            <div class="col-md-4">
+		                <div class="modal-body real-spa">
+		                    <div class="login-grids">
+		                        <div class="login">                                 
+		                            <div class="login-right">
+		                                <ul class="alert alert-danger" style="font-size: 100%; margin-top:-30px; padding-left:40px;">
+
+		                                    @foreach($errors->all() as $error)
+		                                        <li>{{ $error }}</li>
+		                                    @endforeach
+
+		                                </ul>
+		                            </div>
+		                        </div>        
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    @endif
 
 
-			 			<footer class="wrap-footer footer-2 colophon wigetized newsletter">
+ 			<footer class="wrap-footer footer-2 colophon wigetized newsletter">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-1"></div>

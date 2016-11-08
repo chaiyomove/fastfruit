@@ -23,6 +23,7 @@ use App\Http\Requests\AddOrchardRequest;
 use App\Http\Requests\AddPlotRequest;
 use App\Http\Requests\AddProductRequest;
 use App\Http\Requests\MatchOrchardRequest;
+use App\Http\Requests\ContactUsRequest;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -177,18 +178,13 @@ class FastFruitController extends Controller
     }
     
 
-    public function getcontactus()
+    public function getContactUs()
     {
         return view('contact');
     }
 
-     public function postcontactus(Request $request)
+     public function postContactUs(ContactUsRequest $request)
     {
-        $this->validate($request,[
-            'email' => 'required|email',
-            'subject' => 'min:3',
-            'message' => 'min:10' ]);
-
         $data = array(
                 'email'=> $request->email,
                 'subject'=> $request->subject,
