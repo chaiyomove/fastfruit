@@ -30,8 +30,8 @@
 										</div>
 										<div class="col-md-12">
 											<div class="form-control-wrap your-message">
-												<input type="text" name="message" value="" size="40" class="form-control" placeholder="ข้อความ"/>
-												{{-- <textarea name="message" cols="40" rows="10" class="form-control" placeholder="ข้อความ"></textarea> --}}
+												{{-- <input type="text" name="message" value="" size="40" class="form-control" placeholder="ข้อความ"/> --}}
+												<textarea name="message" cols="40" rows="10" class="form-control" placeholder="ข้อความ"></textarea>
 											</div>
 										</div>
 										<div class="col-md-12">

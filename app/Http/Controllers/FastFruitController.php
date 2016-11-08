@@ -193,7 +193,7 @@ class FastFruitController extends Controller
 
         Mail::send('emails.contactus',$data,function($message) use($data){
             $message->from($data['email']);
-            $message->to('fruit-470313@inbox.mailtrap.io');
+            $message->to('fastfruit.me@gmail.com');
             $message->subject($data['subject']); 
 
         });
