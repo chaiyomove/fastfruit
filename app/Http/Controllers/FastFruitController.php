@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Request;
+//use Request;
 use Carbon\Carbon;
 use App\Product_sprints;
 use App\Orchards;
@@ -26,7 +26,9 @@ use App\Http\Requests\MatchOrchardRequest;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Pagination\LengthAwarePaginator;
-
+use Mail;
+use App\Post;
+use Session;
 
 class FastFruitController extends Controller
 {
@@ -175,9 +177,33 @@ class FastFruitController extends Controller
     }
     
 
-    public function contactus()
+    public function getcontactus()
     {
         return view('contact');
+    }
+
+     public function postcontactus(Request $request)
+    {
+        $this->validate($request,[
+            'email' => 'required|email',
+            'subject' => 'min:3',
+            'message' => 'min:10' ]);
+
+        $data = array(
+                'email'=> $request->email,
+                'subject'=> $request->subject,
+                'bodyMessage'=> $request->message
+            );
+
+        Mail::send('emails.contactus',$data,function($message) use($data){
+            $message->from($data['email']);
+            $message->to('fruit-470313@inbox.mailtrap.io');
+            $message->subject($data['subject']); 
+
+        });
+
+        Session::flash('success','your email was send!');
+        return redirect('/');
     }
 
     public function chat()

@@ -13,27 +13,25 @@
 						<div class="row">
 							<div class="col-md-3"></div>
 							<div class="col-md-6">
-								<form class="form">
+								<form class="form" action="{{url('contactus')}}" method="POST">
+								{{ csrf_field() }}
 									<h3>ติดต่อเรา</h3>
 									<div class="row">
-										<div class="col-md-6 col-sm-12">
-											<div class="form-control-wrap your-name">
-												<input type="text" name="your-name" value="" size="40" class="form-control" placeholder="ชื่อ"/>
-											</div>
-										</div>
+										
 										<div class="col-md-6 col-sm-12">
 											<div class="form-control-wrap your-phone">
-												<input type="text" name="your-phone" value="" size="40" class="form-control" placeholder="เบอร์โทรศัพท์"/>
+												<input type="text" name="subject" value="" size="40" class="form-control" placeholder="ชื่อเรื่อง"/>
 											</div>
 										</div>
 										<div class="col-md-12">
 											<div class="form-control-wrap your-email">
-												<input type="email" name="your-email" value="" size="40" class="form-control" placeholder="อีเมล"/>
+												<input type="email" name="email" value="" size="40" class="form-control" placeholder="อีเมล"/>
 											</div>
 										</div>
 										<div class="col-md-12">
 											<div class="form-control-wrap your-message">
-												<textarea name="your-message" cols="40" rows="10" class="form-control" placeholder="ข้อความ"></textarea>
+												<input type="text" name="message" value="" size="40" class="form-control" placeholder="ข้อความ"/>
+												{{-- <textarea name="message" cols="40" rows="10" class="form-control" placeholder="ข้อความ"></textarea> --}}
 											</div>
 										</div>
 										<div class="col-md-12">
