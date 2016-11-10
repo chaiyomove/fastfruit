@@ -69,7 +69,7 @@
 													<em>1</em>
 												</span>
 												</div>
-												<a href="{{ url('dashboard') }}">
+												<a href="{{ url('profile/'.Auth::user()->id) }}">
 												<div>
 													<span><i class="fa fa-user""></i></span>
 												</div>

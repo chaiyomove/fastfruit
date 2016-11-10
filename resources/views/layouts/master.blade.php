@@ -73,7 +73,7 @@
 											</a>
 										</li>
 											<li class="menu-item fly-right">
-												<a href="{{ url('dashboard') }}">
+												<a href="{{ url('profile/'.Auth::user()->id) }}">
 													<i class="fa fa-user"></i>{{Auth::user()->firstName}} 
 												</a>
 											</li>									
