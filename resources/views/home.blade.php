@@ -72,13 +72,13 @@
 												<div>
 													<span><i class="fa fa-user""></i></span>
 												</div>
-												<div>
+												<div style="margin-left: -20px;">
 													<a href="{{ url('logout') }}">{{Auth::user()->firstName}} </a>
 												</div>
 												<div>
 													<span><i class="fa fa-sign-out"></i></span>
 												</div>
-												<div>
+												<div style="margin-left: -20px;">
 													<a href="{{ url('logout') }}">ออกจากระบบ</a>
 												</div>
 											</li>	
