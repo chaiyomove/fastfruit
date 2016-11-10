@@ -208,7 +208,7 @@ class FastFruitController extends Controller
 
         Mail::send('emails.contactus',$data,function($message) use($data){
             $message->from($data['email']);
-            $message->to('fastfruit.me@gmail.com');
+            $message->to('fruit-470313@inbox.mailtrap.io');
             $message->subject($data['subject']); 
 
         });
@@ -511,6 +511,13 @@ class FastFruitController extends Controller
         
         $user = Users::findOrFail(Auth::user()->id);
         
+    }
+
+    public function profile($id)
+    {
+
+        $user=Users::findOrFail($id);
+        return view('dashboard',compact('user'));
     }
 
     

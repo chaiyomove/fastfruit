@@ -39,7 +39,7 @@ Route::post('contactus', 'FastFruitController@postContactUs');
 Route::get('search', 'FastFruitController@search');
 Route::get('plots/{id}', 'FastFruitController@plots');
 Route::get('plot/{id}', 'FastFruitController@plotsDetail');
-
+Route::get('profile/{id}', 'FastFruitController@profile');
 
 
 

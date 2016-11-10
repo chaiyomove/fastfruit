@@ -91,10 +91,11 @@
 														<td>พื้นที่:</td>
 														<td>{{$orchard->area}}&nbsp;ไร่</td>
 													</tr>
-													<tr>				
+													<tr>
+
 														@foreach($orchard->users as $key => $admin)
 														<td>ผู้ดูแล:</td>
-														<td>{{$admin->firstName}}</td>
+														<td><a href="{{url('profile/'.$admin->id)}}">{{$admin->firstName}}</a></td>
 														@endforeach
 													</tr>
 													<tr>

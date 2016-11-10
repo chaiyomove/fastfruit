@@ -3,10 +3,10 @@
 			<section class="noo-page-dashboard eff">
 				<div class="container">
 					<div class="noo-heading-content">
-						<img src="{{asset(Auth::user()->userPicture)}}" width="15%" height="10%" style="border-radius: 50%;" />
-						<p style="font-size: x-large;">{{Auth::user()->firstName}}&nbsp;{{Auth::user()->lastName}}</p>
-						<p style="font-size: medium; ">{{Auth::user()->address}}</p>
-						<p style="font-size: medium; ">{{Auth::user()->province->provinceName}}</p>
+						<img src="{{asset($user->userPicture)}}" width="15%" height="10%" style="border-radius: 50%;" />
+						<p style="font-size: x-large;">{{$user->firstName}}&nbsp;{{Auth::user()->lastName}}</p>
+						<p style="font-size: medium; ">{{$user->address}}</p>
+						<p style="font-size: medium; ">{{$user->province->provinceName}}</p>
 
 						<div class="commerce single-product" style="padding-top: 20px;">
 							<button type="button" class="single_add_to_cart_button button follow" id="follow">
@@ -180,22 +180,7 @@
 												</div>
 											</div>
 											<div id="tab-4" class="tab-pane fade">
-												<div class="widget commerce widget_products">
-													<h3 class="widget-title"></h3>
-													<ul class="product_list_widget">
-													@foreach ($orchards as $key => $orchardTmp)
-													<?php $orchard = new App\Orchards($orchardTmp) ?>
-														<li>
-
-															<a href="{{'orchards/'.$orchard->idOrchard}}">
-																<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
-																<span class="product-title">{{$orchard->nameOrchard}}</span>
-															</a>
-															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
-														</li>
-													@endforeach
-													</ul>
-												</div>
+												
 											</div>
 										</div>
 								</div>

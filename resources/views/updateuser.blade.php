@@ -170,3 +170,20 @@
 			<!--Add-->
 			
 @endsection
+
+<div class="widget commerce widget_products">
+	<h3 class="widget-title"></h3>
+	<ul class="product_list_widget">
+	@foreach ($orchards as $key => $orchardTmp)
+	<?php $orchard = new App\Orchards($orchardTmp) ?>
+		<li>
+
+			<a href="{{'orchards/'.$orchard->idOrchard}}">
+				<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
+				<span class="product-title">{{$orchard->nameOrchard}}</span>
+			</a>
+			<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
+		</li>
+	@endforeach
+	</ul>
+</div>
