@@ -67,7 +67,9 @@ Route::group(['middleware' => 'auth'], function () {
 	
 
 	Route::get('checkgap', 'FastFruitController@checkGap');
-	Route::get('updateorchard', 'FastFruitController@updateOrchard');
+	Route::get('orchard/{id}/edit', 'FastFruitController@editOrchard');
+	Route::patch('orchard/{id}','FastFruitController@updateOrchard');
+	
 	Route::get('userorchard', 'FastFruitController@userOrchard');
 	// Route::get('userproduct', 'FastFruitController@userProduct');
 	Route::get('userproduct/{id}', 'FastFruitController@userProductDetail');

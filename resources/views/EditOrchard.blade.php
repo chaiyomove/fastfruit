@@ -16,28 +16,29 @@
 								<div id="addOrchard">
 	                				<div class="col-md-6">
 	                					<h2>แก้ไขข้อมูลสวน</h2>
-	                					<form class="login" method="POST" enctype="multipart/form-data" action="{{url('user',[Auth::user()->id])}}" >
+	                					<form class="login" method="POST" enctype="multipart/form-data" action="{{url('orchard',[$orchard->idOrchard])}}" >
 	                					<input type="hidden" name="_method" value="PATCH">
 										{{ csrf_field() }}
 	                						<div class="form-row form-row-wide">
 												<label for="username">
 													ชื่อสวน :
 													<span class="required">*</span>
-													<input type="text" class="input-text" name="nameOrchard" id="username" value="" style="width: 70%; float: right;" />
+													<input type="text" class="input-text" name="nameOrchard" id="username" value="{{$orchard->nameOrchard}}" style="width: 70%; float: right;" />
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
 												<label for="username">
 													รายละเอียดสวน :
 													<span class="required">*</span>
-													<textarea name="description" class="input-text" style="resize: none; width: 70%; float: right;"></textarea>
+													<textarea name="description" class="input-text" style="resize: none; width: 70%; float: right;">{{$orchard->description}}
+													</textarea>
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
 												<label for="username">
 													พื้นที่สวน :
 													<span class="required">*</span>
-													<input type="text" class="input-text" name="area" id="username" placeholder="หน่วยเป็นไร่" value="" style="width: 70%; float: right;" />
+													<input type="text" class="input-text" name="area" id="username" placeholder="หน่วยเป็นไร่" value="{{$orchard->area}}" style="width: 70%; float: right;" />
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
@@ -56,14 +57,14 @@
 												<label for="username">
 													โทรศัพท์ :
 													<span class="required">*</span>
-													<input type="text" class="input-text" name="phone" id="username" placeholder="กรอกหมายเลขโทรศัพท์" value="" style="width: 70%; float: right;" />
+													<input type="text" class="input-text" name="phone" id="username" placeholder="กรอกหมายเลขโทรศัพท์" value="{{$orchard->phone}}" style="width: 70%; float: right;" />
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
 												<label for="username">
 													ที่อยู่สวน :
 													<span class="required">*</span>
-													<textarea name="address" class="input-text" style="resize: none; width: 70%; float: right;"></textarea>
+													<textarea name="address" class="input-text" style="resize: none; width: 70%; float: right;">{{$orchard->address}}</textarea>
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
@@ -71,7 +72,13 @@
 													จังหวัด :
 													<span class="required">*</span>
 													<select name="idProvince" id="idProvince" class="form-matching" style="width: 70%; float: right;">
-														<option value="0" selected='selected'>กรุณาเลือก</option>
+														@foreach ($provinces as $province)
+											 			@if ($province->idProvince == $orchard->idProvince)
+											 				<option value="{{$province->idProvince}}" selected>{{$province->provinceName}}</option>
+											 			@else
+												 			<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+											 			@endif
+											 		@endforeach	
 													</select>
 												</label>
 											</div>

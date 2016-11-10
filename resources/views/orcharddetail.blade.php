@@ -131,7 +131,7 @@
 													</button>
 													@endif
 											@endif
-											<a href="{{url('updateorchard')}}">
+											<a href="{{url('orchard/' . $orchard->idOrchard . '/edit')}}">
 											<button type="button" class="single_add_to_cart_button button editProfile">
 												<i class="fa fa-cog">&nbsp;</i>แก้ไข
 											</button></a>	 

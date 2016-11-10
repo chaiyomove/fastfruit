@@ -273,9 +273,38 @@ class FastFruitController extends Controller
         return view('checkgap');
     }
 
-    public function updateOrchard()
+    public function editOrchard($id)
     {
-        return view('EditOrchard');
+        $orchard= Orchards::findOrFail($id);
+        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
+        return view('EditOrchard',compact('orchard','provinces'));
+    }
+
+    public function updateOrchard($id)
+    {
+        $input = Request::all();
+
+        if (array_get($input,'pictures')!==NULL){
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchards'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+
+       
+        $input['description'] = trim($input['description']);
+        // return dd($input);
+        Orchards::find($id)->update($input);
+        
+
+       
+        return redirect('orchards/'.$id);
+       
     }
 
     public function editUser($id)
