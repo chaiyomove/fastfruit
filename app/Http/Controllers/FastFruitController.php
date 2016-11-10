@@ -45,7 +45,6 @@ class FastFruitController extends Controller
     public function orchardDetail($id)
     {
         $orchard = Orchards::findOrFail($id); 
-
         //views counter
         $orchard->views = ($orchard->views)+1;
         $orchard->save();
@@ -283,7 +282,7 @@ class FastFruitController extends Controller
     {
         $user =  Users::findOrFail($id);
         $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
-        return view('updateuser', compact('user', 'provinces'));
+        return view('editProfile', compact('user', 'provinces'));
     }
 
     public function updateUser($id)
@@ -505,6 +504,13 @@ class FastFruitController extends Controller
         $orchard = Orchards::findOrFail(array_get(Request::all(),'idOrchard'));
         $user->orchardFollowing()->save($orchard);
         return redirect(url()->previous());
+    }
+
+    public function followusers()
+    {
+        
+        $user = Users::findOrFail(Auth::user()->id);
+        
     }
 
     

@@ -91,6 +91,12 @@
 														<td>พื้นที่:</td>
 														<td>{{$orchard->area}}&nbsp;ไร่</td>
 													</tr>
+													<tr>				
+														@foreach($orchard->users as $key => $admin)
+														<td>ผู้ดูแล:</td>
+														<td>{{$admin->firstName}}</td>
+														@endforeach
+													</tr>
 													<tr>
 														<td>ติดต่อผู้ขาย:</td>
 														<td>{{$orchard->phone}}</td>

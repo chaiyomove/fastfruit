@@ -3,7 +3,7 @@
 			<section class="noo-page-dashboard eff">
 				<div class="container">
 					<div class="noo-heading-content">
-						<img src="{{asset(Auth::user()->userPicture)}}" width="15%" style="border-radius: 50%;" />
+						<img src="{{asset(Auth::user()->userPicture)}}" width="15%" height="10%" style="border-radius: 50%;" />
 						<p style="font-size: x-large;">{{Auth::user()->firstName}}&nbsp;{{Auth::user()->lastName}}</p>
 						<p style="font-size: medium; ">{{Auth::user()->address}}</p>
 						<p style="font-size: medium; ">{{Auth::user()->province->provinceName}}</p>
@@ -187,7 +187,7 @@
 													<?php $orchard = new App\Orchards($orchardTmp) ?>
 														<li>
 
-															<a href="">
+															<a href="{{'orchards/'.$orchard->idOrchard}}">
 																<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
 																<span class="product-title">{{$orchard->nameOrchard}}</span>
 															</a>
