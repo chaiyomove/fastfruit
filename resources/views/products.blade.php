@@ -104,16 +104,18 @@
 
 									<div class="widget commerce widget_products">
 										<h3 class="widget-title">ผลผลิตยอดนิยม</h3>
+										@foreach($popProducts as $key => $popProduct)
 										<ul class="product_list_widget">
 											<li>
-												<a href="{{url('product', [$product->idProductSprint])}}">
-													<img style="width: 70px; height: 70px;" src="{{asset($product->picture1)}}" alt="" /> 
-													<span class="product-title">{{$product->orchardPlot->fruitSpecie->specieName}}จาก {{$product->orchardPlot->orchard->nameOrchard}}</span>
+												<a href="{{url('product', [$popProduct->idProductSprint])}}">
+													<img style="width: 70px; height: 70px;" src="{{asset($popProduct->picture1)}}" alt="" /> 
+													<span class="product-title">{{$popProduct->orchardPlot->fruitSpecie->specieName}}จาก {{$popProduct->orchardPlot->orchard->nameOrchard}}</span>
 												</a>
 												<span class="amount">จังหวัด</span>
 											</li>
 
 										</ul>
+										@endforeach
 									</div>
 
 								</div>

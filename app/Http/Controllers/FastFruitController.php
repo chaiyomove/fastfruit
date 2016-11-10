@@ -93,17 +93,25 @@ class FastFruitController extends Controller
 
     public function products()
     {
+
+
         $products=Product_sprints::orderBy('idProductSprint','desc')->paginate(9);
-        $product=$products[2];
-        return view('products',compact('products','product'));
+        // $product=$products[2];
+         $popProducts = Product_sprints::orderBy('views','desc')->take(5)->get();
+        return view('products',compact('products','product','popProducts'));
     }
 
     public function productDetail($id)
     {
         $product = Product_sprints::findOrFail($id);
+        $product->views = ($product->views)+1;
+        $product->save();
+
+        
         $plot = $product->orchardPlot;
         $historys = $plot->productSprints;
-        return view('productdetail',compact('product','plot','historys'));
+        $popProducts = Product_sprints::orderBy('views','desc')->take(5)->get();
+        return view('productdetail',compact('product','plot','historys','popProducts'));
     }
 
     public function getMatching()
