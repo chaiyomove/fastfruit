@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
 
 class Product_sprints extends Model
 {
-   protected $fillable = [
+    use AlgoliaEloquentTrait;
+    
+    protected $fillable = [
         'description','fruitNum', 'picture1','picture2','picture3', 'fruitSpecie','time','idOrchardPlot',
     ];
     protected $primaryKey = 'idProductSprint';

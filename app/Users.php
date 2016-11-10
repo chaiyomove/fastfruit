@@ -26,13 +26,6 @@ class Users extends Authenticatable
 
     protected $primaryKey = 'id';
 
-    public function getAlgoliaRecord()
-    {
-        return array_merge($this->toArray(), [
-            'firstName' => 'firstName'
-        ]);
-    }
-
     public function province()
     {
         return $this->belongsTo('App\Provinces','idProvince');

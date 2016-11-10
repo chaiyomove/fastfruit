@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
 
 class Orchards extends Model
 {
+    use AlgoliaEloquentTrait;
+    
     protected $primaryKey = 'idOrchard';
 
     protected $fillable = [
