@@ -1511,44 +1511,44 @@ header .navbar,
   padding: 0;
 }
 @media (max-width: 767px) {
-  .masonry-container .masonry-item {
-    width: 100%;
-    max-width: 100%;
-  }
-  .masonry-container .masonry-item img {
-    width: 100%;
-  }
-  .interact-banner {
-    background-size: 100% 100%;
-  }
-  .navbar-brand {
-    margin-top: 6px;
-    padding-left: 0;
-  }
-  .header-1 .navbar-brand,
-  .header-3 .navbar-brand,
-  .header-5 .navbar-brand {
-    margin-top: 0px;
-  }
-  .header-3 .noo_menu_canvas,
-  .header-6 .noo_menu_canvas,
-  .header-1 .noo_menu_canvas {
-    margin-top: 7px;
-  }
-  .noo-menu-extend {
-    display: none;
-  }
+	.masonry-container .masonry-item {
+		width: 100%;
+		max-width: 100%;
+	}
+	.masonry-container .masonry-item img {
+		width: 100%;
+	}
+	.interact-banner {
+		background-size: 100% 100%;
+	}
+	.navbar-brand {
+		margin-top: 6px;
+		padding-left: 0;
+	}
+	.header-1 .navbar-brand,
+	.header-3 .navbar-brand,
+	.header-5 .navbar-brand {
+		margin-top: 0px;
+	}
+	.header-3 .noo_menu_canvas,
+	.header-6 .noo_menu_canvas,
+	.header-1 .noo_menu_canvas {
+		margin-top: 7px;
+	}
+	.noo-menu-extend {
+		display: none;
+	}
 }
 @media (max-width: 414px) {
     .noo-clients.noo-clients-3 {
         width: 100%;
     }
-  .heading-2 .page-title {
-    margin-top: 35px;
-  }
-  .noo-farmer-title.noo-farmer-title-slider {
-      clear: left;
-  }
+	.heading-2 .page-title {
+		margin-top: 35px;
+	}
+	.noo-farmer-title.noo-farmer-title-slider {
+    	clear: left;
+	}
 }
 
 .x_panel {

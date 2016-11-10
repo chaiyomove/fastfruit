@@ -73,7 +73,7 @@
 											</a>
 										</li>
 											<li class="menu-item fly-right">
-												<a href="index-Fastfruit.html">
+												<a href="{{ url('dashboard') }}">
 													<i class="fa fa-user"></i>{{Auth::user()->firstName}} 
 												</a>
 											</li>									
