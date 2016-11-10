@@ -8,9 +8,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use App\Follow_user;
 
+use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
+
 class Users extends Authenticatable
 {
 	use Notifiable;
+    use AlgoliaEloquentTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +25,13 @@ class Users extends Authenticatable
     ];
 
     protected $primaryKey = 'id';
+
+    public function getAlgoliaRecord()
+    {
+        return array_merge($this->toArray(), [
+            'firstName' => 'firstName'
+        ]);
+    }
 
     public function province()
     {
