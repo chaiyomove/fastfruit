@@ -68,13 +68,15 @@
 													<i class="fa fa-bell"></i>
 													<em>1</em>
 												</span>
-												</div>	
+												</div>
+												<a href="{{ url('dashboard') }}">
 												<div>
 													<span><i class="fa fa-user""></i></span>
 												</div>
 												<div style="margin-left: -20px;">
-													<a href="{{ url('logout') }}">{{Auth::user()->firstName}} </a>
+													{{Auth::user()->firstName}} 
 												</div>
+												</a>
 												<div>
 													<span><i class="fa fa-sign-out"></i></span>
 												</div>
