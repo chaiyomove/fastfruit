@@ -130,57 +130,59 @@
 														</ul>
 													</div>
 												</div>
-												<div class="commerce widget_products" style="width: 50%">
+												<div class="widget commerce widget_products">
+													<h3 class="widget-title"></h3>
 													<ul class="product_list_widget">
-														
-														{{-- <li>
-															<a href="{{url('product', [$product->idProductSprint])}}">
-																<img src="images/product/product_1.jpg" alt="" style="border-radius: 50%; width: 20%" /> 
-																<span class="product-title">สวนสุเมธ</span>
+													@foreach ($followorchards as $key => $orchard)
+													
+														<li>
+
+															<a href="{{'orchards/'.$orchard->idOrchard}}">
+																<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
+																<span class="product-title">{{$orchard->nameOrchard}}</span>
 															</a>
-															<span class="product-title" style="margin-bottom: 15px; color: rgb(206, 74, 74);">รายละเอียด</span>
-															<div class="commerce single-product" style="padding-top: 20px;">
-																<button type="button" class="single_add_to_cart_button button followD" id="follow">
-																	<i class="fa fa-check">&nbsp;</i>กำลังติดตาม
-																</button>
-															</div>
-														</li> --}}
-														
+															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
+														</li>
+													@endforeach
 													</ul>
 												</div>
 											</div>
 											<div id="tab-3" class="tab-pane fade">
+												
 												<div class="widget commerce widget_products">
-													<div class="masonry-filters">
-														<ul class="noo-header-filter" data-option-key="filter">
-															<li>
-																<a data-option-value="*" href="#all" class="selected">
-																	<span>ทั้งหมด</span>
-																</a>
-															</li>
-															<li>
-																<a data-option-value=".organic-fruits" href="#organic-fruits">
-																	<span>สวน</span>
-																</a>
-															</li>
-															<li>
-																<a data-option-value=".vegetable" href="#vegetable">
-																	<span>คน</span>
-																</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-												<div class="commerce widget_products" style="width: 50%">
+													<h3 class="widget-title"></h3>
 													<ul class="product_list_widget">
-														
-														
-														
+													@foreach ($bookmarks as $key => $product)
+													
+														<li>
+
+															<a href="{{'products/'.$product->idProductSprint}}">
+																<img style="width: 70px; height: 70px;" src="{{asset($product->picture1)}}" alt="" /> 
+																<span class="product-title">{{array_get($product->fruitSpeciess,'specieName')}}จาก {{$product->orchardPlot->orchard->nameOrchard}}</span>
+															</a>
+															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$product->orchardPlot->province->provinceName}}</span>
+														</li>
+													@endforeach
 													</ul>
 												</div>
 											</div>
 											<div id="tab-4" class="tab-pane fade">
-												
+												<div class="widget commerce widget_products">
+													<h3 class="widget-title"></h3>
+													<ul class="product_list_widget">
+													@foreach ($orchards as $key => $orchard)
+													
+														<li>
+
+															<a href="{{'orchards/'.$orchard->idOrchard}}">
+																<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
+																<span class="product-title">{{$orchard->nameOrchard}}</span>
+															</a>
+															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
+														</li>
+													@endforeach
+													</ul>
+												</div>
 											</div>
 										</div>
 								</div>

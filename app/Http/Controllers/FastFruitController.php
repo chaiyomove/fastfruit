@@ -517,7 +517,10 @@ class FastFruitController extends Controller
     {
 
         $user=Users::findOrFail($id);
-        return view('dashboard',compact('user'));
+        $orchards = $user->orchards;
+        $bookmarks=$user->userBookmarks;
+        $followorchards=$user->orchardFollowing;
+        return view('dashboard',compact('user','orchards','bookmarks','followorchards'));
     }
 
     
