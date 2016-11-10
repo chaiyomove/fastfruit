@@ -123,7 +123,11 @@
 														<i class="fa fa-plus">&nbsp;</i>ติดตาม
 													</button>
 													@endif
-											@endif	 
+											@endif
+
+											<button type="button" class="single_add_to_cart_button button editProfile">
+												<i class="fa fa-cog">&nbsp;</i>แก้ไข
+											</button>	 
 										</div>
 
 										<div class="clear"></div>
