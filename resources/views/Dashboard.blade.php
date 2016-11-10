@@ -1,5 +1,32 @@
 @extends('layouts/master')
 @section('content')
+{{-- Follow --}}
+<script>
+	jQuery(function ($) {
+		$('#follow').on('click', function () {
+			var $el = $(this),
+			textNode = this.lastChild;
+			$el.find('i').toggleClass('fa fa-check fa fa-plus');
+			textNode.nodeValue = ($el.hasClass('follow') ? 'กำลังติดตาม' : 'ติดตาม')
+			$el.toggleClass('follow');
+
+	        //ajax
+	        @if (Auth::user())
+	        if (!$el.hasClass('follow')){
+	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/followuser/{{$user->id}}', function(data){ 
+	        		// alert(data);
+	        	});	
+	        } else {
+	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/unfollowuser/{{$user->id}}', function(data){ 
+	        		// alert(data);
+	        	});
+	        }
+	        @endif
+	        
+	    });
+	});
+</script>
+
 			<section class="noo-page-dashboard eff">
 				<div class="container">
 					<div class="noo-heading-content">
@@ -9,12 +36,22 @@
 						<p style="font-size: medium; ">{{$user->province->provinceName}}</p>
 
 						<div class="commerce single-product" style="padding-top: 20px;">
-							<button type="button" class="single_add_to_cart_button button follow" id="follow">
-								<i class="fa fa-plus">&nbsp;</i>ติดตาม
-							</button>
-							<!-- <button type="button" class="single_add_to_cart_button button chat">
-								<i class="fa fa-comments">&nbsp;</i>แชท
-							</button> -->
+							@if (Auth::user())
+								<?php $i = 0?>
+								@foreach (Auth::user()->Followings as $key => $followedUser)
+									@if ($followedUser->id == $user->id && $i==0)
+										<button type="button" class="single_add_to_cart_button button" id="follow">
+											<i class="fa fa-check">&nbsp;</i>กำลังติดตาม
+										</button>
+									<?php $i++; ?>
+					                @endif
+					            @endforeach
+					                @if ($i==0) 
+									<button type="button" class="single_add_to_cart_button button follow" id="follow">
+										<i class="fa fa-plus">&nbsp;</i>ติดตาม
+									</button>
+									@endif
+							@endif
 							<a href="{{url('user/' . Auth::user()->id . '/edit')}}">
 							<button type="button" class="single_add_to_cart_button button editProfile">
 								<i class="fa fa-cog">&nbsp;</i>แก้ไขโปรไฟล์

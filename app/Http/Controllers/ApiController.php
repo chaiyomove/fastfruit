@@ -64,6 +64,24 @@ class ApiController extends Controller
         return;
     }
 
+    public function followUser($uid, $id)
+    {
+        $user = Users::findOrFail($uid);
+        $following = Users::findOrFail($id);
+        $user->Followings()->save($following);
+        
+        return;
+    }
+
+    public function UnFollowUser($uid, $id)
+    {
+        $user = Users::findOrFail($uid);
+        $following = Users::findOrFail($id);
+        $user->Followings()->detach($following->id);
+        
+        return;
+    }
+
      public function Bookmark($uid, $id)
     {
 

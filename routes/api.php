@@ -20,5 +20,7 @@ Route::get('/user', function (Request $request) {
 Route::get('fruitspecies/{id}', 'ApiController@fruitSpecies');
 Route::get('user/{uid}/followorchard/{id}', 'ApiController@followOrchard');
 Route::get('user/{uid}/unfolloworchard/{id}', 'ApiController@unFollowOrchard');
+Route::get('user/{uid}/followuser/{id}', 'ApiController@followUser');
+Route::get('user/{uid}/unfollowuser/{id}', 'ApiController@unFollowUser');
 Route::get('user/{uid}/bookmark/{id}', 'ApiController@bookmark');
 Route::get('user/{uid}/unbookmark/{id}', 'ApiController@unbookmark');

@@ -75,12 +75,12 @@ class Users extends Authenticatable
         return $this->belongsToMany('App\Orchards', 'follow_orchard','idUser','idOrchard');            
     }
 
-    public function userFollowers()
+    public function Followers()
     {
         return $this->belongsToMany('App\Users', 'follow_user', 'idUser', 'idFollower');
     }
 
-    public function userFollowings()
+    public function Followings()
     {
         return $this->belongsToMany('App\Users', 'follow_user', 'idFollower', 'idUser');        
     }
