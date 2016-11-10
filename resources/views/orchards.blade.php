@@ -134,16 +134,18 @@
 									</div>
 									<div class="widget commerce widget_products">
 										<h3 class="widget-title">สวนยอดนิยม</h3>
+										@foreach($popOrchards as $key => $popOrchard)
 										<ul class="product_list_widget">
 											<li>
-												<a href="{{'orchards/'.$orchard->idOrchard}}">
-													<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
-													<span class="product-title">{{$orchard->nameOrchard}}</span>
+												<a href="{{'orchards/'.$popOrchard->idOrchard}}">
+													<img style="width: 70px; height: 70px;" src="{{asset($popOrchard->picture1)}}" alt="" /> 
+													<span class="product-title">{{$popOrchard->nameOrchard}}</span>
 												</a>
-												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
+												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$popOrchard->province->provinceName}}</span>
 											</li>
 											
 										</ul>
+										@endforeach
 									</div>
 								</div>
 							</div>

@@ -37,12 +37,20 @@ class FastFruitController extends Controller
     {
         $orchards=Orchards::orderBy('idOrchard','desc')->paginate(9);
          // $orchard=$orchards[2];
-        return view('orchards',compact('orchards'));
+
+        $popOrchards =Orchards::orderBy('views','desc')->take(5)->get();
+        return view('orchards',compact('orchards','popOrchards'));
     }
 
     public function orchardDetail($id)
     {
-        $orchard = Orchards::findOrFail($id);  
+        $orchard = Orchards::findOrFail($id); 
+
+        //views counter
+        $orchard->views = ($orchard->views)+1;
+        $orchard->save();
+
+        $popOrchards = Orchards::orderBy('views','desc')->take(5)->get();
         $products = array();
         
         foreach (Orchards::findOrFail($id)->orchardPlots as $key => $plot) {
@@ -52,7 +60,7 @@ class FastFruitController extends Controller
         }
 
 
-        return view('orcharddetail',compact('orchard','products'));
+        return view('orcharddetail',compact('orchard','products','popOrchards'));
     }
     
     public function createPlot($id)
