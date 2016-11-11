@@ -591,6 +591,40 @@ class FastFruitController extends Controller
 
     }
 
+    public function editProduct($id)
+    {
+        $product = Product_sprints::findOrFail($id);
+        $fruits = Fruits::all();
+        $fruitSpecies = Fruit_species::all();
+        return view('editProduct',compact('product','fruits','fruitSpecies'));
+    }
+
+    public function updateProduct($id)
+    {
+         $input = Request::all();
+
+        if (array_get($input,'pictures')!==NULL){
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+
+        // return dd($input);
+        // $input['description'] = trim($input['description']);
+       
+       Product_sprints::find($id)->update($input);
+        
+
+       
+        return redirect('product/'.$id);
+
+    }
     
 }
 

@@ -156,9 +156,10 @@
 														<i class="fa fa-eye">&nbsp;</i>เพิ่มผลผลิต
 														</button>
 													</a>
+													<a href="{{url('product/' . $product->idProductSprint . '/edit')}}">
 													<button type="button" class="single_add_to_cart_button button editProfile" style="margin-top: 5px">
 														<i class="fa fa-cog">&nbsp;</i>แก้ไข
-													</button>
+													</button></a>
 
 											</div>
 

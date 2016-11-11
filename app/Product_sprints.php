@@ -10,7 +10,7 @@ class Product_sprints extends Model
     use AlgoliaEloquentTrait;
     
     protected $fillable = [
-        'description','fruitNum', 'picture1','picture2','picture3','picture4', 'fruitSpecie','time','idOrchardPlot',
+        'description','fruitNum', 'picture1','picture2','picture3','picture4', 'fruitSpecie','time','idOrchardPlot','startDate','endDate',
     ];
     protected $primaryKey = 'idProductSprint';
 

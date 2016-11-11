@@ -61,6 +61,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('plot/{id}/edit', 'FastFruitController@editPlot');
 	Route::patch('plot/{id}', 'FastFruitController@updatePlot');
 
+	Route::get('product/{id}/edit', 'FastFruitController@editProduct');
+	Route::patch('product/{id}', 'FastFruitController@updateProduct');
+
+
 	Route::delete('matching', 'FastFruitController@deleteMatching');
 	Route::get('chat', 'FastFruitController@chat');
 	Route::get('userprofile/{id}', 'FastFruitController@userProfile');
