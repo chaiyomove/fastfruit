@@ -26,9 +26,9 @@
 													<div class="item">
 														<img style="width: 100%; height: 100%" src="{{ asset($plot->picture3) }}" alt="" />
 													</div>
-													{{-- <div class="item">
+													<div class="item">
 														<img style="width: 100%; height: 100%" src="{{ asset($plot->picture4) }}" alt="" />
-													</div> --}}
+													</div>
 												</div>
 												<div class="owl-carousel sync2">
 													<div class="item">
@@ -40,9 +40,9 @@
 													<div class="item">
 														<img src="{{ asset($plot->picture3) }}" alt="" />
 													</div>
-													{{-- <div class="item">
+													<div class="item">
 														<img src="{{ asset($plot->picture4) }}" alt="" />
-													</div> --}}
+													</div>
 												</div>
 											</div>
 										</div>

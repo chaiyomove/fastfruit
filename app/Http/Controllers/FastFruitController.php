@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use App\Product_sprints;
 use App\Orchards;
 use App\Orchard_plots;
+use App\Plot_status;
 use App\Fruits;
 use App\Fruit_species;
 use App\Provinces;
@@ -552,5 +553,46 @@ class FastFruitController extends Controller
         return view('dashboard',compact('user','orchards','bookmarks','followorchards'));
     }
 
+    public function editPlot($id)
+    {
+        $plot=Orchard_plots::findOrFail($id);
+        $fruits = Fruits::all();
+        $fruitSpecies = Fruit_species::all();
+        
+        $plotstatus=plot_status::all();
+        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
+        return view('editPlot',compact('plot','provinces','fruits','fruitSpecies','plotstatus'));
+    }
+
+    public function updatePlot($id)
+    {
+         $input = Request::all();
+
+        if (array_get($input,'pictures')!==NULL){
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchard_plots'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+
+        // return dd($input);
+        // $input['description'] = trim($input['description']);
+       
+       Orchard_plots::find($id)->update($input);
+        
+
+       
+        return redirect('plot/'.$id);
+
+    }
+
     
 }
+
+
+  
