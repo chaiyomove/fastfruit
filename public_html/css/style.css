@@ -15632,12 +15632,12 @@ input[type='checkbox'] {
     border-color: #79cba8;
 }
 
-.commerce .product-grid .noo-product-inner:hover .noo-product-thumbnail img {
+/*.commerce .product-grid .noo-product-inner:hover .noo-product-thumbnail img {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
     transform: scale(1.1);
-}
+}*/
 
 .commerce .product-grid .noo-product-inner:hover .noo-product-title .noo-product-action {
     background: #45b284;
@@ -16136,7 +16136,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     top: 5px;
 }
 
-.commerce a#bookmark:hover {
+.commerce #bookmark:hover {
     background: #ffffff;
     color: #ffd402;
 }
