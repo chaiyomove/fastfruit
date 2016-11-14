@@ -16143,21 +16143,14 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 .commerce #bookmark {
     font-size: 24px;
     position: relative;
-    margin-left: 15px;
     top: 5px;
-}
-
-.commerce #bookmark:hover {
     background: #ffffff;
     color: #ffd402;
 }
 
-.commerce #after_bookmark {
-    font-size: 24px;
-    position: relative;
-    margin-left: 15px;
-    top: 5px;
-    color: #ffd402;
+.commerce #bookmark:hover {
+    background: #ffffff;
+    color: #ffb402;
 }
 
 .commerce #respond input#submit:hover,
