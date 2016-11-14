@@ -5916,9 +5916,20 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
     text-align: center;
 }
 
-.noo-page-dashboard .noo-heading-content img{
+.noo-page-dashboard .noo-heading-content .profileImg {
     padding-top: 30px;
     padding-bottom: 30px;
+    width: 170px;
+    height: 230px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.noo-page-dashboard .noo-heading-content .profileImg img#resizeimg {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .noo-page-dashboard .noo-heading-content p{

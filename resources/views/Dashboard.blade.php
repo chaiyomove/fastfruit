@@ -30,7 +30,9 @@
 			<section class="noo-page-dashboard eff">
 				<div class="container">
 					<div class="noo-heading-content">
-						<img src="{{asset($user->userPicture)}}" width="15%" height="10%" style="border-radius: 50%;" />
+						<div class="profileImg">
+							<img src="{{asset($user->userPicture)}}" id="resizeimg"/>
+						</div>
 						<p style="font-size: x-large;">{{$user->firstName}}&nbsp;{{Auth::user()->lastName}}</p>
 						<p style="font-size: medium; ">{{$user->address}}</p>
 						<p style="font-size: medium; ">{{$user->province->provinceName}}</p>
