@@ -1,5 +1,6 @@
 @extends('layouts/master')
 @section('content')
+
 			<section class="noo-page-heading eff">
 				<div class="container">
 					<div class="noo-heading-content">
@@ -16,17 +17,33 @@
 								<div id="addOrchard">
 	                				<div class="col-md-6">
 	                					<h2>เพิ่มผลผลิต</h2>
-	                					<form class="login" method="POST" action="{{ url('/login') }}">
+	                					<form class="login" method="POST" enctype="multipart/form-data" action="{{url('/product')}}">
+		                					{{ csrf_field() }}
+											<input type="hidden" name="idProductSprint" value="{{$id}}">
 	                						<div class="form-row form-row-wide">
 												<label for="username">
 													ผลผลิต :
 													<span class="required">*</span>
 													<div style="float: right; width: 70%">
 														<select name="idFruit" class="form-matching" style="width: 50%; float: left;">
-															<option value="" selected='selected'>เลือกผลไม้</option>
+															<option  value="" selected >เลือกชนิดผลไม้</option>
+												 		@foreach ($fruits as $fruit)
+													 		@if ($fruit->idFruit == old('idFruit'))
+													 			<option value="{{$fruit->idFruit}}" selected>{{$fruit->fruitName}}</option>
+													 		@else
+													 			<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>
+													 		@endif
+													 						
+												 		@endforeach
 														</select>
 														<select name="idFruitSpecie" class="form-matching" style="width: 50%; float: left;">
-															<option value="" selected='selected'>เลือกสายพันธุ์</option>
+															<option value="" selected>เลือกสายพันธุ์</option>
+												 		@foreach ($fruitSpecies as $fruitSpecie)
+													 		@foreach ($fruitSpecies as $fruitSpecie)
+													 		@if ($fruitSpecie->idFruitSpecie == App\Orchard_plots::findOrFail($id)->idFruitSpecie))
+													 			<option value="{{$fruitSpecie->idFruitSpecie}}" selected>{{$fruitSpecie->specieName}}</option>
+													 		@endif
+												 		@endforeach		
 														</select>
 													</div>
 												</label>
@@ -35,14 +52,14 @@
 												<label for="username">
 													รายละเอียดผลผลิต :
 													<span class="required">*</span>
-													<textarea name="description" class="input-text" style="resize: none; width: 70%; float: right;"></textarea>
+													<textarea name="description" class="input-text" style="resize: none; width: 70%; float: right;">{{old('description')}}</textarea>
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
 												<label for="username">
 													จำนวนผลผลิต :
 													<span class="required">*</span>
-													<input type="text" class="input-text" name="fruitNum" id="username" placeholder="กิโลกรัมต่อรอบการผลิต" value="" style="width: 70%; float: right;" />
+													<input type="text" class="input-text" name="fruitNum" id="username" placeholder="กิโลกรัมต่อรอบการผลิต" value="{{old('fruitNum')}}" style="width: 70%; float: right;" />
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
@@ -51,7 +68,7 @@
 													<span class="required">*</span>
 													<div style="width: 70%; float: right;">
 														<div class='input-group date' id='datepickerstart' style="width: 50%; float: left;">
-												            <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่"/>
+												            <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" value="{{old('startDate')}}" />
 												            <span class="input-group-addon" data-toggle="datepicker">
 												            	<span class="fa fa-calendar"></span>
 												            </span>
@@ -65,7 +82,7 @@
 													<span class="required">*</span>
 													<div style="width: 70%; float: right;">
 														<div class='input-group date' id='datepickerend' style="width: 50%; float: left;">
-												            <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง"/>
+												            <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง" value="{{old('endDate')}}" />
 												            <span class="input-group-addon" data-toggle="datepicker">
 												            	<span class="fa fa-calendar"></span>
 												            </span>
@@ -102,8 +119,8 @@
 				<div class="noo-footer-shop-now">
 					<div class="container">
 						<div class="col-md-7">
-							<h4>- Every day fresh -</h4>
-							<h3>organic food</h3>
+							<h4></h4>
+							<h3></h3>
 						</div>
 						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
 					</div>

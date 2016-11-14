@@ -64,12 +64,14 @@ class FastFruitController extends Controller
     }
     
     public function createPlot($id)
-    {
+    {   
+        $plot =Orchard_plots::findOrFail($id);
+        $plotstatus=plot_status::all();
         $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
         $orchard = Orchards::findOrFail($id);
-        return view('addplot', compact('provinces', 'fruits', 'fruitSpecies', 'id', 'orchard'));
+        return view('addplot', compact('provinces', 'fruits', 'fruitSpecies', 'id', 'orchard','plot','plotstatus'));
     }    
 
     public function storePlot(AddPlotRequest $request)
@@ -266,7 +268,7 @@ class FastFruitController extends Controller
         // $admin->idUser = Auth::user()->id;
         // $admin->idOrchard = Orchards::latest()->first()->idOrchard;
         // $admin->save();
-        return redirect('userorchard');
+        return redirect('orchards/'.$orchard->idOrchard);
     }
 
     public function checkGap()
@@ -349,12 +351,12 @@ class FastFruitController extends Controller
         return view('AfterLogin');
     }
 
-    public function getUserAddProduct($id)
+    public function createProduct($id)
     {
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
 
-        return view('AddFruit', compact('fruits','fruitSpecies','id'));
+        return view('addproduct', compact('fruits','fruitSpecies','id'));
     }
 
      public function postUserAddProduct(AddProductRequest $request)
@@ -377,7 +379,7 @@ class FastFruitController extends Controller
         // $sprint=new Product_sprints();
         // $sprint->fruitSpecie=$input['fruitSpecie'];
        
-        return redirect('userproduct');
+        return redirect('product/'.$id);
     }
 
     public function userMatching()
@@ -625,6 +627,7 @@ class FastFruitController extends Controller
         return redirect('product/'.$id);
 
     }
+
     
 }
 

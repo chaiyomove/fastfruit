@@ -40,7 +40,7 @@
 			<section class="noo-page-heading eff">
 				<div class="container">
 					<div class="noo-heading-content">
-						<h1 class="page-title eff">แก้ไขข้อมูลแปลง</h1>
+						<h1 class="page-title eff">เพิ่มแปลง</h1>
 					</div>
 				</div>
 			</section>
@@ -52,35 +52,35 @@
 								<div class="col-md-3"></div>
 								<div id="addOrchard">
 	                				<div class="col-md-6">
-	                					<h2>แก้ไขข้อมูลแปลง</h2>
-	                					<form class="login" method="POST" enctype="multipart/form-data" action="{{url('plot',[$plot->idOrchardPlot])}}">
-		                					<input type="hidden" name="_method" value="PATCH">
-											{{ csrf_field() }}
+	                					<h2>เพิ่มแปลง</h2>
+	                					<form class="login" method="POST" enctype="multipart/form-data" action="{{url('/plot')}}">
+		                					{{ csrf_field() }}
+											<input type="hidden" name="idOrchard" value="{{$id}}">
 	                						<div class="form-row form-row-wide">
 												<label for="username">
 													ผลผลิต :
 													<span class="required">*</span>
 													<div style="float: right; width: 70%">
 														<select  name="idFruit" id="idFruit" class="form-matching" style="width: 50%; float: left;">
-															
-															@foreach ($fruits as $fruit)
-													 		@if ($fruit->idFruit == $plot->fruitSpecie->idFruit)
+															<option  value="" selected >เลือกชนิดผลไม้</option>
+												 		@foreach ($fruits as $fruit)
+													 		@if ($fruit->idFruit == old('idFruit'))
 													 			<option value="{{$fruit->idFruit}}" selected>{{$fruit->fruitName}}</option>
 													 		@else
 													 			<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>
 													 		@endif
 													 						
-												 		@endforeach
+												 		@endforeach	
 														</select>
 														<select name="idFruitSpecie" id="idFruitSpecie" class="form-matching" style="width: 50%; float: left;">
-															
-															@foreach ($fruitSpecies as $fruitSpecie)
-													 		@if ($fruitSpecie->idFruitSpecie == $plot->idFruitSpecie)
-													 			<option value="{{$fruitSpecie->idFruitSpecie}}" selected>{{$fruitSpecie->specieName}}</option>
-													 		@else
-													 			<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>
-													 		@endif
-												 		@endforeach			
+															<option value="" selected>เลือกสายพันธุ์</option>
+													 		@foreach ($fruitSpecies as $fruitSpecie)
+														 		@if ($fruitSpecie->idFruitSpecie == old('idFruitSpecie'))
+														 			<option value="{{$fruitSpecie->idFruitSpecie}}" selected>{{$fruitSpecie->specieName}}</option>
+														 		@else
+														 			<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>
+														 		@endif
+													 		@endforeach
 														</select>
 													</div>
 												</label>
@@ -89,21 +89,21 @@
 												<label for="username">
 													รหัสแปลง :
 													<span class="required">*</span>
-													<input type="text" class="input-text" name="plotNumber" id="" value="{{$plot->plotNumber}}" style="width: 70%; float: right;" />
+													<input type="text" class="input-text" name="plotNumber" id="" value="{{old('plotNumber')}}" style="width: 70%; float: right;" />
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
 												<label for="username">
 													รายละเอียดแปลง :
 													<span class="required">*</span>
-													<textarea name="description" class="input-text" style="resize: none; width: 70%; float: right;">{{$plot->description}}</textarea>
+													<textarea name="description" class="input-text" style="resize: none; width: 70%; float: right;">{{old('description')}}</textarea>
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
 												<label for="username">
 													พื้นที่แปลง :
 													<span class="required">*</span>
-													<input type="text" class="input-text" name="area" id="username" placeholder="หน่วยเป็นไร่" value="{{$plot->area}}" style="width: 70%; float: right;" />
+													<input type="text" class="input-text" name="area" id="username" placeholder="หน่วยเป็นไร่" value="{{old('area')}}" style="width: 70%; float: right;" />
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
@@ -122,7 +122,7 @@
 												<label for="username">
 													ที่อยู่แปลง :
 													<span class="required">*</span>
-													<textarea name="address" class="input-text" style="resize: none; width: 70%; float: right;">{{$plot->address}}</textarea>
+													<textarea name="address" class="input-text" style="resize: none; width: 70%; float: right;">{{$orchard->address}}</textarea>
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
@@ -130,12 +130,13 @@
 													จังหวัด :
 													<span class="required">*</span>
 													<select name="idProvince" id="idProvince" class="form-matching" style="width: 70%; float: right;">
-														@foreach ($provinces as $province)
-											 			@if ($province->idProvince == $plot->orchard->idProvince)
-											 				<option value="{{$province->idProvince}}" selected>{{$province->provinceName}}</option>
+														<option value="" selected>กรุณาเลือก</option>	
+											 		@foreach ($provinces as $province)
+											 			@if ($orchard->idProvince == $province->idProvince)
+													 		<option value="{{$province->idProvince}}" selected>{{$province->provinceName}}</option>				
 											 			@else
-												 			<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
-											 			@endif
+													 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
+											 			@endif	
 											 		@endforeach	
 													</select>
 												</label>
