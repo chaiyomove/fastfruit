@@ -552,7 +552,8 @@ class FastFruitController extends Controller
         $orchards = $user->orchards;
         $bookmarks=$user->userBookmarks;
         $followorchards=$user->orchardFollowing;
-        return view('dashboard',compact('user','orchards','bookmarks','followorchards'));
+        $followusers=$user->Followings;
+        return view('dashboard',compact('user','orchards','bookmarks','followorchards','followusers'));
     }
 
     public function editPlot($id)
