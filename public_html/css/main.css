@@ -1,0 +1,30 @@
+#map{
+    	height: 500px;
+    	width: 500px;
+    	margin: 0 auto;
+    }
+
+    #map-canvas{
+    	height: 500px;
+    	width: 500px;
+    	margin: 0 auto;
+    }
+
+
+html, body{
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+ }
+/* #map-wrapper {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }*/
+.bookbefor{
+    color:#000000;
+ }
+.bookafter{
+    color:#ffcc00;
+ }
