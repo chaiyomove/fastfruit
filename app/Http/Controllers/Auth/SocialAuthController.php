@@ -31,11 +31,11 @@ class SocialAuthController extends Controller
     {
         $user = Socialite::driver('facebook')->user(); 
 
-        $user->getId();
-        $user->getNickname();
-        $user->getName();
-        $user->getEmail();
-        $user->getAvatar();
+        echo $user->getId();
+        echo $user->getNickname();
+        echo $user->getName();
+        echo $user->getEmail();
+        echo $user->getAvatar();
 
         // $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
 
