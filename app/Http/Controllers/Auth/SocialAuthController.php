@@ -39,7 +39,7 @@ class SocialAuthController extends Controller
         echo "<br/>";
         echo $user->getEmail();
         echo "<br/>";
-        echo $user->getAvatar();
+        echo "<img src='".$user->getAvatar()."'";
         echo "<br/>";
 
         // $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
