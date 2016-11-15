@@ -9,7 +9,7 @@ class Social_users extends Model
     protected $table = 'social_users';
     protected $primaryKey = 'id';
     protected $fillable = [
-    	'provider_user_id', 'provider',
+    	'user_id', 'provider_user_id', 'provider',
     ];
 
     public function user()
