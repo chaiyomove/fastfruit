@@ -4,9 +4,7 @@
 				<div class="container">
 					<div class="noo-heading-content">
 						<h1 class="page-title eff">เข้าสู่ระบบ</h1>
-						<div class="noo-page-breadcrumb eff">
-							<a href="index-Fastfruit.html" class="home">FastFruit</a>/<span>เข้าสู่ระบบ</span>
-						</div>
+						
 					</div>
 				</div>
 			</section>
