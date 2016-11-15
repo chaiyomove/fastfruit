@@ -91,10 +91,11 @@ class Users extends Authenticatable
 
     public function createOrGetUser(Social_users $socialUser)
         {
-            $account = Social_users::whereProvider('facebook')
-                ->whereProviderUserId($socialUser->getId())
-                ->first();
+            // $account = Social_users::whereProvider('facebook')
+            //     ->whereProviderUserId($socialUser->getId())
+            //     ->first();
 
+            $account = $socialUser->getId();
             if ($account) {
                 echo "existed";
                 // return $account->user;
