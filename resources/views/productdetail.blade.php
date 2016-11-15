@@ -83,7 +83,30 @@
 											</div>
 										</div>
 										<div class="summary entry-summary">
+
+											@if (Auth::user())
+												<?php $i = 0 ?>
+												@foreach (Auth::user()->userBookmarks as $key => $bookmark)
+													@if ($bookmark->idProductSprint == $product->idProductSprint && $i==0)
+														
+														<button type="button" class="single_add_to_cart_button button" id="bookmark" style="float: right;">	
+															<i class="fa fa-star fa-lg"> </i>	    
+														 </button>
+														<?php $i++; ?>
+
+										            @endif
+										        @endforeach
+											        @if ($i==0) 
+
+										                <button type="button" class="single_add_to_cart_button button bookmark" id="bookmark" style="float: right;"> 
+															<i class="fa fa-star-o fa-lg"> </i>
+														</button>
+
+												 	@endif
+												@endif
+											
 											<h1 class="product_title entry-title border_bottom">{{array_get($product->fruitSpeciess,'specieName')}} จาก {{$product->orchardPlot->orchard->nameOrchard}}</h1>
+
 											<div class="product_meta">
 												<table class="detail">
 													<tr>
@@ -124,32 +147,6 @@
 												
 
 												{{-- <a href="#" class="fa fa-star" id="bookmark"></a> --}}
-
-												@if (Auth::user())
-													<?php $i = 0 ?>
-													@foreach (Auth::user()->userBookmarks as $key => $bookmark)
-														@if ($bookmark->idProductSprint == $product->idProductSprint && $i==0)
-														<!-- <button type="submit" class="single_add_to_cart_button button">
-															<i class="fa fa-eye">&nbsp;</i>ดูผลผลิต
-														</button>
-														<button type="submit" class="single_add_to_cart_button plot">
-															<i class="fa fa-eye">&nbsp;</i>ดูแปลง
-														</button>
-														<button type="submit" class="single_add_to_cart_button map">
-															<i class="fa fa-globe">&nbsp;</i>แผนที่
-														</button> -->
-															<button type="button" class="single_add_to_cart_button button" id="bookmark">	
-																<i class="fa fa-star fa-lg"> </i>	    
-														 	</button>
-															<?php $i++; ?>
-										                @endif
-										            @endforeach
-											        @if ($i==0) 
-										                <button type="button" class="single_add_to_cart_button button bookmark" id="bookmark"> 
-															<i class="fa fa-star-o fa-lg"> </i>						    
-														</button>
-												 	@endif
-												@endif
 
 													<a href="{{url('product/' .$plot->idOrchardPlot. '/create')}}">
 														<button type="button" class="single_add_to_cart_button plot">

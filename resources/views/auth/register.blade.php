@@ -4,9 +4,6 @@
 				<div class="container">
 					<div class="noo-heading-content">
 						<h1 class="page-title eff">สมัครสมาชิก</h1>
-						<div class="noo-page-breadcrumb eff">
-							<a href="index-Fastfruit.html" class="home">FastFruit</a>/<span>สมัครสมาชิก</span>
-						</div>
 					</div>
 				</div>
 			</section>
