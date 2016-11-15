@@ -29,7 +29,13 @@ class SocialAuthController extends Controller
      */
     public function handleProviderCallback()
     {
-        return $user = Socialite::driver('facebook')->user(); 
+        $user = Socialite::driver('facebook')->user(); 
+
+        $user->getId();
+        $user->getNickname();
+        $user->getName();
+        $user->getEmail();
+        $user->getAvatar();
 
         // $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
 
