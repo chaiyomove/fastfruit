@@ -191,11 +191,11 @@
 																	<img style="width: 70px; height: 70px;" src="{{asset($history->picture1)}}" alt="" /> 
 																	<span class="product-title">{{$history->orchardPlot->fruitSpecie->specieName}}</span>
 																</a>
+																<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74); float: right;">&nbsp;{{$history->orchardPlot->province->provinceName}}</span>
+
 																<p>วันที่ผลิต {{$product->startDate}} ถึง {{$product->endDate}}</p>
 																<p>จำนวน {{$product->fruitNum}}&nbsp;กิโลกรัม</p>
 
-
-																<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$history->orchardPlot->province->provinceName}}</span>
 															</div>
 														</li>
 													@endforeach
