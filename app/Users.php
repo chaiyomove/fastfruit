@@ -89,30 +89,30 @@ class Users extends Authenticatable
         return $this->belongsToMany('App\Users', 'follow_user', 'idFollower', 'idUser');        
     }
 
-    public function createOrGetUser(Social_users $socialUser)
+    public function createOrGetUser(ProviderUser $providerUser)
         {
             // $account = Social_users::whereProvider('facebook')
-            //     ->whereProviderUserId($socialUser->getId())
+            //     ->whereProviderUserId($providerUser->getId())
             //     ->first();
 
-            $account = $socialUser->getId();
+            $account = $providerUser->getId();
             if ($account) {
                 echo "existed";
                 // return $account->user;
             } else {
                 echo "not exist";
                 // $account = new SocialAccount([
-                //     'provider_user_id' => $socialUser->getId(),
+                //     'provider_user_id' => $providerUser->getId(),
                 //     'provider' => 'facebook'
                 // ]);
 
-                // $user = Users::whereEmail($socialUser->getEmail())->first();
+                // $user = Users::whereEmail($providerUser->getEmail())->first();
 
                 // if (!$user) {
 
                 //     $user = Users::create([
-                //         'email' => $socialUser->getEmail(),
-                //         'name' => $socialUser->getName(),
+                //         'email' => $providerUser->getEmail(),
+                //         'name' => $providerUser->getName(),
                 //     ]);
                 // }
 
