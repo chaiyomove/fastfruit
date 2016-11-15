@@ -89,18 +89,20 @@ class Users extends Authenticatable
         return $this->belongsToMany('App\Users', 'follow_user', 'idFollower', 'idUser');        
     }
 
+    /**
+     * registor and login for facebook OAuth
+     * @param  ProviderUser $providerUser   Socialite
+     * @return Users $user                  Eloquent
+     */
     public function createOrGetUser(ProviderUser $providerUser)
         {
             $account = Social_users::whereProvider('facebook')
                 ->whereProviderUserId($providerUser->getId())
                 ->first();
 
-            // $account = $providerUser->getId();
             if ($account) {
-                // echo "existed";
                 return $account->user;
             } else {
-                // echo "not exist";
                 $account = new Social_users([
                     'provider_user_id' => $providerUser->getId(),
                     'provider' => 'facebook'
