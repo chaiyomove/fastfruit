@@ -6,7 +6,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Database\Eloquent\Model;
+
 use App\Follow_user;
+use App\Social_users;
 
 use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
 
@@ -87,35 +89,36 @@ class Users extends Authenticatable
         return $this->belongsToMany('App\Users', 'follow_user', 'idFollower', 'idUser');        
     }
 
-    public function createOrGetUser(ProviderUser $providerUser)
+    public function createOrGetUser(Social_users $socialUser)
         {
-            $account = SocialAccount::whereProvider('facebook')
-                ->whereProviderUserId($providerUser->getId())
+            $account = Social_users::whereProvider('facebook')
+                ->whereProviderUserId($socialUser->getId())
                 ->first();
 
             if ($account) {
-                return $account->user;
+                echo "existed";
+                // return $account->user;
             } else {
+                echo "not exist";
+                // $account = new SocialAccount([
+                //     'provider_user_id' => $socialUser->getId(),
+                //     'provider' => 'facebook'
+                // ]);
 
-                $account = new SocialAccount([
-                    'provider_user_id' => $providerUser->getId(),
-                    'provider' => 'facebook'
-                ]);
+                // $user = Users::whereEmail($socialUser->getEmail())->first();
 
-                $user = Users::whereEmail($providerUser->getEmail())->first();
+                // if (!$user) {
 
-                if (!$user) {
+                //     $user = Users::create([
+                //         'email' => $socialUser->getEmail(),
+                //         'name' => $socialUser->getName(),
+                //     ]);
+                // }
 
-                    $user = Users::create([
-                        'email' => $providerUser->getEmail(),
-                        'name' => $providerUser->getName(),
-                    ]);
-                }
+                // $account->user()->associate($user);
+                // $account->save();
 
-                $account->user()->associate($user);
-                $account->save();
-
-                return $user;
+                // return $user;
 
             }
 
