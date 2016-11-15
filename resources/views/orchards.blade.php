@@ -137,7 +137,7 @@
 										@foreach($popOrchards as $key => $popOrchard)
 										<ul class="product_list_widget">
 											<li>
-												<a href="{{url('orchards', [$popOrchard->idOrchard])}}">
+												<a href="{{'orchards/'.$popOrchard->idOrchard}}">
 													<img style="width: 70px; height: 70px;" src="{{asset($popOrchard->picture1)}}" alt="" /> 
 													<span class="product-title">{{$popOrchard->nameOrchard}}</span>
 												</a>
