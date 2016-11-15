@@ -32,7 +32,7 @@ class SocialAuthController extends Controller
     public function handleProviderCallback(Users $service)
     {
         // $user = Socialite::driver('facebook')->user();
-        
+
         // return dd($user);
         // echo $user->getId();
         // echo "<br/>";
@@ -47,9 +47,9 @@ class SocialAuthController extends Controller
 
         $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
 
-        // auth()->login($user);
+        auth()->login($user);
 
-        // return redirect()->to('/home');
+        return redirect('/');
 
         // $user->token;
     }

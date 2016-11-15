@@ -91,42 +91,40 @@ class Users extends Authenticatable
 
     public function createOrGetUser(ProviderUser $providerUser)
         {
-            // $account = Social_users::whereProvider('facebook')
-            //     ->whereProviderUserId($providerUser->getId())
-            //     ->first();
+            $account = Social_users::whereProvider('facebook')
+                ->whereProviderUserId($providerUser->getId())
+                ->first();
 
-            $account = $providerUser->getId();
-            $name = $providerUser->getName();
-            echo substr($name, 0, strpos($name, " "));
-            echo " ".substr($name,strpos($name, " ")+1);
-            // if ($account) {
-            //     // echo "existed";
-            //     return $account->user;
-            // } else {
-            //     // echo "not exist";
-            //     $account = new Social_users([
-            //         'provider_user_id' => $providerUser->getId(),
-            //         'provider' => 'facebook'
-            //     ]);
+            // $account = $providerUser->getId();
+            if ($account) {
+                // echo "existed";
+                return $account->user;
+            } else {
+                // echo "not exist";
+                $account = new Social_users([
+                    'provider_user_id' => $providerUser->getId(),
+                    'provider' => 'facebook'
+                ]);
 
-            //     $user = Users::whereEmail($providerUser->getEmail())->first();
+                $user = Users::whereEmail($providerUser->getEmail())->first();
 
-            //     if (!$user) {
-            //         // $name = $providerUser->getName();
+                if (!$user) {
+                    $name = $providerUser->getName();
 
-            //         $user = Users::create([
-            //             'email' => $providerUser->getEmail(),
-            //             // 'firstName' => substr($name, 0, strpos($name, " ")),
-            //             // 'lastName' => substr($name,strpos($name, " ")),
-            //         ]);
-            //     }
+                    $user = Users::create([
+                        'email' => $providerUser->getEmail(),
+                        'firstName' => substr($name, 0, strpos($name, " ")),
+                        'lastName' => substr($name,strpos($name, " ")+1),
+                        'picture' => $providerUser->getAvatar(),
+                    ]);
+                }
 
-            //     $account->user()->associate($user);
-            //     $account->save();
+                $account->user()->associate($user);
+                $account->save();
 
-            //     return $user;
+                return $user;
 
-            // }
+            }
 
         }
 
