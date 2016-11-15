@@ -32,7 +32,7 @@ class SocialAuthController extends Controller
     public function handleProviderCallback(Users $service)
     {
         $user = Socialite::driver('facebook')->user();
-
+        return dd($user);
         echo $user->getId();
         echo "<br/>";
         echo $user->getNickname();
