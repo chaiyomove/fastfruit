@@ -18,6 +18,8 @@ use Illuminate\Http\Request;
 
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
+Route::get('auth/facebook', 'Auth\SocialAuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\SocialAuthController@handleProviderCallback');
 
 
 /**
@@ -63,7 +65,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('product/{id}/edit', 'FastFruitController@editProduct');
 	Route::patch('product/{id}', 'FastFruitController@updateProduct');
-	Route::get('product/{id}/create','FastFruitController@createProduct');
+
 
 	Route::delete('matching', 'FastFruitController@deleteMatching');
 	Route::get('chat', 'FastFruitController@chat');
@@ -80,7 +82,7 @@ Route::group(['middleware' => 'auth'], function () {
 	// Route::get('userproduct', 'FastFruitController@userProduct');
 	Route::get('userproduct/{id}', 'FastFruitController@userProductDetail');
 	Route::get('userproduct', 'FastFruitController@userProductDetail');
-	
+	Route::get('product/{id}/create', 'FastFruitController@getUserAddProduct');
 	Route::post('product', 'FastFruitController@postUserAddProduct');
 	Route::get('usermatching', 'FastFruitController@userMatching');
 	Route::get('useraddadmin', 'FastFruitController@userAddadmin');

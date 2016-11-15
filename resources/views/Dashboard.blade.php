@@ -184,6 +184,20 @@
 														</li>
 													@endforeach
 													</ul>
+
+													<ul class="product_list_widget">
+													@foreach ($followusers as $key => $user)
+													
+														<li>
+
+															<a href="">
+																<img style="width: 70px; height: 70px;" src="{{asset($user->userPicture)}}" alt="" /> 
+																<span class="product-title">{{$user->firstName}}&nbsp;{{$user->lastName}}</span>
+															</a>
+															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$user->province->provinceName}}</span>
+														</li>
+													@endforeach
+													</ul>
 												</div>
 											</div>
 											<div id="tab-3" class="tab-pane fade">
