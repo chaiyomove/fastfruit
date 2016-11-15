@@ -31,6 +31,12 @@ class SocialAuthController extends Controller
     {
         $user = Socialite::driver('facebook')->user(); 
 
+        // $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
+
+        // auth()->login($user);
+
+        // return redirect()->to('/home');
+
         // $user->token;
     }
 }
