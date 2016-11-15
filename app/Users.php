@@ -96,32 +96,37 @@ class Users extends Authenticatable
             //     ->first();
 
             $account = $providerUser->getId();
-            if ($account) {
-                echo "existed";
-                // return $account->user;
-            } else {
-                echo "not exist";
-                // $account = new SocialAccount([
-                //     'provider_user_id' => $providerUser->getId(),
-                //     'provider' => 'facebook'
-                // ]);
+            $name = $providerUser->getName();
+            echo substr($name, 0, strpos($name, " ")),
+            echo substr($name,strpos($name, " ")),
+            // if ($account) {
+            //     // echo "existed";
+            //     return $account->user;
+            // } else {
+            //     // echo "not exist";
+            //     $account = new Social_users([
+            //         'provider_user_id' => $providerUser->getId(),
+            //         'provider' => 'facebook'
+            //     ]);
 
-                // $user = Users::whereEmail($providerUser->getEmail())->first();
+            //     $user = Users::whereEmail($providerUser->getEmail())->first();
 
-                // if (!$user) {
+            //     if (!$user) {
+            //         // $name = $providerUser->getName();
 
-                //     $user = Users::create([
-                //         'email' => $providerUser->getEmail(),
-                //         'name' => $providerUser->getName(),
-                //     ]);
-                // }
+            //         $user = Users::create([
+            //             'email' => $providerUser->getEmail(),
+            //             // 'firstName' => substr($name, 0, strpos($name, " ")),
+            //             // 'lastName' => substr($name,strpos($name, " ")),
+            //         ]);
+            //     }
 
-                // $account->user()->associate($user);
-                // $account->save();
+            //     $account->user()->associate($user);
+            //     $account->save();
 
-                // return $user;
+            //     return $user;
 
-            }
+            // }
 
         }
 
