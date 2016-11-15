@@ -18,6 +18,8 @@ use Illuminate\Http\Request;
 
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
+
+//facebook login
 Route::get('auth/facebook', 'Auth\SocialAuthController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\SocialAuthController@handleProviderCallback');
 
@@ -49,20 +51,21 @@ Route::get('profile/{id}', 'FastFruitController@profile');
  * login required pages
  */
 Route::group(['middleware' => 'auth'], function () {
-	/**
-	 * user
-	 */
+	//User
 	Route::get('user/{id}/edit', 'FastFruitController@editUser'); 	//edit page
 	Route::patch('user/{id}', 'FastFruitController@updateUser');	//update
 
+	//Orchard
 	Route::get('addorchard', 'FastFruitController@getAddOrchard');
 	Route::post('addorchard', 'FastFruitController@postAddOrchard');
 
+	//Plot
 	Route::get('plot/{id}/create', 'FastFruitController@createPlot');
 	Route::post('plot', 'FastFruitController@storePlot');
 	Route::get('plot/{id}/edit', 'FastFruitController@editPlot');
 	Route::patch('plot/{id}', 'FastFruitController@updatePlot');
 
+	//Product
 	Route::get('product/{id}/edit', 'FastFruitController@editProduct');
 	Route::patch('product/{id}', 'FastFruitController@updateProduct');
 
