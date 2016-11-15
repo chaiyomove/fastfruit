@@ -98,7 +98,7 @@ class Users extends Authenticatable
             $account = $providerUser->getId();
             $name = $providerUser->getName();
             echo substr($name, 0, strpos($name, " "));
-            echo " ".substr($name,strpos($name, " "));
+            echo " ".substr($name,strpos($name, " ")+1);
             // if ($account) {
             //     // echo "existed";
             //     return $account->user;
