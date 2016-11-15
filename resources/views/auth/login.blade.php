@@ -40,6 +40,7 @@
 											</div>
 											<div class="lost_password">
 												<a href="{{url('/password/reset')}}">ลืมรหัสผ่าน?</a>
+												<a href="{{url('/auth/facebook')}}">FB Login</a>
 											</div>
 										</form>
 									</div>
