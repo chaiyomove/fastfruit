@@ -10,6 +10,8 @@ use App\Follow_user;
 
 use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
 
+use Laravel\Socialite\Contracts\User as ProviderUser;
+
 class Users extends Authenticatable
 {
 	use Notifiable;
@@ -85,5 +87,38 @@ class Users extends Authenticatable
         return $this->belongsToMany('App\Users', 'follow_user', 'idFollower', 'idUser');        
     }
 
+    public function createOrGetUser(ProviderUser $providerUser)
+        {
+            $account = SocialAccount::whereProvider('facebook')
+                ->whereProviderUserId($providerUser->getId())
+                ->first();
+
+            if ($account) {
+                return $account->user;
+            } else {
+
+                $account = new SocialAccount([
+                    'provider_user_id' => $providerUser->getId(),
+                    'provider' => 'facebook'
+                ]);
+
+                $user = Users::whereEmail($providerUser->getEmail())->first();
+
+                if (!$user) {
+
+                    $user = Users::create([
+                        'email' => $providerUser->getEmail(),
+                        'name' => $providerUser->getName(),
+                    ]);
+                }
+
+                $account->user()->associate($user);
+                $account->save();
+
+                return $user;
+
+            }
+
+        }
 
 }

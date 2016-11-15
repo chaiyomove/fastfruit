@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests;
 
+use App\Users;
+
 use Socialite;
 
 class SocialAuthController extends Controller
@@ -27,9 +29,15 @@ class SocialAuthController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback(Users $user)
     {
-        $user = Socialite::driver('facebook')->user(); 
+        return $user = Socialite::driver('facebook')->user();
+
+        $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
+
+        auth()->login($user);
+
+        return redirect()->to('/');
 
         // $user->token;
     }
