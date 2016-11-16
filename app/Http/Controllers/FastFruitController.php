@@ -104,16 +104,22 @@ class FastFruitController extends Controller
     }
 
     public function productDetail($id)
-    {
+    {   
+        //views counting
         $product = Product_sprints::findOrFail($id);
         $product->views = ($product->views)+1;
         $product->save();
+        $species= array();
+        $orchard = $product->orchardPlot->orchard;
+        foreach($orchard->orchardPlots as $plot){
+            $species[] = $plot->fruitSpecie->specieName;
+        }
+        // return $species;
 
-        
         $plot = $product->orchardPlot;
-        $historys = $plot->productSprints;
+        $pvsProducts = $plot->productSprints;
         $popProducts = Product_sprints::orderBy('views','desc')->take(5)->get();
-        return view('productdetail',compact('product','plot','historys','popProducts'));
+        return view('productdetail',compact('orchard', 'plot', 'product', 'pvsProducts', 'popProducts'));
     }
 
     public function getMatching()
@@ -548,11 +554,11 @@ class FastFruitController extends Controller
     public function profile($id)
     {
 
-        $user=Users::findOrFail($id);
+        $user = Users::findOrFail($id);
         $orchards = $user->orchards;
-        $bookmarks=$user->userBookmarks;
-        $followorchards=$user->orchardFollowing;
-        $followusers=$user->Followings;
+        $bookmarks = $user->userBookmarks;
+        $followorchards = $user->orchardFollowing;
+        $followusers = $user->Followings;
         return view('dashboard',compact('user','orchards','bookmarks','followorchards','followusers'));
     }
 

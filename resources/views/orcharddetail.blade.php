@@ -119,22 +119,37 @@
 													<button type="submit" class="single_add_to_cart_button map">
 														<i class="fa fa-globe">&nbsp;</i>แผนที่
 													</button> -->
+
 														<button type="button" class="single_add_to_cart_button button" id="follow">
 															<i class="fa fa-check">&nbsp;</i>กำลังติดตาม
 														</button>
-													<?php $i++; ?>
+														<?php $i++; ?>
 									                @endif
 									            @endforeach
-									                @if ($i==0) 
-													<button type="button" class="single_add_to_cart_button button follow" id="follow">
-														<i class="fa fa-plus">&nbsp;</i>ติดตาม
-													</button>
+
+									            @if ($orchard->user->first()->id == Auth::user()->id)
+													<a href="{{url('orchard/' . $orchard->idOrchard . '/edit')}}">
+														<button type="button" class="single_add_to_cart_button button editProfile">
+															<i class="fa fa-cog">&nbsp;</i>แก้ไขสวน
+														</button>
+													</a>
+													<a href="{{url('plot/' .$orchard->idOrchard. '/create')}}">
+														<button type="button" class="single_add_to_cart_button plot">
+														<i class="fa fa-eye">&nbsp;</i>เพิ่มผลผลิต
+														</button>
+													</a>
+												@else
+													@if ($i==0) 
+														<button type="button" class="single_add_to_cart_button button follow" id="follow">
+															<i class="fa fa-plus">&nbsp;</i>ติดตาม
+														</button>
 													@endif
+												@endif
+
+
+													
 											@endif
-											<a href="{{url('orchard/' . $orchard->idOrchard . '/edit')}}">
-											<button type="button" class="single_add_to_cart_button button editProfile">
-												<i class="fa fa-cog">&nbsp;</i>แก้ไข
-											</button></a>	 
+												 
 										</div>
 
 										<div class="clear"></div>
@@ -418,7 +433,7 @@
 										@foreach($popOrchards as $key => $popOrchard)
 										<ul class="product_list_widget">
 											<li>
-												<a href="{{'orchards/'.$popOrchard->idOrchard}}">
+												<a href="{{url('orchards/'.$popOrchard->idOrchard)}}">
 													<img style="width: 70px; height: 70px;" src="{{asset($popOrchard->picture1)}}" alt="" /> 
 													<span class="product-title">{{$popOrchard->nameOrchard}}</span>
 												</a>
