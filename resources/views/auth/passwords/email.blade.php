@@ -22,8 +22,15 @@
 
                                         @if (session('status'))
                                             <div class="alert alert-success">
-                                                {{ session('status') }}
+                                                {{-- {{ session('status') }} --}}
+                                                ทำการส่งอีเมลเรียบร้อยแล้ว
                                             </div>
+                                        @endif
+                                        
+                                        @if ($errors->has('email'))
+                                            <div class="alert alert-danger">
+                                                ไม่พบอีเมลแอดเดรสนี้ในระบบ
+                                            </div>                                            
                                         @endif
 
                                         <form class="login" role="form" method="POST" action="{{ url('/password/email') }}">
@@ -38,11 +45,11 @@
 
                                                 <input id="email" type="email" class="input-text" name="email" value="{{ old('email') }}" required>
 
-                                                @if ($errors->has('email'))
+                                                {{-- @if ($errors->has('email'))
                                                     <span class="help-block">
                                                         <strong>{{ $errors->first('email') }}</strong>
                                                     </span>
-                                                @endif
+                                                @endif --}}
                                                 
                                             </div>
                                             <div class="form-row">

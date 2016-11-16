@@ -90,7 +90,7 @@ $style = [
                                                 @if ($level == 'error')
                                                     Whoops!
                                                 @else
-                                                    Hello!
+                                                    สวัสดี!
                                                 @endif
                                             @endif
                                         </h1>
@@ -140,7 +140,7 @@ $style = [
 
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Regards,<br>{{ config('app.name') }}
+                                            ด้วยความเคารพ<br>{{ config('app.name') }}
                                         </p>
 
                                         <!-- Sub Copy -->

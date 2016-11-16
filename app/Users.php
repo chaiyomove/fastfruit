@@ -14,6 +14,8 @@ use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
 
 use Laravel\Socialite\Contracts\User as ProviderUser;
 
+use App\Notifications\ResetPassword as ResetPasswordNotification;
+
 class Users extends Authenticatable
 {
 	use Notifiable;
@@ -95,39 +97,52 @@ class Users extends Authenticatable
      * @return Users $user                  Eloquent
      */
     public function createOrGetUser(ProviderUser $providerUser)
-        {
-            $account = Social_users::whereProvider('facebook')
-                ->whereProviderUserId($providerUser->getId())
-                ->first();
+    {
+        $account = Social_users::whereProvider('facebook')
+            ->whereProviderUserId($providerUser->getId())
+            ->first();
 
-            if ($account) {
-                return $account->user;
-            } else {
-                $account = new Social_users([
-                    'provider_user_id' => $providerUser->getId(),
-                    'provider' => 'facebook'
+        if ($account) {
+            return $account->user;
+        } else {
+            $account = new Social_users([
+                'provider_user_id' => $providerUser->getId(),
+                'provider' => 'facebook'
+            ]);
+
+            $user = Users::whereEmail($providerUser->getEmail())->first();
+
+            if (!$user) {
+                $name = $providerUser->getName();
+
+                $user = Users::create([
+                    'email' => $providerUser->getEmail(),
+                    'firstName' => substr($name, 0, strpos($name, " ")),
+                    'lastName' => substr($name,strpos($name, " ")+1),
+                    'userPicture' => $providerUser->getAvatar(),
                 ]);
-
-                $user = Users::whereEmail($providerUser->getEmail())->first();
-
-                if (!$user) {
-                    $name = $providerUser->getName();
-
-                    $user = Users::create([
-                        'email' => $providerUser->getEmail(),
-                        'firstName' => substr($name, 0, strpos($name, " ")),
-                        'lastName' => substr($name,strpos($name, " ")+1),
-                        'userPicture' => $providerUser->getAvatar(),
-                    ]);
-                }
-
-                $account->user()->associate($user);
-                $account->save();
-
-                return $user;
-
             }
 
+            $account->user()->associate($user);
+            $account->save();
+
+            return $user;
+
         }
+
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
+    }
+
+
 
 }
