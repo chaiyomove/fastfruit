@@ -51,21 +51,21 @@ Route::get('profile/{id}', 'FastFruitController@profile');
  * login required pages
  */
 Route::group(['middleware' => 'auth'], function () {
-	//User
+	//Users
 	Route::get('user/{id}/edit', 'FastFruitController@editUser'); 	//edit page
 	Route::patch('user/{id}', 'FastFruitController@updateUser');	//update
 
-	//Orchard
+	//Orchards
 	Route::get('addorchard', 'FastFruitController@getAddOrchard');
 	Route::post('addorchard', 'FastFruitController@postAddOrchard');
 
-	//Plot
+	//Plots
 	Route::get('plot/{id}/create', 'FastFruitController@createPlot');
 	Route::post('plot', 'FastFruitController@storePlot');
 	Route::get('plot/{id}/edit', 'FastFruitController@editPlot');
 	Route::patch('plot/{id}', 'FastFruitController@updatePlot');
 
-	//Product
+	//Products
 	Route::get('product/{id}/create', 'FastFruitController@getUserAddProduct');
 	Route::post('product', 'FastFruitController@postUserAddProduct');
 	Route::get('product/{id}/edit', 'FastFruitController@editProduct');
