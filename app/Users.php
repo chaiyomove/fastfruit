@@ -117,7 +117,7 @@ class Users extends Authenticatable
                         'email' => $providerUser->getEmail(),
                         'firstName' => substr($name, 0, strpos($name, " ")),
                         'lastName' => substr($name,strpos($name, " ")+1),
-                        'picture' => $providerUser->getAvatar(),
+                        'userPicture' => $providerUser->getAvatar(),
                     ]);
                 }
 
