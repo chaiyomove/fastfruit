@@ -353,13 +353,14 @@ class FastFruitController extends Controller
     {
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
-
-        return view('addproduct', compact('fruits','fruitSpecies','id'));
+        $plot = Orchard_plots::findOrFail($id);
+        return view('addproduct', compact('fruits', 'fruitSpecies', 'id', 'plot'));
     }
 
-     public function postUserAddProduct(AddProductRequest $request)
+     public function storeProduct(AddProductRequest $request)
     {
         $input = Request::all();
+
         if (array_get($input,'pictures')!==NULL){       
             $pictures = array_values(array_get($input,'pictures'));
             for ($i=0 ; $i<count($pictures) ; $i++){
@@ -373,11 +374,44 @@ class FastFruitController extends Controller
         }
 
         // return dd($input);
-        Product_sprints::create($input);
-        // $sprint=new Product_sprints();
-        // $sprint->fruitSpecie=$input['fruitSpecie'];
+
+        $product = Product_sprints::create($input);
+        $plot = Orchard_plots::findOrFail(array_get($input, 'idOrchardPlot'));
+        $plot->productSprints()->save($product);
        
+        return redirect(url('product', [$product->idProductSprint]));
+    }
+
+    public function editProduct($id)
+    {
+        $product = Product_sprints::findOrFail($id);
+        $fruits = Fruits::all();
+        $fruitSpecies = Fruit_species::all();
+        return view('editProduct',compact('product','fruits','fruitSpecies'));
+    }
+
+    public function updateProduct($id)
+    {
+        $input = Request::all();
+
+        if (array_get($input,'pictures')!==NULL){
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+
+        // return dd($input);
+        $input['description'] = trim($input['description']);
+       
+        Product_sprints::find($id)->update($input);
         return redirect('product/'.$id);
+
     }
 
     public function userMatching()
@@ -592,40 +626,7 @@ class FastFruitController extends Controller
 
     }
 
-    public function editProduct($id)
-    {
-        $product = Product_sprints::findOrFail($id);
-        $fruits = Fruits::all();
-        $fruitSpecies = Fruit_species::all();
-        return view('editProduct',compact('product','fruits','fruitSpecies'));
-    }
-
-    public function updateProduct($id)
-    {
-         $input = Request::all();
-
-        if (array_get($input,'pictures')!==NULL){
-            $pictures = array_values(array_get($input,'pictures'));
-            for ($i=0 ; $i<count($pictures) ; $i++){
-                if ($pictures[$i]!=NUll){
-                    $picKeys = "picture".$i+1;
-                    $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
-                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
-                    $input["picture".($i+1)] = $picPath;   
-                }
-            }
-        }
-
-        // return dd($input);
-        // $input['description'] = trim($input['description']);
-       
-       Product_sprints::find($id)->update($input);
-        
-
-       
-        return redirect('product/'.$id);
-
-    }
+    
 
     
 }

@@ -66,8 +66,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::patch('plot/{id}', 'FastFruitController@updatePlot');
 
 	//Products
-	Route::get('product/{id}/create', 'FastFruitController@getUserAddProduct');
-	Route::post('product', 'FastFruitController@postUserAddProduct');
+	Route::get('product/{id}/create', 'FastFruitController@createProduct');
+	Route::post('product', 'FastFruitController@storeProduct');
 	Route::get('product/{id}/edit', 'FastFruitController@editProduct');
 	Route::patch('product/{id}', 'FastFruitController@updateProduct');
 

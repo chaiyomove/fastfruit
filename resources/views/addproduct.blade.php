@@ -19,32 +19,12 @@
 	                					<h2>เพิ่มผลผลิต</h2>
 	                					<form class="login" method="POST" enctype="multipart/form-data" action="{{url('/product')}}">
 		                					{{ csrf_field() }}
-											<input type="hidden" name="idProductSprint" value="{{$id}}">
+											<input type="hidden" name="idOrchardPlot" value="{{$id}}">
 	                						<div class="form-row form-row-wide">
 												<label for="username">
 													ผลผลิต :
-													<span class="required">*</span>
 													<div style="float: right; width: 70%">
-														<select name="idFruit" class="form-matching" style="width: 50%; float: left;">
-															<option  value="" selected >เลือกชนิดผลไม้</option>
-												 		@foreach ($fruits as $fruit)
-													 		@if ($fruit->idFruit == old('idFruit'))
-													 			<option value="{{$fruit->idFruit}}" selected>{{$fruit->fruitName}}</option>
-													 		@else
-													 			<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>
-													 		@endif
-													 						
-												 		@endforeach
-														</select>
-														<select name="idFruitSpecie" class="form-matching" style="width: 50%; float: left;">
-															<option value="" selected>เลือกสายพันธุ์</option>
-												 		@foreach ($fruitSpecies as $fruitSpecie)
-													 		@foreach ($fruitSpecies as $fruitSpecie)
-													 		@if ($fruitSpecie->idFruitSpecie == App\Orchard_plots::findOrFail($id)->idFruitSpecie))
-													 			<option value="{{$fruitSpecie->idFruitSpecie}}" selected>{{$fruitSpecie->specieName}}</option>
-													 		@endif
-												 		@endforeach		
-														</select>
+														{{$plot->fruitSpecie->specieName}}	
 													</div>
 												</label>
 											</div>
