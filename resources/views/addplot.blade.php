@@ -108,18 +108,6 @@
 											</div>
 											<div class="form-row form-row-wide">
 												<label for="username">
-													อัพโหลดรูป :
-													<span class="required">*</span>
-													<div style="float: right;">
-														<input name="pictures[]" id="exampleInputFile" type="file" />
-														<input name="pictures[]" id="exampleInputFile" type="file" />
-														<input name="pictures[]" id="exampleInputFile" type="file" />
-														<input name="pictures[]" id="exampleInputFile" type="file" />
-													</div>
-												</label>
-											</div>
-											<div class="form-row form-row-wide">
-												<label for="username">
 													ที่อยู่แปลง :
 													<span class="required">*</span>
 													<textarea name="address" class="input-text" style="resize: none; width: 70%; float: right;">{{$plot->address}}</textarea>
