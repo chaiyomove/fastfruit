@@ -3,7 +3,7 @@
 			<section class="noo-page-heading eff">
 				<div class="container">
 					<div class="noo-heading-content">
-						<h1 class="page-title eff">แก้ไขข้อมูลผลผลิต</h1>
+						<h1 class="page-title eff">แก้ไขรอบผลผลิต        </h1>
 					</div>
 				</div>
 			</section>
@@ -22,27 +22,8 @@
 	                						<div class="form-row form-row-wide">
 												<label for="username">
 													ผลผลิต :
-													<span class="required">*</span>
 													<div style="float: right; width: 70%">
-														<select name="idFruit" id="idFruit" class="form-matching" style="width: 50%; float: left;">
-															@foreach ($fruits as $fruit)
-													 		@if ($fruit->idFruit == $product->orchardPlot->fruitSpecie->fruit->idFruit)
-													 			<option value="{{$fruit->idFruit}}" selected>{{$fruit->fruitName}}</option>
-													 		@else
-													 			<option value="{{$fruit->idFruit}}">{{$fruit->fruitName}}</option>
-													 		@endif
-													 						
-												 		@endforeach
-														</select>
-														<select name="idFruitSpecie" class="form-matching" style="width: 50%; float: left;">
-															@foreach ($fruitSpecies as $fruitSpecie)
-													 		@if ($fruitSpecie->idFruitSpecie == $product->orchardPlot->idFruitSpecie)
-													 			<option value="{{$fruitSpecie->idFruitSpecie}}" selected>{{$fruitSpecie->specieName}}</option>
-													 		@else
-													 			<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>
-													 		@endif
-												 		@endforeach			
-														</select>
+														{{$product->orchardPlot->fruitSpecie->specieName}}	
 													</div>
 												</label>
 											</div>
