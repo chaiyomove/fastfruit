@@ -72,11 +72,12 @@
 								<div class="product">
 									<div class="commerce-tabs">
 										<ul class="nav nav-tabs tabs">
-									    	<!-- <li class="active">
-									    		<a data-toggle="tab" href="#tab-1">สถิติ</a>
-									    	</li> -->
+									    	
 									    	<li class="active">
-									    		<a data-toggle="tab" href="#tab-2">ติดตาม</a>
+									    		<a data-toggle="tab" href="#tab-1">ติดตามสวน</a>
+									    	</li>
+									    	<li>
+									    		<a data-toggle="tab" href="#tab-2">ติดตามคน</a>
 									    	</li>
 									    	<li>
 									    		<a data-toggle="tab" href="#tab-3">ติดดาว</a>
@@ -86,89 +87,8 @@
 									    	</li>
 									  	</ul>
 										<div class="tab-content">
-											<!-- <div class="tab-pane fade in active" id="tab-1">
-												<table class="" style="width:100%">
-													<tbody>
-														<tr>
-															<th style="width:37%;">
-																<p>อันดับ</p>
-															</th>
-															<th>
-																<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-																	<p class="">สวน</p>
-																</div>
-																<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-																	<p class="">ร้อยละ</p>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<td>
-																<iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
-																<canvas id="canvas1" height="140" width="140" style="margin: 15px 10px 10px 0px; width: 140px; height: 140px;"></canvas>
-															</td>
-															<td>
-																<table class="tile_info">
-																	<tbody>
-																		<tr>
-																			<td>
-																				<p><i class="fa fa-square blue"></i>สวนเบ็ญจวรรณ์ </p>
-																			</td>
-																			<td>30%</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<p><i class="fa fa-square green"></i>สวนกุลภัสร์ </p>
-																			</td>
-																			<td>10%</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<p><i class="fa fa-square purple"></i>สวนพุดทรัพย์ </p>
-																			</td>
-																			<td>20%</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<p><i class="fa fa-square aero"></i>สวนสิริจรรยา </p>
-																			</td>
-																			<td>15%</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<p><i class="fa fa-square red"></i>สวนรุจิระธราพันธุ์ </p>
-																			</td>
-																			<td>30%</td>
-																		</tr>
-																	</tbody>
-																</table>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div> -->
-											<div id="tab-2" class="tab-pane fade in active">
-												<div class="widget commerce widget_products">
-													<div class="masonry-filters">
-														<ul class="noo-header-filter" data-option-key="filter">
-															<li>
-																<a data-option-value="*" href="#all" class="selected">
-																	<span>ทั้งหมด</span>
-																</a>
-															</li>
-															<li>
-																<a data-option-value=".organic-fruits" href="#organic-fruits">
-																	<span>สวน</span>
-																</a>
-															</li>
-															<li>
-																<a data-option-value=".vegetable" href="#vegetable">
-																	<span>คน</span>
-																</a>
-															</li>
-														</ul>
-													</div>
-												</div>
+											<div id="tab-1" class="tab-pane fade in active">
+												
 												<div class="widget commerce widget_products">
 													<h3 class="widget-title"></h3>
 													<ul class="product_list_widget">
@@ -184,6 +104,12 @@
 														</li>
 													@endforeach
 													</ul>
+												</div>
+											</div>
+											<div id="tab-2" class="tab-pane fade">
+												
+												<div class="widget commerce widget_products">
+													<h3 class="widget-title"></h3>
 
 													<ul class="product_list_widget">
 													@foreach ($followusers as $key => $user)
