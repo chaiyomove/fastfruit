@@ -51,23 +51,26 @@ Route::get('profile/{id}', 'FastFruitController@profile');
  * login required pages
  */
 Route::group(['middleware' => 'auth'], function () {
-	//User
+	//Users
 	Route::get('user/{id}/edit', 'FastFruitController@editUser'); 	//edit page
 	Route::patch('user/{id}', 'FastFruitController@updateUser');	//update
 
-	//Orchard
+	//Orchards
 	Route::get('addorchard', 'FastFruitController@getAddOrchard');
 	Route::post('addorchard', 'FastFruitController@postAddOrchard');
 
-	//Plot
+	//Plots
 	Route::get('plot/{id}/create', 'FastFruitController@createPlot');
 	Route::post('plot', 'FastFruitController@storePlot');
 	Route::get('plot/{id}/edit', 'FastFruitController@editPlot');
 	Route::patch('plot/{id}', 'FastFruitController@updatePlot');
 
-	//Product
+	//Products
+	Route::get('product/{id}/create', 'FastFruitController@getUserAddProduct');
+	Route::post('product', 'FastFruitController@postUserAddProduct');
 	Route::get('product/{id}/edit', 'FastFruitController@editProduct');
 	Route::patch('product/{id}', 'FastFruitController@updateProduct');
+
 
 
 	Route::delete('matching', 'FastFruitController@deleteMatching');
@@ -85,8 +88,7 @@ Route::group(['middleware' => 'auth'], function () {
 	// Route::get('userproduct', 'FastFruitController@userProduct');
 	Route::get('userproduct/{id}', 'FastFruitController@userProductDetail');
 	Route::get('userproduct', 'FastFruitController@userProductDetail');
-	Route::get('product/{id}/create', 'FastFruitController@getUserAddProduct');
-	Route::post('product', 'FastFruitController@postUserAddProduct');
+	
 	Route::get('usermatching', 'FastFruitController@userMatching');
 	Route::get('useraddadmin', 'FastFruitController@userAddadmin');
 	Route::get('dashboard', 'FastFruitController@dashboard');

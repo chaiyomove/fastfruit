@@ -48,17 +48,20 @@
 									<?php $i++; ?>
 					                @endif
 					            @endforeach
-					                @if ($i==0) 
-									<button type="button" class="single_add_to_cart_button button follow" id="follow">
-										<i class="fa fa-plus">&nbsp;</i>ติดตาม
-									</button>
+					            @if ($user->id == Auth::user()->id)
+									<a href="{{url('user/' . Auth::user()->id . '/edit')}}">
+										<button type="button" class="single_add_to_cart_button button editProfile">
+											<i class="fa fa-cog">&nbsp;</i>แก้ไขโปรไฟล์
+										</button>
+									</a>
+								@else
+									@if ($i==0) 
+										<button type="button" class="single_add_to_cart_button button follow" id="follow">
+											<i class="fa fa-plus">&nbsp;</i>ติดตาม
+										</button>
 									@endif
+								@endif           
 							@endif
-							<a href="{{url('user/' . Auth::user()->id . '/edit')}}">
-							<button type="button" class="single_add_to_cart_button button editProfile">
-								<i class="fa fa-cog">&nbsp;</i>แก้ไขโปรไฟล์
-							</button>
-							</a>
 						</div>
 					</div>
 				</div>
@@ -96,7 +99,7 @@
 													
 														<li>
 
-															<a href="{{'orchards/'.$orchard->idOrchard}}">
+															<a href="{{url('orchards/'.$orchard->idOrchard)}}">
 																<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
 																<span class="product-title">{{$orchard->nameOrchard}}</span>
 															</a>
@@ -116,7 +119,7 @@
 													
 														<li>
 
-															<a href="">
+															<a href="{{url('profile/'.$user->id)}}">
 																<img style="width: 70px; height: 70px;" src="{{asset($user->userPicture)}}" alt="" /> 
 																<span class="product-title">{{$user->firstName}}&nbsp;{{$user->lastName}}</span>
 															</a>
@@ -127,7 +130,6 @@
 												</div>
 											</div>
 											<div id="tab-3" class="tab-pane fade">
-												
 												<div class="widget commerce widget_products">
 													<h3 class="widget-title"></h3>
 													<ul class="product_list_widget">
@@ -135,7 +137,7 @@
 													
 														<li>
 
-															<a href="{{'products/'.$product->idProductSprint}}">
+															<a href="{{url('product/'.$product->idProductSprint)}}">
 																<img style="width: 70px; height: 70px;" src="{{asset($product->picture1)}}" alt="" /> 
 																<span class="product-title">{{array_get($product->fruitSpeciess,'specieName')}}จาก {{$product->orchardPlot->orchard->nameOrchard}}</span>
 															</a>
@@ -153,7 +155,7 @@
 													
 														<li>
 
-															<a href="{{'orchards/'.$orchard->idOrchard}}">
+															<a href="{{url('orchards/'.$orchard->idOrchard)}}">
 																<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
 																<span class="product-title">{{$orchard->nameOrchard}}</span>
 															</a>

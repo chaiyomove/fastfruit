@@ -131,7 +131,29 @@
 													</tr>
 													<tr>
 														<td>ผลผลิตของสวน:</td>
-														<td></td>
+														<td>
+															<?php $speciesTmp = array(); 
+																  $strSpecies = "";
+															?>
+															@foreach ($orchard->orchardPlots as $plotKey => $orchardPlot)
+																@if (!array_has($speciesTmp, $orchardPlot->fruitSpecie->specieName))
+																	<?php $speciesTmp[] =  $orchardPlot->fruitSpecie->specieName; ?>
+																	@if($plotKey==0)
+																		<?php $strSpecies = $orchardPlot->fruitSpecie->specieName;
+																		?>
+																		
+																	@elseif(count($orchard->orchardPlot)===$plotKey+1)
+																		<?php $strSpecies .= $orchardPlot->fruitSpecie->specieName; ?>
+																		
+																	@else
+																		<?php $strSpecies .= ", ".$orchardPlot->fruitSpecie->specieName; ?>
+																		
+																	@endif	
+																@endif
+																
+															@endforeach
+															{!! str_limit($strSpecies, $limit = 100)!!}
+														</td>
 													</tr>
 													
 
@@ -139,27 +161,33 @@
 											</div>
 
 											<div>
-												<a href="{{url('orchards',[$product->orchardPlot->orchard->idOrchard])}}">
-												<button type="button" class="single_add_to_cart_button button">
-													<i class="fa fa-eye">&nbsp;</i>ชมสวน
-												</button>
+												<a href="{{url('orchards',[$orchard->idOrchard])}}">
+													<button type="button" class="single_add_to_cart_button button">
+														<i class="fa fa-eye">&nbsp;</i>ชมสวน
+													</button>
 												</a>
-												
-
-												{{-- <a href="#" class="fa fa-star" id="bookmark"></a> --}}
-
-													<a href="{{url('product/' .$plot->idOrchardPlot. '/create')}}">
-														<button type="button" class="single_add_to_cart_button plot">
-														<i class="fa fa-eye">&nbsp;</i>เพิ่มผลผลิต
+											</div>	
+											<div>
+									            @if ($plot->orchard->user->first()->id == Auth::user()->id)
+									            	<a href="{{url('product/' . $product->idProductSprint . '/edit')}}">
+									            		<button type="button" class="single_add_to_cart_button button editProfile" style="margin-top: 5px">
+									            			<i class="fa fa-cog">&nbsp;</i>แก้ไขแปลง
+									            		</button>
+									            	</a>
+									            	<a href="{{url('product/' .$plot->idOrchardPlot. '/create')}}">
+									            		<button type="button" class="single_add_to_cart_button plot">
+									            		<i class="fa fa-eye">&nbsp;</i>เพิ่มผลผลิต
+									            		</button>
+									            	</a>
+													<a href="{{url('product/' . $product->idProductSprint . '/edit')}}">
+														<button type="button" class="single_add_to_cart_button button editProfile" style="margin-top: 5px">
+															<i class="fa fa-cog">&nbsp;</i>แก้ไขผลผลิด
 														</button>
 													</a>
-													<a href="{{url('product/' . $product->idProductSprint . '/edit')}}">
-													<button type="button" class="single_add_to_cart_button button editProfile" style="margin-top: 5px">
-														<i class="fa fa-cog">&nbsp;</i>แก้ไข
-													</button></a>
-
+												@endif
 											</div>
-
+												
+												
 											<div class="clear"></div>
 											
 										</div> 
@@ -184,14 +212,14 @@
 												<div class="widget commerce widget_products">
 													<h3 class="widget-title"></h3>
 													<ul class="product_list_widget">
-													@foreach ($historys as $key => $history)
+													@foreach ($pvsProducts as $key => $pvsProduct)
 														<li>
 															<div class="box-item">
-																<a href="{{url('product', [$history->idProductSprint])}}">
-																	<img style="width: 70px; height: 70px;" src="{{asset($history->picture1)}}" alt="" /> 
-																	<span class="product-title">{{$history->orchardPlot->fruitSpecie->specieName}}</span>
+																<a href="{{url('product', [$pvsProduct->idProductSprint])}}">
+																	<img style="width: 70px; height: 70px;" src="{{asset($pvsProduct->picture1)}}" alt="" /> 
+																	<span class="product-title">{{$pvsProduct->orchardPlot->fruitSpecie->specieName}}</span>
 																</a>
-																<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74); float: right;">&nbsp;{{$history->orchardPlot->province->provinceName}}</span>
+																<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74); float: right;">&nbsp;{{$pvsProduct->orchardPlot->province->provinceName}}</span>
 
 																<p>วันที่ผลิต {{$product->startDate}} ถึง {{$product->endDate}}</p>
 																<p>จำนวน {{$product->fruitNum}}&nbsp;กิโลกรัม</p>

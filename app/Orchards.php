@@ -40,6 +40,11 @@ class Orchards extends Model
         return $this->belongsToMany('App\Users', 'admins', 'idOrchard', 'idUser');
     }
 
+    public function user()
+    {
+        return $this->belongsToMany('App\Users', 'admins', 'idOrchard', 'idUser');
+    }
+
     public function orchardFollowers()
     {
         return $this->belongsToMany('App\Users', 'follow_orchard','idOrchard','idUser');
