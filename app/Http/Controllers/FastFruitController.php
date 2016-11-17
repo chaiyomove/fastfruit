@@ -76,25 +76,18 @@ class FastFruitController extends Controller
     public function storePlot(AddPlotRequest $request)
     {
         $input = Request::all();
-        if (array_get($input,'pictures')!==NULL){
-            $pictures = array_values(array_get($input,'pictures'));
-            for ($i=0 ; $i<count($pictures) ; $i++){
-                if ($pictures[$i]!=NUll){
-                    $picKeys = "picture".$i+1;
-                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchard_plots'));
-                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
-                    $input["picture".($i+1)] = $picPath;   
-                }
-            }
-        }
-        return $input;
+        
+        // return $input;
+
         $plot = Orchard_plots::create($input);
+        $orchard = Orchards::findOrFail(array_get($input, 'idOrchard'));        
+        $orchard->orchardPlots()->save($plot);
+
         return redirect(url('orchards', [$plot->orchard->idOrchard]));
     }
 
     public function products()
     {
-
 
         $products=Product_sprints::orderBy('idProductSprint','desc')->paginate(9);
         // $product=$products[2];
