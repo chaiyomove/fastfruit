@@ -15,7 +15,7 @@
 								<div class="col-md-3"></div>
 								<div id="addOrchard">
 	                				<div class="col-md-6">
-	                					<h2>แก้ไขข้อมูลผลผลิต</h2>
+	                					<h2>แก้ไขรอบผลผลิต</h2>
 	                					<form class="login" method="POST" enctype="multipart/form-data" action="{{url('product',[$product->idProductSprint])}}">
 	                						<input type="hidden" name="_method" value="PATCH">
 											{{ csrf_field() }}
