@@ -65,13 +65,12 @@ class FastFruitController extends Controller
     
     public function createPlot($id)
     {   
-        $plot =Orchard_plots::findOrFail($id);
-        $plotstatus=plot_status::all();
+        $plotstatus = plot_status::all();
         $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
         $orchard = Orchards::findOrFail($id);
-        return view('addplot', compact('provinces', 'fruits', 'fruitSpecies', 'id', 'orchard','plot','plotstatus'));
+        return view('addplot', compact('provinces', 'fruits', 'fruitSpecies', 'id', 'orchard', 'plotstatus'));
     }    
 
     public function storePlot(AddPlotRequest $request)
@@ -88,7 +87,7 @@ class FastFruitController extends Controller
                 }
             }
         }
-        // return $input;
+        return $input;
         $plot = Orchard_plots::create($input);
         return redirect(url('orchards', [$plot->orchard->idOrchard]));
     }

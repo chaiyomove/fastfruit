@@ -168,23 +168,26 @@
 												</a>
 											</div>	
 											<div>
-									            @if ($plot->orchard->user->first()->id == Auth::user()->id)
-									            	<a href="{{url('product/' . $product->idProductSprint . '/edit')}}">
-									            		<button type="button" class="single_add_to_cart_button button editProfile" style="margin-top: 5px">
-									            			<i class="fa fa-cog">&nbsp;</i>แก้ไขแปลง
-									            		</button>
-									            	</a>
-									            	<a href="{{url('product/' .$plot->idOrchardPlot. '/create')}}">
-									            		<button type="button" class="single_add_to_cart_button plot">
-									            		<i class="fa fa-eye">&nbsp;</i>เพิ่มผลผลิต
-									            		</button>
-									            	</a>
-													<a href="{{url('product/' . $product->idProductSprint . '/edit')}}">
-														<button type="button" class="single_add_to_cart_button button editProfile" style="margin-top: 5px">
-															<i class="fa fa-cog">&nbsp;</i>แก้ไขผลผลิด
-														</button>
-													</a>
+												@if (Auth::check())
+													 @if ($plot->orchard->user->first()->id == Auth::user()->id)
+										            	<a href="{{url('plot/' . $plot->idOrchardPlot . '/edit')}}">
+										            		<button type="button" class="single_add_to_cart_button button editProfile" style="margin-top: 5px">
+										            			<i class="fa fa-cog">&nbsp;</i>แก้ไขแปลง
+										            		</button>
+										            	</a>
+										            	<a href="{{url('product/' .$plot->idOrchardPlot. '/create')}}">
+										            		<button type="button" class="single_add_to_cart_button plot">
+										            		<i class="fa fa-eye">&nbsp;</i>เพิ่มผลผลิต
+										            		</button>
+										            	</a>
+														<a href="{{url('product/' . $product->idProductSprint . '/edit')}}">
+															<button type="button" class="single_add_to_cart_button button editProfile" style="margin-top: 5px">
+																<i class="fa fa-cog">&nbsp;</i>แก้ไขผลผลิด
+															</button>
+														</a>
+													@endif
 												@endif
+								           
 											</div>
 												
 												

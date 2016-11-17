@@ -106,20 +106,10 @@
 											</div>
 											
 											<div>
-											@if (Auth::user())
+											@if (Auth::check())
 												<?php $i = 0?>
 												@foreach (Auth::user()->orchardFollowing as $key => $followedOrchard)
 													@if ($followedOrchard->idOrchard == $orchard->idOrchard && $i==0)
-													<!-- <button type="submit" class="single_add_to_cart_button button">
-														<i class="fa fa-eye">&nbsp;</i>ดูผลผลิต
-													</button>
-													<button type="submit" class="single_add_to_cart_button plot">
-														<i class="fa fa-eye">&nbsp;</i>ดูแปลง
-													</button>
-													<button type="submit" class="single_add_to_cart_button map">
-														<i class="fa fa-globe">&nbsp;</i>แผนที่
-													</button> -->
-
 														<button type="button" class="single_add_to_cart_button button" id="follow">
 															<i class="fa fa-check">&nbsp;</i>กำลังติดตาม
 														</button>
@@ -135,7 +125,7 @@
 													</a>
 													<a href="{{url('plot/' .$orchard->idOrchard. '/create')}}">
 														<button type="button" class="single_add_to_cart_button plot">
-														<i class="fa fa-eye">&nbsp;</i>เพิ่มผลผลิต
+														<i class="fa fa-eye">&nbsp;</i>เพิ่มแปลง
 														</button>
 													</a>
 												@else

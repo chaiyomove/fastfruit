@@ -22,14 +22,13 @@
 
                                         @if (session('status'))
                                             <div class="alert alert-success">
-                                                {{-- {{ session('status') }} --}}
-                                                ทำการส่งอีเมลเรียบร้อยแล้ว
+                                                {{ session('status') }}
                                             </div>
                                         @endif
                                         
                                         @if ($errors->has('email'))
                                             <div class="alert alert-danger">
-                                                ไม่พบอีเมลแอดเดรสนี้ในระบบ
+                                                {{$errors->first('email')}}                                                
                                             </div>                                            
                                         @endif
 
