@@ -54,9 +54,7 @@ class FastFruitController extends Controller
         $products = array();
         
         foreach (Orchards::findOrFail($id)->orchardPlots as $key => $plot) {
-            foreach ($plot->productSprints as $key => $product) {
-                $products[] = $product;
-            }    
+            $products[] = $plot->productSprints->last();
         }
 
 
@@ -225,7 +223,7 @@ class FastFruitController extends Controller
         // return $species;
 
         $plot = $product->orchardPlot;
-        $pvsProducts = $plot->productSprints;
+        $pvsProducts = $plot->productSprints->reverse();
         $popProducts = Product_sprints::orderBy('views','desc')->take(5)->get();
         return view('productdetail',compact('orchard', 'plot', 'product', 'pvsProducts', 'popProducts'));
     }
