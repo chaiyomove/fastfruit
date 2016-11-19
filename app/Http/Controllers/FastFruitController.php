@@ -109,7 +109,7 @@ class FastFruitController extends Controller
         return view('EditOrchard',compact('orchard','provinces'));
     }
 
-    public function updateOrchard($id)
+    public function updateOrchard(UpdateOrchardRequest $request,$id)
     {
         $input = Request::all();
 
@@ -181,7 +181,7 @@ class FastFruitController extends Controller
         return view('editPlot',compact('plot','provinces','fruits','fruitSpecies','plotstatus'));
     }
 
-    public function updatePlot($id)
+    public function updatePlot(UpdatePlotRequest $request,$id)
     {
          $input = Request::all();
 
@@ -274,7 +274,7 @@ class FastFruitController extends Controller
         return view('editProduct',compact('product','fruits','fruitSpecies'));
     }
 
-    public function updateProduct($id)
+    public function updateProduct(UpdateProductRequest $request,$id)
     {
         $input = Request::all();
 
@@ -433,7 +433,7 @@ class FastFruitController extends Controller
         return view('editProfile', compact('user', 'provinces'));
     }
 
-    public function updateUser($id)
+    public function updateUser(UpdateUserRequest $request,$id)
     {
         $input = Request::all();
         if (array_get($input,'picture')!==NULL){

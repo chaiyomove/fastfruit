@@ -23,7 +23,7 @@
 												<label for="username">
 													ชื่อสวน :
 													<span class="required">*</span>
-													<input type="text" class="input-text" name="nameOrchard" id="username" value="{{$orchard->nameOrchard}}" style="width: 70%; float: right;" />
+													<input type="text" class="input-text" name="nameOrchard"  value="{{$orchard->nameOrchard}}" style="width: 70%; float: right;" />
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
@@ -38,7 +38,7 @@
 												<label for="username">
 													พื้นที่สวน :
 													<span class="required">*</span>
-													<input type="text" class="input-text" name="area" id="username" placeholder="หน่วยเป็นไร่" value="{{$orchard->area}}" style="width: 70%; float: right;" />
+													<input type="text" class="input-text" name="area"  placeholder="หน่วยเป็นไร่" value="{{$orchard->area}}" style="width: 70%; float: right;" />
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
@@ -57,7 +57,7 @@
 												<label for="username">
 													โทรศัพท์ :
 													<span class="required">*</span>
-													<input type="text" class="input-text" name="phone" id="username" placeholder="กรอกหมายเลขโทรศัพท์" value="{{$orchard->phone}}" style="width: 70%; float: right;" />
+													<input type="text" class="input-text" name="phone"  placeholder="กรอกหมายเลขโทรศัพท์" value="{{$orchard->phone}}" style="width: 70%; float: right;" />
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
