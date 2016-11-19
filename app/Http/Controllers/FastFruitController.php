@@ -447,7 +447,7 @@ class FastFruitController extends Controller
         // return $input;
         $input['address'] = trim($input['address']);
         Users::find($id)->update($input);
-        return redirect('profile',[$id]);
+        return redirect(url('profile',[$id]));
 
     }
 
