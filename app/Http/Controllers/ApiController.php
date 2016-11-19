@@ -22,7 +22,13 @@ use App\Orchards;
 
 use App\Product_sprints;
 
-use Illuminate\Support\Facades\Auth;
+use App\Matchings;
+
+use Auth;
+
+// use Illuminate\Support\Facades\Auth;
+
+use App\Http\Requests\MatchOrchardRequest;
 
 
 
@@ -100,4 +106,5 @@ class ApiController extends Controller
         
         return;
     }
+    
 }

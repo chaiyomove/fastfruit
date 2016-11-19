@@ -33,16 +33,23 @@ Route::get('home', 'HomeController@index');
 
 Route::get('orchards', 'FastFruitController@orchards');
 Route::get('orchards/{id}', 'FastFruitController@orchardDetail');
+
+Route::get('plots/{id}', 'FastFruitController@plots');
+Route::get('plot/{id}', 'FastFruitController@plotsDetail');
+
 Route::get('products', 'FastFruitController@products');
 Route::get('products/{id}', 'FastFruitController@orchardProducts');
 Route::get('product/{id}', 'FastFruitController@productDetail');
+
 Route::get('matching', 'FastFruitController@getMatching')->name('matching.show');
-Route::post('matching', 'FastFruitController@postMatching');
+// Route::post('matching', 'FastFruitController@storeMatching');
+// Route::post('matching', 'FastFruitController@postMatching');
+// 
 Route::get('contactus', 'FastFruitController@getContactUs');
 Route::post('contactus', 'FastFruitController@postContactUs');
+
 Route::get('search', 'FastFruitController@search');
-Route::get('plots/{id}', 'FastFruitController@plots');
-Route::get('plot/{id}', 'FastFruitController@plotsDetail');
+
 Route::get('profile/{id}', 'FastFruitController@profile');
 
 

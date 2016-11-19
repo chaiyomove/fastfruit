@@ -14,6 +14,8 @@
 
 <script>
 	$(document).ready(function(){
+
+		//fruitspecies dropdown
 		$('#idFruit').on('change', function(e){
 	    	var idFruit = e.target.value;
 
@@ -33,16 +35,33 @@
 	            	} else {
 		            	$('#idFruitSpecie').append('<option value="' + fruitSpecie.idFruitSpecie + '">' +  fruitSpecie.specieName + '</option>');            		
 	            	}
+	           	});
+	       	});
+	   	});
 
+		$('#matching_form').on('submit', function(e){
+			e.preventDefault();
+			var formData = $('#matching_form').serializeArray();
+			console.log(formData);
+	   //  	var formData = {
+	   //          '_token'           	: $('input[name=_token]').val(),
+				// "idFruit"			: $('input[name=idFruit]').val(),
+				// "idFruitSpecie"		: $('input[name=idFruitSpecie]').val(),
+				// "idProvince"		: $('input[name=idProvince]').val(),
+				// "startDate"			: $('input[name=startDate]').val(),
+				// "endDate"			: $('input[name=endDate]').val(),
+				// "fruitNum"			: $('input[name=fruitNum]').val(),
+				// "idPlotStatus"		: $('input[name=idPlotStatus]').val(),
+				// "unit"				: $('input[name=unit]').val(),
+    //     	};
 
-	           });
+	        //ajax
+	        $.post('{{url('api/matching',[Auth::user()->id])}}', formData)
+	        	.done(function(data){
+	        		// echo data;
+	        	});
+	   	});
 
-
-
-	       });
-
-
-	   });
 	});
 </script>
 
@@ -61,7 +80,7 @@
 								<div id="matching">
 	                				<div class="col-md-8">
 	                					<h2>เลือกจับคู่</h2>
-	                					<form class="login" method="post" action="{{url('/matching')}}">
+	                					<form id="matching_form" class="login" method="post" action="{{url('api/matching',[Auth::user()->id])}}">
 	                						{{ csrf_field() }}
 	                						<div class="col-md-4">
 		                						<div class="form-row form-row-wide">
@@ -159,7 +178,7 @@
 													</select>
 												</div>
 												<div class="form-row">
-													<button type="submit" class="button" style="float: right;">
+													<button type="submit" class="button" id="addMatching" style="float: right;">
 														เพิ่ม
 													</button>
 												</div>
