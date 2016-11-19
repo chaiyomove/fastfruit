@@ -154,15 +154,17 @@
 												<div class="widget commerce widget_products">
 													<h3 class="widget-title"></h3>
 													<ul class="product_list_widget">
-													@foreach ($products as $key => $product)
-														<li>
-															<a href="{{url('product', [$product->idProductSprint])}}">
-																<img style="width: 70px; height: 70px;" src="{{asset($product->picture1)}}" alt="" /> 
-																<span class="product-title">{{$product->orchardPlot->fruitSpecie->specieName}}</span>
-															</a>
-															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$product->orchardPlot->province->provinceName}}</span>
-														</li>
-													@endforeach
+													@if ($products->first()!=NULL)
+														@foreach ($products as $key => $product)
+															<li>
+																<a href="{{url('product', [$product->idProductSprint])}}">
+																	<img style="width: 70px; height: 70px;" src="{{asset($product->picture1)}}" alt="" /> 
+																	<span class="product-title">{{$product->orchardPlot->fruitSpecie->specieName}}</span>
+																</a>
+																<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$product->orchardPlot->province->provinceName}}</span>
+															</li>
+														@endforeach
+													@endif
 													</ul>
 												</div>
 											</div>
@@ -188,22 +190,6 @@
 											<div class="tab-pane fade in active" id="tab-1">
 												<p>{{$orchard->description}}</p>
 											</div>
-											<!-- <div id="tab-2" class="tab-pane fade">
-												<div class="widget commerce widget_products">
-													<h3 class="widget-title"></h3>
-													<ul class="product_list_widget">
-													@foreach ($products as $key => $product)
-														<li>
-															<a href="{{url('product', [$product->idProductSprint])}}">
-																<img style="width: 70px; height: 70px;" src="{{asset($product->picture1)}}" alt="" /> 
-																<span class="product-title">{{$product->orchardPlot->fruitSpecie->specieName}}</span>
-															</a>
-															<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$product->orchardPlot->province->provinceName}}</span>
-														</li>
-													@endforeach
-													</ul>
-												</div>
-											</div> -->
 											<div id="tab-4" class="tab-pane fade" style = "display:none;">
 											</div>
 											<div id="tab-5" class="tab-pane fade">
