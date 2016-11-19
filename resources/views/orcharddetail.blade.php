@@ -135,9 +135,6 @@
 														</button>
 													@endif
 												@endif
-
-
-													
 											@endif
 												 
 										</div>

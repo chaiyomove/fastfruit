@@ -62,7 +62,88 @@ class FastFruitController extends Controller
 
         return view('orcharddetail',compact('orchard','products','popOrchards'));
     }
+
+    public function getAddOrchard()
+    {
+        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
+        return view('AddOrchard', compact('provinces'));
+    }
+
+    public function postAddOrchard(AddOrchardRequest $request)
+    {
+        $input = Request::all();
+
+        if (array_get($input,'pictures')!==NULL){
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchards'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+
+        // return dd($input);
+
+        $orchard = Orchards::create($input);
+        $user = Auth::user();
+
+        $user->orchards()->save($orchard);
+
+        // $admin = new Admins();
+        // $admin->idUser = Auth::user()->id;
+        // $admin->idOrchard = Orchards::latest()->first()->idOrchard;
+        // $admin->save();
+        return redirect('orchards/'.$orchard->idOrchard);
+    }
+
+    public function editOrchard($id)
+    {
+        $orchard= Orchards::findOrFail($id);
+        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
+        return view('EditOrchard',compact('orchard','provinces'));
+    }
+
+    public function updateOrchard($id)
+    {
+        $input = Request::all();
+
+        if (array_get($input,'pictures')!==NULL){
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchards'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+
+       
+        $input['description'] = trim($input['description']);
+        // return dd($input);
+        Orchards::find($id)->update($input);
+        
+
+       
+        return redirect('orchards/'.$id);
+    }
     
+    public function plots($id)
+    {
+        $plots=Orchards::findOrFail($id)->orchardPlots;
+        return view('plot',compact('plots'));
+    }
+
+    public function plotsDetail($id)
+    {
+        $plot=Orchard_plots::findOrFail($id);
+        return view('plotDetail',compact('plot'));
+    }    
+
     public function createPlot($id)
     {   
         $plotstatus = plot_status::all();
@@ -84,6 +165,41 @@ class FastFruitController extends Controller
         $orchard->orchardPlots()->save($plot);
 
         return redirect(url('orchards', [$plot->orchard->idOrchard]));
+    }
+
+    public function editPlot($id)
+    {
+        $plot=Orchard_plots::findOrFail($id);
+        $fruits = Fruits::all();
+        $fruitSpecies = Fruit_species::all();
+        
+        $plotstatus=plot_status::all();
+        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
+        return view('editPlot',compact('plot','provinces','fruits','fruitSpecies','plotstatus'));
+    }
+
+    public function updatePlot($id)
+    {
+         $input = Request::all();
+
+        if (array_get($input,'pictures')!==NULL){
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchard_plots'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+
+        // return dd($input);
+        // $input['description'] = trim($input['description']);
+       
+        Orchard_plots::find($id)->update($input);
+        
+        return redirect('plot/'.$id);
     }
 
     public function products()
@@ -112,6 +228,71 @@ class FastFruitController extends Controller
         $pvsProducts = $plot->productSprints;
         $popProducts = Product_sprints::orderBy('views','desc')->take(5)->get();
         return view('productdetail',compact('orchard', 'plot', 'product', 'pvsProducts', 'popProducts'));
+    }
+
+    public function createProduct($id)
+    {
+        $fruits = Fruits::all();
+        $fruitSpecies = Fruit_species::all();
+        $plot = Orchard_plots::findOrFail($id);
+        return view('addproduct', compact('fruits', 'fruitSpecies', 'id', 'plot'));
+    }
+
+     public function storeProduct(AddProductRequest $request)
+    {
+        $input = Request::all();
+
+        if (array_get($input,'pictures')!==NULL){       
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+
+        // return dd($input);
+
+        $product = Product_sprints::create($input);
+        $plot = Orchard_plots::findOrFail(array_get($input, 'idOrchardPlot'));
+        $plot->productSprints()->save($product);
+       
+        return redirect(url('product', [$product->idProductSprint]));
+    }
+
+    public function editProduct($id)
+    {
+        $product = Product_sprints::findOrFail($id);
+        $fruits = Fruits::all();
+        $fruitSpecies = Fruit_species::all();
+        return view('editProduct',compact('product','fruits','fruitSpecies'));
+    }
+
+    public function updateProduct($id)
+    {
+        $input = Request::all();
+
+        if (array_get($input,'pictures')!==NULL){
+            $pictures = array_values(array_get($input,'pictures'));
+            for ($i=0 ; $i<count($pictures) ; $i++){
+                if ($pictures[$i]!=NUll){
+                    $picKeys = "picture".$i+1;
+                    $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
+                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
+                    $input["picture".($i+1)] = $picPath;   
+                }
+            }
+        }
+
+        // return dd($input);
+        $input['description'] = trim($input['description']);
+       
+        Product_sprints::find($id)->update($input);
+        return redirect('product/'.$id);
+
     }
 
     public function getMatching()
@@ -233,80 +414,14 @@ class FastFruitController extends Controller
     //     return view('FristLogin');
     // }
 
-    public function getAddOrchard()
-    {
-        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
-        return view('AddOrchard', compact('provinces'));
-    }
-
-    public function postAddOrchard(AddOrchardRequest $request)
-    {
-        $input = Request::all();
-
-        if (array_get($input,'pictures')!==NULL){
-            $pictures = array_values(array_get($input,'pictures'));
-            for ($i=0 ; $i<count($pictures) ; $i++){
-                if ($pictures[$i]!=NUll){
-                    $picKeys = "picture".$i+1;
-                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchards'));
-                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
-                    $input["picture".($i+1)] = $picPath;   
-                }
-            }
-        }
-
-        // return dd($input);
-
-        $orchard = Orchards::create($input);
-        $user = Auth::user();
-
-        $user->orchards()->save($orchard);
-
-        // $admin = new Admins();
-        // $admin->idUser = Auth::user()->id;
-        // $admin->idOrchard = Orchards::latest()->first()->idOrchard;
-        // $admin->save();
-        return redirect('orchards/'.$orchard->idOrchard);
-    }
+    
 
     public function checkGap()
     {
         return view('checkgap');
     }
 
-    public function editOrchard($id)
-    {
-        $orchard= Orchards::findOrFail($id);
-        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
-        return view('EditOrchard',compact('orchard','provinces'));
-    }
-
-    public function updateOrchard($id)
-    {
-        $input = Request::all();
-
-        if (array_get($input,'pictures')!==NULL){
-            $pictures = array_values(array_get($input,'pictures'));
-            for ($i=0 ; $i<count($pictures) ; $i++){
-                if ($pictures[$i]!=NUll){
-                    $picKeys = "picture".$i+1;
-                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchards'));
-                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
-                    $input["picture".($i+1)] = $picPath;   
-                }
-            }
-        }
-
-       
-        $input['description'] = trim($input['description']);
-        // return dd($input);
-        Orchards::find($id)->update($input);
-        
-
-       
-        return redirect('orchards/'.$id);
-       
-    }
+    
 
     public function editUser($id)
     {
@@ -349,70 +464,7 @@ class FastFruitController extends Controller
         return view('AfterLogin');
     }
 
-    public function createProduct($id)
-    {
-        $fruits = Fruits::all();
-        $fruitSpecies = Fruit_species::all();
-        $plot = Orchard_plots::findOrFail($id);
-        return view('addproduct', compact('fruits', 'fruitSpecies', 'id', 'plot'));
-    }
-
-     public function storeProduct(AddProductRequest $request)
-    {
-        $input = Request::all();
-
-        if (array_get($input,'pictures')!==NULL){       
-            $pictures = array_values(array_get($input,'pictures'));
-            for ($i=0 ; $i<count($pictures) ; $i++){
-                if ($pictures[$i]!=NUll){
-                    $picKeys = "picture".$i+1;
-                    $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
-                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
-                    $input["picture".($i+1)] = $picPath;   
-                }
-            }
-        }
-
-        // return dd($input);
-
-        $product = Product_sprints::create($input);
-        $plot = Orchard_plots::findOrFail(array_get($input, 'idOrchardPlot'));
-        $plot->productSprints()->save($product);
-       
-        return redirect(url('product', [$product->idProductSprint]));
-    }
-
-    public function editProduct($id)
-    {
-        $product = Product_sprints::findOrFail($id);
-        $fruits = Fruits::all();
-        $fruitSpecies = Fruit_species::all();
-        return view('editProduct',compact('product','fruits','fruitSpecies'));
-    }
-
-    public function updateProduct($id)
-    {
-        $input = Request::all();
-
-        if (array_get($input,'pictures')!==NULL){
-            $pictures = array_values(array_get($input,'pictures'));
-            for ($i=0 ; $i<count($pictures) ; $i++){
-                if ($pictures[$i]!=NUll){
-                    $picKeys = "picture".$i+1;
-                    $picPath = $pictures[$i]->move(base_path('public_html\images\fruits'));
-                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
-                    $input["picture".($i+1)] = $picPath;   
-                }
-            }
-        }
-
-        // return dd($input);
-        $input['description'] = trim($input['description']);
-       
-        Product_sprints::find($id)->update($input);
-        return redirect('product/'.$id);
-
-    }
+    
 
     public function userMatching()
     {
@@ -549,17 +601,7 @@ class FastFruitController extends Controller
         return view('map');
     }
 
-     public function plots($id)
-    {
-        $plots=Orchards::findOrFail($id)->orchardPlots;
-        return view('plot',compact('plots'));
-    }
-
-    public function plotsDetail($id)
-    {
-        $plot=Orchard_plots::findOrFail($id);
-        return view('plotDetail',compact('plot'));
-    }
+    
 
     public function followorchards()
     {
@@ -587,47 +629,6 @@ class FastFruitController extends Controller
         $followusers = $user->Followings;
         return view('dashboard',compact('user','orchards','bookmarks','followorchards','followusers'));
     }
-
-    public function editPlot($id)
-    {
-        $plot=Orchard_plots::findOrFail($id);
-        $fruits = Fruits::all();
-        $fruitSpecies = Fruit_species::all();
-        
-        $plotstatus=plot_status::all();
-        $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
-        return view('editPlot',compact('plot','provinces','fruits','fruitSpecies','plotstatus'));
-    }
-
-    public function updatePlot($id)
-    {
-         $input = Request::all();
-
-        if (array_get($input,'pictures')!==NULL){
-            $pictures = array_values(array_get($input,'pictures'));
-            for ($i=0 ; $i<count($pictures) ; $i++){
-                if ($pictures[$i]!=NUll){
-                    $picKeys = "picture".$i+1;
-                    $picPath = $pictures[$i]->move(base_path('public_html\images\orchard_plots'));
-                    $picPath = substr($picPath,strpos($picPath, "\public_html\\")+13);
-                    $input["picture".($i+1)] = $picPath;   
-                }
-            }
-        }
-
-        // return dd($input);
-        // $input['description'] = trim($input['description']);
-       
-       Orchard_plots::find($id)->update($input);
-        
-
-       
-        return redirect('plot/'.$id);
-
-    }
-
-    
-
     
 }
 
