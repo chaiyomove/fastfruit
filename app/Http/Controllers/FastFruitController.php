@@ -447,7 +447,7 @@ class FastFruitController extends Controller
         // return $input;
         $input['address'] = trim($input['address']);
         Users::find($id)->update($input);
-        return redirect('dashboard');
+        return redirect('profile',[$id]);
 
     }
 
@@ -635,29 +635,23 @@ class FastFruitController extends Controller
     
     public function storeMatching(MatchOrchardRequest $request)
     {
-        return $input = $request->all();
-
-        if (Auth::user()) {
-            echo "NOT NULL";
-        }else{
-            echo "NULL";
-        }
+        $input = $request->all();
 
         //converse to kg.
         if ( $input['unit']==2){
             $input['fruitNum']= $input['fruitNum']*1000;
-        }
+        }        
 
         if (Auth::check()){
             $input['idUser'] = Auth::user()->id;
-            return dd($input);
+            // return dd($input);
             Matchings::create($input);
         } else {
             $input['idUser'] = 0;
         }       
         
         // dd($input);
-        return redirect('matching');
+        // return redirect('matching');
     }
 
 }
