@@ -1,6 +1,6 @@
 @extends('layouts/master')
 @section('content')
-		<section class="noo-page-heading eff">
+		<section class="noo-page-orchard eff">
 				<div class="container">
 					<div class="noo-heading-content">
 						<h1  class="page-title eff">สวนทั้งหมด</h1>
