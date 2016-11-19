@@ -57,12 +57,11 @@ class FastFruitController extends Controller
         $orchard->save();
 
         $popOrchards = Orchards::orderBy('views','desc')->take(5)->get();
-        $products = array();
+        $products = collect();
         
         foreach (Orchards::findOrFail($id)->orchardPlots as $key => $plot) {
             $products[] = $plot->productSprints->last();
         }
-
 
         return view('orcharddetail',compact('orchard','products','popOrchards'));
     }
@@ -634,6 +633,33 @@ class FastFruitController extends Controller
         return view('dashboard',compact('user','orchards','bookmarks','followorchards','followusers'));
     }
     
+    public function storeMatching(MatchOrchardRequest $request)
+    {
+        return $input = $request->all();
+
+        if (Auth::user()) {
+            echo "NOT NULL";
+        }else{
+            echo "NULL";
+        }
+
+        //converse to kg.
+        if ( $input['unit']==2){
+            $input['fruitNum']= $input['fruitNum']*1000;
+        }
+
+        if (Auth::check()){
+            $input['idUser'] = Auth::user()->id;
+            return dd($input);
+            Matchings::create($input);
+        } else {
+            $input['idUser'] = 0;
+        }       
+        
+        // dd($input);
+        return redirect('matching');
+    }
+
 }
 
 
