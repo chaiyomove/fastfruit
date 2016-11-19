@@ -20,11 +20,17 @@ use App\Admins;
 use App\Users;
 use Auth;
 use DB;
+
 use App\Http\Requests\AddOrchardRequest;
 use App\Http\Requests\AddPlotRequest;
 use App\Http\Requests\AddProductRequest;
 use App\Http\Requests\MatchOrchardRequest;
 use App\Http\Requests\ContactUsRequest;
+use App\Http\Requests\UpdateOrchardRequest;
+use App\Http\Requests\UpdatePlotRequest;
+use App\Http\Requests\UpdateProductRequest;
+use App\Http\Requests\UpdateUserRequest;
+
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Pagination\LengthAwarePaginator;
