@@ -40,7 +40,7 @@
 			<section class="noo-page-heading eff">
 				<div class="container">
 					<div class="noo-heading-content">
-						<h1 class="page-title eff">แก้ไขข้อมูลแปลง</h1>
+						<h1 class="page-title eff">เพิ่มแปลง</h1>
 					</div>
 				</div>
 			</section>
@@ -52,7 +52,7 @@
 								<div class="col-md-3"></div>
 								<div id="addOrchard">
 	                				<div class="col-md-6">
-	                					<h2>แก้ไขข้อมูลแปลง</h2>
+	                					<h2>เพิ่มแปลง</h2>
 	                					<form class="login" method="POST" enctype="multipart/form-data" action="{{url('plot')}}">
 											{{ csrf_field() }}
 											<input type="hidden" name="idOrchard" value="{{$id}}">
@@ -159,15 +159,6 @@
 							</div>
 							<div class="col-md-3"></div>
 						</div>
-					</div>
-				</div>
-				<div class="noo-footer-shop-now">
-					<div class="container">
-						<div class="col-md-7">
-							<h4>-  -</h4>
-							<h3></h3>
-						</div>
-						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
 					</div>
 				</div>
 			</div>

@@ -96,14 +96,5 @@
 						</div>
 					</div>
 				</div>
-				<div class="noo-footer-shop-now">
-					<div class="container">
-						<div class="col-md-7">
-							<h4></h4>
-							<h3></h3>
-						</div>
-						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
-					</div>
-				</div>
 			</div>
 @endsection

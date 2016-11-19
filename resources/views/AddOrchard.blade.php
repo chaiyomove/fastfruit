@@ -180,15 +180,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="noo-footer-shop-now">
-					<div class="container">
-						<div class="col-md-7">
-							<h4>- Medium between orchards and you -</h4>
-							<h3>FastFruit</h3>
-						</div>
-						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
-					</div>
-				</div>
 			</div>
 
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKPwTquIvNcVchkVTbdougmPk9xbOt38&callback=initMap&language=th" async defer>
