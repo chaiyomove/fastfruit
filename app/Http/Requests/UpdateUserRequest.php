@@ -26,7 +26,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'firstName' => 'required',
             'lastName' => 'required',
-            'citizenId' => 'integer|min:13|max:13',
+            'citizenId' => 'numeric|digits:13',
             'phone' => 'numeric|digits_between:9,10',
             'address' => 'required',
             'idProvince' => 'required|numeric|not_in:0',
