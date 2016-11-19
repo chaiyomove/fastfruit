@@ -24,9 +24,9 @@ class AddPlotRequest extends FormRequest
     public function rules()
     {
         return [
-            'plotNumber' => 'min:13|max:16',
+            'plotNumber' => 'numeric|digits_between:13,16',
             'description' => 'required',
-            'area' => 'required|numeric',
+            'area' => 'required|numeric|not_in:0',
             'address' => 'required',
             'idProvince' => 'required|numeric|not_in:0',
             'idPlotStatus' => 'required|numeric',
