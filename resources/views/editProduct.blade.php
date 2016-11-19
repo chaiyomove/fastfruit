@@ -1,5 +1,8 @@
 @extends('layouts/master')
 @section('content')
+
+<link href="{{asset('css/jquery.datepicker.css')}}" rel="stylesheet">
+
 			<section class="noo-page-heading eff">
 				<div class="container">
 					<div class="noo-heading-content">
@@ -96,4 +99,7 @@
 					</div>
 				</div>
 			</div>
+
+<script src="{{asset('js/jquery.datepicker.js')}}"></script>
+
 @endsection
