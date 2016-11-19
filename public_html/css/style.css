@@ -5871,7 +5871,8 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
 
 /* === 4.1. HEADING === */
 
-.noo-page-heading {
+.noo-page-heading,
+.noo-page-orchard{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -5939,7 +5940,8 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
 
 
 
-.noo-page-heading:before {
+.noo-page-heading:before,
+.noo-page-orchard:before {
     content: '';
     position: absolute;
     top: 0;
@@ -5952,22 +5954,26 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
     transition: all 1s ease 0s;
 }
 
-.noo-page-heading.eff:before {
+.noo-page-heading.eff:before,
+.noo-page-orchard.eff:before {
     background: rgba(33, 33, 33, 0.5);
 }
 
-.noo-page-heading .container {
+.noo-page-heading .container,
+.noo-page-orchard .container {
     height: 100%;
     position: relative;
     display: table;
 }
 
-.noo-page-heading .noo-heading-content {
+.noo-page-heading .noo-heading-content,
+.noo-page-orchard .noo-heading-content {
     display: table-cell;
     vertical-align: middle;
 }
 
-.noo-page-heading .page-title {
+.noo-page-heading .page-title,
+.noo-page-orchard .page-title {
     padding: 0 15px;
     color: #ffffff;
     margin: 0;
@@ -5984,7 +5990,8 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
     transition: all 0.9s ease 0s;
 }
 
-.noo-page-heading .page-title.eff {
+.noo-page-heading .page-title.eff,
+.noo-page-orchard .page-title.eff {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);

@@ -1436,6 +1436,9 @@ header .navbar,
 .noo-page-dashboard {
   background-image: url('../images/testimonial_bg_2.jpg');
 }
+.noo-page-orchard {
+  background-image: url('../images/banner/header-orchard.jpg');
+}
 .noo-page-heading.heading-2 {
   background-image: url('../images/banner/header-agency.jpg');
 }

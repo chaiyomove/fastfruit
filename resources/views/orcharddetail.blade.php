@@ -29,7 +29,7 @@
 </script>
 
 <link rel="stylesheet" href="{{asset('css/main.css')}}">
-			<section class="noo-page-heading eff heading-3">
+			<section class="noo-page-orchard eff">
 				<div class="container">
 					<div class="noo-heading-content">
 						<h1 class="page-title eff">ข้อมูลสวน</h1>
