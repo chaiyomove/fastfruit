@@ -88,7 +88,7 @@
 											<div class="form-row form-row-wide">
 												<label for="username">
 													รหัสแปลง :
-													<span class="required">*</span>
+													<span class=""></span>
 													<input type="text" class="input-text" name="plotNumber" id="" value="{{$plot->plotNumber}}" style="width: 70%; float: right;" />
 												</label>
 											</div>

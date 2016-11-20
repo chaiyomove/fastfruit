@@ -36,7 +36,7 @@
 											<div class="form-row form-row-wide">
 												<label for="reg_email">
 													รหัสบัตรประชาชน
-													<span class="required">*</span>
+													<span class=""></span>
 												</label>
 												<input type="text" class="input-text" name="citizenId" id="reg_email" value="{{Auth::user()->citizenId}}" />
 											</div>
@@ -75,7 +75,7 @@
 											<div class="form-row form-row-wide">
 												<label for="username">
 													รูปโปรไฟล์
-													<span class="required">*</span>
+													<span class=""></span>
 													<div>
 														<input name="picture" id="exampleInputFile" type="file" />
 													</div>
