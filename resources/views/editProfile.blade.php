@@ -36,7 +36,7 @@
 											<div class="form-row form-row-wide">
 												<label for="reg_email">
 													รหัสบัตรประชาชน
-													<span class="required">*</span>
+													<span class=""></span>
 												</label>
 												<input type="text" class="input-text" name="citizenId" id="reg_email" value="{{Auth::user()->citizenId}}" />
 											</div>
@@ -75,7 +75,7 @@
 											<div class="form-row form-row-wide">
 												<label for="username">
 													รูปโปรไฟล์
-													<span class="required">*</span>
+													<span class=""></span>
 													<div>
 														<input name="picture" id="exampleInputFile" type="file" />
 													</div>
@@ -90,15 +90,6 @@
 								<div class="col-md-3"></div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="noo-footer-shop-now">
-					<div class="container">
-						<div class="col-md-7">
-							<h4>-  -</h4>
-							<h3></h3>
-						</div>
-						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
 					</div>
 				</div>
 			</div>

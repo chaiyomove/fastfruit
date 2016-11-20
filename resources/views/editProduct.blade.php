@@ -75,7 +75,7 @@
 											<div class="form-row form-row-wide">
 												<label for="username">
 													อัพโหลดรูป :
-													<span class="required">*</span>
+													<span class=""></span>
 													<div style="float: right;">
 														<input name="pictures[]" id="exampleInputFile" type="file" />
 														<input name="pictures[]" id="exampleInputFile" type="file" />
