@@ -298,11 +298,14 @@ class FastFruitController extends Controller
 
     }
 
-    public function getMatching()
+    public function createMatching()
     {
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
         $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
+        $matchings = collect();
+        $matchedOrcs = array(); 
+
         
 
         // $matchings = DB::table('Matchings')->where('idUser',Auth::user()->id);
@@ -310,7 +313,7 @@ class FastFruitController extends Controller
         if (Auth::check()){
             $matchings = Matchings::where('idUser',Auth::user()->id)->get();
             $orchards = Orchards::latest()->get();
-            $matchedOrcs = array(); 
+            // $matchedOrcs = array(); 
                    
             foreach ($matchings as $key => $matching) {
                 foreach ($orchards as $key => $orchard) {
@@ -328,7 +331,7 @@ class FastFruitController extends Controller
                 }
                 // echo $matching->idFruitSpecie;
                 // echo "<br><hr>";
-            }
+            } 
             
 
 
@@ -336,8 +339,12 @@ class FastFruitController extends Controller
             // 
             // 
             //dd($matchings->idFruitSpecie);
-            return view('match', compact('fruits','fruitSpecies','provinces','matchings','matchedOrcs'));
+            
+        } else {
+            $orchards = Orchards::latest()->get();
+            $matchedOrcs = array(); 
         }
+        return view('match', compact('fruits','fruitSpecies','provinces','matchings','matchedOrcs'));
         
         // return dd($matchings);
         // return dd($fruits);
@@ -366,17 +373,7 @@ class FastFruitController extends Controller
         Matchings::create($input);
         // dd($input);
         return redirect('matching');
-    }
-
-    public function deleteMatching()
-    {
-        $input = Request::all();
-        
-        // return dd($input['idMatching']);
-        Matchings::destroy($input['idMatching']);
-        return redirect(action('FastFruitController@getMatching'));
-    }
-    
+    }    
 
     public function getContactUs()
     {
@@ -631,27 +628,6 @@ class FastFruitController extends Controller
         $followorchards = $user->orchardFollowing;
         $followusers = $user->Followings;
         return view('dashboard',compact('user','orchards','bookmarks','followorchards','followusers'));
-    }
-    
-    public function storeMatching(MatchOrchardRequest $request, $id)
-    {
-        return $input = $request->all();
-
-        //converse to kg.
-        if ( $input['unit']==2){
-            $input['fruitNum']= $input['fruitNum']*1000;
-        }        
-
-        if ($id){
-            $input['idUser'] = $id;
-            // return dd($input);
-            Matchings::create($input);
-        } else {
-            $input['idUser'] = 0;
-        }       
-        
-        // dd($input);
-        // return redirect('matching');
     }
 
 }

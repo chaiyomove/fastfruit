@@ -28,4 +28,6 @@ Route::get('user/{uid}/unfollowuser/{id}', 'ApiController@unFollowUser');
 Route::get('user/{uid}/bookmark/{id}', 'ApiController@bookmark');
 Route::get('user/{uid}/unbookmark/{id}', 'ApiController@unbookmark');
 
-Route::post('matching/{id}', 'FastFruitController@storeMatching');
+Route::post('matching/{id}', 'ApiController@storeMatching');
+Route::delete('matching', 'ApiController@deleteMatching');
+

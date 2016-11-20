@@ -14,7 +14,7 @@
 
 <script>
 	$(document).ready(function(){
-
+		var idMatching = 0;
 		//fruitspecies dropdown
 		$('#idFruit').on('change', function(e){
 	    	var idFruit = e.target.value;
@@ -42,7 +42,7 @@
 		$('#matching_form').on('submit', function(e){
 			e.preventDefault();
 			var formData = $('#matching_form').serializeArray();
-			console.log(formData);
+			// console.log(formData);
 	   //  	var formData = {
 	   //          '_token'           	: $('input[name=_token]').val(),
 				// "idFruit"			: $('input[name=idFruit]').val(),
@@ -56,11 +56,33 @@
     //     	};
 
 	        //ajax
-	        $.post('{{url('api/matching',[Auth::user()->id])}}', formData)
+	    	$.post('{{url('api/matching',[(Auth::check() ? Auth::user()->id : 0)])}}', formData) 
 	        	.done(function(data){
-	        		// echo data;
+	        		console.log(data);	
+	        		idMatching--;	        		
+	        		$('#matchings_show')
+	         			.append('<form id="matching_delete" class="login matching_delete" method="POST" action="{!!url("/matching")!!}" style="padding: 5px 0px 5px 15px; margin:1em 0;"> 																													   {!! csrf_field() !!}        																											<input name="_method" type="hidden" value="DELETE" />																				 '+ data.fruitSpecie +' '+ data.fruitNum +' '+'กิโลกรัม' +' '+' 																			     <button type="submit" class="btn btn-link">																							<i class="fa fa-minus-circle" aria-hidden="true"></i>																			 </button>																								 							  <input type="hidden" name="idMatching" value="'+ ( "idMatching" in data ? data.idMatching : idMatching) +'">																																  </form>  ');
 	        	});
 	   	});
+
+		$('.matching_delete').live('submit', function(e){
+			e.preventDefault();
+			var formData = $(this).serializeArray();
+			/** an alternative **/
+			// var formData = $(e.target).serializeArray();
+			
+			// console.log(formData[2].value);			
+			var id = e.target.idMatching.value;
+			$(this).remove();
+			
+			//ajax
+			$.post('{{url("api/matching")}}', formData)
+				.done(function(data){
+					console.log(data);
+					console.log("delete complete");
+				});
+
+		});
 
 	});
 </script>
@@ -80,7 +102,7 @@
 								<div id="matching">
 	                				<div class="col-md-8">
 	                					<h2>เลือกจับคู่</h2>
-	                					<form id="matching_form" class="login" method="post" action="{{url('api/matching',[Auth::user()->id])}}">
+	                					<form id="matching_form" class="login" method="post" action="{{Auth::check() ? url('api/matching',[Auth::user()->id]) : url('api/matching',[0])}}}}">
 	                						{{ csrf_field() }}
 	                						<div class="col-md-4">
 		                						<div class="form-row form-row-wide">
@@ -188,41 +210,29 @@
 									</div>
 								</div>
 								<div id="matching">
-	                				<div class="col-md-4">
+	                				<div id="matchings_show" class="col-md-4">
 	                					<h2>ผลไม้ที่สนใจ</h2>
-	                					@if (Auth::check())
-										@foreach ($matchings as $key => $matching)
-											@if ($key % 2 == 0)
-	                						<div class="form-row form-row-wide">
-											@else
-
-											@endif
-											<form class="login" method="POST" action="{{url('/matching')}}" 
-											style="padding: 5px 0px 5px 15px; margin:1em 0;">
-											{{ csrf_field() }}
-											<input name="_method" type="hidden" value="DELETE" />
-											{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}
-											<button type="submit" class="btn btn-link">
-												
-													<i class="fa fa-minus-circle" aria-hidden="true"></i>
-											
-											</button>
-											<input type="hidden" name="idMatching" value="{{$matching->idMatching}}">
-											</form>
+											@foreach ($matchings as $key => $matching)
+												<form id="matching_delete" class="login matching_delete" method="POST" action="{{url('/matching')}}" style="padding: 5px 0px 5px 15px; margin:1em 0;">
+													{{ csrf_field() }}
+													<input name="_method" type="hidden" value="DELETE" />
+													{{$fruitSpecies[$matching->idFruitSpecie-1]->specieName.' '.$matching->fruitNum.' กิโลกรัม'}}
+													<button type="submit" class="btn btn-link">													
+														<i class="fa fa-minus-circle" aria-hidden="true"></i>	
+													</button>
+													<input type="hidden" name="idMatching" value="{{$matching->idMatching}}">
+												</form>
 											@endforeach
-											@endif
-											</div>
-											<form method="get" action="{{url('/matching')}}">
-												{{ csrf_field() }}
-											<div class="form-row">
-											
-												<button type="submit" class="button" style="float: right;">
-													จับคู่
-												</button>
-												
-											</div>
-											</form>
-											<div class="form-row form-row-wide"></div>
+									</div>
+									<form method="get" action="{{url('/matching')}}">
+										{{ csrf_field() }}
+										<div class="form-row">
+										<button type="submit" class="button" style="float: right;">
+											จับคู่
+										</button>
+									</div>
+									</form>
+									<div class="form-row form-row-wide"></div>
 										
 									</div>
 								</div>

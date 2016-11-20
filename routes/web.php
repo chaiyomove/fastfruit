@@ -41,7 +41,7 @@ Route::get('products', 'FastFruitController@products');
 Route::get('products/{id}', 'FastFruitController@orchardProducts');
 Route::get('product/{id}', 'FastFruitController@productDetail');
 
-Route::get('matching', 'FastFruitController@getMatching')->name('matching.show');
+Route::get('matching', 'FastFruitController@createMatching')->name('matching.show');
 // Route::post('matching', 'FastFruitController@storeMatching');
 // Route::post('matching', 'FastFruitController@postMatching');
 // 
@@ -80,7 +80,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-	Route::delete('matching', 'FastFruitController@deleteMatching');
 	Route::get('chat', 'FastFruitController@chat');
 	Route::get('userprofile/{id}', 'FastFruitController@userProfile');
 	Route::get('userprofile', 'FastFruitController@userProfile');

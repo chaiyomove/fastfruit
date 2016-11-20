@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// use Request
+
 use App\Http\Requests;
 
 use App\Http\Controllers\Controller;
@@ -24,9 +26,7 @@ use App\Product_sprints;
 
 use App\Matchings;
 
-use Auth;
-
-// use Illuminate\Support\Facades\Auth;
+use App\Provinces;
 
 use App\Http\Requests\MatchOrchardRequest;
 
@@ -105,6 +105,44 @@ class ApiController extends Controller
         $user->userBookmarks()->detach($product->idProductSprint);
         
         return;
+    }
+
+    public function storeMatching(MatchOrchardRequest $request, $id)
+    {
+        $input = $request->all();
+
+        //converse to kg.
+        if ($input['unit']==2){
+            $input['fruitNum']= $input['fruitNum']*1000;
+        }   
+
+        $input['idUser'] = $id;     
+
+        if ($id > 0){
+            $matching = Matchings::create($input);
+        } else {
+            $matching = new Matchings($input);
+        }       
+
+        $matching["fruitSpecie"] = Fruit_species::find($input['idFruitSpecie'])->specieName; 
+        $matching["Province"] = trim(Provinces::find($input['idProvince'])->provinceName); 
+        return $matching;
+        
+        // dd($input);
+        // return redirect('matching');
+    }
+
+    public function deleteMatching()
+    {
+        $input = Input::all();
+        // return $input[2];
+        if ($input['idMatching'] > 0) {
+            Matchings::destroy($input['idMatching']);
+            return "database";
+        }   
+        // return dd($input['idMatching']);
+        
+        return "nondatabase";
     }
     
 }
