@@ -14,7 +14,7 @@
 
 <script>
 	$(document).ready(function(){
-		var idMatching = 0;
+		// var idMatching = 0;
 
 		//fruitspecies dropdown
 		$('#idFruit').on('change', function(e){
@@ -62,7 +62,7 @@
 	        	.done(function(data){
 	        		console.log(data);	
 	        		$('#div_errors').hide();
-	        		idMatching--;	        		
+	        		// idMatching--;	        		
 	        		$('#matchings_show')
 	         			.append('<form id="matching_delete" class="login matching_delete" method="POST" action="{!!url("/matching")!!}" style="padding: 5px 0px 5px 15px; margin:1em 0;"> 																													   {!! csrf_field() !!}        																											<input name="_method" type="hidden" value="DELETE" />																				 '+ data.fruitSpecie +' '+ data.fruitNum +' '+'กิโลกรัม' +' '+' 																			     <button type="submit" class="btn btn-link">																							<i class="fa fa-minus-circle" aria-hidden="true"></i>																			 </button>																								 							  <input type="hidden" name="idMatching" value="'+ ( "idMatching" in data ? data.idMatching : idMatching) +'">																																  </form>  ');
 	        	})

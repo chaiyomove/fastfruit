@@ -119,11 +119,10 @@ class ApiController extends Controller
         $input['idUser'] = $id;     
 
         if ($id > 0){
-            $matching = Matchings::create($input);
-        } else {
-            $matching = new Matchings($input);
-            $matching = Matchings::create($input);
-        }       
+            unset($input['_token']);
+        }     
+
+        $matching = Matchings::create($input);
 
         $matching["fruitSpecie"] = Fruit_species::find($input['idFruitSpecie'])->specieName; 
         $matching["Province"] = trim(Provinces::find($input['idProvince'])->provinceName); 
@@ -137,13 +136,13 @@ class ApiController extends Controller
     {
         $input = Input::all();
         // return $input[2];
-        if ($input['idMatching'] > 0) {
+        // if ($input['idMatching'] > 0) {
             Matchings::destroy($input['idMatching']);
-            return "database";
-        }   
+            // return "database";
+        // }   
         // return dd($input['idMatching']);
         
-        return "nondatabase";
+        // return "nondatabase";
     }
 
     public function showMatching($id)

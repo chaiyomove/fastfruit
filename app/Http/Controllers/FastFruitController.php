@@ -328,6 +328,9 @@ class FastFruitController extends Controller
                     } 
                 }
             } 
+        } else {
+            $matchings = Matchings::where('_token', csrf_token())->get();
+
         }
 
         return view('match', compact('fruits','fruitSpecies','provinces','matchings','matchedOrcs'));
