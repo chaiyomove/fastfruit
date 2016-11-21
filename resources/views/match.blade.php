@@ -1,20 +1,21 @@
 @extends('layouts/master')
 @section('content')
 
-<link rel="stylesheet" href="css/swipebox.css">
-			<script src="js/jquery.swipebox.min.js"></script> 
-			    <script type="text/javascript">
-					jQuery(function($) {
-						$(".swipebox").swipebox();
-					});
-				</script>
-
+{{-- <link rel="stylesheet" href="css/swipebox.css">
+<script src="js/jquery.swipebox.min.js"></script> 
+<script type="text/javascript">
+	jQuery(function($) {
+		$(".swipebox").swipebox();
+	});
+</script>
+ --}}
 <link href="{{asset('css/jquery.datepicker.css')}}" rel="stylesheet">
 
 
 <script>
 	$(document).ready(function(){
 		var idMatching = 0;
+
 		//fruitspecies dropdown
 		$('#idFruit').on('change', function(e){
 	    	var idFruit = e.target.value;
@@ -39,6 +40,7 @@
 	       	});
 	   	});
 
+		//Add matching record
 		$('#matching_form').on('submit', function(e){
 			e.preventDefault();
 			var formData = $('#matching_form').serializeArray();
@@ -59,12 +61,22 @@
 	    	$.post('{{url('api/matching',[(Auth::check() ? Auth::user()->id : 0)])}}', formData) 
 	        	.done(function(data){
 	        		console.log(data);	
+	        		$('#div_errors').hide();
 	        		idMatching--;	        		
 	        		$('#matchings_show')
 	         			.append('<form id="matching_delete" class="login matching_delete" method="POST" action="{!!url("/matching")!!}" style="padding: 5px 0px 5px 15px; margin:1em 0;"> 																													   {!! csrf_field() !!}        																											<input name="_method" type="hidden" value="DELETE" />																				 '+ data.fruitSpecie +' '+ data.fruitNum +' '+'กิโลกรัม' +' '+' 																			     <button type="submit" class="btn btn-link">																							<i class="fa fa-minus-circle" aria-hidden="true"></i>																			 </button>																								 							  <input type="hidden" name="idMatching" value="'+ ( "idMatching" in data ? data.idMatching : idMatching) +'">																																  </form>  ');
-	        	});
+	        	})
+	        		.fail(function(data){
+	        			var errors = data.responseJSON;
+	        			$.each(errors, function (key, error) {
+	        				console.log(error[0]);
+	        				$('#ul_errors').append('<li>'+ error[0] +'</li>');
+	        			});
+	        			$('#div_errors').show();      				        	
+	        		});
 	   	});
 
+		//Delete matching record
 		$('.matching_delete').live('submit', function(e){
 			e.preventDefault();
 			var formData = $(this).serializeArray();

@@ -122,6 +122,7 @@ class ApiController extends Controller
             $matching = Matchings::create($input);
         } else {
             $matching = new Matchings($input);
+            $matching = Matchings::create($input);
         }       
 
         $matching["fruitSpecie"] = Fruit_species::find($input['idFruitSpecie'])->specieName; 
@@ -132,7 +133,7 @@ class ApiController extends Controller
         // return redirect('matching');
     }
 
-    public function deleteMatching()
+    public function destroyMatching()
     {
         $input = Input::all();
         // return $input[2];
@@ -143,6 +144,36 @@ class ApiController extends Controller
         // return dd($input['idMatching']);
         
         return "nondatabase";
+    }
+
+    public function showMatching($id)
+    {        
+        $matchedOrcs = collect(); 
+        $orchards = Orchards::latest()->get();
+
+        // $matchings = DB::table('Matchings')->where('idUser',Auth::user()->id);
+
+        if (Auth::check()){
+            
+            // $matchedOrcs = array(); 
+            foreach ($matchings as $key => $matching) {
+                foreach ($orchards as $key => $orchard) {
+                   $orchardPlots = $orchard->orchardPlots; 
+                   foreach ($orchardPlots as $key => $orchardPlot) {
+                        if ($matching->idFruitSpecie == $orchardPlot->idFruitSpecie){
+                            // array_push($matchedOrcs, $orchard->idOrchard);
+                            $matchedOrcs[] = $orchard;
+                            // foreach ($matchedOrcs as $key => $idOrchard) {
+                            //     echo $idOrchard;
+                            //     echo "<br><hr>";
+                            // }
+                        }
+                    } 
+                }
+            } 
+        }
+
+        return $matchings;
     }
     
 }

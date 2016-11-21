@@ -29,5 +29,6 @@ Route::get('user/{uid}/bookmark/{id}', 'ApiController@bookmark');
 Route::get('user/{uid}/unbookmark/{id}', 'ApiController@unbookmark');
 
 Route::post('matching/{id}', 'ApiController@storeMatching');
-Route::delete('matching', 'ApiController@deleteMatching');
+Route::delete('matching', 'ApiController@destroyMatching');
+Route::get('matching/{id}', 'ApiController@showMatching');
 

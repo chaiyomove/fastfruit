@@ -303,18 +303,16 @@ class FastFruitController extends Controller
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
         $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
-        $matchings = collect();
-        $matchedOrcs = array(); 
-
         
+        $matchings = collect();
+        $matchedOrcs = collect(); 
+        $orchards = Orchards::latest()->get();
 
         // $matchings = DB::table('Matchings')->where('idUser',Auth::user()->id);
 
         if (Auth::check()){
             $matchings = Matchings::where('idUser',Auth::user()->id)->get();
-            $orchards = Orchards::latest()->get();
             // $matchedOrcs = array(); 
-                   
             foreach ($matchings as $key => $matching) {
                 foreach ($orchards as $key => $orchard) {
                    $orchardPlots = $orchard->orchardPlots; 
@@ -329,26 +327,10 @@ class FastFruitController extends Controller
                         }
                     } 
                 }
-                // echo $matching->idFruitSpecie;
-                // echo "<br><hr>";
             } 
-            
-
-
-
-            // 
-            // 
-            //dd($matchings->idFruitSpecie);
-            
-        } else {
-            $orchards = Orchards::latest()->get();
-            $matchedOrcs = array(); 
         }
+
         return view('match', compact('fruits','fruitSpecies','provinces','matchings','matchedOrcs'));
-        
-        // return dd($matchings);
-        // return dd($fruits);
-        // return view('match', compact('fruits','fruitSpecies','provinces'));
     }
 
     public function postMatching(MatchOrchardRequest $request)

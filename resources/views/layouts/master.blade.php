@@ -165,8 +165,7 @@
 
 		                                    @foreach($errors->all() as $error)
 		                                        <li>{{ $error }}</li>
-		                                    @endforeach
-
+		                                    @endforeach		                                    
 		                                </ul>
 		                            </div>
 		                        </div>        
@@ -175,6 +174,24 @@
 		            </div>
 		        </div>
 		    @endif
+		    
+		    <div id="div_errors" class="row" style="display:none">
+	            <div class="col-md-4"></div>
+            	<div class="col-md-4">
+                	<div class="modal-body real-spa">
+                    	<div class="login-grids">
+                        	<div class="login">                                 
+                            	<div id="errors" class="login-right">
+                                	<ul id="ul_errors" class="alert alert-danger" style="font-size: 100%; margin-top:-30px; padding-left:40px;">
+
+                                	</ul>
+	                            </div>
+	                        </div>        
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+   			
 
 
  			<footer class="wrap-footer footer-2 colophon wigetized newsletter">
