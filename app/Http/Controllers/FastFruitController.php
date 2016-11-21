@@ -314,27 +314,21 @@ class FastFruitController extends Controller
 
         if (Auth::check()){
             $matchings = Matchings::where('idUser',Auth::user()->id)->get();
-            // $matchedOrcs = array(); 
-            foreach ($matchings as $key => $matching) {
-                foreach ($orchards as $key => $orchard) {
-                   $orchardPlots = $orchard->orchardPlots; 
-                   foreach ($orchardPlots as $key => $orchardPlot) {
-                        if ($matching->idFruitSpecie == $orchardPlot->idFruitSpecie){
-                            // array_push($matchedOrcs, $orchard->idOrchard);
-                            $matchedOrcs[] = $orchard;
-                            // foreach ($matchedOrcs as $key => $idOrchard) {
-                            //     echo $idOrchard;
-                            //     echo "<br><hr>";
-                            // }
-                        }
-                    } 
-                }
-            } 
         } else {
             $matchings = Matchings::where('_token', csrf_token())->get();
-
         }
 
+        foreach ($matchings as $key => $matching) {
+            foreach ($orchards as $key => $orchard) {
+               $orchardPlots = $orchard->orchardPlots; 
+               foreach ($orchardPlots as $key => $orchardPlot) {
+                    if ($matching->idFruitSpecie == $orchardPlot->idFruitSpecie){
+                        // array_push($matchedOrcs, $orchard->idOrchard);
+                        $matchedOrcs[] = $orchard;
+                    }
+                } 
+            }
+        }
         return view('match', compact('fruits','fruitSpecies','provinces','matchings','matchedOrcs'));
     }
 
@@ -361,6 +355,11 @@ class FastFruitController extends Controller
         // dd($input);
         return redirect('matching');
     }    
+
+    public function showMatching($id)
+    {
+        return redirect(url('matching#results'));
+    }
 
     public function getContactUs()
     {

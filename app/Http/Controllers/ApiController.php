@@ -135,14 +135,8 @@ class ApiController extends Controller
     public function destroyMatching()
     {
         $input = Input::all();
-        // return $input[2];
-        // if ($input['idMatching'] > 0) {
-            Matchings::destroy($input['idMatching']);
-            // return "database";
-        // }   
-        // return dd($input['idMatching']);
-        
-        // return "nondatabase";
+        Matchings::destroy($input['idMatching']);
+      
     }
 
     public function showMatching($id)
@@ -151,8 +145,7 @@ class ApiController extends Controller
         $orchards = Orchards::latest()->get();
 
         // $matchings = DB::table('Matchings')->where('idUser',Auth::user()->id);
-
-        if (Auth::check()){
+        if (true){
             
             // $matchedOrcs = array(); 
             foreach ($matchings as $key => $matching) {
