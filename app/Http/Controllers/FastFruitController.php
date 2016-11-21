@@ -527,7 +527,8 @@ class FastFruitController extends Controller
         // $orchard=$orchards[2];
         $fruitSpecies = fruit_species::all();
         $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
-        $matchedOrcs = array(); 
+        $matchedOrcs = collect();
+        $popOrchards =Orchards::orderBy('views','desc')->take(5)->get();
 
         foreach ($orchards as $key => $orchard) {
             if (str_contains($orchard->nameOrchard,$search)) {
@@ -556,10 +557,28 @@ class FastFruitController extends Controller
             }               
         }
 
-        $matchedOrcs = array_unique($matchedOrcs);
-        $matchedOrcs = array_values($matchedOrcs);
+        // $matchedOrcs = array_unique($matchedOrcs);
+        // $matchedOrcs = array_values($matchedOrcs);
+        $matchedOrcs = $matchedOrcs->unique();
+        $matchedOrcs = $matchedOrcs->values();
 
-        return view('search', compact('matchedOrcs'));
+        $page = Input::get('page', 1); 
+
+        // Number of items per page
+        $perPage = 2;
+
+        // Start displaying items from this number;
+        $offSet = ($page * $perPage) - $perPage; // Start displaying items from this number
+
+        // Get only the items you need using array_slice (only get 10 items since that's what you need)
+        // $itemsForCurrentPage = array_slice($matchedOrcs->toArray(), $offSet, $perPage, true);
+        $itemsForCurrentPage = $matchedOrcs->slice($offSet, $perPage, true);
+
+        // Return the paginator with only 10 items but with the count of all items and set the it on the correct page
+        // return new LengthAwarePaginator($itemsForCurrentPage, count($orchardsTmp), $perPage, $page);
+        // return dd($orchards = new LengthAwarePaginator($itemsForCurrentPage, count($orchardsTmp), $perPage, $page));
+        ($results = new LengthAwarePaginator($itemsForCurrentPage, count($matchedOrcs), $perPage, $page, ['path' => Request::url(), 'query' => Request::query()]));
+        return view('search', compact('matchedOrcs','popOrchards','results'));
     }
 
     public function orchardProducts($id)

@@ -99,7 +99,6 @@
 											</div>
 										@endif
 									@endforeach	
-									{{--  --}}
 								<div class="pagination list-center" style="margin-left:343px">
 									{!! $orchards->Links(); !!}
 								</div>
