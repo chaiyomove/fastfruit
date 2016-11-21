@@ -52,7 +52,7 @@ Route::get('search', 'FastFruitController@search');
 
 Route::get('profile/{id}', 'FastFruitController@profile');
 
-
+Route::post('review/{id}','FastFruitController@storeReview')->name('review.store');
 
 /**
  * login required pages

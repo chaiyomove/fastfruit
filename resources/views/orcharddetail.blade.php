@@ -194,82 +194,49 @@
 											</div>
 											<div id="tab-5" class="tab-pane fade">
 												<div id="comments" class="comments-area">
-						                        	<h2 class="comments-title">2 Comments</h2>
+						                        	<h2 class="comments-title">ความคิดเห็นจากลูกค้า จากทั้งหมด {{$reviews->count()}}</h2>
 						                        	<ol class="comments-list">
 									        			<li class="comment">
 						            						<div class="comment-wrap">
-						                						<div class="comment-img">
-						                    						<img alt='' src='http://placehold.it/100x100' height='80' width='80' />
-						                    					</div>
+						                						
+						                    					@foreach($reviews as $review)
 						                						<article class="comment-block">
 						                    						<header class="comment-header">
 						                        						<cite class="comment-author">
-						                        							admin
+						                        							<p>{{$review->name}}</p>
 						                        						</cite>
-												                        <div class="comment-meta">
-												                            <span class="time">
-												                                4 months ago
-												                            </span>
-												                        </div>
+												                       
 						                                            </header>
 						                    						<div class="comment-content">
-						                        						<p>fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus</p>
+						                        						<p>{{$review->review}}</p>
 						                    						</div>
-						                    						<span class="comment-reply">
-						                        						<a class='comment-reply-link' href='#'><i class="fa fa-reply"></i> Reply</a>
-						                        					</span>
+						                    						
 						                						</article>
+						                						@endforeach
 						            						</div>
-						        							<ol class="children">
-						        								<li class="comment">
-						            								<div class="comment-wrap">
-						                								<div class="comment-img">
-						                    								<img alt='' src='http://placehold.it/100x100' height='80' width='80' />
-						                    							</div>
-						                								<article class="comment-block">
-						                    								<header class="comment-header">
-						                        								<cite class="comment-author">
-						                        									admin
-						                                                    	</cite>
-														                        <div class="comment-meta">
-														                            <span class="time">
-														                                4 months ago
-														                            </span>
-														                        </div>
-						                                            		</header>
-														                    <div class="comment-content">
-														                        <p>fSames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus</p>
-														                    </div>
-						                    								<span class="comment-reply">
-								                        						<a class='comment-reply-link' href='#'><i class="fa fa-reply"></i> Reply</a>
-								                        					</span>
-						                								</article>
-														            </div>
-														        </li><!-- #comment-## -->
-															</ol><!-- .children -->
-														</li><!-- #comment-## -->
-													</ol> <!-- /.comments-list -->
+						        							
 													<div id="respond-wrap">
 						        						<div id="respond" class="comment-respond">
 															<h3 id="reply-title" class="comment-reply-title">
-																<span>Leave your thought</span>
+																<span>แสดงความคิดเห็นของคุณ</span>
 															</h3>
-															<form class="comment-form">
+															<form class="comment-form" method="POST" enctype="multipart/form-data" action="{{url('/review',[$orchard->idOrchard])}}">
+															{{ csrf_field() }}
 																<div class="row">
 																	<div class="comment-form-author col-sm-6">
-																		<input id="author" name="author" type="text" placeholder="Enter Your Name*" class="form-control" value="" size="30" />
+																		<input id="name" name="name" type="text" placeholder="ชื่อของคุณ" class="form-control" value="" size="30" />
 																	</div>
 																	<div class="comment-form-email col-sm-6">
-																		<input id="email" name="email" type="text" placeholder="Enter Your Email*" class="form-control" value="" size="30" />
+																		<input id="email" name="email" type="text" placeholder="กรุณากรอกอีเมล์" class="form-control" value="" size="30" />
 																	</div>
 																	<div class="col-sm-12">
 																		<div class="comment-form-comment">
-																			<textarea class="form-control" placeholder="Enter Your Comment" id="comment" name="comment" cols="40" rows="6"></textarea>
+																			<textarea class="form-control" placeholder="เนื้อหาของรีวิว" id="review" name="review" cols="40" rows="6"></textarea>
 																		</div>
 																	</div>
 																</div>
 																<div class="form-submit">
-																	<input name="submit" type="submit" id="submit" class="submit" value="Post Comments" />
+																	<input name="submit" type="submit" id="submit" class="submit" value="ส่งรีวิว" />
 																</div>
 															</form>
 														</div><!-- #respond -->

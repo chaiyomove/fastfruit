@@ -50,4 +50,9 @@ class Orchards extends Model
         return $this->belongsToMany('App\Users', 'follow_orchard','idOrchard','idUser');
     }
 
+    public function reviews()
+    {
+        return $this->hasMany('App\Reviews','idOrchard');
+    }
+
 }

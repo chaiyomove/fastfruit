@@ -18,6 +18,7 @@ use App\Provinces;
 use App\Matchings;
 use App\Admins;
 use App\Users;
+use App\Reviews;
 use Auth;
 use DB;
 
@@ -57,13 +58,14 @@ class FastFruitController extends Controller
         $orchard->save();
 
         $popOrchards = Orchards::orderBy('views','desc')->take(5)->get();
+        $reviews =DB::table('reviews')->get();
         $products = collect();
         
         foreach (Orchards::findOrFail($id)->orchardPlots as $key => $plot) {
             $products[] = $plot->productSprints->last();
         }
 
-        return view('orcharddetail',compact('orchard','products','popOrchards'));
+        return view('orcharddetail',compact('orchard','products','popOrchards','reviews'));
     }
 
     public function getAddOrchard()
@@ -633,6 +635,29 @@ class FastFruitController extends Controller
         $followusers = $user->Followings;
         return view('dashboard',compact('user','orchards','bookmarks','followorchards','followusers'));
     }
+
+    public function storeReview($id)
+    {
+        // $this->validate($request, array(
+        //     'name' => 'required|max:255',
+        //     'email' => 'required|email|max:255',
+        //     'review' => 'required|min:5|max:2000'
+        //     ));
+
+        $orchard = Orchards::find($id);
+        $input = Request::all();
+        $input['approved'] = 1;
+        $input['idOrchard'] = $id;
+
+        $review = Reviews::create($input);
+        $orchard->reviews()->save($review);
+
+        // Session::flash('Success')
+
+        return redirect(url('/orchards', [$orchard->idOrchard]));
+    }
+
+
 
 }
 
