@@ -83,7 +83,7 @@
 											<input type="submit" value="Search"/>
 										</form>
 									</div>
-									<div class="widget commerce widget_price_filter">
+									<!-- <div class="widget commerce widget_price_filter">
 										<h3 class="widget-title">กรองตามรอบการผลิต</h3>
 										<form>
 											<div class="price_slider_wrapper">
@@ -100,7 +100,7 @@
 												</div>
 											</div>
 										</form>
-									</div>
+									</div> -->
 
 									<div class="widget commerce widget_products">
 										<h3 class="widget-title">ผลผลิตยอดนิยม</h3>
