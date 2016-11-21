@@ -193,7 +193,8 @@
 														GAP
 														<span class="required">*</span>
 														<select name="idPlotStatus" class="form-matching" style="width: 60%; float: right;">
-															<option value="1" selected='selected'>มี GAP</option>
+															<option value="0" selected='selected'>กรุณาเลือก</option>
+															<option value="1">มี GAP</option>
 									   						<option value="2">ไม่มี GAP</option>	
 														</select>
 													</label>
@@ -243,7 +244,6 @@
 											จับคู่
 										</button>
 									</div>
-									<a href="{{url('matching')}}#results">คลิก</a>
 									</form>
 									<div class="form-row form-row-wide"></div>
 										
