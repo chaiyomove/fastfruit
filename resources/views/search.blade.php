@@ -13,7 +13,7 @@
 						<div class="row">
 							<div class="noo-main col-md-9">
 								<div class="noo-catalog">
-									<p class="commerce-result-count">แสดง 1&ndash;9 of 18 ทั้งหมด</p>
+									<p class="commerce-result-count">พบผลลัพธ์ทั้งหมด {{$matchedOrcs->count()}}  </p>
 								
 									<form class="commerce-ordering">
 										<select name="orderby" class="orderby">
@@ -80,12 +80,9 @@
 								@endif
 							@endforeach	
 						
-								<div class="pagination list-center">
-									<span class="page-numbers current">1</span>
-									<a class="page-numbers" href="#">2</a>
-									<a class="page-numbers" href="#">3</a>
-									<a class="next page-numbers" href="#"><i class="fa fa-long-arrow-right"></i></a>
-								</div>
+								{{-- <div class="pagination list-center" style="margin-left:343px">
+									{!! $results->Links(); !!}
+								</div> --}}
 							</div>
 							<div class="noo-sidebar col-md-3">
 								<div class="noo-sidebar-wrap">
@@ -116,17 +113,17 @@
 									</div>
 									<div class="widget commerce widget_products">
 										<h3 class="widget-title">สวนยอดนิยม</h3>
+										@foreach($popOrchards as $key => $popOrchard)
 										<ul class="product_list_widget">
 											<li>
-												<a href="{{'orchards/'.$orchard->idOrchard}}">
-													<img style="width: 70px; height: 70px;" src="{{asset($orchard->picture1)}}" alt="" /> 
-													<span class="product-title">{{$orchard->nameOrchard}}</span>
+												<a href="{{'orchards/'.$popOrchard->idOrchard}}">
+													<img style="width: 70px; height: 70px;" src="{{asset($popOrchard->picture1)}}" alt="" /> 
+													<span class="product-title">{{$popOrchard->nameOrchard}}</span>
 												</a>
-												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
+												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$popOrchard->province->provinceName}}</span>
 											</li>
-											
-											
 										</ul>
+										@endforeach
 									</div>
 								</div>
 							</div>
