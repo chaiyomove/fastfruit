@@ -137,7 +137,7 @@
 														<span class="required">*</span>
 													</label>
 													<select name="idFruitSpecie" id="idFruitSpecie" class="form-matching">
-														<option value="0" selected='selected'>กรุณาเลือก</option>
+														{{-- <option value="0" selected='selected'>กรุณาเลือก</option> --}}
 														@foreach ($fruitSpecies as $fruitSpecie)
 													 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>		
 												 		@endforeach		
@@ -151,7 +151,7 @@
 														<span class="required">*</span>
 													</label>
 													<select name="idProvince" id="idProvince" class="form-matching">
-														<option value="0" selected='selected'>กรุณาเลือก</option>
+														{{-- <option value="0" selected='selected'>กรุณาเลือก</option> --}}
 														@foreach ($provinces as $province)
 													 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
 												 		@endforeach	
@@ -165,7 +165,7 @@
 														<span class="required">*</span>
 													</label>
 													<div class='input-group date' id='datepickerstart'>
-											            <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" />
+											            <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" value="2016-10-12"/>
 											            <span class="input-group-addon" data-toggle="datepicker">
 											            	<span class="fa fa-calendar"></span>
 											            </span>
@@ -173,7 +173,7 @@
 											    </div>
 											    <div class="form-row form-row-wide">    
 											        <div class='input-group date' id='datepickerend'>
-											            <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง" />
+											            <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง" value="2016-10-12" />
 											            <span class="input-group-addon" data-toggle="datepicker">
 											                <span class="fa fa-calendar"></span>
 											            </span>
@@ -186,7 +186,7 @@
 														จำนวน
 														<span class="required">*</span>
 													</label>
-													<input type="text" class="input-text" name="fruitNum" id="username" value=""/>
+													<input type="text" class="input-text" name="fruitNum" id="username" value="100"/>
 												</div>
 												<div class="form-row form-row-wide">
 													<label for="username">
@@ -206,7 +206,7 @@
 														<span class="required">*</span>
 													</label>
 													<select name="unit" class="form-matching">
-														<option value="0" selected='selected'>หน่วย</option>
+														{{-- <option value="0" selected='selected'>หน่วย</option> --}}
 														<option value="1">กิโลกรัม</option>
 							   							<option value="2">ตัน</option>	
 													</select>
@@ -236,13 +236,14 @@
 												</form>
 											@endforeach
 									</div>
-									<form method="get" action="{{url('/matching')}}">
+									<form method="GET" action="{{url('matching',[(Auth::check() ? Auth::user()->id : 0)])}}">
 										{{ csrf_field() }}
 										<div class="form-row">
 										<button type="submit" class="button" style="float: right;">
 											จับคู่
 										</button>
 									</div>
+									<a href="{{url('matching')}}#results">คลิก</a>
 									</form>
 									<div class="form-row form-row-wide"></div>
 										
@@ -259,7 +260,7 @@
 												<div class="noo-sh-title">
 													<img width="40" height="39" src="images/organicfood-2.png" alt=""
 													style="margin-bottom: 15px;" />
-													<h2>ผลลัพธ์</h2> 
+													<h2 id="results">ผลลัพธ์</h2> 
 													<ul class="breadcrumb">
 													@if (Auth::check())
 														@foreach ($matchings as $key => $matching)

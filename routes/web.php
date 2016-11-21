@@ -41,7 +41,9 @@ Route::get('products', 'FastFruitController@products');
 Route::get('products/{id}', 'FastFruitController@orchardProducts');
 Route::get('product/{id}', 'FastFruitController@productDetail');
 
-Route::get('matching', 'FastFruitController@createMatching')->name('matching.show');
+Route::get('matching', 'FastFruitController@createMatching')->name('matching.create');
+Route::get('matching/{id}', 'FastFruitController@showMatching');
+
 // Route::post('matching', 'FastFruitController@storeMatching');
 // Route::post('matching', 'FastFruitController@postMatching');
 // 
