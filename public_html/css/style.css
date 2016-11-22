@@ -16147,6 +16147,23 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
     transition: all 0.4s ease 0s;
 }
 
+.commerce button.fblogin{
+    font-size: 12px;
+    background: #3b5998;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 400;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
 .commerce #bookmark {
     font-size: 24px;
     position: relative;
@@ -16194,6 +16211,11 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 
 .commerce button.editProfile:hover {
     background: #656565;
+    color: #ffffff;
+}
+
+.commerce button.fblogin:hover {
+    background: #253d6f;
     color: #ffffff;
 }
 

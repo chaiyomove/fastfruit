@@ -35,10 +35,14 @@
 											</div>
 											<div class="form-row">
 												<input type="submit" class="button" name="login" value="เข้าสู่ระบบ" />
+												<a href="{{url('/auth/facebook')}}">
+													<button type="button" class="button fblogin" name="fblogin">
+														<i class="fa fa-facebook" >&nbsp;</i>เข้าสู่ระบบด้วย Facebook
+													</button>
+												</a>
 											</div>
 											<div class="lost_password">
 												<a href="{{url('/password/reset')}}">ลืมรหัสผ่าน?</a>
-												<a href="{{url('/auth/facebook')}}">FB Login</a>
 											</div>
 
 										</form>
