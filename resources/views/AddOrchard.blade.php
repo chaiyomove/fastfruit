@@ -142,13 +142,15 @@
 											                
 
 
-											                // map.addListener('click', function(e) {
-											                //     var marker = new google.maps.Marker({
-											                //       position: e.latLng,
-											                //       map: map
-											                //     });
-											                //     map.panTo(latLng);
-											                //   });
+											                map.addListener('click', function(e) {
+											                    // var marker = new google.maps.Marker({
+											                    //   position: e.latLng,
+											                    //   map: map
+											                    // });
+											                    
+											                    marker.setPosition(e.latLng);
+											                    map.panTo(latLng);
+											                  });
 											                
 
 											                // function placeMarkerAndPanTo(latLng, map) {
