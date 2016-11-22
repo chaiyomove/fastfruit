@@ -108,7 +108,7 @@
 													          map: map
 													        });
 													        // Bubble
-													        var infoWindow = new google.maps.InfoWindow({map: map});
+													        // var infoWindow = new google.maps.InfoWindow({map: map});
 
 											                // Try HTML5 geolocation.
 											                if (navigator.geolocation) {
@@ -127,10 +127,11 @@
 												                    //set bubble
 												                    // infoWindow.setPosition(pos);
 												                    // infoWindow.setContent('Location found.');
-
+												                    
 												                    //set input's value
-												                    $("#lat").val(curLat);
-												                    $("#lng").val(curLng);
+													                $("#lat").val(pos.lat);
+													                $("#lng").val(pos.lng);		
+												                    
 											                  	}, function() {
 											                    handleLocationError(true, infoWindow, map.getCenter());
 											                  });
@@ -141,9 +142,17 @@
 
 											                //Place marker and pan to the click location 
 											                map.addListener('click', function(e) {											                    
-											                    marker.setPosition(e.latLng);
-											                    map.panTo(latLng);
-											                  });													       
+											                    pos = e.latLng;
+											                    marker.setPosition(pos);
+											                    // map.panTo(pos);;	
+											                    // 
+											              		//set input's value
+												                $("#lat").val(pos.lat());
+												                $("#lng").val(pos.lng());	
+											                });		
+
+
+											                										       
 												    	});
 												    });	
 											   		
@@ -164,7 +173,7 @@
 					</div>
 				</div>
 			</div>
-
+			
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKPwTquIvNcVchkVTbdougmPk9xbOt38&callback=initMap&language=th" async defer>
 
 @endsection
