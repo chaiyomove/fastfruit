@@ -127,7 +127,7 @@
 										</li>
 										@if (Auth::user())
 											<li>
-												<a href="{{ url('addorchard')}}">เพิ่มสวน</a>
+												<a href="{{ url('orchard')}}">เพิ่มสวน</a>
 											</li>
 										@endif
 									</ul>

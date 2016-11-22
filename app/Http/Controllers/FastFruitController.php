@@ -43,10 +43,9 @@ class FastFruitController extends Controller
 {
     public function orchards()
     {
-        $orchards=Orchards::orderBy('idOrchard','desc')->paginate(9);
-         // $orchard=$orchards[2];
+        $orchards = Orchards::orderBy('idOrchard','desc')->paginate(9);
+        $popOrchards = Orchards::orderBy('views','desc')->take(5)->get();
 
-        $popOrchards =Orchards::orderBy('views','desc')->take(5)->get();
         return view('orchards',compact('orchards','popOrchards'));
     }
 
@@ -68,13 +67,13 @@ class FastFruitController extends Controller
         return view('orcharddetail',compact('orchard','products','popOrchards','reviews'));
     }
 
-    public function getAddOrchard()
+    public function createOrchard()
     {
         $provinces = DB::table('provinces')->orderBy('provinceName', 'asc')->get();
         return view('AddOrchard', compact('provinces'));
     }
 
-    public function postAddOrchard(AddOrchardRequest $request)
+    public function storeOrchard(AddOrchardRequest $request)
     {
         $input = Request::all();
 
@@ -233,6 +232,7 @@ class FastFruitController extends Controller
         $plot = $product->orchardPlot;
         $pvsProducts = $plot->productSprints->reverse();
         $popProducts = Product_sprints::orderBy('views','desc')->take(5)->get();
+
         return view('productdetail',compact('orchard', 'plot', 'product', 'pvsProducts', 'popProducts'));
     }
 
@@ -241,6 +241,7 @@ class FastFruitController extends Controller
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
         $plot = Orchard_plots::findOrFail($id);
+
         return view('addproduct', compact('fruits', 'fruitSpecies', 'id', 'plot'));
     }
 
@@ -265,6 +266,7 @@ class FastFruitController extends Controller
         $product = Product_sprints::create($input);
         $plot = Orchard_plots::findOrFail(array_get($input, 'idOrchardPlot'));
         $plot->productSprints()->save($product);
+        Product_sprints::reindex(); 
        
         return redirect(url('product', [$product->idProductSprint]));
     }
@@ -274,6 +276,7 @@ class FastFruitController extends Controller
         $product = Product_sprints::findOrFail($id);
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
+
         return view('editProduct',compact('product','fruits','fruitSpecies'));
     }
 
@@ -295,6 +298,7 @@ class FastFruitController extends Controller
 
         // return dd($input);
         $input['description'] = trim($input['description']);
+        Product_sprints::reindex(); 
        
         Product_sprints::find($id)->update($input);
         return redirect('product/'.$id);

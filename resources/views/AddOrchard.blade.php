@@ -18,7 +18,7 @@
 								<div id="addOrchard">
 	                				<div class="col-md-6">
 	                					<h2>เพิ่มสวน</h2>
-	                					<form method="POST" enctype="multipart/form-data" action="{{url('/addorchard')}}">
+	                					<form method="POST" enctype="multipart/form-data" action="{{url('/orchard')}}">
 										{{ csrf_field() }}
 										<input type="hidden" name="idUser" value="{{Auth::user()->id}}">
 	                						<div class="form-row form-row-wide">
