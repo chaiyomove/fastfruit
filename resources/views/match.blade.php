@@ -326,7 +326,35 @@
 															</div>
 															<div class="noo-product-title"> 
 																<h3><a href="{{url('orchards/'.$matchedOrc->idOrchard)}}">{{$matchedOrc->nameOrchard}}</a></h3>
-																<span class="price"><span class="amount">&#36;3.95</span></span>
+																<?php $speciesTmp = array(); 
+													  $strSpecies = "";
+												?>
+
+												@foreach ($matchedOrc->orchardPlots as $plotKey => $orchardPlot)
+													@if (!array_has($speciesTmp, $orchardPlot->fruitSpecie->specieName))
+														<?php $speciesTmp[] =  $orchardPlot->fruitSpecie->specieName; ?>
+														@if($plotKey==0)
+															<?php $strSpecies = $orchardPlot->fruitSpecie->specieName;
+															?>
+															
+														@elseif(count($matchedOrc->orchardPlot)===$plotKey+1)
+															<?php $strSpecies .= $orchardPlot->fruitSpecie->specieName; ?>
+															
+														@else
+															<?php $strSpecies .= ", ".$orchardPlot->fruitSpecie->specieName; ?>
+															
+														@endif	
+													@endif
+													
+												@endforeach
+
+												<p class='spac'><i class='fa fa-lemon-o' style='color: green; margin-top: 10px;'></i>&nbsp;
+
+												{{-- {{ str_limit($string, $limit = 10, $end = '...') }} --}}
+
+												{!! str_limit($strSpecies, $limit = 100)!!}
+												</p>
+												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$matchedOrc->province->provinceName}}</span>
 																<div class="noo-product-action">
 																	<div class="noo-action">
 																		<a href="{{url('orchards/'.$matchedOrc->idOrchard)}}" class="button product_type_simple info_circle_button">
