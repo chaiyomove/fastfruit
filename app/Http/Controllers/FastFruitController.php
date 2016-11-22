@@ -61,9 +61,15 @@ class FastFruitController extends Controller
         $reviews = $orchard->reviews;
         $products = collect();
         
-        foreach (Orchards::findOrFail($id)->orchardPlots as $key => $plot) {
-            $products[] = $plot->productSprints->last();
+        foreach ($orchard->orchardPlots as $key => $plot) {
+            if ($plot->productSprints->last() != NULL) {
+                $products[] = $plot->productSprints->last();
+            } else {
+                $products[] = $plot;
+            }
         }
+
+        // return $products;
 
         return view('orcharddetail',compact('orchard','products','popOrchards','reviews'));
     }
@@ -152,7 +158,8 @@ class FastFruitController extends Controller
     public function plotDetail($id)
     {
         $plot = Orchard_plots::findOrFail($id);
-        return view('plotdetail',compact('plot'));
+        $popProducts = Product_sprints::orderBy('views','desc')->take(5)->get();
+        return view('plotdetail',compact('plot', 'popProducts'));
     }    
 
     public function createPlot($id)
@@ -162,6 +169,7 @@ class FastFruitController extends Controller
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
         $orchard = Orchards::findOrFail($id);
+
         return view('addplot', compact('provinces', 'fruits', 'fruitSpecies', 'id', 'orchard', 'plotstatus'));
     }    
 

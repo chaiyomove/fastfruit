@@ -84,7 +84,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 	Route::get('chat', 'FastFruitController@chat');
-1	Route::get('userprofile/{id}', 'FastFruitController@userProfile');
+	Route::get('userprofile/{id}', 'FastFruitController@userProfile');
 	Route::get('userprofile', 'FastFruitController@userProfile');
 
 	

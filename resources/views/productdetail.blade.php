@@ -105,7 +105,7 @@
 												 	@endif
 												@endif
 											
-											<h1 class="product_title entry-title border_bottom">{{array_get($product->fruitSpeciess,'specieName')}} จาก {{$product->orchardPlot->orchard->nameOrchard}}</h1>
+											<h1 class="product_title entry-title border_bottom">{{$product->orchardPlot->fruitSpecie->specieName}} จาก {{$product->orchardPlot->orchard->nameOrchard}}</h1>
 
 											<div class="product_meta">
 												<table class="detail">
