@@ -111,7 +111,9 @@
 													<img style="width: 70px; height: 70px;" src="{{asset($popProduct->picture1)}}" alt="" /> 
 													<span class="product-title">{{$popProduct->orchardPlot->fruitSpecie->specieName}}จาก {{$popProduct->orchardPlot->orchard->nameOrchard}}</span>
 												</a>
-												<span class="amount">จังหวัด</span>
+												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;
+														{{$popProduct->orchardPlot->province->provinceName}}
+													</span>
 											</li>
 
 										</ul>

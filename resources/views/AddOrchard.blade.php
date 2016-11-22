@@ -73,7 +73,7 @@
 													จังหวัด :
 													<span class="required">*</span>
 													<select name="idProvince" id="idProvince" class="form-matching" style="width: 70%; float: right;">
-														<option value="0" selected='selected'>กรุณาเลือก</option>
+														<option value="" selected='selected'>กรุณาเลือก</option>
 														@foreach ($provinces as $province)
 											 			@if ($province->idProvince == old('idProvince'))
 												 			<option value="{{$province->idProvince}}" selected>{{$province->provinceName}}</option>				
