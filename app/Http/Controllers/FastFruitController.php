@@ -58,7 +58,7 @@ class FastFruitController extends Controller
         $orchard->save();
 
         $popOrchards = Orchards::orderBy('views','desc')->take(5)->get();
-        $reviews =DB::table('reviews')->get();
+        $reviews = $orchard->reviews;
         $products = collect();
         
         foreach (Orchards::findOrFail($id)->orchardPlots as $key => $plot) {
@@ -645,12 +645,24 @@ class FastFruitController extends Controller
         //     ));
 
         $orchard = Orchards::find($id);
+        if (Auth::check()){
+            $user = Auth::user();
+        } else {
+            $user = Users::find(0);
+        }
+       
         $input = Request::all();
         $input['approved'] = 1;
         $input['idOrchard'] = $id;
+        $input['idUser'] = $user->id;
+        $input['name'] = $user->firstName;
+        $input['email'] = $user->email;
+
+
 
         $review = Reviews::create($input);
         $orchard->reviews()->save($review);
+        $user->reviews()->save($review);
 
         // Session::flash('Success')
 
