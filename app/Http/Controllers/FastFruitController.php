@@ -163,7 +163,7 @@ class FastFruitController extends Controller
         $input = Request::all();
         
         // return $input;
-
+        $input->plotNumber;
         $plot = Orchard_plots::create($input);
         $orchard = Orchards::findOrFail(array_get($input, 'idOrchard'));        
         $orchard->orchardPlots()->save($plot);
