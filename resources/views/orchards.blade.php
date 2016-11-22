@@ -74,11 +74,11 @@
 													
 												@endforeach
 
-												<p class='spac'><i class='fa fa-lemon-o' style='color: green; margin-top: 10px;'></i>&nbsp;
+												<p class='spac' style="overflow: auto;"><i class='fa fa-lemon-o' style='color: green; margin-top: 10px;'></i>&nbsp;
 
 												{{-- {{ str_limit($string, $limit = 10, $end = '...') }} --}}
 
-												{!! str_limit($strSpecies, $limit = 100)!!}
+												{!! str_limit($strSpecies, $limit = 30)!!}
 												</p>
 
 												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>

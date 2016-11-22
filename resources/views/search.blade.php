@@ -51,7 +51,7 @@
 														<?php $speciesTmp[] =  $orchardPlot->fruitSpecie->specieName; ?>
 														@if($plotKey==0)
 															
-															<p class="space"><i class="fa fa-lemon-o" style="color: green; margin-top: 10px;"></i>&nbsp;{{$orchardPlot->fruitSpecie->specieName}}
+															<p class="space" style="overflow: auto;"><i class="fa fa-lemon-o" style="color: green; margin-top: 10px;"></i>&nbsp;{{$orchardPlot->fruitSpecie->specieName}}
 														@elseif(count($orchard->orchardPlot)===$plotKey+1)
 															{{$orchardPlot->fruitSpecie->specieName}}
 															
@@ -92,7 +92,7 @@
 											<input type="search" class="search-field" placeholder="ค้นหาสวน&hellip;" value="" name="s"/>
 											<input type="submit" value="Search"/>
 										</form>
-									</div>
+									</div><!-- 
 									<div class="widget commerce widget_price_filter">
 										<h3 class="widget-title">กรองตามรอบการผลิต</h3>
 										<form>
@@ -110,7 +110,7 @@
 												</div>
 											</div>
 										</form>
-									</div>
+									</div> -->
 									<div class="widget commerce widget_products">
 										<h3 class="widget-title">สวนยอดนิยม</h3>
 										@foreach($popOrchards as $key => $popOrchard)

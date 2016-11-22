@@ -227,7 +227,9 @@
 													</div> -->
 												</div>
 												<div class="noo-product-title"> 
-													<h3><a href="{{url('product', [$product->idProductSprint])}}">{{$product->orchardPlot->fruitSpecie->specieName}}จาก {{$product->orchardPlot->orchard->nameOrchard}}</a></h3>
+													<h3><a href="{{url('product', [$product->idProductSprint])}}">{{$product->orchardPlot->fruitSpecie->specieName}}<br>
+													<i class='fa fa-leaf' style='color: green;'></i>&nbsp;
+													{{$product->orchardPlot->orchard->nameOrchard}}</a></h3>
 													<span class="price"><span class="amount">จำนวนผลผลิต: {{$product->fruitNum}} กิโลกรัม</span></span>
 													<p class="space">รอบการผลิต:{{$product->startDate}} ถึง {{$product->endDate}}</p>
 													<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;
