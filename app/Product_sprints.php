@@ -14,6 +14,8 @@ class Product_sprints extends Model
     ];
     protected $primaryKey = 'idProductSprint';
 
+    // protected $dates = ['created_at', 'updated_at', 'startData','endDate'];
+
      public function orchardPlot()
     {
     	return $this->belongsTo('App\Orchard_plots','idOrchardPlot');

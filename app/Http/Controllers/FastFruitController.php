@@ -210,9 +210,10 @@ class FastFruitController extends Controller
     public function products()
     {
 
-        $products=Product_sprints::orderBy('idProductSprint','desc')->paginate(9);
+        $products = Product_sprints::orderBy('idProductSprint','desc')->paginate(9);
         // $product=$products[2];
-         $popProducts = Product_sprints::orderBy('views','desc')->take(5)->get();
+        $popProducts = Product_sprints::orderBy('views','desc')->take(5)->get();
+        // $products->endDate->difForHumans();
         return view('products',compact('products','product','popProducts'));
     }
 

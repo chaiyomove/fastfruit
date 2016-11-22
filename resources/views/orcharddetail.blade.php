@@ -25,6 +25,13 @@
 	        @endif
 	        
 	    });
+		$( document ).ready(){
+			$('a[href=mapclient*="maps.google.com")]').live('load', function (e) {
+		    	e.preventDefault();
+		    	console.log(e.href.val());
+		    });
+		};
+	    
 	});
 </script>
 
@@ -248,11 +255,11 @@
 											<script>
 												jQuery(function($) {
 												    $(document).ready(function() {
-														var latlng = {lat: 13.755243, lng: 100.495771 };												 
+														var pos = {lat: 13.755243, lng: 100.495771 };												 
 												        
 												        var myOptions = {
 												            zoom: 8,
-												            center: latlng,
+												            center: pos,
 												            mapTypeId: google.maps.MapTypeId.ROADMAP
 												        };
 												        
@@ -263,32 +270,33 @@
 												    		// Bubble
 												    		var infoWindow = new google.maps.InfoWindow({
 												    			map: map,
-												    			position: latlng,
+												    			position: pos,
 												    			content: "ไม่ทราบตำแหน่งของสวน"
 												    		});
 
 
 
 												        @else
-												        	var latlng = {lat: {{$orchard->lat}}, lng: {{$orchard->lng}} };
-												        	map.setCenter(latlng);
+												        	var pos = {lat: {{$orchard->lat}}, lng: {{$orchard->lng}} };
+												        	map.setCenter(pos);
 												        	
 										                    var marker = new google.maps.Marker({
-													         	position: latlng,
+													         	position: pos,
 													          	map: map
 														    });
 
 												    	@endif
 
-												        
-
-
 												        console.dir(map);
+												        console.log(map.zoom);
+
+												        $('#tab-6').append('<a target="_blank" href="https://maps.google.com/maps?q='+pos.lat+','+pos.lng+'&ll='+pos.lat+','+pos.lng+'&z='+map.zoom+'">คลิกเพื่อดูพื้นที่นี้ใน Google Maps </a>');
+
 
 												        $('a[href="#tab-4"]').on('click', function(e) {
 												            $("#tab-6").show();
 												            google.maps.event.trigger(map, 'resize');
-												            map.setCenter(latlng);
+												            map.setCenter(pos);
 												        	$("#map").css("width", 500).css("height", 500);
 												        });
 
