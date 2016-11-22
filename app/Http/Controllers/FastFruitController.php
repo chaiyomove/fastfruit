@@ -149,6 +149,12 @@ class FastFruitController extends Controller
         return view('plotDetail',compact('plot'));
     }    
 
+    public function plotDetail($id)
+    {
+        $plot = Orchard_plots::findOrFail($id);
+        return view('plotdetail',compact('plot'));
+    }    
+
     public function createPlot($id)
     {   
         $plotstatus = plot_status::all();
@@ -182,7 +188,7 @@ class FastFruitController extends Controller
         $orchard = Orchards::findOrFail(array_get($input, 'idOrchard'));        
         $orchard->orchardPlots()->save($plot);
 
-        return redirect(url('orchards', [$plot->orchard->idOrchard]));
+        return redirect(url('plot', [$plot->idOrchardPlot]));
     }
 
     public function editPlot($id)

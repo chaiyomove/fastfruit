@@ -34,8 +34,8 @@ Route::get('home', 'HomeController@index');
 Route::get('orchards', 'FastFruitController@orchards');
 Route::get('orchards/{id}', 'FastFruitController@orchardDetail');
 
-Route::get('plots/{id}', 'FastFruitController@plots');
-Route::get('plot/{id}', 'FastFruitController@plotsDetail');
+// Route::get('plots/{id}', 'FastFruitController@plots');
+// Route::get('plot/{id}', 'FastFruitController@plotDetail');
 
 Route::get('products', 'FastFruitController@products');
 Route::get('products/{id}', 'FastFruitController@orchardProducts');
@@ -73,6 +73,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('plot', 'FastFruitController@storePlot');
 	Route::get('plot/{id}/edit', 'FastFruitController@editPlot');
 	Route::patch('plot/{id}', 'FastFruitController@updatePlot');
+	Route::get('plot/{id}', 'FastFruitController@plotDetail');
 
 	//Products
 	Route::get('product/{id}/create', 'FastFruitController@createProduct');
@@ -83,7 +84,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 	Route::get('chat', 'FastFruitController@chat');
-	Route::get('userprofile/{id}', 'FastFruitController@userProfile');
+1	Route::get('userprofile/{id}', 'FastFruitController@userProfile');
 	Route::get('userprofile', 'FastFruitController@userProfile');
 
 	
