@@ -19,6 +19,7 @@ use App\Matchings;
 use App\Admins;
 use App\Users;
 use App\Reviews;
+USE App\GapOrchards;
 use Auth;
 use DB;
 
@@ -166,11 +167,16 @@ class FastFruitController extends Controller
         $input['plotNumber'] = substr_replace($input['plotNumber'], "-", 6, 0);
         $input['plotNumber'] = substr_replace($input['plotNumber'], "-", 12, 0);
 
-        $gapOrchard = GapOrchards::wherePlotnumber($input['plotNumber']);
+        $gapOrchard = GapOrchards::wherePlotnumber($input['plotNumber'])->get()->toArray();
         
-        if ($gapOrchard) {
-            $input['idPlotStatus'] = 1;
+        if ($input['idPlotStatus'] == 1) {
+            if ($gapOrchard!=NULL) {
+                $input['idPlotStatus'] = 1;
+            } else {
+                $input['idPlotStatus'] = 3;
+            }
         }
+        
         
         $plot = Orchard_plots::create($input);
         $orchard = Orchards::findOrFail(array_get($input, 'idOrchard'));        

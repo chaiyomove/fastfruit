@@ -91,7 +91,7 @@
 												<label for="username">
 													รหัสแปลง :
 													<span class=""></span>
-													<input type="text" class="input-text" name="plotNumber" id="" value="{{old('plotNumber')}}" style="width: 70%; float: right;" />
+													<input type="text" class="input-text" name="plotNumber" id="" placeholder="เฉพาะตัวเลข" value="{{old('plotNumber')}}" style="width: 70%; float: right;" />
 												</label>
 											</div>
 											<div class="form-row form-row-wide">
