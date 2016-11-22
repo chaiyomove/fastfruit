@@ -163,7 +163,15 @@ class FastFruitController extends Controller
         $input = Request::all();
         
         // return $input;
-        $input->plotNumber;
+        $input['plotNumber'] = substr_replace($input['plotNumber'], "-", 6, 0);
+        $input['plotNumber'] = substr_replace($input['plotNumber'], "-", 12, 0);
+
+        $gapOrchard = GapOrchards::wherePlotnumber($input['plotNumber']);
+        
+        if ($gapOrchard) {
+            $input['idPlotStatus'] = 1;
+        }
+        
         $plot = Orchard_plots::create($input);
         $orchard = Orchards::findOrFail(array_get($input, 'idOrchard'));        
         $orchard->orchardPlots()->save($plot);
