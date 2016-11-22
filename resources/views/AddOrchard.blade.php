@@ -125,8 +125,8 @@
 												                    marker.setPosition(pos);
 
 												                    //set bubble
-												                    infoWindow.setPosition(pos);
-												                    infoWindow.setContent('Location found.');
+												                    // infoWindow.setPosition(pos);
+												                    // infoWindow.setContent('Location found.');
 
 												                    //set input's value
 												                    $("#lat").val(curLat);
@@ -139,30 +139,11 @@
 											                  handleLocationError(false, infoWindow, map.getCenter());
 											                }
 
-											                
-
-
-											                map.addListener('click', function(e) {
-											                    // var marker = new google.maps.Marker({
-											                    //   position: e.latLng,
-											                    //   map: map
-											                    // });
-											                    
+											                //Place marker and pan to the click location 
+											                map.addListener('click', function(e) {											                    
 											                    marker.setPosition(e.latLng);
 											                    map.panTo(latLng);
-											                  });
-											                
-
-											                // function placeMarkerAndPanTo(latLng, map) {
-											                //   var marker = new google.maps.Marker({
-											                //     position: latLng,
-											                //     map: map
-											                //   });
-											                //   map.panTo(latLng);
-											                // }
-
-
-													       
+											                  });													       
 												    	});
 												    });	
 											   		
