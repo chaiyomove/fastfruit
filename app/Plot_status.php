@@ -21,4 +21,9 @@ class Plot_status extends Model
     {
     	return $this->hasMany('App\Matchings','idPlotStatus');
     }
+
+     public function gapOrchards()
+    {
+        return $this->hasMany('App\GapOrchards','idPlotStatus');
+    }
 }
