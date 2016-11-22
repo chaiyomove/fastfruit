@@ -201,12 +201,16 @@
 											</div>
 											<div id="tab-5" class="tab-pane fade">
 												<div id="comments" class="comments-area">
-						                        	<h2 class="comments-title">ความคิดเห็นจากลูกค้า จากทั้งหมด {{$reviews->count()}}</h2>
+						                        	<h2 class="comments-title">ความคิดเห็นจากลูกค้า ทั้งหมด {{$reviews->count()}} ความคิดเห็น</h2>
 						                        	<ol class="comments-list">
 									        			<li class="comment">
 						            						<div class="comment-wrap">
-						                						
-						                    					@foreach($reviews as $review)
+						                						@foreach($reviews as $review)
+						                						<div class="comment-img">
+						                    						<img alt='' src='{{asset(($review->idUser!=0?$review->user->userPicture:'images/avatar/avatar_review.png'))}}' height='80' width='80' />
+						                    					</div>
+						                    					
+
 						                						<article class="comment-block">
 						                    						<header class="comment-header">
 						                        						<cite class="comment-author">
@@ -230,12 +234,14 @@
 															<form class="comment-form" method="POST" enctype="multipart/form-data" action="{{url('/review',[$orchard->idOrchard])}}">
 															{{ csrf_field() }}
 																<div class="row">
-																	<div class="comment-form-author col-sm-6">
-																		<input id="name" name="name" type="text" placeholder="ชื่อของคุณ" class="form-control" value="" size="30" />
-																	</div>
-																	<div class="comment-form-email col-sm-6">
-																		<input id="email" name="email" type="text" placeholder="กรุณากรอกอีเมล์" class="form-control" value="" size="30" />
-																	</div>
+																 	@if (!Auth::check())
+																 		<div class="comment-form-author col-sm-6">
+																 			<input id="name" name="name" type="text" placeholder="ชื่อของคุณ" class="form-control" value="" size="30" />
+																 		</div>
+																 		<div class="comment-form-email col-sm-6">
+																 			<input id="email" name="email" type="text" placeholder="กรุณากรอกอีเมล์" class="form-control" value="" size="30" />
+																 		</div>
+																 	@endif
 																	<div class="col-sm-12">
 																		<div class="comment-form-comment">
 																			<textarea class="form-control" placeholder="เนื้อหาของรีวิว" id="review" name="review" cols="40" rows="6"></textarea>
@@ -290,7 +296,7 @@
 												        console.dir(map);
 												        console.log(map.zoom);
 
-												        $('#tab-6').append('<a target="_blank" href="https://maps.google.com/maps?q='+pos.lat+','+pos.lng+'&ll='+pos.lat+','+pos.lng+'&z='+map.zoom+'">คลิกเพื่อดูพื้นที่นี้ใน Google Maps </a>');
+												        $('#tab-6').append('<a target="_blank" href="https://maps.google.com/maps?q='+pos.lat+','+pos.lng+'&ll='+pos.lat+','+pos.lng+'&z='+map.zoom+'">คลิกเพื่อดูพื้นที่นี้ใน Google Maps </a>').css("text-align","center");
 
 
 												        $('a[href="#tab-4"]').on('click', function(e) {

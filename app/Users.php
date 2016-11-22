@@ -143,6 +143,9 @@ class Users extends Authenticatable
         $this->notify(new ResetPasswordNotification($token));
     }
 
-
+     public function reviews()
+    {
+        return $this->hasMany('App\Reviews','idUser');
+    }
 
 }
