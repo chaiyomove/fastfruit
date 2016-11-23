@@ -41,9 +41,9 @@ class ConfirmEmail extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('คุณได้รับอีเมล์นี้เพราะ เราได้รับคำขอตั้งรหัสผ่านใหม่จากคุณ')
-                    ->action('เปลี่ยนรหัสผ่าน', url('email/confirm', [$this->token]))
-                    ->line('ถ้าคุณไม่ได้ส่งคำขอตั้งรหัสผ่านใหม่มา คุณก็ไม่ต้องดำเนินการใดกับลิงค์นี้ทั้งสิ้น');
+                    ->line('คุณได้รับอีเมล์นี้ เนื่องจากคุณได้สมัครสมาชิกเว็บไซต์ fastfruit.me')
+                    ->action('ยืนยันการสมัครสมาชิก', url('email/confirm', [$this->token]))
+                    ->line('ถ้าคุณไม่ได้ส่งคำขอสมัครสมาชิกของคุณ คุณก็ไม่ต้องดำเนินการใดกับลิงค์นี้ทั้งสิ้น');
     }
 
     /**
