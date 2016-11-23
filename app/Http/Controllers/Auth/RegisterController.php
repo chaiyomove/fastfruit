@@ -104,7 +104,7 @@ class RegisterController extends Controller
 
     protected function emailComfirmation($token)
     {
-        $confirm = Password_resets::whereToken($token);
+        $confirm = Password_resets::whereToken($token)->get();
         if ($confirm != NULL){
             $user = Users::whereEmail($confirm->email);
             $confirm->delete();
