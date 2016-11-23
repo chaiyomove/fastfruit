@@ -10,7 +10,8 @@
         "kartik-v/dependent-dropdown": "^1.4",
         "algolia/algoliasearch-laravel": "^1.5",
         "laravel/socialite": "^2.0",
-        "caouecs/laravel-lang": "^3.0"
+        "caouecs/laravel-lang": "^3.0",
+        "laravel/scout": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

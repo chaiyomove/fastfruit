@@ -10,7 +10,9 @@ use Illuminate\Database\Eloquent\Model;
 use App\Follow_user;
 use App\Social_users;
 
-use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
+// use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
+
+use Laravel\Scout\Searchable;
 
 use Laravel\Socialite\Contracts\User as ProviderUser;
 
@@ -19,7 +21,8 @@ use App\Notifications\ResetPassword as ResetPasswordNotification;
 class Users extends Authenticatable
 {
 	use Notifiable;
-    use AlgoliaEloquentTrait;
+    // use AlgoliaEloquentTrait;
+    use Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -31,6 +34,11 @@ class Users extends Authenticatable
     ];
 
     protected $primaryKey = 'id';
+
+    public function searchableAs()
+    {
+        return 'users';
+    }
 
     public function province()
     {

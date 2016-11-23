@@ -38,8 +38,8 @@ return [
     'connections' => [
 
         'main' => [
-            'id' => '9NKXLJ5ACI',
-            'key' => '3c267414f70127ac0551a8c42dc0e582',
+            'id' => env('ALGOLIA_APP_ID'),
+            'key' => env('ALGOLIA_SECRET'),
         ],
 
         'alternative' => [

@@ -81,6 +81,7 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
             'League\\OAuth1\\' => 14,
             'League\\Flysystem\\' => 17,
             'Laravel\\Socialite\\' => 18,
+            'Laravel\\Scout\\' => 14,
         ),
         'I' => 
         array (
@@ -238,6 +239,10 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
         array (
             0 => __DIR__ . '/..' . '/laravel/socialite/src',
         ),
+        'Laravel\\Scout\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/scout/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -373,6 +378,7 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
         'App\\Follow_user' => __DIR__ . '/../..' . '/app/Follow_user.php',
         'App\\Fruit_species' => __DIR__ . '/../..' . '/app/Fruit_species.php',
         'App\\Fruits' => __DIR__ . '/../..' . '/app/Fruits.php',
+        'App\\GapOrchards' => __DIR__ . '/../..' . '/app/GapOrchards.php',
         'App\\Http\\Controllers\\ApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApiController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -409,6 +415,7 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Provinces' => __DIR__ . '/../..' . '/app/Provinces.php',
+        'App\\Reviews' => __DIR__ . '/../..' . '/app/Reviews.php',
         'App\\Social_users' => __DIR__ . '/../..' . '/app/Social_users.php',
         'App\\User' => __DIR__ . '/../..' . '/app/asdsadfasdfUser.php',
         'App\\Users' => __DIR__ . '/../..' . '/app/Users.php',
@@ -1618,6 +1625,20 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'Laravel\\Scout\\Builder' => __DIR__ . '/..' . '/laravel/scout/src/Builder.php',
+        'Laravel\\Scout\\Console\\FlushCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/FlushCommand.php',
+        'Laravel\\Scout\\Console\\ImportCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/ImportCommand.php',
+        'Laravel\\Scout\\EngineManager' => __DIR__ . '/..' . '/laravel/scout/src/EngineManager.php',
+        'Laravel\\Scout\\Engines\\AlgoliaEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/AlgoliaEngine.php',
+        'Laravel\\Scout\\Engines\\ElasticsearchEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/ElasticsearchEngine.php',
+        'Laravel\\Scout\\Engines\\Engine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/Engine.php',
+        'Laravel\\Scout\\Engines\\NullEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/NullEngine.php',
+        'Laravel\\Scout\\Events\\ModelsImported' => __DIR__ . '/..' . '/laravel/scout/src/Events/ModelsImported.php',
+        'Laravel\\Scout\\Jobs\\MakeSearchable' => __DIR__ . '/..' . '/laravel/scout/src/Jobs/MakeSearchable.php',
+        'Laravel\\Scout\\ModelObserver' => __DIR__ . '/..' . '/laravel/scout/src/ModelObserver.php',
+        'Laravel\\Scout\\ScoutServiceProvider' => __DIR__ . '/..' . '/laravel/scout/src/ScoutServiceProvider.php',
+        'Laravel\\Scout\\Searchable' => __DIR__ . '/..' . '/laravel/scout/src/Searchable.php',
+        'Laravel\\Scout\\SearchableScope' => __DIR__ . '/..' . '/laravel/scout/src/SearchableScope.php',
         'Laravel\\Socialite\\AbstractUser' => __DIR__ . '/..' . '/laravel/socialite/src/AbstractUser.php',
         'Laravel\\Socialite\\Contracts\\Factory' => __DIR__ . '/..' . '/laravel/socialite/src/Contracts/Factory.php',
         'Laravel\\Socialite\\Contracts\\Provider' => __DIR__ . '/..' . '/laravel/socialite/src/Contracts/Provider.php',

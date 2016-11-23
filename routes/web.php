@@ -110,32 +110,7 @@ Route::group(['middleware' => 'auth'], function () {
  */
 Route::get('test', function(){
 
-	// return App\Follow_user::all();
-	
-	foreach (Auth::user()->orchardFollowing as $key => $orchard) {
-	 	if ($orchard->idOrchard == 7) {
-	 		return "YESS";
-	 	}
- 	} 
-
-	// $users = App\Users::all();
-	// // return $users;
-	// foreach ($users as $user) {
-	// 	echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
-	// 	echo "<br><hr>";
-	// }
-
-	// $provinces = App\Provinces::first();
-	// // return $provinces;
-	// // foreach ($provinces as $province) {
-	// 	$users = $provinces->users;
-	// 	foreach ($users as $key => $user) {
-	// 		echo $user->firstName." ".$user->lastName."-".$user->provinces->provinceName;
-	// 		echo "<br><hr>";
-	// 	}
-
-	// 	echo "<br><hr>";
-	// // }
+	return App\Orchards::search("เกียว")->get();
 });
 
 Route::get('upload', function(){

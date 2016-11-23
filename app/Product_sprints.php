@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
+use Laravel\Scout\Searchable;
 
 class Product_sprints extends Model
 {
-    use AlgoliaEloquentTrait;
+    use Searchable;
     
     protected $fillable = [
         'description','fruitNum', 'picture1','picture2','picture3','picture4', 'fruitSpecie','time','idOrchardPlot','startDate','endDate',
@@ -16,7 +16,12 @@ class Product_sprints extends Model
 
     // protected $dates = ['created_at', 'updated_at', 'startData','endDate'];
 
-     public function orchardPlot()
+    public function searchableAs()
+    {
+        return 'product_sprints';
+    }
+
+    public function orchardPlot()
     {
     	return $this->belongsTo('App\Orchard_plots','idOrchardPlot');
     }

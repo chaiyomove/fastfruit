@@ -370,5 +370,13 @@
 		<script type='text/javascript' src='{{asset('js/owl.carousel.min.js')}}'></script>
 		<script type='text/javascript' src='{{asset('js/jflickrfeed.min.js')}}'></script>
 		<script type='text/javascript' src='{{asset('js/jquery.magnific-popup.js')}}'></script>
+		<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.jquery.min.js"></script>
+		<script>
+		  var client = $.algolia.Client('9NKXLJ5ACI', '4531fc24773a02036dbae35cb360b320');
+		  var index = client.initIndex('orchards');
+		  index.search('เหมด', function searchDone(err, content) {
+		    console.log(err, content.hits)
+		  });
+		</script>
 	</body>
 </html>

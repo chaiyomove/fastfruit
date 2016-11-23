@@ -3,17 +3,22 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
+use Laravel\Scout\Searchable;
 
 class Orchards extends Model
 {
-    use AlgoliaEloquentTrait;
+    use Searchable;
     
     protected $primaryKey = 'idOrchard';
 
     protected $fillable = [
         'nameOrchard','description', 'area', 'geolocation','picture1','picture2','picture3','picture4','address','lat','lng','phone','ownerId','idProvince'
     ];
+
+    public function searchableAs()
+    {
+        return 'orchards';
+    }
 
     public function province()
     {

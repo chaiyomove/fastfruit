@@ -565,6 +565,7 @@ class FastFruitController extends Controller
         $matchedOrcs = collect();
         $popOrchards =Orchards::orderBy('views','desc')->take(5)->get();
 
+        // Orchards => nameOrchard, description
         foreach ($orchards as $key => $orchard) {
             if (str_contains($orchard->nameOrchard,$search)) {
                 $matchedOrcs[] = $orchard;
@@ -574,6 +575,7 @@ class FastFruitController extends Controller
             }  
         }  
 
+        // Orchards->OrchardPlots => fruitspecie
         foreach ($fruitSpecies as $key => $fruitSpecie) {
             if (str_contains($fruitSpecie->specieName,$search)) {
                 $orchardPlots = $fruitSpecie->orchardPlots;
@@ -584,6 +586,7 @@ class FastFruitController extends Controller
             }   
         }
 
+        // Orchards => province
         foreach ($provinces as $key => $province) {
             if (str_contains($province->provinceName,$search)) {
                 foreach ($province->orchards as $key => $orchard) {
