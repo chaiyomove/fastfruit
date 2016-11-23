@@ -202,6 +202,7 @@ class FastFruitController extends Controller
     public function editPlot($id)
     {
         $plot=Orchard_plots::findOrFail($id);
+        $plot->plotNumber = str_replace("-", "",$plot->plotNumber);
         $fruits = Fruits::all();
         $fruitSpecies = Fruit_species::all();
         
@@ -212,7 +213,9 @@ class FastFruitController extends Controller
 
     public function updatePlot(UpdatePlotRequest $request,$id)
     {
-         $input = Request::all();
+        $input = Request::all();
+        $input['plotNumber'] = substr_replace($input['plotNumber'], "-", 6, 0);
+        $input['plotNumber'] = substr_replace($input['plotNumber'], "-", 11, 0);
 
         if (array_get($input,'pictures')!==NULL){
             $pictures = array_values(array_get($input,'pictures'));
@@ -230,8 +233,10 @@ class FastFruitController extends Controller
         // $input['description'] = trim($input['description']);
        
         Orchard_plots::find($id)->update($input);
-        
-        return redirect('plot/'.$id);
+        $plot = Orchard_plots::find($id);
+        $products = $plot->productSprints->reverse();
+
+        return redirect(url('product',[$products->first()->idProductSprint]));
     }
 
     public function products()
