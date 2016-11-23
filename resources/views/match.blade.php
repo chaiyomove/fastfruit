@@ -44,7 +44,7 @@
 		$('#matching_form').on('submit', function(e){
 			e.preventDefault();
 			var formData = $('#matching_form').serializeArray();
-			// console.log(formData);
+			console.log(formData);
 	   //  	var formData = {
 	   //          '_token'           	: $('input[name=_token]').val(),
 				// "idFruit"			: $('input[name=idFruit]').val(),

@@ -64,10 +64,14 @@
 										@if (Auth::user())							
 											<li>
 												<div>
-													<span class="has-cart">
-													<a href="{{ url('notifications') }}"><i class="fa fa-bell"></i></a>
-													<em>1</em>
-												</span>
+													<a href="{{ url('notifications') }}">
+														<span class="has-cart">
+															<i class="fa fa-bell"></i>
+															@if (Auth::user()->notifications->first() != null)
+																<em>{{Auth::user()->notifications->count()}}</em>														
+															@endif
+														</span>
+													</a>
 												</div>
 												<a href="{{ url('profile/'.Auth::user()->id) }}">
 												<div>

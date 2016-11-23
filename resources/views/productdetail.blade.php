@@ -96,7 +96,7 @@
 										</div>
 										<div class="summary entry-summary">
 
-											@if (Auth::user())
+											@if (Auth::user() && $product->orchardPlot->orchard->user->first()->id != Auth::user()->id)
 												<?php $i = 0 ?>
 												@foreach (Auth::user()->userBookmarks as $key => $bookmark)
 													@if ($bookmark->idProductSprint == $product->idProductSprint && $i==0)

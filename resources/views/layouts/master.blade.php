@@ -68,7 +68,9 @@
 											<a href="{{ url('notifications') }}">
 												<span class="has-cart">
 													<i class="fa fa-bell"></i>
-													<em>1</em>
+														@if (Auth::user()->notifications->first() != null)
+															<em>{{Auth::user()->notifications->count()}}</em>														
+														@endif
 												</span>
 											</a>
 										</li>
@@ -162,7 +164,6 @@
 		                        <div class="login">                                 
 		                            <div class="login-right">
 		                                <ul class="alert alert-danger" style="font-size: 100%; margin-top:-30px; padding-left:40px;">
-
 		                                    @foreach($errors->all() as $error)
 		                                        <li>{{ $error }}</li>
 		                                    @endforeach		                                    

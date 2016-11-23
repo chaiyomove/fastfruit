@@ -164,11 +164,16 @@ class Users extends Authenticatable
         $this->notify(new ConfirmEmailNotification($token));
     }
 
-
-
-     public function reviews()
+    public function reviews()
     {
         return $this->hasMany('App\Reviews','idUser');
     }
+
+    public function notifications()
+    {
+        return $this->hasMany('App\Notifications','idUser');
+    }
+
+
 
 }
