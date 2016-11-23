@@ -65,7 +65,7 @@
 
 										@if (Auth::user())
 										<li>
-											<a href="cart.html">
+											<a href="{{ url('notifications') }}">
 												<span class="has-cart">
 													<i class="fa fa-bell"></i>
 													<em>1</em>
