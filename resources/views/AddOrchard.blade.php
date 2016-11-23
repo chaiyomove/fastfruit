@@ -105,7 +105,8 @@
 
 													        // Marker
 													        var marker = new google.maps.Marker({
-													          map: map
+													          map: map,
+													          position: pos,
 													        });
 
 													        // Bubble
