@@ -33,7 +33,7 @@
 						<div class="profileImg">
 							<img src="{{asset($user->userPicture)}}" id="resizeimg"/>
 						</div>
-						<p style="font-size: x-large;">{{$user->firstName}}&nbsp;{{Auth::user()->lastName}}</p>
+						<p style="font-size: x-large;">{{$user->firstName}}&nbsp;{{$user->lastName}}</p>
 						<p style="font-size: medium; ">{{$user->address}}</p>
 						<p style="font-size: medium; ">{{$user->province->provinceName}}</p>
 
