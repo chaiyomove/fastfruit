@@ -93,20 +93,21 @@
 													
 											   		jQuery(function($) {
 											   		    $(document).ready(function() {
-													        var center = {lat: -25.363, lng: 131.044 };
+															var pos = {lat: 13.755243, lng: 100.495771 };												 
 													        var curLat;
 													        var curLng;
 
 													        // MAP
 													        var map = new google.maps.Map(document.getElementById('map'), {
 													          zoom: 4,
-													          // center: center
+													          center: pos,
 													        });
+
 													        // Marker
 													        var marker = new google.maps.Marker({
-													          // position: center,
 													          map: map
 													        });
+
 													        // Bubble
 													        // var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -144,8 +145,8 @@
 											                map.addListener('click', function(e) {											                    
 											                    pos = e.latLng;
 											                    marker.setPosition(pos);
-											                    // map.panTo(pos);;	
-											                    // 
+											                    // map.panTo(pos);
+											                    
 											              		//set input's value
 												                $("#lat").val(pos.lat());
 												                $("#lng").val(pos.lng());	

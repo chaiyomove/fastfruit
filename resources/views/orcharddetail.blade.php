@@ -302,7 +302,6 @@
 												    	@endif
 
 												        console.dir(map);
-												        console.log(map.zoom);
 
 												        $('#tab-6').append('<a target="_blank" href="https://maps.google.com/maps?q='+pos.lat+','+pos.lng+'&ll='+pos.lat+','+pos.lng+'&z='+map.zoom+'">คลิกเพื่อดูพื้นที่นี้ใน Google Maps </a>').css("text-align","center");
 
