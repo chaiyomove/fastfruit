@@ -94,12 +94,9 @@ class RegisterController extends Controller
 
         $this->create($request->all());
 
-        return redirect('success');
-    }
+        session(['status' => 'สมัครสมาชิกสำเร็จ กรุณายืนยันอีเมลก่อนลงชื่อเข้าใช้']);
 
-    public function success()
-    {
-        return "Seccess!";
+        return redirect(url('login'));
     }
 
     protected function emailComfirmation($token)

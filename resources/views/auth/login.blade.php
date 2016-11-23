@@ -17,6 +17,14 @@
 								<div id="customer_login">
 	                				<div class="col-md-6">
 	                					<h2>เข้าสู่ระบบ</h2>
+
+	                					@if (session('status'))
+	                					    <div class="alert alert-success">
+	                					        {{ session('status') }}
+	       										<?php session()->forget('status');  ?>
+	                					    </div>
+	                					@endif
+
 	                					<form class="login" method="POST" action="{{ url('/login') }}">
 	                						{{ csrf_field() }}
 	                						<div class="form-row form-row-wide">
