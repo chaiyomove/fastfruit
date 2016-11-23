@@ -151,7 +151,9 @@
 												                $("#lng").val(pos.lng());	
 											                });		
 
-
+											                google.maps.event.trigger(map, 'resize');
+												            map.setCenter(pos);
+												        	$("#map").css("width", 500).css("height", 500);
 											                										       
 												    	});
 												    });	
