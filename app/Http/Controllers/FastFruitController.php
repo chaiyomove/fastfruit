@@ -294,7 +294,6 @@ class FastFruitController extends Controller
         $product = Product_sprints::create($input);
         $plot = Orchard_plots::findOrFail(array_get($input, 'idOrchardPlot'));
         $plot->productSprints()->save($product);
-        Product_sprints::reindex(); 
        
         return redirect(url('product', [$product->idProductSprint]));
     }
@@ -326,7 +325,6 @@ class FastFruitController extends Controller
 
         // return dd($input);
         $input['description'] = trim($input['description']);
-        Product_sprints::reindex(); 
        
         Product_sprints::find($id)->update($input);
         return redirect('product/'.$id);
