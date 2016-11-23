@@ -20,6 +20,7 @@ use App\Admins;
 use App\Users;
 use App\Reviews;
 USE App\GapOrchards;
+USE App\Notifications;
 use Auth;
 use DB;
 
@@ -102,7 +103,16 @@ class FastFruitController extends Controller
         $user = Auth::user();
 
         $user->orchards()->save($orchard);
+        foreach ($user->Followers as $key => $otherUser) {
+            $noti = new Notifications;
+            $noti->idUser = $user->id;
+            $noti->idOtherUser = $otherUser->id;
+            $noti->idOrchard = $orchard->idOrchard;
+            $noti->idNotiType = 6;
 
+            $noti->save();
+        }     
+        
         // $admin = new Admins();
         // $admin->idUser = Auth::user()->id;
         // $admin->idOrchard = Orchards::latest()->first()->idOrchard;
@@ -298,7 +308,28 @@ class FastFruitController extends Controller
 
         $product = Product_sprints::create($input);
         $plot = Orchard_plots::findOrFail(array_get($input, 'idOrchardPlot'));
+        // return $plot->orchard->orchardFollowers;
         $plot->productSprints()->save($product);
+
+        foreach (Auth::user()->Followers as $key => $otherUser) {
+            $noti = new Notifications;
+            $noti->idUser = Auth::user()->id;
+            $noti->idOtherUser = $otherUser->id;
+            $noti->idProductSprint = $product->idProductSprint;
+            $noti->idNotiType = 7;
+            
+            $noti->save();
+        }     
+
+        foreach ($plot->orchard->orchardFollowers as $key => $otherUser) {
+            $noti = new Notifications;
+            $noti->idUser = Auth::user()->id;
+            $noti->idOtherUser = $otherUser->id;
+            $noti->idProductSprint = $product->idProductSprint;
+            $noti->idNotiType = 7;
+
+            $noti->save();
+        }     
        
         return redirect(url('product', [$product->idProductSprint]));
     }
