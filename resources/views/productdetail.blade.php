@@ -203,9 +203,7 @@
 									    	<li>
 									    		<a data-toggle="tab" href="#tab-2">ประวัติการผลิต</a>
 									    	</li>
-									    	<li>
-									    		<a data-toggle="tab" href="#tab-3">รีวิว</a>
-									    	</li>
+
 									  	</ul>
 										<div class="tab-content">
 											<div class="tab-pane fade in active" id="tab-1">
