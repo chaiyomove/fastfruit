@@ -103,14 +103,14 @@
 							</div>
 							<div class="noo-sidebar col-md-3">
 								<div class="noo-sidebar-wrap">
-									<div class="widget commerce widget_product_search">
+									<!-- <div class="widget commerce widget_product_search">
 										<h3 class="widget-title">ค้นหา</h3>
 										<form method="GET" action="{{ url('search') }}" class="form-horizontal">
 											{{ csrf_field() }}
 											<input type="search" class="search-field" placeholder="ค้นหาสวน&hellip;" value=""/>
 											<input type="submit" value="Search"/>
 										</form>
-									</div>
+									</div> -->
 									<!-- <div class="widget commerce widget_price_filter">
 										<h3 class="widget-title">กรองตามรอบการผลิต</h3>
 										<form>
