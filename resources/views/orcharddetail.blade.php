@@ -215,7 +215,7 @@
 						            						<div class="comment-wrap">
 						                						@foreach($reviews as $review)
 						                						<div class="comment-img">
-						                    						<img alt='' src='{{asset(($review->idUser!=0?$review->user->userPicture:'images/avatar/avatar_review.png'))}}' height='80' width='80' />
+						                    						<img alt='' src='{{asset(($review->idUser!=0?$review->user->userPicture:'images/avatar/avatar_review.png'))}}' height='80' width='80' style="margin-top: 10px; width: 80px; height: 80px;" />
 						                    					</div>
 						                    					
 
