@@ -103,6 +103,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('useraddadmin', 'FastFruitController@userAddadmin');
 	Route::get('dashboard', 'FastFruitController@dashboard');
 	Route::get('map', 'FastFruitController@map');
+	Route::get('notifications','FastFruitController@notifications');
 });
 
 

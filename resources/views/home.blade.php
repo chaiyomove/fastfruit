@@ -65,7 +65,7 @@
 											<li>
 												<div>
 													<span class="has-cart">
-													<i class="fa fa-bell"></i>
+													<a href="{{ url('notifications') }}"><i class="fa fa-bell"></i></a>
 													<em>1</em>
 												</span>
 												</div>

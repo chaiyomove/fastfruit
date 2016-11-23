@@ -704,6 +704,13 @@ class FastFruitController extends Controller
         return redirect(url('/orchards', [$orchard->idOrchard]));
     }
 
+    public function notifications()
+    {
+        
+        return view('notification');
+        
+    }
+
 
 
 }
