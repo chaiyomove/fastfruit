@@ -63,11 +63,36 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Users::create([
-            'firstName' => $data['firstName'],
-            'lastName' => $data['lastName'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+        $user = Users::create([
+                    'firstName' => $data['firstName'],
+                    'lastName' => $data['lastName'],
+                    'email' => $data['email'],
+                    'password' => bcrypt($data['password']),
+                    'confirm' => 0,
+                ]);
+        $confirm = Password_resets::create([
+                        'email' => $user->email,
+                        'token' => str_random(64),
         ]);
+
+        $user->sendEmailComfirmationNotification($confirm->token);
+
+        return $user; 
+
+    }
+
+    protected function emailComfirmation($token)
+    {
+        $confirm = Password_resets::whereToken($token);
+        if ($confirm != NULL){
+            $user = Users::whereEmail($confirm->email);
+            $confirm->delete();
+            $user->confirm = 1;
+            $user->save();
+            auth()->login($user);
+            
+            return redirect('/');
+        }
+
     }
 }

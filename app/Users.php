@@ -18,6 +18,8 @@ use Laravel\Socialite\Contracts\User as ProviderUser;
 
 use App\Notifications\ResetPassword as ResetPasswordNotification;
 
+use App\Notifications\ConfirmEmail as ConfirmEmailNotification;
+
 class Users extends Authenticatable
 {
 	use Notifiable;
@@ -150,6 +152,19 @@ class Users extends Authenticatable
     {
         $this->notify(new ResetPasswordNotification($token));
     }
+
+    /**
+     * Send the email confeirmmation notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendEmailComfirmationNotification($token)
+    {
+        $this->notify(new ConfirmEmailNotification($token));
+    }
+
+
 
      public function reviews()
     {

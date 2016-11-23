@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 //     return view('zzzwelcome');
 // });
 
-
+Route::get('email/confirm/{id}', 'RegisterController@emailComfirmation');
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
 
@@ -109,8 +109,7 @@ Route::group(['middleware' => 'auth'], function () {
  * TEST
  */
 Route::get('test', function(){
-
-	return App\Orchards::search("เกียว")->get();
+	return str_random(64);
 });
 
 Route::get('upload', function(){
