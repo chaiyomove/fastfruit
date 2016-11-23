@@ -45,24 +45,33 @@
 											</div>
 											<div class="noo-product-title"> 
 												<h3><a href="{{'orchards/'.$orchard->idOrchard}}">{{$orchard->nameOrchard}}</a></h3>
-												<?php $speciesTmp = array(); ?>
+
+												<?php $speciesTmp = array(); 
+													 $strSpecies = "";
+													 ?>
 												@foreach ($orchard->orchardPlots as $plotKey => $orchardPlot)
 													@if (!array_has($speciesTmp, $orchardPlot->fruitSpecie->specieName))
 														<?php $speciesTmp[] =  $orchardPlot->fruitSpecie->specieName; ?>
 														@if($plotKey==0)
 															
-															<p class="space" style="overflow: auto;"><i class="fa fa-lemon-o" style="color: green; margin-top: 10px;"></i>&nbsp;{{$orchardPlot->fruitSpecie->specieName}}
+															<?php $strSpecies = $orchardPlot->fruitSpecie->specieName;
+															?>
 														@elseif(count($orchard->orchardPlot)===$plotKey+1)
-															{{$orchardPlot->fruitSpecie->specieName}}
-															
+															<?php $strSpecies .= $orchardPlot->fruitSpecie->specieName; ?>
+														 	
 														@else
-														, {{$orchardPlot->fruitSpecie->specieName}}
+														<?php $strSpecies .= ", ".$orchardPlot->fruitSpecie->specieName; ?>
 															
 														@endif	
 													@endif
 													
 												@endforeach
-															</p>
+															<p class='spac' style="overflow: auto;"><i class='fa fa-lemon-o' style='color: green; margin-top: 10px;'></i>&nbsp;
+
+												{{-- {{ str_limit($string, $limit = 10, $end = '...') }} --}}
+
+												{!! str_limit($strSpecies, $limit = 30)!!}
+												</p>
 
 												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
 												<div class="noo-product-action">
