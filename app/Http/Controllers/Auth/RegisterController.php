@@ -106,7 +106,7 @@ class RegisterController extends Controller
     {
         $confirm = Password_resets::whereToken($token)->get();
         if ($confirm != NULL){
-            $user = Users::whereEmail($confirm->email);
+            $user = Users::whereEmail($confirm->email)->get();
             $confirm->delete();
             $user->confirm = "1";
             $user->save();
