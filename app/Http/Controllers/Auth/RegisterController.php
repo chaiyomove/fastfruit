@@ -7,7 +7,7 @@ use App\Password_resets;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     /*
