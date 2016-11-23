@@ -82,6 +82,26 @@ class RegisterController extends Controller
 
     }
 
+     /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        $this->create($request->all());
+
+        return redirect('success');
+    }
+
+    public function success()
+    {
+        return "Seccess!";
+    }
+
     protected function emailComfirmation($token)
     {
         $confirm = Password_resets::whereToken($token);
