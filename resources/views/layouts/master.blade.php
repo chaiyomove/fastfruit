@@ -240,7 +240,7 @@
 										</a>
 									</p>
 								</div>
-								<div class="widget widget_noo_social"> 
+								<!-- <div class="widget widget_noo_social"> 
 									<div class="noo_social">
 										<div class="social-all">
 											<a href="#" class="fa fa-facebook"></a>
@@ -250,7 +250,7 @@
 											<a href="#" class="fa fa-skype"></a>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						<div class="col-md-1"></div>
