@@ -25,13 +25,6 @@
 	        @endif
 	        
 	    });
-		$( document ).ready(){
-			$('a[href=mapclient*="maps.google.com")]').live('load', function (e) {
-		    	e.preventDefault();
-		    	console.log(e.href.val());
-		    });
-		};
-	    
 	});
 </script>
 
