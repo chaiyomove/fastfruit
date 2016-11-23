@@ -104,9 +104,9 @@ class RegisterController extends Controller
 
     protected function emailComfirmation($token)
     {
-        $confirm = Password_resets::whereToken($token)->last();
+        $confirm = Password_resets::whereToken($token)->orderBy('created_at', 'desc')->first();
         if ($confirm != NULL){
-            $user = Users::whereEmail($confirm->email)->last();
+            $user = Users::whereEmail($confirm->email)->first();
             $confirm->delete();
             $user->confirm = "1";
             $user->save();

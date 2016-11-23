@@ -56,29 +56,41 @@
 													<div class="item">
 														<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture1)}}" alt="" />
 													</div>
-													<div class="item">
-														<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture2)}}" alt="" />
-													</div>
-													<div class="item">
-														<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture3)}}" alt="" />
-													</div>
-													<div class="item">
-														<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture4)}}" alt="" />
-													</div>
+													@if (!str_contains($orchard->picture2, "no11"))
+														<div class="item">
+															<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture2)}}" alt="" />
+														</div>
+													@endif
+													@if (!str_contains($orchard->picture3, "no11"))
+														<div class="item">
+															<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture3)}}" alt="" />
+														</div>
+													@endif
+													@if (!str_contains($orchard->picture4, "no11"))
+														<div class="item">
+															<img style="width: 400px; height: 265px" src="{{ asset($orchard->picture4)}}" alt="" />
+														</div>
+													@endif 
 												</div>
 												<div class="owl-carousel sync2">
 													<div class="item">
 														<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture1)}}" alt="" />
 													</div>
-													<div class="item">
-														<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture2)}}" alt="" />
-													</div>
-													<div class="item">
-														<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture3)}}" alt="" />
-													</div>
-													<div class="item">
-														<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture4)}}" alt="" />
-													</div>
+													@if (!str_contains($orchard->picture2, "no11"))
+														<div class="item">
+															<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture2)}}" alt="" />
+														</div>
+													@endif
+													@if (!str_contains($orchard->picture3, "no11"))
+														<div class="item">
+															<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture3)}}" alt="" />
+														</div>
+													@endif
+													@if (!str_contains($orchard->picture4, "no11"))
+														<div class="item">
+															<img style="width: 90px; height: 60px" src="{{ asset($orchard->picture4)}}" alt="" />
+														</div>
+													@endif
 												</div>
 											</div>
 										</div>

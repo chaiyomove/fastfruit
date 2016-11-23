@@ -74,8 +74,11 @@
 													
 												@endforeach
 
-												<p class='spac' style="overflow: auto;"><i class='fa fa-lemon-o' style='color: green; margin-top: 10px;'></i>&nbsp;
-
+												{{-- @if ($strSpecies != NULL) --}}
+													<p class='spac' style="overflow: auto;"><i class='fa fa-lemon-o' style='color: green; margin-top: 10px; {{$strSpecies == NULL ? "visibility: hidden" : ""}}'></i>&nbsp;
+												{{-- @else
+													<p class='spac' style="overflow: auto;"><i class='fa fa-lemon-o' style='color: green; margin-top: 10px;'></i>
+												@endif --}}
 												{{-- {{ str_limit($string, $limit = 10, $end = '...') }} --}}
 
 												{!! str_limit($strSpecies, $limit = 30)!!}
