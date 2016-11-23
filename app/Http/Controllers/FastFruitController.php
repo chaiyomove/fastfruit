@@ -179,7 +179,7 @@ class FastFruitController extends Controller
         
         // return $input;
         $input['plotNumber'] = substr_replace($input['plotNumber'], "-", 6, 0);
-        $input['plotNumber'] = substr_replace($input['plotNumber'], "-", 12, 0);
+        $input['plotNumber'] = substr_replace($input['plotNumber'], "-", 11, 0);
 
         $gapOrchard = GapOrchards::wherePlotnumber($input['plotNumber'])->get()->toArray();
         
