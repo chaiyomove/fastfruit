@@ -149,13 +149,13 @@
 							</div>
 							<div class="noo-sidebar col-md-3">
 								<div class="noo-sidebar-wrap">
-									<div class="widget commerce widget_product_search">
+									<!-- <div class="widget commerce widget_product_search">
 										<h3 class="widget-title">ค้นหา</h3>
 										<form>
 											<input type="search" class="search-field" placeholder="ค้นหาสวน&hellip;" value="" name="s"/>
 											<input type="submit" value="Search"/>
 										</form>
-									</div>
+									</div> -->
 									<div class="widget commerce widget_products">
 										<h3 class="widget-title">ผลผลิตยอดนิยม</h3>
 										@foreach($popProducts as $key => $popProduct)
