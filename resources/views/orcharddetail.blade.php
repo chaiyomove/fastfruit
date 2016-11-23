@@ -16,7 +16,7 @@
 	        if (!$el.hasClass('follow')){
 	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/followorchard/{{$orchard->idOrchard}}', function(data){ 
 	        		// alert(data);
-	        	});	
+	        	}).done(function(data){console.log(data);});	
 	        } else {
 	        	$.get('{{url('api/user')}}/{{Auth::user()->id}}/unfolloworchard/{{$orchard->idOrchard}}', function(data){ 
 	        		// alert(data);

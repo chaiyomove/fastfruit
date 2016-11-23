@@ -28,6 +28,8 @@ use App\Matchings;
 
 use App\Provinces;
 
+use App\Notifications;
+
 use App\Http\Requests\MatchOrchardRequest;
 
 
@@ -57,8 +59,15 @@ class ApiController extends Controller
         $user = Users::findOrFail($uid);
         $orchard = Orchards::findOrFail($id);
         $user->orchardFollowing()->save($orchard);
-        
-        return;
+        $noti = new Notifications;
+        $noti->idUser = $orchard->users->first()->id;
+        $noti->idOtherUser = $uid;
+        $noti->idOrchard = $id;
+        $noti->idNotiType = 2;
+
+        $noti->save();
+
+        return $noti;
     }
 
     public function UnFollowOrchard($uid, $id)
@@ -75,8 +84,11 @@ class ApiController extends Controller
         $user = Users::findOrFail($uid);
         $following = Users::findOrFail($id);
         $user->Followings()->save($following);
-        
-        return;
+        $user->notiFollowings()->save($following);
+        $noti = $following->notifications->reverse()->first();
+        $noti->idNotiType = 1;
+        $noti->save();
+        return $noti;
     }
 
     public function UnFollowUser($uid, $id)

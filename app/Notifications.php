@@ -8,7 +8,7 @@ class Notifications extends Model
 {
 	 protected $primaryKey = 'id';
      protected $fillable = [
-        'notiType','seenStatus','idUser','idOrchard','idNotiType','idProductSprint'
+        'notiType','seenStatus','idOtherUser','idUser','idOrchard','idNotiType','idProductSprint'
     ];
     protected $table = 'notifications';
 
@@ -20,6 +20,11 @@ class Notifications extends Model
     public function user()
     {
     	return $this->belongsTo('App\Users','idUser');
+    }
+
+    public function otherUser()
+    {
+        return $this->belongsTo('App\Users','idOtherUser');
     }
 
     public function notificationTyes()

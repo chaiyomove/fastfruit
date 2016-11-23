@@ -174,6 +174,14 @@ class Users extends Authenticatable
         return $this->hasMany('App\Notifications','idUser');
     }
 
+    public function notiFollowings()
+    {
+        return $this->belongsToMany('App\Notifications', 'notifications', 'idOtherUser', 'idUser');        
+    }
 
+    public function notiorchardFollowing()
+    {
+        return $this->belongsToMany('App\Notifications', 'notifications','idUser','idOrchard');            
+    }
 
 }
