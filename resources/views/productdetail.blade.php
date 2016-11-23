@@ -220,7 +220,7 @@
 																	<img style="width: 70px; height: 70px;" src="{{asset($pvsProduct->picture1)}}" alt="" /> 
 																	<span class="product-title">{{$pvsProduct->orchardPlot->fruitSpecie->specieName}}</span>
 																</a>
-																<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74); float: right;">&nbsp;{{$pvsProduct->orchardPlot->province->provinceName}}</span>
+																<!-- <span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74); float: right;">&nbsp;{{$pvsProduct->orchardPlot->province->provinceName}}</span> -->
 
 																<p>วันที่ผลิต {{$product->startDate}} ถึง {{$product->endDate}}</p>
 																<p>จำนวน {{$product->fruitNum}}&nbsp;กิโลกรัม</p>
