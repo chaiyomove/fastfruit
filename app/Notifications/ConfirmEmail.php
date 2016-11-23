@@ -42,7 +42,7 @@ class ConfirmEmail extends Notification
     {
         return (new MailMessage)
                     ->line('คุณได้รับอีเมล์นี้เพราะ เราได้รับคำขอตั้งรหัสผ่านใหม่จากคุณ')
-                    ->action('เปลี่ยนรหัสผ่าน', url('password/reset', $this->token))
+                    ->action('เปลี่ยนรหัสผ่าน', url('email/confirm', [$this->token]))
                     ->line('ถ้าคุณไม่ได้ส่งคำขอตั้งรหัสผ่านใหม่มา คุณก็ไม่ต้องดำเนินการใดกับลิงค์นี้ทั้งสิ้น');
     }
 
