@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 //     return view('zzzwelcome');
 // });
 // 
-Route::get('success', 'RegisterController@rsuccess');
+Route::get('success', 'RegisterController@success');
 Route::get('email/confirm/{id}', 'RegisterController@emailComfirmation');
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();

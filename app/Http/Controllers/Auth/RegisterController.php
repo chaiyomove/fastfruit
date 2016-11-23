@@ -108,7 +108,7 @@ class RegisterController extends Controller
         if ($confirm != NULL){
             $user = Users::whereEmail($confirm->email);
             $confirm->delete();
-            $user->confirm = 1;
+            $user->confirm = "1";
             $user->save();
             auth()->login($user);
             
