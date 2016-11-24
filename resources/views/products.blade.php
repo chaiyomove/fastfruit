@@ -15,7 +15,7 @@
 								<div class="noo-catalog">
 									<p class="commerce-result-count">แสดง {{$products->count()}} จากทั้งหมด {{App\Product_sprints::all()->count()}}</p>
 								
-									<form class="commerce-ordering">
+									{{-- <form class="commerce-ordering">
 										<select name="orderby" class="orderby">
 											<option value="" selected='selected'>เรียงตามค่าเริ่มต้น</option>
 											<option value="">เรียงตามจังหวัด</option>
@@ -23,7 +23,7 @@
 											<option value="">Sort by newness</option>
 											<option value="">Sort by price: low to high</option>
 										</select>
-									</form>
+									</form> --}}
 								</div>
 								@foreach ($products as $key => $product)
 								@if ($key%3 == 0)	

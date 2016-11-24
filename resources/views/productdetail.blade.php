@@ -329,7 +329,7 @@
 											</div> --}}
 										</div>
 									</div>
-									<div class="related products">
+									{{-- <div class="related products">
 									<h2>ผลผลิตที่คล้ายกัน</h2>
 									
 										<div class="products row product-grid">
@@ -366,7 +366,7 @@
 											
 											
 										</div>
-									</div>
+									</div> --}}
 								</div>
 							</div>
 							<div class="noo-sidebar col-md-3">

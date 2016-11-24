@@ -332,56 +332,7 @@
 										</div>
 									</div>
 									<div class="related products">
-									<h2>สวนที่คล้ายกัน</h2>
-										<div class="products row product-grid">
-											<div class="masonry-item noo-product-column col-md-3 col-sm-6 product">
-												<div class="noo-product-inner">
-													<div class="noo-product-thumbnail">
-														<a href="{{'orchards/'.$orchard->idOrchard}}">
-															<img style="width: 260px; height: 160px;" src="{{asset($orchard->picture1)}}"alt="" />
-														</a>
-														<!-- <div class="noo-rating">
-															<div class="star-rating">
-																<span style="width:0%"></span>
-															</div>
-														</div> -->
-													</div>
-													<div class="noo-product-title"> 
-														<h3><a href="{{'orchards/'.$orchard->idOrchard}}">{{$orchard->nameOrchard}}</a></h3>
-														<?php $speciesTmp = array(); ?>
-												@foreach ($orchard->orchardPlots as $plotKey => $orchardPlot)
-													@if (!array_has($speciesTmp, $orchardPlot->fruitSpecie->specieName))
-														<?php $speciesTmp[] =  $orchardPlot->fruitSpecie->specieName; ?>
-														@if($plotKey==0)
-															
-															<p class="space"><i class="fa fa-lemon-o" style="color: green; margin-top: 10px;"></i>&nbsp;{{$orchardPlot->fruitSpecie->specieName}}
-														@elseif(count($orchard->orchardPlot)===$plotKey+1)
-															{{$orchardPlot->fruitSpecie->specieName}}
-															
-														@else
-														, {{$orchardPlot->fruitSpecie->specieName}}
-															
-														@endif	
-													@endif
-													
-												@endforeach
-															</p>
-
-												<span class="fa fa-map-marker" style="margin-bottom: 15px; color: rgb(206, 74, 74);">&nbsp;{{$orchard->province->provinceName}}</span>
-														<div class="noo-product-action">
-															<div class="noo-action">
-																<a href="{{'orchards/'.$orchard->idOrchard}}" class="button product_type_simple eye_button">
-																	<span>ชมสวน</span>
-																</a>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											
-											
-										</div>
+									
 									</div>
 								</div>
 							</div>

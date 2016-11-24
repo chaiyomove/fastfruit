@@ -15,13 +15,13 @@
 								<div class="noo-catalog">
 									<p class="commerce-result-count">แสดง {{$orchards->count()}} จากทั้งหมด {{App\Orchards::all()->count()}}</p>
 								
-									<form class="commerce-ordering" method="GET" action="">
+									{{-- <form class="commerce-ordering" method="GET" action="">
 										<select name="orderby" class="orderby">
 											<option value="" selected='selected'>เรียงตามค่าเริ่มต้น ใหม่->เก่า</option>
 											<option value="">เรียงตามที่มี GAP</option>
 											<option value="">เรียงตามจำนวนชนิดผลไม้ มาก->น้อย</option>
 										</select>
-									</form>
+									</form> --}}
 								</div>
 								@foreach ($orchards as $key => $orchard)
 								@if ($key%3 == 0)

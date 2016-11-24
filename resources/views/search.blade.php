@@ -15,15 +15,7 @@
 								<div class="noo-catalog">
 									<p class="commerce-result-count">พบผลลัพธ์ทั้งหมด {{$matchedOrcs->count()}}  </p>
 								
-									<form class="commerce-ordering">
-										<select name="orderby" class="orderby">
-											<option value="" selected='selected'>เรียงตามค่าเริ่มต้น</option>
-											<option value="">เรียงตามจังหวัด</option>
-											<option value="">เรียงตามรอบการผลิต</option>
-											<option value="">Sort by newness</option>
-											<option value="">Sort by price: low to high</option>
-										</select>
-									</form>
+									
 								</div>
 
 								@foreach ($matchedOrcs as $key => $orchard)

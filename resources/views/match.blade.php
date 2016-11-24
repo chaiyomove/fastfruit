@@ -137,7 +137,7 @@
 														<span class="required">*</span>
 													</label>
 													<select name="idFruitSpecie" id="idFruitSpecie" class="form-matching">
-														{{-- <option value="0" selected='selected'>กรุณาเลือก</option> --}}
+														<option value="0" selected='selected'>กรุณาเลือก</option>
 														@foreach ($fruitSpecies as $fruitSpecie)
 													 		<option value="{{$fruitSpecie->idFruitSpecie}}">{{$fruitSpecie->specieName}}</option>		
 												 		@endforeach		
@@ -151,7 +151,7 @@
 														<span class="required">*</span>
 													</label>
 													<select name="idProvince" id="idProvince" class="form-matching">
-														{{-- <option value="0" selected='selected'>กรุณาเลือก</option> --}}
+														<option value="0" selected='selected'>กรุณาเลือก</option>
 														@foreach ($provinces as $province)
 													 		<option value="{{$province->idProvince}}">{{$province->provinceName}}</option>				
 												 		@endforeach	
@@ -165,7 +165,7 @@
 														<span class="required">*</span>
 													</label>
 													<div class='input-group date' id='datepickerstart'>
-											            <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" value="2016-10-12"/>
+											            <input type='text' class="form-control" name="startDate" id="date" data-select="datepicker" placeholder="ตั้งแต่" value=""/>
 											            <span class="input-group-addon" data-toggle="datepicker">
 											            	<span class="fa fa-calendar"></span>
 											            </span>
@@ -173,7 +173,7 @@
 											    </div>
 											    <div class="form-row form-row-wide">    
 											        <div class='input-group date' id='datepickerend'>
-											            <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง" value="2016-10-12" />
+											            <input type='text' class="form-control" name="endDate" id="date" data-select="datepicker" placeholder="ถึง" value="" />
 											            <span class="input-group-addon" data-toggle="datepicker">
 											                <span class="fa fa-calendar"></span>
 											            </span>
@@ -186,14 +186,14 @@
 														จำนวน
 														<span class="required">*</span>
 													</label>
-													<input type="text" class="input-text" name="fruitNum" id="username" value="100"/>
+													<input type="text" class="input-text" name="fruitNum" id="username" value=""/>
 												</div>
 												<div class="form-row form-row-wide">
 													<label for="username">
 														GAP
 														<span class="required">*</span>
 														<select name="idPlotStatus" class="form-matching" style="width: 60%; float: right;">
-															<option value="0" selected='selected'>กรุณาเลือก</option>
+															<option value="" selected='selected'>กรุณาเลือก</option>
 															<option value="1">มี GAP</option>
 									   						<option value="2">ไม่มี GAP</option>	
 														</select>
@@ -207,7 +207,7 @@
 														<span class="required">*</span>
 													</label>
 													<select name="unit" class="form-matching">
-														{{-- <option value="0" selected='selected'>หน่วย</option> --}}
+														<option value="" selected='selected'>หน่วย</option>
 														<option value="1">กิโลกรัม</option>
 							   							<option value="2">ตัน</option>	
 													</select>
@@ -261,7 +261,7 @@
 													<img width="40" height="39" src="images/organicfood-2.png" alt=""
 													style="margin-bottom: 15px;" />
 													<h2 id="results">ผลลัพธ์</h2> 
-													<ul class="breadcrumb">
+													{{-- <ul class="breadcrumb">
 													@if (Auth::check())
 														@foreach ($matchings as $key => $matching)
 														<li>
@@ -269,37 +269,9 @@
 														</li>
 														@endforeach
 													@endif
-												</ul>
+												</ul> --}}
 												</div>
-												<div class="noo-product-filter masonry-filters" style="margin-top: 0px;">
-													<ul class="noo-header-filter" data-option-key="filter">
-														<li>
-															<a data-option-value="*" href="#all" class="selected">
-																<span>ทั้งหมด</span>
-															</a>
-														</li>
-														<li>
-															<a data-option-value=".fruit" href="#fruit">
-																<span>ระยะทาง</span>
-															</a>
-														</li>
-														<li>
-															<a data-option-value=".vegetable" href="#vegetable">
-																<span>จำนวน</span>
-															</a>
-														</li>
-														<li>
-															<a data-option-value=".bread" href="#bread">
-																<span>ผลไม้</span>
-															</a>
-														</li>
-														<li>
-															<a data-option-value=".others" href="#others">
-																<span>อื่น</span>
-															</a>
-														</li>
-													</ul>
-												</div>
+												
 												@foreach ($matchedOrcs as $key => $matchedOrc)
 												@if ($key%4 == 0)	
 												<div class="noo-product-grid products row product-grid noo-grid-4">
