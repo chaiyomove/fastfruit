@@ -182,6 +182,7 @@ return [
 
 
         AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
 
 
     ],
@@ -231,6 +232,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Date' => Jenssegers\Date\Date::class,
+
 
     ],
 

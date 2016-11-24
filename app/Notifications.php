@@ -11,6 +11,8 @@ class Notifications extends Model
         'notiType','seenStatus','idOtherUser','idUser','idOrchard','idNotiType','idProductSprint'
     ];
     protected $table = 'notifications';
+    
+    protected $dates = ['created_at'];
 
     public function orchard()
     {

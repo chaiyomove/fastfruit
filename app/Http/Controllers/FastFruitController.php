@@ -105,8 +105,8 @@ class FastFruitController extends Controller
         $user->orchards()->save($orchard);
         foreach ($user->Followers as $key => $otherUser) {
             $noti = new Notifications;
-            $noti->idUser = $user->id;
-            $noti->idOtherUser = $otherUser->id;
+            $noti->idUser = $otherUser->id;
+            $noti->idOtherUser = $user->id;
             $noti->idOrchard = $orchard->idOrchard;
             $noti->idNotiType = 6;
 
@@ -313,18 +313,18 @@ class FastFruitController extends Controller
 
         foreach (Auth::user()->Followers as $key => $otherUser) {
             $noti = new Notifications;
-            $noti->idUser = Auth::user()->id;
-            $noti->idOtherUser = $otherUser->id;
+            $noti->idUser = $otherUser->id; 
+            $noti->idOtherUser = Auth::user()->id;
             $noti->idProductSprint = $product->idProductSprint;
             $noti->idNotiType = 7;
-            
+
             $noti->save();
         }     
 
         foreach ($plot->orchard->orchardFollowers as $key => $otherUser) {
             $noti = new Notifications;
-            $noti->idUser = Auth::user()->id;
-            $noti->idOtherUser = $otherUser->id;
+            $noti->idUser = $otherUser->id;
+            $noti->idOtherUser = Auth::user()->id;
             $noti->idProductSprint = $product->idProductSprint;
             $noti->idNotiType = 7;
 
@@ -740,8 +740,8 @@ class FastFruitController extends Controller
 
     public function notifications()
     {
-        
-        return view('notification');
+        $notifications = Auth::user()->notifications->reverse();
+        return view('notification', compact('notifications'));
         
     }
 

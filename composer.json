@@ -11,7 +11,8 @@
         "algolia/algoliasearch-laravel": "^1.5",
         "laravel/socialite": "^2.0",
         "caouecs/laravel-lang": "^3.0",
-        "laravel/scout": "^1.1"
+        "laravel/scout": "^1.1",
+        "jenssegers/date": "^3.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

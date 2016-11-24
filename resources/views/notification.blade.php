@@ -16,41 +16,47 @@
 							<div class="widget commerce widget_products">
 								<h3 class="widget-title">รายการแจ้งเตือน</h3>
 									<ul class="product_list_widget">
-										<li>
-											<a href="orchardDetail.html">
-												<img width="100" height="100" src="images/product/product_8.jpg" alt="" /> 
-												<span class="product-title">French Bread</span>
-											</a>
-											<span class="amount">&#36;10.00</span>
-										</li>
-										<li>
-											<a href="orchardDetail.html">
-												<img width="100" height="100" src="images/product/product_6.jpg" alt="" /> 
-												<span class="product-title">Cookie</span>
-											</a>
-											<span class="amount">&#36;15.00</span>
-										</li>
-										<li>
-											<a href="orchardDetail.html">
-												<img width="100" height="100" src="images/product/product_3.jpg" alt="" /> 
-												<span class="product-title">Brown Bread</span>
-											</a>
-											<span class="amount">&#36;12.00</span>
-										</li>
-										<li>
-											<a href="orchardDetail.html">
-												<img width="100" height="100" src="images/product/product_1.jpg" alt="" /> 
-												<span class="product-title">Apples</span>
-											</a>
-											<span class="amount">&#36;3.95</span>
-										</li>
-										<li>
-											<a href="orchardDetail.html">
-												<img width="100" height="100" src="images/product/product_16.jpg" alt="" /> 
-												<span class="product-title">Onions</span>
-											</a>
-											<span class="amount">&#36;3.90</span>
-										</li>
+
+										@foreach ($notifications as $key => $notification)
+											@if ($notification->seenStatus == 0)
+												@if ($notification->idNotiType == 1)
+													<li>
+														<a href="{{url('profile',[$notification->idOtherUser])}}">
+															<img width="100" height="100" src="{{App\User::find($notification->idOtherUser)->userPicture}}" alt="" /> 
+															<span class="product-title">{{App\User::find($notification->idOtherUser)->firstName}} {{App\User::find($notification->idOtherUser)->lastName}}</span>
+														</a>
+														<span class="amount">ได้เริ่มติดตามคุณเมื่อ {{$notification->created_at->diffForHumans()}} </span>
+													</li>
+												@endif
+												@if ($notification->idNotiType == 2)
+													<li>
+														<a href="{{url('profile',[$notification->idOtherUser])}}">
+															<img width="100" height="100" src="{{App\User::find($notification->idOtherUser)->userPicture}}" alt="" /> 
+															<span class="product-title">{{App\User::find($notification->idOtherUser)->firstName}} {{App\User::find($notification->idOtherUser)->lastName}}</span>
+														</a>
+														<span class="amount">ได้เริ่มติดตามสวนของคุณเมื่อ {{$notification->created_at->diffForHumans()}} </span>
+													</li>
+												@endif
+												@if ($notification->idNotiType == 6)
+													<li>
+														<a href="{{url('profile',[$notification->idOtherUser])}}">
+															<img width="100" height="100" src="{{App\User::find($notification->idOtherUser)->userPicture}}" alt="" /> 
+															<span class="product-title">{{App\User::find($notification->idOtherUser)->firstName}} {{App\User::find($notification->idOtherUser)->lastName}}</span>
+														</a>
+														<span class="amount">ได้เพิ่มสวนใหม่เมื่อ {{$notification->created_at->diffForHumans()}} </span>
+													</li>
+												@endif
+												@if ($notification->idNotiType == 7)
+													<li>
+														<a href="{{url('profile',[$notification->idOtherUser])}}">
+															<img width="100" height="100" src="{{App\User::find($notification->idOtherUser)->userPicture}}" alt="" /> 
+															<span class="product-title">{{App\User::find($notification->idOtherUser)->firstName}} {{App\User::find($notification->idOtherUser)->lastName}}</span>
+														</a>
+														<span class="amount">ได้เพิ่มรอบการผลิตใหม่เมื่อ {{$notification->created_at->diffForHumans()}} </span>
+													</li>
+												@endif
+											@endif
+										@endforeach								
 									</ul>
 								</div>
 							</div>

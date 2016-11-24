@@ -83,6 +83,10 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
             'Laravel\\Socialite\\' => 18,
             'Laravel\\Scout\\' => 14,
         ),
+        'J' => 
+        array (
+            'Jenssegers\\Date\\' => 16,
+        ),
         'I' => 
         array (
             'Illuminate\\' => 11,
@@ -242,6 +246,10 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
         'Laravel\\Scout\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/scout/src',
+        ),
+        'Jenssegers\\Date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jenssegers/date/src',
         ),
         'Illuminate\\' => 
         array (
@@ -403,9 +411,13 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
         'App\\Http\\Requests\\UpdateProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateProductRequest.php',
         'App\\Http\\Requests\\UpdateUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateUserRequest.php',
         'App\\Matchings' => __DIR__ . '/../..' . '/app/Matchings.php',
+        'App\\NotificationTypes' => __DIR__ . '/../..' . '/app/NotificationTypes.php',
+        'App\\Notifications' => __DIR__ . '/../..' . '/app/Notifications.php',
+        'App\\Notifications\\ConfirmEmail' => __DIR__ . '/../..' . '/app/Notifications/ConfirmEmail.php',
         'App\\Notifications\\ResetPassword' => __DIR__ . '/../..' . '/app/Notifications/ResetPassword.php',
         'App\\Orchard_plots' => __DIR__ . '/../..' . '/app/Orchard_plots.php',
         'App\\Orchards' => __DIR__ . '/../..' . '/app/Orchards.php',
+        'App\\Password_resets' => __DIR__ . '/../..' . '/app/Password_resets.php',
         'App\\Plot_status' => __DIR__ . '/../..' . '/app/Plot_status.php',
         'App\\Post' => __DIR__ . '/../..' . '/app/Post.php',
         'App\\Product_sprints' => __DIR__ . '/../..' . '/app/Product_sprints.php',
@@ -1625,6 +1637,8 @@ class ComposerStaticInit932da7ad96d4e87e18e9f1ba81242285
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'Jenssegers\\Date\\Date' => __DIR__ . '/..' . '/jenssegers/date/src/Date.php',
+        'Jenssegers\\Date\\DateServiceProvider' => __DIR__ . '/..' . '/jenssegers/date/src/DateServiceProvider.php',
         'Laravel\\Scout\\Builder' => __DIR__ . '/..' . '/laravel/scout/src/Builder.php',
         'Laravel\\Scout\\Console\\FlushCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/FlushCommand.php',
         'Laravel\\Scout\\Console\\ImportCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/ImportCommand.php',
